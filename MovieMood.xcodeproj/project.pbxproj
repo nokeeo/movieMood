@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6A1899F8AF00992093 /* Foundation.framework */; };
+		BEE1CA6D1899F8AF00992093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */; };
+		BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6E1899F8AF00992093 /* UIKit.framework */; };
+		BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA701899F8AF00992093 /* CoreData.framework */; };
+		BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA751899F8AF00992093 /* InfoPlist.strings */; };
+		BEE1CA791899F8AF00992093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA781899F8AF00992093 /* main.m */; };
+		BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */; };
+		BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */; };
+		BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA811899F8AF00992093 /* Images.xcassets */; };
+		BEE1CA891899F8AF00992093 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA881899F8AF00992093 /* XCTest.framework */; };
+		BEE1CA8A1899F8AF00992093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6A1899F8AF00992093 /* Foundation.framework */; };
+		BEE1CA8B1899F8AF00992093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6E1899F8AF00992093 /* UIKit.framework */; };
+		BEE1CA8C1899F8AF00992093 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA701899F8AF00992093 /* CoreData.framework */; };
+		BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA921899F8AF00992093 /* InfoPlist.strings */; };
+		BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA951899F8AF00992093 /* MovieMoodTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEE1CA8D1899F8AF00992093 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEE1CA5F1899F8AF00992093 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEE1CA661899F8AF00992093;
+			remoteInfo = MovieMood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BEE1CA671899F8AF00992093 /* MovieMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE1CA6A1899F8AF00992093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BEE1CA6E1899F8AF00992093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BEE1CA701899F8AF00992093 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BEE1CA741899F8AF00992093 /* MovieMood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMood-Info.plist"; sourceTree = "<group>"; };
+		BEE1CA761899F8AF00992093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEE1CA781899F8AF00992093 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEE1CA7A1899F8AF00992093 /* MovieMood-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieMood-Prefix.pch"; sourceTree = "<group>"; };
+		BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKYAppDelegate.h; sourceTree = "<group>"; };
+		BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKYAppDelegate.m; sourceTree = "<group>"; };
+		BEE1CA7F1899F8AF00992093 /* MovieMood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieMood.xcdatamodel; sourceTree = "<group>"; };
+		BEE1CA811899F8AF00992093 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEE1CA871899F8AF00992093 /* MovieMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE1CA881899F8AF00992093 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BEE1CA911899F8AF00992093 /* MovieMoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMoodTests-Info.plist"; sourceTree = "<group>"; };
+		BEE1CA931899F8AF00992093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEE1CA951899F8AF00992093 /* MovieMoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMoodTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEE1CA641899F8AF00992093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA6D1899F8AF00992093 /* CoreGraphics.framework in Frameworks */,
+				BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */,
+				BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */,
+				BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEE1CA841899F8AF00992093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA891899F8AF00992093 /* XCTest.framework in Frameworks */,
+				BEE1CA8C1899F8AF00992093 /* CoreData.framework in Frameworks */,
+				BEE1CA8B1899F8AF00992093 /* UIKit.framework in Frameworks */,
+				BEE1CA8A1899F8AF00992093 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEE1CA5E1899F8AF00992093 = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA721899F8AF00992093 /* MovieMood */,
+				BEE1CA8F1899F8AF00992093 /* MovieMoodTests */,
+				BEE1CA691899F8AF00992093 /* Frameworks */,
+				BEE1CA681899F8AF00992093 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEE1CA681899F8AF00992093 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA671899F8AF00992093 /* MovieMood.app */,
+				BEE1CA871899F8AF00992093 /* MovieMoodTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEE1CA691899F8AF00992093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA6A1899F8AF00992093 /* Foundation.framework */,
+				BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */,
+				BEE1CA6E1899F8AF00992093 /* UIKit.framework */,
+				BEE1CA701899F8AF00992093 /* CoreData.framework */,
+				BEE1CA881899F8AF00992093 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEE1CA721899F8AF00992093 /* MovieMood */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */,
+				BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */,
+				BEE1CA811899F8AF00992093 /* Images.xcassets */,
+				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
+				BEE1CA731899F8AF00992093 /* Supporting Files */,
+			);
+			path = MovieMood;
+			sourceTree = "<group>";
+		};
+		BEE1CA731899F8AF00992093 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA741899F8AF00992093 /* MovieMood-Info.plist */,
+				BEE1CA751899F8AF00992093 /* InfoPlist.strings */,
+				BEE1CA781899F8AF00992093 /* main.m */,
+				BEE1CA7A1899F8AF00992093 /* MovieMood-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEE1CA8F1899F8AF00992093 /* MovieMoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA951899F8AF00992093 /* MovieMoodTests.m */,
+				BEE1CA901899F8AF00992093 /* Supporting Files */,
+			);
+			path = MovieMoodTests;
+			sourceTree = "<group>";
+		};
+		BEE1CA901899F8AF00992093 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA911899F8AF00992093 /* MovieMoodTests-Info.plist */,
+				BEE1CA921899F8AF00992093 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEE1CA661899F8AF00992093 /* MovieMood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEE1CA991899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMood" */;
+			buildPhases = (
+				BEE1CA631899F8AF00992093 /* Sources */,
+				BEE1CA641899F8AF00992093 /* Frameworks */,
+				BEE1CA651899F8AF00992093 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieMood;
+			productName = MovieMood;
+			productReference = BEE1CA671899F8AF00992093 /* MovieMood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEE1CA861899F8AF00992093 /* MovieMoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEE1CA9C1899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMoodTests" */;
+			buildPhases = (
+				BEE1CA831899F8AF00992093 /* Sources */,
+				BEE1CA841899F8AF00992093 /* Frameworks */,
+				BEE1CA851899F8AF00992093 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEE1CA8E1899F8AF00992093 /* PBXTargetDependency */,
+			);
+			name = MovieMoodTests;
+			productName = MovieMoodTests;
+			productReference = BEE1CA871899F8AF00992093 /* MovieMoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEE1CA5F1899F8AF00992093 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SKY;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Sky Apps";
+				TargetAttributes = {
+					BEE1CA861899F8AF00992093 = {
+						TestTargetID = BEE1CA661899F8AF00992093;
+					};
+				};
+			};
+			buildConfigurationList = BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "MovieMood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BEE1CA5E1899F8AF00992093;
+			productRefGroup = BEE1CA681899F8AF00992093 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEE1CA661899F8AF00992093 /* MovieMood */,
+				BEE1CA861899F8AF00992093 /* MovieMoodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEE1CA651899F8AF00992093 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
+				BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEE1CA851899F8AF00992093 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEE1CA631899F8AF00992093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
+				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
+				BEE1CA791899F8AF00992093 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEE1CA831899F8AF00992093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEE1CA8E1899F8AF00992093 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEE1CA661899F8AF00992093 /* MovieMood */;
+			targetProxy = BEE1CA8D1899F8AF00992093 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEE1CA751899F8AF00992093 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEE1CA761899F8AF00992093 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BEE1CA921899F8AF00992093 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEE1CA931899F8AF00992093 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEE1CA971899F8AF00992093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BEE1CA981899F8AF00992093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEE1CA9A1899F8AF00992093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BEE1CA9B1899F8AF00992093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BEE1CA9D1899F8AF00992093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MovieMood.app/MovieMood";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MovieMoodTests/MovieMoodTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BEE1CA9E1899F8AF00992093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MovieMood.app/MovieMood";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				INFOPLIST_FILE = "MovieMoodTests/MovieMoodTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "MovieMood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE1CA971899F8AF00992093 /* Debug */,
+				BEE1CA981899F8AF00992093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEE1CA991899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE1CA9A1899F8AF00992093 /* Debug */,
+				BEE1CA9B1899F8AF00992093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BEE1CA9C1899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE1CA9D1899F8AF00992093 /* Debug */,
+				BEE1CA9E1899F8AF00992093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BEE1CA7F1899F8AF00992093 /* MovieMood.xcdatamodel */,
+			);
+			currentVersion = BEE1CA7F1899F8AF00992093 /* MovieMood.xcdatamodel */;
+			path = MovieMood.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BEE1CA5F1899F8AF00992093 /* Project object */;
+}
