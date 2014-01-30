@@ -10,10 +10,12 @@
 #import "JLTMDbClient.h"
 
 @interface SKYViewController ()
-
+@property (nonatomic, retain) ISColorWheel *colorWheel;
 @end
 
 @implementation SKYViewController
+
+@synthesize colorWheel = _colorWheel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +29,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	CGSize size = self.view.bounds.size;
+    
+    CGSize wheelSize = CGSizeMake(size.width * .75, size.width * .75);
+    
+    _colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
+                                                                 size.height * .3,
+                                                                 wheelSize.width,
+                                                                 wheelSize.height)];
+    _colorWheel.delegate = self;
+    _colorWheel.continuous = true;
+    [self.view addSubview:_colorWheel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +65,10 @@
             //NSLog(@"Popular Movies: %@",fetchedData);
         }
     }];
+}
+
+-(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
+    NSLog(@"%@", _colorWheel.currentColor);
 }
 
 @end

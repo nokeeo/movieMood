@@ -1,1261 +1,566 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>146FBDF6E5B840C2B03FE7E9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>35A86E6D26CC4E8093567DFD</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BED5AF08189AC99A00ABF4EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BED5AF09189AC9CE00ABF4EC</string>
-				<string>BED5AF0A189AC9CE00ABF4EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ColorWheel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BED5AF09189AC9CE00ABF4EC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ISColorWheel.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BED5AF0A189AC9CE00ABF4EC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ISColorWheel.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BED5AF0B189AC9CE00ABF4EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BED5AF0A189AC9CE00ABF4EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA5E1899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C15BE3B5189AD23E006FC7C3</string>
-				<string>BEE1CA721899F8AF00992093</string>
-				<string>BEE1CA8F1899F8AF00992093</string>
-				<string>BEE1CA691899F8AF00992093</string>
-				<string>BEE1CA681899F8AF00992093</string>
-				<string>E652B3611CCC4609BE7DC798</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA5F1899F8AF00992093</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>SKY</string>
-				<key>LastUpgradeCheck</key>
-				<string>0500</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Sky Apps</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>BEE1CA861899F8AF00992093</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>BEE1CA661899F8AF00992093</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>BEE1CA621899F8AF00992093</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>BEE1CA5E1899F8AF00992093</string>
-			<key>productRefGroup</key>
-			<string>BEE1CA681899F8AF00992093</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>BEE1CA661899F8AF00992093</string>
-				<string>BEE1CA861899F8AF00992093</string>
-			</array>
-		</dict>
-		<key>BEE1CA621899F8AF00992093</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>BEE1CA971899F8AF00992093</string>
-				<string>BEE1CA981899F8AF00992093</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BEE1CA631899F8AF00992093</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BEE1CA7D1899F8AF00992093</string>
-				<string>BED5AF0B189AC9CE00ABF4EC</string>
-				<string>C15BE3BC189AD269006FC7C3</string>
-				<string>C15BE3B9189AD23E006FC7C3</string>
-				<string>BEE1CA801899F8AF00992093</string>
-				<string>BEE1CA791899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BEE1CA641899F8AF00992093</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BEE1CA6D1899F8AF00992093</string>
-				<string>BEE1CA711899F8AF00992093</string>
-				<string>BEE1CA6F1899F8AF00992093</string>
-				<string>BEE1CA6B1899F8AF00992093</string>
-				<string>F7DFF6DD665543C9A8239D34</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BEE1CA651899F8AF00992093</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C12714531899FB9300246E40</string>
-				<string>BEE1CA771899F8AF00992093</string>
-				<string>BEE1CA821899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BEE1CA661899F8AF00992093</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>BEE1CA991899F8AF00992093</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C62EE67B7C4343EBB6749A84</string>
-				<string>BEE1CA631899F8AF00992093</string>
-				<string>BEE1CA641899F8AF00992093</string>
-				<string>BEE1CA651899F8AF00992093</string>
-				<string>146FBDF6E5B840C2B03FE7E9</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MovieMood</string>
-			<key>productName</key>
-			<string>MovieMood</string>
-			<key>productReference</key>
-			<string>BEE1CA671899F8AF00992093</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>BEE1CA671899F8AF00992093</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MovieMood.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BEE1CA681899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA671899F8AF00992093</string>
-				<string>BEE1CA871899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA691899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA6A1899F8AF00992093</string>
-				<string>BEE1CA6C1899F8AF00992093</string>
-				<string>BEE1CA6E1899F8AF00992093</string>
-				<string>BEE1CA701899F8AF00992093</string>
-				<string>BEE1CA881899F8AF00992093</string>
-				<string>35A86E6D26CC4E8093567DFD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA6A1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BEE1CA6B1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA6A1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA6C1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BEE1CA6D1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA6C1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA6E1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BEE1CA6F1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA6E1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA701899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreData.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreData.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>BEE1CA711899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA701899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA721899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BED5AF08189AC99A00ABF4EC</string>
-				<string>BEE1CA7B1899F8AF00992093</string>
-				<string>BEE1CA7C1899F8AF00992093</string>
-				<string>BEE1CA811899F8AF00992093</string>
-				<string>BEE1CA7E1899F8AF00992093</string>
-				<string>BEE1CA731899F8AF00992093</string>
-				<string>C12714521899FB9300246E40</string>
-				<string>C15BE3BA189AD269006FC7C3</string>
-				<string>C15BE3BB189AD269006FC7C3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MovieMood</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA731899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA741899F8AF00992093</string>
-				<string>BEE1CA751899F8AF00992093</string>
-				<string>BEE1CA781899F8AF00992093</string>
-				<string>BEE1CA7A1899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA741899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>MovieMood-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA751899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA761899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA761899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA771899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA751899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA781899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA791899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA781899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA7A1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MovieMood-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA7B1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SKYAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA7C1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SKYAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA7D1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA7C1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA7E1899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA7F1899F8AF00992093</string>
-			</array>
-			<key>currentVersion</key>
-			<string>BEE1CA7F1899F8AF00992093</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>MovieMood.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>BEE1CA7F1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>MovieMood.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA801899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA7E1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA811899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA821899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA811899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA831899F8AF00992093</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BEE1CA961899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BEE1CA841899F8AF00992093</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BEE1CA891899F8AF00992093</string>
-				<string>BEE1CA8C1899F8AF00992093</string>
-				<string>BEE1CA8B1899F8AF00992093</string>
-				<string>BEE1CA8A1899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BEE1CA851899F8AF00992093</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BEE1CA941899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BEE1CA861899F8AF00992093</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>BEE1CA9C1899F8AF00992093</string>
-			<key>buildPhases</key>
-			<array>
-				<string>BEE1CA831899F8AF00992093</string>
-				<string>BEE1CA841899F8AF00992093</string>
-				<string>BEE1CA851899F8AF00992093</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>BEE1CA8E1899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MovieMoodTests</string>
-			<key>productName</key>
-			<string>MovieMoodTests</string>
-			<key>productReference</key>
-			<string>BEE1CA871899F8AF00992093</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>BEE1CA871899F8AF00992093</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MovieMoodTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BEE1CA881899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>BEE1CA891899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA881899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA8A1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA6A1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA8B1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA6E1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA8C1899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA701899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA8D1899F8AF00992093</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>BEE1CA5F1899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>BEE1CA661899F8AF00992093</string>
-			<key>remoteInfo</key>
-			<string>MovieMood</string>
-		</dict>
-		<key>BEE1CA8E1899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>BEE1CA661899F8AF00992093</string>
-			<key>targetProxy</key>
-			<string>BEE1CA8D1899F8AF00992093</string>
-		</dict>
-		<key>BEE1CA8F1899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA951899F8AF00992093</string>
-				<string>BEE1CA901899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MovieMoodTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA901899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA911899F8AF00992093</string>
-				<string>BEE1CA921899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA911899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>MovieMoodTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA921899F8AF00992093</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BEE1CA931899F8AF00992093</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA931899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA941899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA921899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA951899F8AF00992093</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MovieMoodTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE1CA961899F8AF00992093</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEE1CA951899F8AF00992093</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BEE1CA971899F8AF00992093</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>BEE1CA981899F8AF00992093</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BEE1CA991899F8AF00992093</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>BEE1CA9A1899F8AF00992093</string>
-				<string>BEE1CA9B1899F8AF00992093</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BEE1CA9A1899F8AF00992093</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E652B3611CCC4609BE7DC798</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MovieMood/MovieMood-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MovieMood/MovieMood-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>BEE1CA9B1899F8AF00992093</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E652B3611CCC4609BE7DC798</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MovieMood/MovieMood-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MovieMood/MovieMood-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BEE1CA9C1899F8AF00992093</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>BEE1CA9D1899F8AF00992093</string>
-				<string>BEE1CA9E1899F8AF00992093</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BEE1CA9D1899F8AF00992093</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MovieMood.app/MovieMood</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MovieMood/MovieMood-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>MovieMoodTests/MovieMoodTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>BEE1CA9E1899F8AF00992093</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MovieMood.app/MovieMood</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MovieMood/MovieMood-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MovieMoodTests/MovieMoodTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C12714521899FB9300246E40</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C12714531899FB9300246E40</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C12714521899FB9300246E40</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C15BE3B5189AD23E006FC7C3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C15BE3B6189AD23E006FC7C3</string>
-				<string>C15BE3B7189AD23E006FC7C3</string>
-				<string>C15BE3B8189AD23E006FC7C3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>JLTMDbClient</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C15BE3B6189AD23E006FC7C3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>JLTMDbClient.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C15BE3B7189AD23E006FC7C3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>JLTMDbClient.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C15BE3B8189AD23E006FC7C3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>JLTMDbClientDefines.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C15BE3B9189AD23E006FC7C3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C15BE3B7189AD23E006FC7C3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C15BE3BA189AD269006FC7C3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SKYViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C15BE3BB189AD269006FC7C3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SKYViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C15BE3BC189AD269006FC7C3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C15BE3BB189AD269006FC7C3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C62EE67B7C4343EBB6749A84</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E652B3611CCC4609BE7DC798</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F7DFF6DD665543C9A8239D34</key>
-		<dict>
-			<key>fileRef</key>
-			<string>35A86E6D26CC4E8093567DFD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>BEE1CA5F1899F8AF00992093</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */; };
+		BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6A1899F8AF00992093 /* Foundation.framework */; };
+		BEE1CA6D1899F8AF00992093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */; };
+		BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6E1899F8AF00992093 /* UIKit.framework */; };
+		BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA701899F8AF00992093 /* CoreData.framework */; };
+		BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA751899F8AF00992093 /* InfoPlist.strings */; };
+		BEE1CA791899F8AF00992093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA781899F8AF00992093 /* main.m */; };
+		BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */; };
+		BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */; };
+		BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA811899F8AF00992093 /* Images.xcassets */; };
+		BEE1CA891899F8AF00992093 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA881899F8AF00992093 /* XCTest.framework */; };
+		BEE1CA8A1899F8AF00992093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6A1899F8AF00992093 /* Foundation.framework */; };
+		BEE1CA8B1899F8AF00992093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6E1899F8AF00992093 /* UIKit.framework */; };
+		BEE1CA8C1899F8AF00992093 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA701899F8AF00992093 /* CoreData.framework */; };
+		BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA921899F8AF00992093 /* InfoPlist.strings */; };
+		BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA951899F8AF00992093 /* MovieMoodTests.m */; };
+		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
+		C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */; };
+		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
+		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEE1CA8D1899F8AF00992093 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEE1CA5F1899F8AF00992093 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEE1CA661899F8AF00992093;
+			remoteInfo = MovieMood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35A86E6D26CC4E8093567DFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED5AF09189AC9CE00ABF4EC /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
+		BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		BEE1CA671899F8AF00992093 /* MovieMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE1CA6A1899F8AF00992093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BEE1CA6E1899F8AF00992093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BEE1CA701899F8AF00992093 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BEE1CA741899F8AF00992093 /* MovieMood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMood-Info.plist"; sourceTree = "<group>"; };
+		BEE1CA761899F8AF00992093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEE1CA781899F8AF00992093 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEE1CA7A1899F8AF00992093 /* MovieMood-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieMood-Prefix.pch"; sourceTree = "<group>"; };
+		BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKYAppDelegate.h; sourceTree = "<group>"; };
+		BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKYAppDelegate.m; sourceTree = "<group>"; };
+		BEE1CA7F1899F8AF00992093 /* MovieMood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieMood.xcdatamodel; sourceTree = "<group>"; };
+		BEE1CA811899F8AF00992093 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEE1CA871899F8AF00992093 /* MovieMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE1CA881899F8AF00992093 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BEE1CA911899F8AF00992093 /* MovieMoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMoodTests-Info.plist"; sourceTree = "<group>"; };
+		BEE1CA931899F8AF00992093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEE1CA951899F8AF00992093 /* MovieMoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMoodTests.m; sourceTree = "<group>"; };
+		C12714521899FB9300246E40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C15BE3B6189AD23E006FC7C3 /* JLTMDbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClient.h; sourceTree = "<group>"; };
+		C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTMDbClient.m; sourceTree = "<group>"; };
+		C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClientDefines.h; sourceTree = "<group>"; };
+		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYViewController.h; sourceTree = "<group>"; };
+		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYViewController.m; sourceTree = "<group>"; };
+		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEE1CA641899F8AF00992093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA6D1899F8AF00992093 /* CoreGraphics.framework in Frameworks */,
+				BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */,
+				BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */,
+				BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */,
+				F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEE1CA841899F8AF00992093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA891899F8AF00992093 /* XCTest.framework in Frameworks */,
+				BEE1CA8C1899F8AF00992093 /* CoreData.framework in Frameworks */,
+				BEE1CA8B1899F8AF00992093 /* UIKit.framework in Frameworks */,
+				BEE1CA8A1899F8AF00992093 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BED5AF08189AC99A00ABF4EC /* ColorWheel */ = {
+			isa = PBXGroup;
+			children = (
+				BED5AF09189AC9CE00ABF4EC /* ISColorWheel.h */,
+				BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */,
+			);
+			name = ColorWheel;
+			sourceTree = "<group>";
+		};
+		BEE1CA5E1899F8AF00992093 = {
+			isa = PBXGroup;
+			children = (
+				C15BE3B5189AD23E006FC7C3 /* JLTMDbClient */,
+				BEE1CA721899F8AF00992093 /* MovieMood */,
+				BEE1CA8F1899F8AF00992093 /* MovieMoodTests */,
+				BEE1CA691899F8AF00992093 /* Frameworks */,
+				BEE1CA681899F8AF00992093 /* Products */,
+				E652B3611CCC4609BE7DC798 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		BEE1CA681899F8AF00992093 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA671899F8AF00992093 /* MovieMood.app */,
+				BEE1CA871899F8AF00992093 /* MovieMoodTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEE1CA691899F8AF00992093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA6A1899F8AF00992093 /* Foundation.framework */,
+				BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */,
+				BEE1CA6E1899F8AF00992093 /* UIKit.framework */,
+				BEE1CA701899F8AF00992093 /* CoreData.framework */,
+				BEE1CA881899F8AF00992093 /* XCTest.framework */,
+				35A86E6D26CC4E8093567DFD /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEE1CA721899F8AF00992093 /* MovieMood */ = {
+			isa = PBXGroup;
+			children = (
+				BED5AF08189AC99A00ABF4EC /* ColorWheel */,
+				BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */,
+				BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */,
+				BEE1CA811899F8AF00992093 /* Images.xcassets */,
+				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
+				BEE1CA731899F8AF00992093 /* Supporting Files */,
+				C12714521899FB9300246E40 /* Main.storyboard */,
+				C15BE3BA189AD269006FC7C3 /* SKYViewController.h */,
+				C15BE3BB189AD269006FC7C3 /* SKYViewController.m */,
+			);
+			path = MovieMood;
+			sourceTree = "<group>";
+		};
+		BEE1CA731899F8AF00992093 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA741899F8AF00992093 /* MovieMood-Info.plist */,
+				BEE1CA751899F8AF00992093 /* InfoPlist.strings */,
+				BEE1CA781899F8AF00992093 /* main.m */,
+				BEE1CA7A1899F8AF00992093 /* MovieMood-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEE1CA8F1899F8AF00992093 /* MovieMoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA951899F8AF00992093 /* MovieMoodTests.m */,
+				BEE1CA901899F8AF00992093 /* Supporting Files */,
+			);
+			path = MovieMoodTests;
+			sourceTree = "<group>";
+		};
+		BEE1CA901899F8AF00992093 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CA911899F8AF00992093 /* MovieMoodTests-Info.plist */,
+				BEE1CA921899F8AF00992093 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C15BE3B5189AD23E006FC7C3 /* JLTMDbClient */ = {
+			isa = PBXGroup;
+			children = (
+				C15BE3B6189AD23E006FC7C3 /* JLTMDbClient.h */,
+				C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */,
+				C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */,
+			);
+			path = JLTMDbClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEE1CA661899F8AF00992093 /* MovieMood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEE1CA991899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMood" */;
+			buildPhases = (
+				C62EE67B7C4343EBB6749A84 /* Check Pods Manifest.lock */,
+				BEE1CA631899F8AF00992093 /* Sources */,
+				BEE1CA641899F8AF00992093 /* Frameworks */,
+				BEE1CA651899F8AF00992093 /* Resources */,
+				146FBDF6E5B840C2B03FE7E9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieMood;
+			productName = MovieMood;
+			productReference = BEE1CA671899F8AF00992093 /* MovieMood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEE1CA861899F8AF00992093 /* MovieMoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEE1CA9C1899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMoodTests" */;
+			buildPhases = (
+				BEE1CA831899F8AF00992093 /* Sources */,
+				BEE1CA841899F8AF00992093 /* Frameworks */,
+				BEE1CA851899F8AF00992093 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEE1CA8E1899F8AF00992093 /* PBXTargetDependency */,
+			);
+			name = MovieMoodTests;
+			productName = MovieMoodTests;
+			productReference = BEE1CA871899F8AF00992093 /* MovieMoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEE1CA5F1899F8AF00992093 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SKY;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Sky Apps";
+				TargetAttributes = {
+					BEE1CA861899F8AF00992093 = {
+						TestTargetID = BEE1CA661899F8AF00992093;
+					};
+				};
+			};
+			buildConfigurationList = BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "MovieMood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BEE1CA5E1899F8AF00992093;
+			productRefGroup = BEE1CA681899F8AF00992093 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEE1CA661899F8AF00992093 /* MovieMood */,
+				BEE1CA861899F8AF00992093 /* MovieMoodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEE1CA651899F8AF00992093 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C12714531899FB9300246E40 /* Main.storyboard in Resources */,
+				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
+				BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEE1CA851899F8AF00992093 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		146FBDF6E5B840C2B03FE7E9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C62EE67B7C4343EBB6749A84 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEE1CA631899F8AF00992093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
+				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
+				C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */,
+				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
+				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
+				BEE1CA791899F8AF00992093 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEE1CA831899F8AF00992093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEE1CA8E1899F8AF00992093 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEE1CA661899F8AF00992093 /* MovieMood */;
+			targetProxy = BEE1CA8D1899F8AF00992093 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEE1CA751899F8AF00992093 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEE1CA761899F8AF00992093 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BEE1CA921899F8AF00992093 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEE1CA931899F8AF00992093 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEE1CA971899F8AF00992093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BEE1CA981899F8AF00992093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEE1CA9A1899F8AF00992093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E652B3611CCC4609BE7DC798 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BEE1CA9B1899F8AF00992093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E652B3611CCC4609BE7DC798 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BEE1CA9D1899F8AF00992093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MovieMood.app/MovieMood";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MovieMoodTests/MovieMoodTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BEE1CA9E1899F8AF00992093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MovieMood.app/MovieMood";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
+				INFOPLIST_FILE = "MovieMoodTests/MovieMoodTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "MovieMood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE1CA971899F8AF00992093 /* Debug */,
+				BEE1CA981899F8AF00992093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEE1CA991899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE1CA9A1899F8AF00992093 /* Debug */,
+				BEE1CA9B1899F8AF00992093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEE1CA9C1899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE1CA9D1899F8AF00992093 /* Debug */,
+				BEE1CA9E1899F8AF00992093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BEE1CA7F1899F8AF00992093 /* MovieMood.xcdatamodel */,
+			);
+			currentVersion = BEE1CA7F1899F8AF00992093 /* MovieMood.xcdatamodel */;
+			path = MovieMood.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BEE1CA5F1899F8AF00992093 /* Project object */;
+}
