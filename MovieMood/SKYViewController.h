@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @end

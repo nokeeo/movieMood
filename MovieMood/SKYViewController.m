@@ -36,35 +36,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (IBAction)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self getMoviesByGenre:searchBar.text];
 }
 
 - (void)getMoviesByGenre:(NSString *) genre
 {
+    // Aaron: still not grabbing by genre, needs fixing
     [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbMoviePopular withParameters:nil andResponseBlock:^(id response, NSError *error) {
         if(!error){
-            id fetchedData = response;
-            NSData* movies = [fetchedData dataUsingEncoding:NSUTF8StringEncoding];
-            [self deserializeMovieJson:movies];
+            // Aaron: still having trouble parsing the response, the client deserializes for us (unconfirmed).
+            NSDictionary* fetchedData = response;
+            NSArray* movieNames = [fetchedData objectForKey:@"title"];
+            NSLog(@"movie name: %@", movieNames);
+            //NSLog(@"Popular Movies: %@",fetchedData);
         }
     }];
-}
-
-- (void)deserializeMovieJson:(NSData *) movieJson
-{
-    //parse out the json data
-    NSError* error;
-    NSDictionary* json = [NSJSONSerialization
-                          JSONObjectWithData:movieJson //1
-                          
-                          options:kNilOptions
-                          error:&error];
-    
-    NSArray* movieNames = [json objectForKey:@"title"]; //2
-    
-    NSLog(@"movie name: %@", movieNames); //3
 }
 
 @end
