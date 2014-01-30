@@ -117,6 +117,7 @@
 		BEE1CA721899F8AF00992093 /* MovieMood */ = {
 			isa = PBXGroup;
 			children = (
+				BEE1CA9F189AC67200992093 /* ISColorWheel */,
 				BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */,
 				BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */,
 				BEE1CA811899F8AF00992093 /* Images.xcassets */,
@@ -154,6 +155,15 @@
 				BEE1CA921899F8AF00992093 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEE1CA9F189AC67200992093 /* ISColorWheel */ = {
+			isa = PBXGroup;
+			children = (
+				BEE1CAA0189AC6A700992093 /* ISColorWheel.h */,
+				BEE1CAA1189AC6A700992093 /* ISColorWheel.m */,
+			);
+			name = ISColorWheel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
+				BEE1CAA2189AC6A700992093 /* ISColorWheel.m in Sources */,
 				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
 				BEE1CA791899F8AF00992093 /* main.m in Sources */,
 			);
