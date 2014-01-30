@@ -10,7 +10,6 @@
 #import "JLTMDbClient.h"
 
 @interface SKYViewController ()
-@property NSDictionary* genreList;
 @end
 
 @implementation SKYViewController
@@ -51,7 +50,7 @@
             NSDictionary* fetchedData = response;
             NSArray* movies  = fetchedData[@"results"];
             NSLog(@"Popular Movies: %@",movies);
-        } else
+        }else
         {
             [errorAlertView show];
         }
