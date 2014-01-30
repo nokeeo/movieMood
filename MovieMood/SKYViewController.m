@@ -10,7 +10,7 @@
 #import "JLTMDbClient.h"
 
 @interface SKYViewController ()
-
+@property NSDictionary* genreList;
 @end
 
 @implementation SKYViewController
@@ -44,13 +44,16 @@
 - (void)getMoviesByGenre:(NSString *) genre
 {
     // Aaron: still not grabbing by genre, needs fixing
-    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbMoviePopular withParameters:nil andResponseBlock:^(id response, NSError *error) {
+    __block UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Ok", @""), nil];
+    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre} andResponseBlock:^(id response, NSError *error) {
         if(!error){
             // Aaron: still having trouble parsing the response, the client deserializes for us (unconfirmed).
             NSDictionary* fetchedData = response;
-            NSArray* movieNames = [fetchedData objectForKey:@"title"];
-            NSLog(@"movie name: %@", movieNames);
-            //NSLog(@"Popular Movies: %@",fetchedData);
+            NSArray* movies  = fetchedData[@"results"];
+            NSLog(@"Popular Movies: %@",movies);
+        } else
+        {
+            [errorAlertView show];
         }
     }];
 }
