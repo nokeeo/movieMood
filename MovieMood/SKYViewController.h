@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ISColorWheel.h"
 
-@interface SKYViewController : UIViewController
+@interface SKYViewController : UIViewController <ISColorWheelDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @end
