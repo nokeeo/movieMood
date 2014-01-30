@@ -22,6 +22,7 @@
 		BEE1CA8C1899F8AF00992093 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA701899F8AF00992093 /* CoreData.framework */; };
 		BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA921899F8AF00992093 /* InfoPlist.strings */; };
 		BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA951899F8AF00992093 /* MovieMoodTests.m */; };
+		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BEE1CA911899F8AF00992093 /* MovieMoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMoodTests-Info.plist"; sourceTree = "<group>"; };
 		BEE1CA931899F8AF00992093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEE1CA951899F8AF00992093 /* MovieMoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMoodTests.m; sourceTree = "<group>"; };
+		C12714521899FB9300246E40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				BEE1CA811899F8AF00992093 /* Images.xcassets */,
 				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
+				C12714521899FB9300246E40 /* Main.storyboard */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12714531899FB9300246E40 /* Main.storyboard in Resources */,
 				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
 				BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */,
 			);
@@ -452,6 +456,7 @@
 				BEE1CA9B1899F8AF00992093 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEE1CA9C1899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMoodTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +465,7 @@
 				BEE1CA9E1899F8AF00992093 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
