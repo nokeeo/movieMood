@@ -13,6 +13,8 @@
 @interface SKYViewController ()
 @property ISColorWheel *colorWheel;
 @property NSDictionary *results;
+@property (nonatomic, retain) ISColorWheel *colorWheel;
+@property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
 @end
 
 @implementation SKYViewController
