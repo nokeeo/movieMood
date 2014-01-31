@@ -26,6 +26,9 @@
 		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
 		C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */; };
 		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
+		C192F1F7189B3C6200F5A00D /* SKYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C192F1F6189B3C6200F5A00D /* SKYResultViewController.m */; };
+		C192F1FA189B3DAE00F5A00D /* SKYResultViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C192F1F9189B3DAE00F5A00D /* SKYResultViewCell.m */; };
+		C192F1FD189B3E1900F5A00D /* SKYResultViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C192F1FC189B3E1900F5A00D /* SKYResultViewLayout.m */; };
 		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +68,14 @@
 		C15BE3B6189AD23E006FC7C3 /* JLTMDbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClient.h; sourceTree = "<group>"; };
 		C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTMDbClient.m; sourceTree = "<group>"; };
 		C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClientDefines.h; sourceTree = "<group>"; };
-		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYViewController.h; sourceTree = "<group>"; };
-		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYViewController.m; sourceTree = "<group>"; };
+		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYViewController.h; path = MovieMood/SKYViewController.h; sourceTree = "<group>"; };
+		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYViewController.m; path = MovieMood/SKYViewController.m; sourceTree = "<group>"; };
+		C192F1F5189B3C6200F5A00D /* SKYResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYResultViewController.h; sourceTree = "<group>"; };
+		C192F1F6189B3C6200F5A00D /* SKYResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYResultViewController.m; sourceTree = "<group>"; };
+		C192F1F8189B3DAE00F5A00D /* SKYResultViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYResultViewCell.h; path = MovieMood/SKYResultViewCell.h; sourceTree = "<group>"; };
+		C192F1F9189B3DAE00F5A00D /* SKYResultViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYResultViewCell.m; path = MovieMood/SKYResultViewCell.m; sourceTree = "<group>"; };
+		C192F1FB189B3E1900F5A00D /* SKYResultViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYResultViewLayout.h; sourceTree = "<group>"; };
+		C192F1FC189B3E1900F5A00D /* SKYResultViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYResultViewLayout.m; sourceTree = "<group>"; };
 		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +152,8 @@
 		BEE1CA721899F8AF00992093 /* MovieMood */ = {
 			isa = PBXGroup;
 			children = (
+				C192F1FF189B3E3B00F5A00D /* ViewLayouts */,
+				C192F1FE189B3E2200F5A00D /* ViewControllers */,
 				BED5AF08189AC99A00ABF4EC /* ColorWheel */,
 				BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */,
 				BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */,
@@ -150,8 +161,6 @@
 				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
 				C12714521899FB9300246E40 /* Main.storyboard */,
-				C15BE3BA189AD269006FC7C3 /* SKYViewController.h */,
-				C15BE3BB189AD269006FC7C3 /* SKYViewController.m */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -193,6 +202,30 @@
 				C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */,
 			);
 			path = JLTMDbClient;
+			sourceTree = "<group>";
+		};
+		C192F1FE189B3E2200F5A00D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C192F1F5189B3C6200F5A00D /* SKYResultViewController.h */,
+				C192F1F6189B3C6200F5A00D /* SKYResultViewController.m */,
+				C15BE3BA189AD269006FC7C3 /* SKYViewController.h */,
+				C15BE3BB189AD269006FC7C3 /* SKYViewController.m */,
+			);
+			name = ViewControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C192F1FF189B3E3B00F5A00D /* ViewLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				C192F1FB189B3E1900F5A00D /* SKYResultViewLayout.h */,
+				C192F1FC189B3E1900F5A00D /* SKYResultViewLayout.m */,
+				C192F1F8189B3DAE00F5A00D /* SKYResultViewCell.h */,
+				C192F1F9189B3DAE00F5A00D /* SKYResultViewCell.m */,
+			);
+			name = ViewLayouts;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,12 +360,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C192F1FD189B3E1900F5A00D /* SKYResultViewLayout.m in Sources */,
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
+				C192F1F7189B3C6200F5A00D /* SKYResultViewController.m in Sources */,
 				C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */,
 				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
 				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
 				BEE1CA791899F8AF00992093 /* main.m in Sources */,
+				C192F1FA189B3DAE00F5A00D /* SKYResultViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
