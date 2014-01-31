@@ -28,7 +28,7 @@
     self = [super init];
     if (self)
     {
-        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10769", @"36", @"27", @"10756", @"1115", @"10749", @"878", @"9805", @"53", @"10752", @"37", nil];
+        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10769", @"36", @"27", @"10756", @"1115", @"10749", @"878", @"10748", @"53", @"10752", @"37", nil];
         NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Fantasy", @"Foreign", @"History", @"Horror", @"Indie", @"Road Movie", @"Romance", @"Science Fiction", @"Suspense", @"Thriller", @"War", @"Western", nil];
         
         _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
@@ -58,8 +58,13 @@
     }
     
     NSDictionary *displayProps = [self calcDisplayProportions:bestFitGenres];
-    NSLog(@"%@", displayProps);
-    return displayProps;
+    NSMutableDictionary *returnProps = [[NSMutableDictionary alloc] init];
+    for(id genreName in displayProps) {
+        [returnProps setObject:[displayProps objectForKey:genreName] forKey:[_genreIds objectForKey:genreName]];
+    }
+    
+    NSLog(@"%@", returnProps);
+    return returnProps;
 }
 
 #pragma mark - Private Methods
