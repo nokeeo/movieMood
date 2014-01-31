@@ -25,6 +25,7 @@
 		BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA921899F8AF00992093 /* InfoPlist.strings */; };
 		BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA951899F8AF00992093 /* MovieMoodTests.m */; };
 		C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D1294189C4D6000A2B84F /* SKYResultViewController.m */; };
+		C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D129A189C538600A2B84F /* SKYIntroViewController.m */; };
 		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
 		C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */; };
 		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
@@ -67,6 +68,8 @@
 		BEE1CA951899F8AF00992093 /* MovieMoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMoodTests.m; sourceTree = "<group>"; };
 		C11D1293189C4D6000A2B84F /* SKYResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYResultViewController.h; path = MovieMood/SKYResultViewController.h; sourceTree = "<group>"; };
 		C11D1294189C4D6000A2B84F /* SKYResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYResultViewController.m; path = MovieMood/SKYResultViewController.m; sourceTree = "<group>"; };
+		C11D1299189C538600A2B84F /* SKYIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYIntroViewController.h; path = MovieMood/SKYIntroViewController.h; sourceTree = "<group>"; };
+		C11D129A189C538600A2B84F /* SKYIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYIntroViewController.m; path = MovieMood/SKYIntroViewController.m; sourceTree = "<group>"; };
 		C12714521899FB9300246E40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C15BE3B6189AD23E006FC7C3 /* JLTMDbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClient.h; sourceTree = "<group>"; };
 		C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTMDbClient.m; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				C15BE3BB189AD269006FC7C3 /* SKYViewController.m */,
 				C11D1293189C4D6000A2B84F /* SKYResultViewController.h */,
 				C11D1294189C4D6000A2B84F /* SKYResultViewController.m */,
+				C11D1299189C538600A2B84F /* SKYIntroViewController.h */,
+				C11D129A189C538600A2B84F /* SKYIntroViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -363,6 +368,7 @@
 				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
 				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
 				BEE1CA791899F8AF00992093 /* main.m in Sources */,
+				C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

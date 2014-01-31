@@ -16,7 +16,10 @@
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
 @end
 
-@implementation SKYViewController
+@implementation SKYViewController {
+    UIDynamicAnimator* _animator;
+    NSDictionary* results;
+}
 
 @synthesize colorWheel = _colorWheel;
 @synthesize colorAnalyser = _colorAnalyser;
@@ -66,10 +69,8 @@
 
 - (IBAction)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSDictionary* results = [self getMoviesByGenre:searchBar.text];
-    SKYResultViewController* resultVC = [[SKYResultViewController alloc] init];
-    resultVC.source = results;
-    [self.navigationController pushViewController:resultVC animated:YES];
+    results = [self getMoviesByGenre:searchBar.text];
+    [self performSegueWithIdentifier: @"ShowResults" sender: self];
 }
 
 - (NSDictionary*)getMoviesByGenre:(NSString *) genre
@@ -77,6 +78,13 @@
     __block NSDictionary* fetchedData = [[NSDictionary alloc] init];
     // Aaron: still not grabbing by genre, needs fixing
     __block UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Ok", @""), nil];
+    UIGravityBehavior *gravityBehaviour = [[UIGravityBehavior alloc] initWithItems:@[errorAlertView]];
+    gravityBehaviour.gravityDirection = CGVectorMake(0, 10);
+    [_animator addBehavior:gravityBehaviour];
+    
+    UIDynamicItemBehavior *itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:@[errorAlertView]];
+    [itemBehaviour addAngularVelocity:-M_PI_2 forItem:errorAlertView];
+    [_animator addBehavior:itemBehaviour];
     [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre} andResponseBlock:^(id response, NSError *error) {
         if(!error){
             // Aaron: still having trouble parsing the response, the client deserializes for us (unconfirmed).
@@ -91,6 +99,15 @@
 
 -(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
     [_colorAnalyser analyzeColor:colorWheel.currentColor];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowResults"])
+    {
+        SKYResultViewController* resultVC = [segue destinationViewController];
+        resultVC.source = results;
+    }
 }
 
 @end

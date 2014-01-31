@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="Mb4-Y3-bLb">
             <objects>
-                <viewController id="2Kf-dC-obl" sceneMemberID="viewController">
+                <viewController id="2Kf-dC-obl" customClass="SKYIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XQs-Xl-8qH"/>
                         <viewControllerLayoutGuide type="bottom" id="iw1-W6-X9F"/>
@@ -24,7 +24,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="9S7-Rb-QHs" kind="push" id="An0-Ci-m1j"/>
+                        <segue destination="9S7-Rb-QHs" kind="modal" identifier="StartApp" modalTransitionStyle="flipHorizontal" id="uyJ-4Y-6gs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t74-nB-aXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,6 +71,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="l6r-IF-Q3Y"/>
+                    <connections>
+                        <segue destination="848-LE-X0u" kind="modal" identifier="ShowResults" id="8H8-B1-c7B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPy-sV-N3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
