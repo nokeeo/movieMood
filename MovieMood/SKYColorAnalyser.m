@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSDictionary* genreIds;
 
 -(NSArray *) rgbToXyzWithRed:(float) red withGreen:(float) green withBlue: (float) blue;
+-(NSArray *) xyzToLabWithX:(float) x withY:(float) y withZ:(float) z;
 @end
 
 @implementation SKYColorAnalyser
@@ -34,13 +35,13 @@
     CGFloat green;
     CGFloat blue;
     [color getRed:&red green:&green blue:&blue alpha:0];
-    NSLog(@"%@", [self rgbToXyzWithRed:10/255.f withGreen:40 / 255.f withBlue:190 / 255.f]);
+    NSLog(@"%@", [self xyzToLabWithX:.7 withY:.3 withZ:.9]);
     //NSLog(@"%@", [self rgbToXyzWithRed:red withGreen:green withBlue:blue]);
     return nil;
 }
 
 -(NSArray *) rgbToXyzWithRed:(float)red withGreen:(float)green withBlue:(float)blue {
-    if ( red > 0.04045 )
+    if (red > 0.04045)
         red = pow((red + 0.055) / 1.055, 2.4);
     else
         red = red / 12.92;
@@ -66,4 +67,30 @@
     return [NSArray arrayWithObjects:[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y], [NSNumber numberWithFloat:z], nil];
 }
 
+-(NSArray *) xyzToLabWithX:(float)x withY:(float)y withZ:(float)z {
+    x = x / 95.047;
+    y = y / 100.0;
+    z = z / 108.883;
+    
+    if (x > 0.008856)
+        x = pow(x, (1/3.f));
+    else
+        x = (7.787 * x ) + (16 / 116.f);
+        
+    if (y > 0.008856)
+        y = pow(y, (1/3.f));
+    else
+        y = (7.787 * y) + (16 / 116.f);
+        
+    if (z > 0.008856)
+        z = pow(z, (1/3.f));
+    else
+        z = (7.787 * z) + (16 / 116.f);
+    
+    float l = (116 * y) - 16;
+    float a = 500 * (x - y);
+    float b = 200 * (y - z);
+    
+    return [NSArray arrayWithObjects: [NSNumber numberWithFloat:l], [NSNumber numberWithFloat:a], [NSNumber numberWithFloat:b], nil];
+}
 @end
