@@ -32,14 +32,25 @@
 	CGSize size = self.view.bounds.size;
     
     CGSize wheelSize = CGSizeMake(size.width * .75, size.width * .75);
+    CGSize indicatorSize = CGSizeMake(size.width * .50, size.width * .50);
+    
+    
+    UIView *colorIndicator = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - indicatorSize.width / 2,
+                                                                      (size.height * .3) + (wheelSize.height - indicatorSize.height) / 2,
+                                                                      indicatorSize.width,
+                                                                      indicatorSize.height)];
+    colorIndicator.backgroundColor = [UIColor colorWithRed:(77/255.0) green:(77/255.0) blue:(77/225.0) alpha:1.0];
+    colorIndicator.layer.cornerRadius = 80;
     
     _colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
                                                                  size.height * .3,
                                                                  wheelSize.width,
                                                                  wheelSize.height)];
+    
     _colorWheel.delegate = self;
     _colorWheel.continuous = true;
     [self.view addSubview:_colorWheel];
+    [self.view addSubview:colorIndicator];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +79,6 @@
 }
 
 -(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
-    NSLog(@"%@", _colorWheel.currentColor);
 }
 
 @end
