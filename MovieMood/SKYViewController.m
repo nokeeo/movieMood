@@ -7,11 +7,11 @@
 //
 
 #import "SKYViewController.h"
+#import "SKYResultViewController.h"
 #import "JLTMDbClient.h"
 #import "SKYColorAnalyser.h"
 
 @interface SKYViewController ()
-@property NSDictionary *results;
 @property (nonatomic, retain) ISColorWheel *colorWheel;
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
 @end
@@ -66,30 +66,27 @@
 
 - (IBAction)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [self getMoviesByGenre:searchBar.text];
-//    if(!self.results)
-//    {
-//        SKYResultViewController* resultVC = [[SKYResultViewController alloc]initWithNibName:Nil bundle:Nil];
-//        [self.navigationController pushViewController:resultVC animated:YES];
-//    }
+    NSDictionary* results = [self getMoviesByGenre:searchBar.text];
+    SKYResultViewController* resultVC = [[SKYResultViewController alloc] init];
+    resultVC.source = results;
+    [self.navigationController pushViewController:resultVC animated:YES];
 }
 
-- (void)getMoviesByGenre:(NSString *) genre
+- (NSDictionary*)getMoviesByGenre:(NSString *) genre
 {
+    __block NSDictionary* fetchedData = [[NSDictionary alloc] init];
     // Aaron: still not grabbing by genre, needs fixing
     __block UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Ok", @""), nil];
     [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre} andResponseBlock:^(id response, NSError *error) {
         if(!error){
             // Aaron: still having trouble parsing the response, the client deserializes for us (unconfirmed).
-            NSDictionary* fetchedData = response;
-            self.results = fetchedData;
-            NSArray* movies  = fetchedData[@"results"];
-            NSLog(@"Popular Movies: %@",movies);
+            fetchedData = response;
         }else
         {
             [errorAlertView show];
         }
     }];
+    return fetchedData;
 }
 
 -(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {

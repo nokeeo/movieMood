@@ -13,7 +13,7 @@
 static NSString * const ResultCellIdentifier = @"ResultCell";
 
 @interface SKYResultViewController ()
-
+@property NSDictionary* source;
 @end
 
 @implementation SKYResultViewController
