@@ -11,6 +11,8 @@
 #import "SKYColorAnalyser.h"
 
 @interface SKYViewController ()
+@property ISColorWheel *colorWheel;
+@property NSDictionary *results;
 @property (nonatomic, retain) ISColorWheel *colorWheel;
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
 @end
@@ -66,6 +68,11 @@
 - (IBAction)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self getMoviesByGenre:searchBar.text];
+//    if(!self.results)
+//    {
+//        SKYResultViewController* resultVC = [[SKYResultViewController alloc]initWithNibName:Nil bundle:Nil];
+//        [self.navigationController pushViewController:resultVC animated:YES];
+//    }
 }
 
 - (void)getMoviesByGenre:(NSString *) genre
@@ -76,6 +83,7 @@
         if(!error){
             // Aaron: still having trouble parsing the response, the client deserializes for us (unconfirmed).
             NSDictionary* fetchedData = response;
+            self.results = fetchedData;
             NSArray* movies  = fetchedData[@"results"];
             NSLog(@"Popular Movies: %@",movies);
         }else
