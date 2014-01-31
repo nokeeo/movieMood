@@ -13,6 +13,8 @@
 -(NSArray *) rgbToXyzWithRed:(float) red withGreen:(float) green withBlue: (float) blue;
 -(NSArray *) xyzToLabWithX:(float) x withY:(float) y withZ:(float) z;
 -(float) calcColorDifferenceWithColor:(UIColor *) color1 withColor:(UIColor *) color2;
+-(UIColor *) getColorWithGenre:(NSString *) genre;
+-(NSDictionary *) getGenreColorDifferenceWithColor:(UIColor *) compareColor;
 @end
 
 @implementation SKYColorAnalyser
@@ -23,8 +25,8 @@
     self = [super init];
     if (self)
     {
-        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10753", @"10769", @"36", @"27", @"10756", @"9648", @"10754", @"1115", @"10749", @"878", @"9805", @"53", @"10752", @"37", nil];
-        NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Fantasy", @"Film Noir", @"Foreign", @"History", @"Horror", @"Indie", @"Mystery", @"Neo-noir", @"Road Movie", @"Romance", @"Science Fiction", @"Suspense", @"Thriller", @"War", @"Western", nil];
+        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10769", @"36", @"27", @"10756", @"1115", @"10749", @"878", @"9805", @"53", @"10752", @"37", nil];
+        NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Fantasy", @"Foreign", @"History", @"Horror", @"Indie", @"Road Movie", @"Romance", @"Science Fiction", @"Suspense", @"Thriller", @"War", @"Western", nil];
         
         _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
     }
@@ -32,10 +34,7 @@
 }
 
 -(NSDictionary *) analyzeColor:(UIColor *)color {
-    UIColor *color1 = [UIColor colorWithRed:255/255.f green:0/255.f blue:0/255.f alpha:1.0];
-    UIColor *color2 = [UIColor colorWithRed:0/255.f green:255/255.f blue:0/255.f alpha:1.0];
-    
-    NSLog(@"%f", [self calcColorDifferenceWithColor:color1 withColor:color2]);
+    NSLog(@"%@", [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f]]);
     return nil;
 }
 
@@ -119,5 +118,53 @@
     float deltaE = sqrt(lCalc + aCalc + bCalc);
     
     return deltaE;
+}
+
+-(UIColor *) getColorWithGenre:(NSString *)genre {
+    UIColor *returnColor = nil;
+    if([genre isEqualToString:@"Action"] || [genre isEqualToString:@"Suspense"] || [genre isEqualToString:@"Thriller"])
+        returnColor = [UIColor colorWithRed:255/255.f green:85/255.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Adventure"] || [genre isEqualToString:@"Western"])
+        returnColor = [UIColor colorWithRed:255/255.f green:174/255.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Animation"])
+        returnColor = [UIColor colorWithRed:255/255.f green:255/255.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Animation"])
+        returnColor = [UIColor colorWithRed:0/225.f green:255/255.f blue:0/255.f alpha:1.f];
+    else if([genre isEqualToString:@"Comedy"])
+        returnColor = [UIColor colorWithRed:255/255.f green:255.f blue:0/255.f alpha:1.f];
+    else if([genre isEqualToString:@"Crime"] || [genre isEqualToString:@"Disaster"] || [genre isEqualToString:@"War"])
+        returnColor = [UIColor colorWithRed:255/255.f green:0.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Documentary"] || [genre isEqualToString:@"History"])
+        returnColor = [UIColor colorWithRed:0.f green:0.f blue:1.f alpha:1.f];
+    else if([genre isEqualToString: @"Drama"])
+        returnColor = [UIColor colorWithRed:0.f green:123/255.f blue:1.f alpha:1.f];
+    else if([genre isEqualToString:@"Family"])
+        returnColor = [UIColor colorWithRed:162/255.f green:1.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Fantasy"])
+        returnColor = [UIColor colorWithRed:1.f green:0.f blue:1.f alpha:1.f];
+    else if([genre isEqualToString:@"Foreign"])
+        returnColor = [UIColor colorWithRed:0.f green:1.f blue:1.f alpha:1.f];
+    else if([genre isEqualToString:@"Horror"])
+        returnColor = [UIColor colorWithRed:255.f green:0.f blue:127/255.f alpha:1.f];
+    else if([genre isEqualToString:@"Indie"])
+        returnColor = [UIColor colorWithRed:0.f green:127/255.f blue:1.f alpha:1.f];
+    else if([genre isEqualToString:@"Road Movie"])
+        returnColor = [UIColor colorWithRed:1.f green:157/255.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Science Fiction"])
+        returnColor = [UIColor colorWithRed:127/255.f green:0.f blue:1.f alpha:1.f];
+    
+    return returnColor;
+}
+
+-(NSDictionary *) getGenreColorDifferenceWithColor:(UIColor *)compareColor {
+    NSMutableDictionary *returnDictionary = [[NSMutableDictionary alloc] init];
+    for(id genre in _genreIds) {
+        UIColor *genreColor = [self getColorWithGenre: genre];
+        NSNumber *difference = [NSNumber numberWithFloat: [self calcColorDifferenceWithColor: genreColor withColor: compareColor]];
+        
+        [returnDictionary setObject:difference forKey: genre];
+    }
+    
+    return returnDictionary;
 }
 @end
