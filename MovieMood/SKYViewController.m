@@ -8,6 +8,7 @@
 
 #import "SKYViewController.h"
 #import "JLTMDbClient.h"
+#import "SKYColorAnalyser.h"
 
 @interface SKYViewController ()
 @property ISColorWheel *colorWheel;
@@ -17,6 +18,7 @@
 @implementation SKYViewController
 
 @synthesize colorWheel = _colorWheel;
+@synthesize colorAnalyser = _colorAnalyser;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,6 +52,7 @@
     
     _colorWheel.delegate = self;
     _colorWheel.continuous = true;
+    _colorAnalyser = [[SKYColorAnalyser alloc] init];
     [self.view addSubview:_colorWheel];
     [self.view addSubview:colorIndicator];
 }
@@ -89,6 +92,7 @@
 }
 
 -(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
+    [_colorAnalyser analyzeColor:colorWheel.currentColor];
 }
 
 @end
