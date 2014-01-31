@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>58D5866D-7E7D-4578-BC96-5CD14BBB5C12</string>
+	<string>5AAB5AC1-731A-4DA3-9252-0F7CE6D58F43</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MovieMood</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B0E33A04-88F5-403D-95E6-8D1D75849D5D</key>
-		<string>https://github.com/nokeeo/movieMood</string>
+		<key>FD104CB9-7193-415B-BCB4-5EA94B8E1F54</key>
+		<string>https://github.com/nokeeo/movieMood.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MovieMood.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B0E33A04-88F5-403D-95E6-8D1D75849D5D</key>
+		<key>FD104CB9-7193-415B-BCB4-5EA94B8E1F54</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/nokeeo/movieMood</string>
+	<string>https://github.com/nokeeo/movieMood.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B0E33A04-88F5-403D-95E6-8D1D75849D5D</string>
+	<string>FD104CB9-7193-415B-BCB4-5EA94B8E1F54</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B0E33A04-88F5-403D-95E6-8D1D75849D5D</string>
+			<string>FD104CB9-7193-415B-BCB4-5EA94B8E1F54</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MovieMood</string>
+			<string>movieMood</string>
 		</dict>
 	</array>
 </dict>

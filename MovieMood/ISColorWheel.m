@@ -384,7 +384,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
     CGPoint center = CGPointMake(width / 2.0, height / 2.0);
     
     // Check if the touch is outside the wheel
-    if (ISColorWheel_PointDistance(center, point) < _radius)
+    if (ISColorWheel_PointDistance(center, point) < _radius && ISColorWheel_PointDistance(center, point) > (height * .3 + ((_radius / 2) - (width * .50 / 2))))
     {
         _touchPoint = point;
     }
