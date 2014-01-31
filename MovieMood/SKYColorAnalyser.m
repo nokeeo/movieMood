@@ -12,6 +12,7 @@
 
 -(NSArray *) rgbToXyzWithRed:(float) red withGreen:(float) green withBlue: (float) blue;
 -(NSArray *) xyzToLabWithX:(float) x withY:(float) y withZ:(float) z;
+-(float) calcColorDifferenceWithColor:(UIColor *) color1 withColor:(UIColor *) color2;
 @end
 
 @implementation SKYColorAnalyser
@@ -31,12 +32,10 @@
 }
 
 -(NSDictionary *) analyzeColor:(UIColor *)color {
-    CGFloat red;
-    CGFloat green;
-    CGFloat blue;
-    [color getRed:&red green:&green blue:&blue alpha:0];
-    NSLog(@"%@", [self xyzToLabWithX:.7 withY:.3 withZ:.9]);
-    //NSLog(@"%@", [self rgbToXyzWithRed:red withGreen:green withBlue:blue]);
+    UIColor *color1 = [UIColor colorWithRed:255/255.f green:0/255.f blue:0/255.f alpha:1.0];
+    UIColor *color2 = [UIColor colorWithRed:0/255.f green:255/255.f blue:0/255.f alpha:1.0];
+    
+    NSLog(@"%f", [self calcColorDifferenceWithColor:color1 withColor:color2]);
     return nil;
 }
 
@@ -92,5 +91,33 @@
     float b = 200 * (y - z);
     
     return [NSArray arrayWithObjects: [NSNumber numberWithFloat:l], [NSNumber numberWithFloat:a], [NSNumber numberWithFloat:b], nil];
+}
+
+-(float) calcColorDifferenceWithColor:(UIColor *) color1 withColor:(UIColor *) color2 {
+    
+    CGFloat red1;
+    CGFloat green1;
+    CGFloat blue1;
+    
+    CGFloat red2;
+    CGFloat green2;
+    CGFloat blue2;
+    
+    [color1 getRed: &red1 green: &green1 blue: &blue1 alpha: nil];
+    [color2 getRed: &red2 green: &green2 blue: &blue2 alpha: nil];
+    
+    NSArray *xyz1 = [self rgbToXyzWithRed: red1 withGreen: green1 withBlue: blue1];
+    NSArray *xyz2 = [self rgbToXyzWithRed: red2 withGreen: green2 withBlue: blue2];
+    
+    NSArray *lab1 = [self xyzToLabWithX: [[xyz1 objectAtIndex: 0] floatValue] withY: [[xyz1 objectAtIndex: 1] floatValue] withZ: [[xyz1 objectAtIndex: 2] floatValue]];
+    NSArray *lab2 = [self xyzToLabWithX: [[xyz2 objectAtIndex: 0] floatValue] withY: [[xyz2 objectAtIndex: 1] floatValue] withZ: [[xyz2 objectAtIndex: 2] floatValue]];
+    
+    float lCalc = pow([[lab2 objectAtIndex: 0] floatValue] - [[lab1 objectAtIndex: 0] floatValue], 2);
+    float aCalc = pow([[lab2 objectAtIndex: 1] floatValue] - [[lab1 objectAtIndex: 1] floatValue], 2);
+    float bCalc = pow([[lab2 objectAtIndex: 2] floatValue] - [[lab1 objectAtIndex: 2] floatValue], 2);
+    
+    float deltaE = sqrt(lCalc + aCalc + bCalc);
+    
+    return deltaE;
 }
 @end
