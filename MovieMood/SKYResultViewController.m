@@ -2,7 +2,7 @@
 //  SKYResultViewController.m
 //  MovieMood
 //
-//  Created by Aaron Sky on 1/30/14.
+//  Created by Aaron Sky on 1/31/14.
 //  Copyright (c) 2014 Sky Apps. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 @end
 
 @implementation SKYResultViewController
+@synthesize source = _source;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
