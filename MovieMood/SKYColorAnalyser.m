@@ -15,6 +15,9 @@
 -(float) calcColorDifferenceWithColor:(UIColor *) color1 withColor:(UIColor *) color2;
 -(UIColor *) getColorWithGenre:(NSString *) genre;
 -(NSDictionary *) getGenreColorDifferenceWithColor:(UIColor *) compareColor;
+-(NSDictionary *) getRelatedGenresWithColorDiffs: (NSDictionary *) colorDiffs;
+-(NSDictionary *) calcDisplayProportions:(NSDictionary *) genreDiffs;
+
 @end
 
 @implementation SKYColorAnalyser
@@ -34,8 +37,23 @@
 }
 
 -(NSDictionary *) analyzeColor:(UIColor *)color {
-    NSLog(@"%@", [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f]]);
-    return nil;
+    NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f]];
+    
+    NSDictionary *relatedGenres = [self getRelatedGenresWithColorDiffs:genreDiff];
+    
+    NSArray *sortedKeys = [relatedGenres keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
+        NSNumber *num1 = (NSNumber *)obj1;
+        NSNumber *num2 = (NSNumber *)obj2;
+        return (NSComparisonResult)[num1 compare: num2];
+    }];
+    
+    NSMutableDictionary *bestFitGenres = [[NSMutableDictionary alloc] init];
+    for(int i = 0; (i < [sortedKeys count] && i < 3); i++) {
+        [bestFitGenres setObject:[relatedGenres objectForKey:[sortedKeys objectAtIndex:i]] forKey: [sortedKeys objectAtIndex:i]];
+    }
+    
+    NSLog(@"%@", [self calcDisplayProportions:bestFitGenres]);
+    return relatedGenres;
 }
 
 -(NSArray *) rgbToXyzWithRed:(float)red withGreen:(float)green withBlue:(float)blue {
@@ -166,5 +184,52 @@
     }
     
     return returnDictionary;
+}
+
+-(NSDictionary *) getRelatedGenresWithColorDiffs:(NSDictionary *)colorDiffs {
+    NSMutableDictionary *relatedGenres = [[NSMutableDictionary alloc] init];
+    for(id key in colorDiffs) {
+        NSNumber *currentDiff = [colorDiffs objectForKey:key];
+        if([currentDiff floatValue] <= 50.0)
+            [relatedGenres setObject:currentDiff forKey:key];
+    }
+    
+    //If no values are in the 50 range find the closest value
+    if([[relatedGenres allKeys] count] == 0) {
+        NSString *closestKey;
+        NSNumber *closestValue = [NSNumber numberWithFloat:1000.f];
+        
+        for(id key in colorDiffs) {
+            NSNumber *currentDiff = [colorDiffs objectForKey: key];
+            if([currentDiff floatValue] < [closestValue floatValue]) {
+                closestKey = key;
+                closestValue = currentDiff;
+            }
+            else if([currentDiff floatValue] == [closestValue floatValue]) {
+                if(arc4random() % 2) {
+                    closestKey = key;
+                    closestValue = currentDiff;
+                }
+            }
+        }
+        [relatedGenres setObject:closestValue forKey:closestKey];
+    }
+    return relatedGenres;
+}
+
+-(NSDictionary *) calcDisplayProportions:(NSDictionary *) genreDiffs {
+    NSMutableDictionary *proportions = [[NSMutableDictionary alloc] init];
+    float diffSum = 0.f;
+    for(id genre in genreDiffs) {
+        diffSum += [[genreDiffs objectForKey:genre] floatValue] + 1;
+    }
+    
+    for(id genre in genreDiffs) {
+        float currentValue = [[genreDiffs objectForKey:genre] floatValue] + 1;
+        float prop = currentValue / diffSum;
+        
+        [proportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
+    }
+    return proportions;
 }
 @end
