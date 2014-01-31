@@ -37,7 +37,8 @@
 }
 
 -(NSDictionary *) analyzeColor:(UIColor *)color {
-    NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f]];
+    //NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:0.f green:0.f blue:1.f alpha:1.f]];
+    NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:color];
     
     NSDictionary *relatedGenres = [self getRelatedGenresWithColorDiffs:genreDiff];
     
@@ -52,8 +53,9 @@
         [bestFitGenres setObject:[relatedGenres objectForKey:[sortedKeys objectAtIndex:i]] forKey: [sortedKeys objectAtIndex:i]];
     }
     
-    NSLog(@"%@", [self calcDisplayProportions:bestFitGenres]);
-    return relatedGenres;
+    NSDictionary *displayProps = [self calcDisplayProportions:bestFitGenres];
+    NSLog(@"%@", displayProps);
+    return displayProps;
 }
 
 -(NSArray *) rgbToXyzWithRed:(float)red withGreen:(float)green withBlue:(float)blue {
@@ -218,7 +220,8 @@
 }
 
 -(NSDictionary *) calcDisplayProportions:(NSDictionary *) genreDiffs {
-    NSMutableDictionary *proportions = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *inverseProportions = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *finalProportions = [[NSMutableDictionary alloc] init];
     float diffSum = 0.f;
     for(id genre in genreDiffs) {
         diffSum += [[genreDiffs objectForKey:genre] floatValue] + 1;
@@ -226,10 +229,22 @@
     
     for(id genre in genreDiffs) {
         float currentValue = [[genreDiffs objectForKey:genre] floatValue] + 1;
-        float prop = currentValue / diffSum;
+        float prop = 1 / (currentValue / diffSum);
         
-        [proportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
+        [inverseProportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
     }
-    return proportions;
+    
+    diffSum = 0.f;
+    for(id genre in inverseProportions) {
+        diffSum += [[inverseProportions objectForKey:genre] floatValue];
+    }
+    
+    for(id genre in inverseProportions) {
+        float currentValue = [[inverseProportions objectForKey:genre] floatValue];
+        float prop = (currentValue / diffSum);
+        
+        [finalProportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
+    }
+    return finalProportions;
 }
 @end
