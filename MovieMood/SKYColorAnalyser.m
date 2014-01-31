@@ -23,8 +23,8 @@
     self = [super init];
     if (self)
     {
-        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"82", @"2916", @"10751", @"10750", @"14", @"10753", @"10769", @"36", @"10595", @"27", @"10756", @"10402", @"22", @"9648", @"10754", @"1115", @"10749", @"878", @"10755", @"9805", @"10758", @"10757", @"10748", @"10770", @"53", @"10752", @"37", nil];
-        NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Eastern", @"Erotic", @"Family", @"Fan Film", @"Fantasy", @"Film Noir", @"Foreign", @"History", @"Holiday", @"Horror", @"Indie", @"Music", @"Musical", @"Mystery", @"Neo-noir", @"Road Movie", @"Romance", @"Science Fiction", @"Short", @"Sport", @"Sporting Event", @"Sports Film", @"Suspense", @"TV movie", @"Thriller", @"War", @"Western", nil];
+        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10753", @"10769", @"36", @"27", @"10756", @"9648", @"10754", @"1115", @"10749", @"878", @"9805", @"53", @"10752", @"37", nil];
+        NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Fantasy", @"Film Noir", @"Foreign", @"History", @"Horror", @"Indie", @"Mystery", @"Neo-noir", @"Road Movie", @"Romance", @"Science Fiction", @"Suspense", @"Thriller", @"War", @"Western", nil];
         
         _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
     }
