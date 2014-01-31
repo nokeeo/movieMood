@@ -10,9 +10,12 @@
 
 @interface SKYResultViewController ()
 
+@property (strong, nonatomic) NSArray *resultArray;
+
 @end
 
-@implementation SKYResultViewController
+@implementation SKYResultViewController {
+}
 @synthesize source = _source;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -28,6 +31,8 @@
 {
     [super viewDidLoad];
 
+    self.resultArray = [_source objectForKey:@"title"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -45,16 +50,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.resultArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,7 +66,19 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    NSDictionary *tempDictionary = [self.resultArray objectAtIndex:indexPath.row];
     
+    cell.textLabel.text = [tempDictionary objectForKey:@"title"];
+    
+//    if([tempDictionary objectForKey:@"rating"] != NULL)
+//    {
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"Rating: %@ of 5",[tempDictionary   objectForKey:@"rating"]];
+//    }
+//    else
+//    {
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"Not Rated"];
+//    }
+        
     return cell;
 }
 

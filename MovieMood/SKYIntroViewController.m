@@ -49,7 +49,10 @@
     itemBehaviour.elasticity = 0.6;
     [_animator addBehavior:itemBehaviour];
     
-    [self performSelector:@selector(goToNextView) withObject:nil afterDelay:2];
+    UIPushBehavior* pushBehaviour = [[UIPushBehavior alloc] initWithItems:@[square] mode:UIPushBehaviorModeInstantaneous];
+    [pushBehaviour setPushDirection:CGVectorMake(-0.1, 0.1)];
+    
+    [self performSelector:@selector(goToNextView) withObject:nil afterDelay:3];
 }
 
 - (void) goToNextView
