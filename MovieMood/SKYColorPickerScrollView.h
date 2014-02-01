@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ISColorWheel.h"
+@protocol ColorPickerViewProtocol
+-(void) colorDidChange:(id) sender;
+-(void) selectButtonPressed:(id) sender;
+@end
 
 @interface SKYColorPickerScrollView : UIScrollView
 @property (nonatomic, retain) UIView *colorIndicator;
 @property (nonatomic, retain) ISColorWheel *colorWheel;
+@property id colorViewDelegate;
 @end

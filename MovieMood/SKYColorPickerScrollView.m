@@ -8,13 +8,14 @@
 
 #import "SKYColorPickerScrollView.h"
 
-@interface SKYColorPickerScrollView()
+@interface SKYColorPickerScrollView() <ISColorWheelDelegate>
 @end
 
 @implementation SKYColorPickerScrollView
 
 @synthesize colorIndicator = _colorIndicator;
 @synthesize colorWheel = _colorWheel;
+@synthesize colorViewDelegate = _colorViewDelegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -27,6 +28,7 @@
         CGSize indicatorSize = CGSizeMake(size.width * .40, size.width * .40);
         CGSize wheelSize = CGSizeMake(size.width * .75, size.width * .75);
         CGSize centerWheelSize = CGSizeMake(size.width * .50, size.width * .50);
+        CGSize selectButtonSize = CGSizeMake(size.width * .3, size.width * .3);
         
         UIView *centerWheel = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - centerWheelSize.width / 2,
                                                                        (size.height * .2) + (wheelSize.height - centerWheelSize.height) / 2,
@@ -42,6 +44,7 @@
                                                                      wheelSize.width,
                                                                      wheelSize.height)];
         _colorWheel.continuous = true;
+        _colorWheel.delegate = self;
         
         _colorIndicator = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - indicatorSize.width / 2,
                                                                    (size.height * .2) + (wheelSize.height - indicatorSize.height) / 2,
@@ -50,18 +53,32 @@
         _colorIndicator.layer.cornerRadius = 64;
         _colorIndicator.backgroundColor = _colorWheel.currentColor;
         
+        UIButton *selectButton = [[UIButton alloc] initWithFrame:CGRectMake(size.width / 2 - selectButtonSize.width / 2,
+                                                                            (size.height * .2) + (wheelSize.height - selectButtonSize.height) / 2,
+                                                                            selectButtonSize.width,
+                                                                            selectButtonSize.height)];
+        [selectButton setTitle:@"GO" forState:UIControlStateNormal];
+        [selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        
         [self addSubview:_colorWheel];
         [self addSubview:centerWheel];
         [self addSubview:_colorIndicator];
+        [self addSubview:selectButton];
     }
     return self;
 }
 
+-(void) colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
+    [_colorViewDelegate colorDidChange:self];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self];
     self.alwaysBounceVertical = true;
+}
+
+-(void)selectButtonPressed:(id) sender {
+    [_colorViewDelegate selectButtonPressed:self];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -11,7 +11,6 @@
 #import "JLTMDbClient.h"
 #import "SKYColorAnalyser.h"
 #import "TLAlertView.h"
-#import "SKYColorPickerScrollView.h"
 
 @interface SKYViewController ()
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
@@ -52,7 +51,7 @@
                                                                         self.view.bounds.origin.y,
                                                                         size.width,
                                                                         size.height)];
-    _contentScrollView.colorWheel.delegate = self;
+    _contentScrollView.colorViewDelegate = self;
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
     [self.view addSubview:_contentScrollView];
 
@@ -94,7 +93,7 @@
     return fetchedData;
 }
 
--(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
+-(void)colorDidChange:(id) sender {
     _contentScrollView.alwaysBounceVertical = false;
     _contentScrollView.colorIndicator.backgroundColor = _contentScrollView.colorWheel.currentColor;
 }
@@ -108,7 +107,7 @@
     }
 }
 
-- (IBAction)colorWheelButtonPressed:(id)sender {
+-(void)selectButtonPressed:(id)sender {
     __block UIActivityIndicatorView* progress = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     progress.hidesWhenStopped = YES;
     [progress startAnimating];
