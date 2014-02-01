@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYIntroViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *bucket;
 
 @end

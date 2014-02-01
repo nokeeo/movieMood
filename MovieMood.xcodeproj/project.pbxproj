@@ -29,6 +29,9 @@
 		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
 		C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */; };
 		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
+		C16624E2189C72600086F00C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E1189C72600086F00C /* smile.png */; };
+		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
+		C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */; };
 		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClientDefines.h; sourceTree = "<group>"; };
 		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYViewController.h; path = MovieMood/SKYViewController.h; sourceTree = "<group>"; };
 		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYViewController.m; path = MovieMood/SKYViewController.m; sourceTree = "<group>"; };
+		C16624E1189C72600086F00C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		C16624E3189C76030086F00C /* bucket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucket.png; sourceTree = "<group>"; };
+		C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SkyApps_143x59.png; sourceTree = "<group>"; };
 		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +158,7 @@
 		BEE1CA721899F8AF00992093 /* MovieMood */ = {
 			isa = PBXGroup;
 			children = (
+				C16624E0189C71010086F00C /* Images */,
 				C192F1FF189B3E3B00F5A00D /* ViewLayouts */,
 				C192F1FE189B3E2200F5A00D /* ViewControllers */,
 				BED5AF08189AC99A00ABF4EC /* ColorWheel */,
@@ -202,6 +209,16 @@
 				C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */,
 			);
 			path = JLTMDbClient;
+			sourceTree = "<group>";
+		};
+		C16624E0189C71010086F00C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */,
+				C16624E3189C76030086F00C /* bucket.png */,
+				C16624E1189C72600086F00C /* smile.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		C192F1FE189B3E2200F5A00D /* ViewControllers */ = {
@@ -307,7 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12714531899FB9300246E40 /* Main.storyboard in Resources */,
+				C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */,
 				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
+				C16624E4189C76030086F00C /* bucket.png in Resources */,
+				C16624E2189C72600086F00C /* smile.png in Resources */,
 				BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
