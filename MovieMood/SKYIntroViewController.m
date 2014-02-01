@@ -17,6 +17,7 @@
     UIDynamicAnimator* _animator;
     UIGravityBehavior* _gravity;
     UICollisionBehavior* _collision;
+    NSMutableArray* smiles;
 }
 @synthesize bucket = _bucket;
 @synthesize smilePile = _smilePile;
@@ -34,12 +35,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSMutableArray* smiles = [[NSMutableArray alloc] init];
+    smiles = [[NSMutableArray alloc] init];
     for (int i = 0; i < 10; i++) {
         smiles[i] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]];
         [smiles[i] setPosition:CGPointMake(self.view.bounds.size.width / 2, 200)];
         [self.view insertSubview:smiles[i] belowSubview:_smilePile];
     }
+    
+    [self becomeFirstResponder];
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     _gravity = [[UIGravityBehavior alloc] initWithItems:smiles];
@@ -63,6 +66,18 @@
     [_animator addBehavior:pushBehaviour];
     
     [self performSelector:@selector(goToNextView) withObject:nil afterDelay:3];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        UIPushBehavior* push = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
+        [push setMagnitude:5];
+        [_animator addBehavior:push];
+    }
 }
 
 - (void) goToNextView
