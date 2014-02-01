@@ -70,13 +70,10 @@
     id currentMovie = [_movieSource objectAtIndex:indexPath.row];
     UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
-    NSLog(@"%@", currentImage);
-    
     if(!currentImage) {
         NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
         currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
         [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
-        NSLog(@"FIRE!");
     }
     
     cell.title.text = [currentMovie valueForKey:@"title"];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */; };
 		BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */; };
 		BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */; };
 		BE94F129189CD71C006BAE45 /* SKYMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F128189CD71C006BAE45 /* SKYMovieViewController.m */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		35A86E6D26CC4E8093567DFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0378E4189DA9980032EC9F /* SKYColorPickerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYColorPickerScrollView.h; sourceTree = "<group>"; };
+		BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYColorPickerScrollView.m; sourceTree = "<group>"; };
 		BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYColorAnalyser.m; path = MovieMood/SKYColorAnalyser.m; sourceTree = "<group>"; };
 		BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYColorAnalyser.h; path = MovieMood/SKYColorAnalyser.h; sourceTree = "<group>"; };
 		BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYResultMovieCell.h; path = MovieMood/SKYResultMovieCell.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
 				C12714521899FB9300246E40 /* Main.storyboard */,
+				BE0378E4189DA9980032EC9F /* SKYColorPickerScrollView.h */,
+				BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 			files = (
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
 				BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */,
+				BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */,
 				BE94F129189CD71C006BAE45 /* SKYMovieViewController.m in Sources */,
 				C1A2CEBC189D39A400FDE503 /* TLAlertView.m in Sources */,
 				C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */,
