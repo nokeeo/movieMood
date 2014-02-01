@@ -13,12 +13,11 @@
 #import "TLAlertView.h"
 
 @interface SKYViewController ()
-@property (nonatomic, retain) ISColorWheel *colorWheel;
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
-@property (nonatomic, retain) UIView *colorIndicator;
+@property (nonatomic, retain) NSArray *moviesForColor;
+@property (nonatomic, retain) SKYColorPickerScrollView *contentScrollView;
 @property int requestsSent;
 @property int requestsRecieved;
-@property (nonatomic, retain) NSArray *moviesForColor;
 @end
 
 @implementation SKYViewController {
@@ -26,11 +25,10 @@
     NSDictionary* results;
 }
 
-@synthesize colorWheel = _colorWheel;
 @synthesize colorAnalyser = _colorAnalyser;
-@synthesize colorIndicator = _colorIndicator;
 @synthesize requestsRecieved = _requestsRecieved;
 @synthesize requestsSent = _requestsSent;
+@synthesize contentScrollView = _contentScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,39 +47,14 @@
     _requestsRecieved = 0;
     
 	CGSize size = self.view.bounds.size;
-    
-    CGSize wheelSize = CGSizeMake(size.width * .75, size.width * .75);
-    CGSize centerWheelSize = CGSizeMake(size.width * .50, size.width * .50);
-    CGSize indicatorSize = CGSizeMake(size.width * .40, size.width * .40);
-    
-    
-    UIView *centerWheel = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - centerWheelSize.width / 2,
-                                                                      (size.height * .3) + (wheelSize.height - centerWheelSize.height) / 2,
-                                                                      centerWheelSize.width,
-                                                                      centerWheelSize.height)];
-    centerWheel.backgroundColor = [UIColor colorWithRed:(77/255.0) green:(77/255.0) blue:(77/225.0) alpha:1.0];
-    centerWheel.layer.cornerRadius = 80;
-    centerWheel.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    centerWheel.layer.borderWidth = 1.f;
-    
-    _colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
-                                                                 size.height * .3,
-                                                                 wheelSize.width,
-                                                                 wheelSize.height)];
-    
-    _colorIndicator = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - indicatorSize.width / 2,
-                                                               (size.height * .3) + (wheelSize.height - indicatorSize.height) / 2,
-                                                               indicatorSize.height,
-                                                               indicatorSize.width)];
-    _colorIndicator.layer.cornerRadius = 64;
-    _colorIndicator.backgroundColor = _colorWheel.currentColor;
-    
-    _colorWheel.delegate = self;
-    _colorWheel.continuous = true;
+    _contentScrollView = [[SKYColorPickerScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
+                                                                        self.view.bounds.origin.y,
+                                                                        size.width,
+                                                                        size.height)];
+    _contentScrollView.colorViewDelegate = self;
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
-    [self.view addSubview:_colorWheel];
-    [self.view addSubview:centerWheel];
-    [self.view addSubview:_colorIndicator];
+    [self.view addSubview:_contentScrollView];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,8 +93,9 @@
     return fetchedData;
 }
 
--(void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel {
-    _colorIndicator.backgroundColor = _colorWheel.currentColor;
+-(void)colorDidChange:(id) sender {
+    _contentScrollView.alwaysBounceVertical = false;
+    _contentScrollView.colorIndicator.backgroundColor = _contentScrollView.colorWheel.currentColor;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -133,11 +107,11 @@
     }
 }
 
-- (IBAction)colorWheelButtonPressed:(id)sender {
+-(void)selectButtonPressed:(id)sender {
     __block UIActivityIndicatorView* progress = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     progress.hidesWhenStopped = YES;
     [progress startAnimating];
-    NSDictionary *colorProps = [_colorAnalyser analyzeColor: _colorWheel.currentColor];
+    NSDictionary *colorProps = [_colorAnalyser analyzeColor: _contentScrollView.colorWheel.currentColor];
     NSMutableDictionary *searchResults = [[NSMutableDictionary alloc] init];
     for(id key in colorProps) {
         [self getMoviesByGenre: key callback:^(id requestResponse) {
