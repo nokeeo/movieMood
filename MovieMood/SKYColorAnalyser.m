@@ -62,8 +62,6 @@
     for(id genreName in displayProps) {
         [returnProps setObject:[displayProps objectForKey:genreName] forKey:[_genreIds objectForKey:genreName]];
     }
-    
-    NSLog(@"%@", returnProps);
     return returnProps;
 }
 

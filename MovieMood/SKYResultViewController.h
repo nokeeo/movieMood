@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYResultViewController : UITableViewController
-@property (nonatomic,retain) NSDictionary* source;
+@property (nonatomic,retain) NSArray* movieSource;
 @end
