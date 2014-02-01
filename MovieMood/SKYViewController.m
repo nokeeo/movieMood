@@ -10,6 +10,7 @@
 #import "SKYResultViewController.h"
 #import "JLTMDbClient.h"
 #import "SKYColorAnalyser.h"
+#import "TLAlertView.h"
 
 @interface SKYViewController ()
 @property (nonatomic, retain) ISColorWheel *colorWheel;
@@ -91,6 +92,7 @@
 
 - (IBAction)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    [searchBar resignFirstResponder];
     //results = [self getMoviesByGenre:searchBar.text];
     [self performSegueWithIdentifier: @"ShowResults" sender: self];
 }
@@ -99,7 +101,7 @@
     _requestsSent++;
     
     __block NSDictionary* fetchedData = [[NSDictionary alloc] init];
-    __block UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Ok", @""), nil];
+    __block TLAlertView *errorAlertView = [[TLAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") buttonTitle:NSLocalizedString(@"OK",@"")];
     UIGravityBehavior *gravityBehaviour = [[UIGravityBehavior alloc] initWithItems:@[errorAlertView]];
     gravityBehaviour.gravityDirection = CGVectorMake(0, 10);
     [_animator addBehavior:gravityBehaviour];
@@ -132,6 +134,9 @@
 }
 
 - (IBAction)colorWheelButtonPressed:(id)sender {
+    __block UIActivityIndicatorView* progress = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    progress.hidesWhenStopped = YES;
+    [progress startAnimating];
     NSDictionary *colorProps = [_colorAnalyser analyzeColor: _colorWheel.currentColor];
     NSMutableDictionary *searchResults = [[NSMutableDictionary alloc] init];
     for(id key in colorProps) {
@@ -153,9 +158,11 @@
                     }
                 }
                 _moviesForColor = movies;
+                [progress stopAnimating];
                 [self performSegueWithIdentifier:@"ShowResults" sender:self];
             }
         }];
     }
+    [progress stopAnimating];
 }
 @end

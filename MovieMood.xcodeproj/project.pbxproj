@@ -34,6 +34,7 @@
 		C16624E2189C72600086F00C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E1189C72600086F00C /* smile.png */; };
 		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
 		C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */; };
+		C1A2CEBC189D39A400FDE503 /* TLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A2CEBB189D39A400FDE503 /* TLAlertView.m */; };
 		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +52,8 @@
 		35A86E6D26CC4E8093567DFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYColorAnalyser.m; path = MovieMood/SKYColorAnalyser.m; sourceTree = "<group>"; };
 		BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYColorAnalyser.h; path = MovieMood/SKYColorAnalyser.h; sourceTree = "<group>"; };
-		BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYResultMovieCell.h; sourceTree = "<group>"; };
-		BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYResultMovieCell.m; sourceTree = "<group>"; };
+		BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYResultMovieCell.h; path = MovieMood/SKYResultMovieCell.h; sourceTree = "<group>"; };
+		BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYResultMovieCell.m; path = MovieMood/SKYResultMovieCell.m; sourceTree = "<group>"; };
 		BE94F127189CD71C006BAE45 /* SKYMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovieViewController.h; sourceTree = "<group>"; };
 		BE94F128189CD71C006BAE45 /* SKYMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovieViewController.m; sourceTree = "<group>"; };
 		BED5AF09189AC9CE00ABF4EC /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
@@ -88,6 +89,8 @@
 		C16624E1189C72600086F00C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		C16624E3189C76030086F00C /* bucket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucket.png; sourceTree = "<group>"; };
 		C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SkyApps_143x59.png; sourceTree = "<group>"; };
+		C1A2CEBA189D39A400FDE503 /* TLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAlertView.h; sourceTree = "<group>"; };
+		C1A2CEBB189D39A400FDE503 /* TLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAlertView.m; sourceTree = "<group>"; };
 		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,8 +177,6 @@
 				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
 				C12714521899FB9300246E40 /* Main.storyboard */,
-				BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */,
-				BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -248,6 +249,10 @@
 		C192F1FF189B3E3B00F5A00D /* ViewLayouts */ = {
 			isa = PBXGroup;
 			children = (
+				C1A2CEBA189D39A400FDE503 /* TLAlertView.h */,
+				C1A2CEBB189D39A400FDE503 /* TLAlertView.m */,
+				BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */,
+				BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */,
 				BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */,
 				BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */,
 			);
@@ -393,6 +398,7 @@
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
 				BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */,
 				BE94F129189CD71C006BAE45 /* SKYMovieViewController.m in Sources */,
+				C1A2CEBC189D39A400FDE503 /* TLAlertView.m in Sources */,
 				C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */,
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,

@@ -35,7 +35,7 @@
 	// Do any additional setup after loading the view.
     NSMutableArray* smiles = [[NSMutableArray alloc] init];
     NSLog(@"%@",machineName());
-    int count = ([machineName() isEqualToString:@"iPhone5,1"] || [machineName() isEqualToString:@"iPhone5,2"] || [machineName() isEqualToString:@"x86_64"] ? 50 : 10 );
+    int count = ([machineName() isEqualToString:@"iPhone5,1"] || [machineName() isEqualToString:@"iPhone5,2"] || [machineName() isEqualToString:@"x86_64"] ? 30 : 15 );
     for (int i = 0; i < count; i++) {
         smiles[i] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]];
         [self.view insertSubview:smiles[i] belowSubview:_bucket];
