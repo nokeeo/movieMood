@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="331" y="-23"/>
         </scene>
-        <!--Result View Controller - Movie Results-->
+        <!--Result View Controller - Results-->
         <scene sceneID="aee-8a-ch1">
             <objects>
                 <tableViewController id="848-LE-X0u" customClass="SKYResultViewController" sceneMemberID="viewController">
@@ -138,13 +138,59 @@
                             <outlet property="delegate" destination="848-LE-X0u" id="3JR-6N-34I"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Movie Results" id="YVa-rl-bSZ">
+                    <navigationItem key="navigationItem" title="Results" id="YVa-rl-bSZ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bvw-sg-fwp"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="MJC-q8-mti" kind="push" identifier="MovieDetail" id="PCx-16-7Xa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbs-kw-sby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="737" y="-23"/>
+        </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="fAu-VA-hBO">
+            <objects>
+                <viewController id="MJC-q8-mti" customClass="SKYMovieViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cz5-JT-WHh"/>
+                        <viewControllerLayoutGuide type="bottom" id="iSa-Ou-elA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="85w-we-lk0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
+                                <rect key="frame" x="0.0" y="65" width="320" height="164"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J40-3H-XZb">
+                                <rect key="frame" x="20" y="237" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
+                                <rect key="frame" x="20" y="266" width="280" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vdc-hD-ang"/>
+                    <connections>
+                        <outlet property="description" destination="hmd-KZ-sKX" id="1kD-pB-U1H"/>
+                        <outlet property="headerImage" destination="L7J-NJ-qIJ" id="fig-gO-sMo"/>
+                        <outlet property="movieTitle" destination="J40-3H-XZb" id="EB6-6J-UpP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaK-EX-sTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176" y="-23"/>
         </scene>
     </scenes>
     <resources>
