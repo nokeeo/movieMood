@@ -7,6 +7,7 @@
 //
 
 #import "SKYResultViewController.h"
+#import "SKYResultMovieCell.h"
 
 @interface SKYResultViewController ()
 
@@ -59,9 +60,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"MovieCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[_movieSource objectAtIndex:indexPath.row] valueForKey:@"title"];
+    id currentMovie = [_movieSource objectAtIndex:indexPath.row];
+    cell.title.text = [currentMovie valueForKey:@"title"];
+    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
+    cell.artwork.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: imageURL]];
     return cell;
 }
 
