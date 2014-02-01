@@ -2,17 +2,25 @@
 //  SKYResultViewController.m
 //  MovieMood
 //
-//  Created by Aaron Sky on 1/30/14.
+//  Created by Aaron Sky on 1/31/14.
 //  Copyright (c) 2014 Sky Apps. All rights reserved.
 //
 
 #import "SKYResultViewController.h"
+#import "SKYResultMovieCell.h"
+#import "SKYMovieViewController.h"
 
 @interface SKYResultViewController ()
-
+@property NSString *selectedMovidId;
+@property NSMutableDictionary *imageCache;
 @end
 
-@implementation SKYResultViewController
+@implementation SKYResultViewController {
+}
+
+@synthesize movieSource = _movieSource;
+@synthesize selectedMovidId = _selectedMovidId;
+@synthesize imageCache = _imageCache;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,7 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    _imageCache = [[NSMutableDictionary alloc] init];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -44,77 +53,68 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_movieSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"MovieCell";
+    SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    id currentMovie = [_movieSource objectAtIndex:indexPath.row];
+    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    
+    NSLog(@"%@", currentImage);
+    
+    if(!currentImage) {
+        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
+        currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+        [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+        NSLog(@"FIRE!");
+    }
+    
+    cell.title.text = [currentMovie valueForKey:@"title"];
+    cell.artwork.image = currentImage;
+    
+    [self checkColor];
+    [[cell title] setTextColor:_chosenColor];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id movie = [_movieSource objectAtIndex: indexPath.row];
+    _selectedMovidId = [movie objectForKey:@"id"];
+    [self performSegueWithIdentifier:@"MovieDetail" sender:self];
 }
 
- */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"MovieDetail"]) {
+        SKYMovieViewController *movieVC = segue.destinationViewController;
+        movieVC.movieId = _selectedMovidId;
+    }
+}
+
+-(void)checkColor
+{
+    CGFloat hue, sat, brightness, alpha;
+    [_chosenColor getHue:&hue saturation:&sat brightness:&brightness alpha:&alpha];
+    //NSLog(@"hue: %f", hue);
+    if(hue < 0.55f && hue >= 0.5f)
+    {
+        hue = 0.55f;
+    }
+    else if(hue < 0.5f && hue > 0.45f)
+    {
+        hue = 0.45f;
+    }
+    _chosenColor = [_chosenColor initWithHue:hue saturation:sat brightness:brightness alpha:alpha];
+}
 
 @end

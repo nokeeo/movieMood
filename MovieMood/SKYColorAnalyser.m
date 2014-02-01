@@ -28,7 +28,7 @@
     self = [super init];
     if (self)
     {
-        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10769", @"36", @"27", @"10756", @"1115", @"10749", @"878", @"9805", @"53", @"10752", @"37", nil];
+        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10769", @"36", @"27", @"10756", @"1115", @"10749", @"878", @"10748", @"53", @"10752", @"37", nil];
         NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Fantasy", @"Foreign", @"History", @"Horror", @"Indie", @"Road Movie", @"Romance", @"Science Fiction", @"Suspense", @"Thriller", @"War", @"Western", nil];
         
         _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
@@ -36,8 +36,13 @@
     return self;
 }
 
+/*---------------------------------------------------------------------------
+* Generates the genres and proportions associated with genre.
+* Returns dictionary with genre id as the key and the values as the proportions.
+ ---------------------------------------------------------------------------*/
 -(NSDictionary *) analyzeColor:(UIColor *)color {
-    NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f]];
+    //NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:0.f green:0.f blue:1.f alpha:1.f]];
+    NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:color];
     
     NSDictionary *relatedGenres = [self getRelatedGenresWithColorDiffs:genreDiff];
     
@@ -52,10 +57,20 @@
         [bestFitGenres setObject:[relatedGenres objectForKey:[sortedKeys objectAtIndex:i]] forKey: [sortedKeys objectAtIndex:i]];
     }
     
-    NSLog(@"%@", [self calcDisplayProportions:bestFitGenres]);
-    return relatedGenres;
+    NSDictionary *displayProps = [self calcDisplayProportions:bestFitGenres];
+    NSMutableDictionary *returnProps = [[NSMutableDictionary alloc] init];
+    for(id genreName in displayProps) {
+        [returnProps setObject:[displayProps objectForKey:genreName] forKey:[_genreIds objectForKey:genreName]];
+    }
+    return returnProps;
 }
 
+#pragma mark - Private Methods
+
+/*---------------------------------------------------------------------------
+* Calculates the xyz color values from rgb color values
+* Returns array with x, y, z values respectively
+ ---------------------------------------------------------------------------*/
 -(NSArray *) rgbToXyzWithRed:(float)red withGreen:(float)green withBlue:(float)blue {
     if (red > 0.04045)
         red = pow((red + 0.055) / 1.055, 2.4);
@@ -83,6 +98,10 @@
     return [NSArray arrayWithObjects:[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y], [NSNumber numberWithFloat:z], nil];
 }
 
+/*---------------------------------------------------------------------------
+ * Calculates the CEI lab color values from xyz color values
+ * Returns array with l, a, b values respectively
+ ---------------------------------------------------------------------------*/
 -(NSArray *) xyzToLabWithX:(float)x withY:(float)y withZ:(float)z {
     x = x / 95.047;
     y = y / 100.0;
@@ -110,6 +129,12 @@
     return [NSArray arrayWithObjects: [NSNumber numberWithFloat:l], [NSNumber numberWithFloat:a], [NSNumber numberWithFloat:b], nil];
 }
 
+/*---------------------------------------------------------------------------
+* Calculates the color difference value using the CEI76.
+* This is not the most favorable formula, however it is suficiant for this
+* project.
+* Returns the difference between the colors as a float value.
+ ---------------------------------------------------------------------------*/
 -(float) calcColorDifferenceWithColor:(UIColor *) color1 withColor:(UIColor *) color2 {
     
     CGFloat red1;
@@ -138,6 +163,9 @@
     return deltaE;
 }
 
+/*---------------------------------------------------------------------------
+* Gets the UIColor associated with a genre.
+ ---------------------------------------------------------------------------*/
 -(UIColor *) getColorWithGenre:(NSString *)genre {
     UIColor *returnColor = nil;
     if([genre isEqualToString:@"Action"] || [genre isEqualToString:@"Suspense"] || [genre isEqualToString:@"Thriller"])
@@ -174,6 +202,11 @@
     return returnColor;
 }
 
+/*---------------------------------------------------------------------------
+* Gets a dictionary of color differences for all genres.
+* Returns a dictionary where the key is the genre and value is the 
+* difference between the the genre's color and the given color
+ ---------------------------------------------------------------------------*/
 -(NSDictionary *) getGenreColorDifferenceWithColor:(UIColor *)compareColor {
     NSMutableDictionary *returnDictionary = [[NSMutableDictionary alloc] init];
     for(id genre in _genreIds) {
@@ -186,6 +219,11 @@
     return returnDictionary;
 }
 
+/*---------------------------------------------------------------------------
+* Gets the closely related genre(s) based on the given color
+* Returns a dictionary with the key as the genre and the value as the 
+* difference
+ ---------------------------------------------------------------------------*/
 -(NSDictionary *) getRelatedGenresWithColorDiffs:(NSDictionary *)colorDiffs {
     NSMutableDictionary *relatedGenres = [[NSMutableDictionary alloc] init];
     for(id key in colorDiffs) {
@@ -217,8 +255,14 @@
     return relatedGenres;
 }
 
+/*---------------------------------------------------------------------------
+* Calcualtes the proportions for each genre as the movies should appear
+* in a search result
+* Returns a dictionary where the key is the genre and proportions as values.
+ ---------------------------------------------------------------------------*/
 -(NSDictionary *) calcDisplayProportions:(NSDictionary *) genreDiffs {
-    NSMutableDictionary *proportions = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *inverseProportions = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *finalProportions = [[NSMutableDictionary alloc] init];
     float diffSum = 0.f;
     for(id genre in genreDiffs) {
         diffSum += [[genreDiffs objectForKey:genre] floatValue] + 1;
@@ -226,10 +270,22 @@
     
     for(id genre in genreDiffs) {
         float currentValue = [[genreDiffs objectForKey:genre] floatValue] + 1;
-        float prop = currentValue / diffSum;
+        float prop = 1 / (currentValue / diffSum);
         
-        [proportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
+        [inverseProportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
     }
-    return proportions;
+    
+    diffSum = 0.f;
+    for(id genre in inverseProportions) {
+        diffSum += [[inverseProportions objectForKey:genre] floatValue];
+    }
+    
+    for(id genre in inverseProportions) {
+        float currentValue = [[inverseProportions objectForKey:genre] floatValue];
+        float prop = (currentValue / diffSum);
+        
+        [finalProportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
+    }
+    return finalProportions;
 }
 @end

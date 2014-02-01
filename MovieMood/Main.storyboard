@@ -1,13 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9S7-Rb-QHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2Kf-dC-obl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="Mb4-Y3-bLb">
+            <objects>
+                <viewController id="2Kf-dC-obl" customClass="SKYIntroViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XQs-Xl-8qH"/>
+                        <viewControllerLayoutGuide type="bottom" id="iw1-W6-X9F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FGq-WP-9kD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-r1-j2q" userLabel="smilePile - smiles.png">
+                                <rect key="frame" x="0.0" y="135" width="320" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bucket.png" translatesAutoresizingMaskIntoConstraints="NO" id="MpC-PY-AR6" userLabel="bucket - bucket.png">
+                                <rect key="frame" x="0.0" y="250" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkyApps_143x59.png" translatesAutoresizingMaskIntoConstraints="NO" id="q8t-8U-yzn">
+                                <rect key="frame" x="110" y="477" width="100" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.19607843137254902" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="smilePile" destination="fdB-r1-j2q" id="hr2-bN-ReF"/>
+                        <segue destination="9S7-Rb-QHs" kind="modal" identifier="StartApp" modalTransitionStyle="flipHorizontal" id="uyJ-4Y-6gs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t74-nB-aXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-544" y="-23"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GtT-C9-kiM">
             <objects>
                 <navigationController definesPresentationContext="YES" id="9S7-Rb-QHs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jVM-ML-rGl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fem-uU-XiH">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -35,75 +82,136 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="g5d-FV-OnJ" id="1SS-Wg-kKd"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKM-nE-1V3">
+                                <rect key="frame" x="270" y="420" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GO!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="colorWheelButtonPressed:" destination="g5d-FV-OnJ" eventType="touchUpInside" id="hSA-SJ-g3P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="l6r-IF-Q3Y"/>
+                    <connections>
+                        <segue destination="848-LE-X0u" kind="push" identifier="ShowResults" id="8H8-B1-c7B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPy-sV-N3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331" y="-23"/>
         </scene>
-        <!--Result View Controller-->
-        <scene sceneID="crb-7L-mFR">
-            <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="U5U-yn-Z8o" customClass="SKYResultViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="h8a-rt-SG3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewLayout key="collectionViewLayout" id="zny-qm-xkK" customClass="SKYResultViewLayout"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DPu-CM-0MR">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <size key="customSize" width="50" height="50"/>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="U5U-yn-Z8o" id="Qzg-ml-LXD"/>
-                            <outlet property="delegate" destination="U5U-yn-Z8o" id="2zD-Y0-p3Q"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WxO-pJ-zf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="751" y="-24"/>
-        </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Result View Controller - Results-->
         <scene sceneID="aee-8a-ch1">
             <objects>
-                <tableViewController id="848-LE-X0u" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hz6-JL-oj8">
+                <tableViewController id="848-LE-X0u" customClass="SKYResultViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hz6-JL-oj8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XrF-A6-J9Q">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="66" id="XrF-A6-J9Q" customClass="SKYResultMovieCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XrF-A6-J9Q" id="iQ1-LA-Zyg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-mH-SHT">
+                                            <rect key="frame" x="0.0" y="0.0" width="46" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eue-DI-mfO">
+                                            <rect key="frame" x="64" y="22" width="223" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artwork" destination="kc2-mH-SHT" id="mBf-Zc-99l"/>
+                                    <outlet property="title" destination="eue-DI-mfO" id="Ky3-QL-yHN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="848-LE-X0u" id="JTL-VS-dRa"/>
+                            <outlet property="delegate" destination="848-LE-X0u" id="3JR-6N-34I"/>
+                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="YVa-rl-bSZ"/>
+                    <navigationItem key="navigationItem" title="Results" id="YVa-rl-bSZ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="bvw-sg-fwp"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="MJC-q8-mti" kind="push" identifier="MovieDetail" id="PCx-16-7Xa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbs-kw-sby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="-23"/>
+            <point key="canvasLocation" x="737" y="-23"/>
+        </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="fAu-VA-hBO">
+            <objects>
+                <viewController id="MJC-q8-mti" customClass="SKYMovieViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cz5-JT-WHh"/>
+                        <viewControllerLayoutGuide type="bottom" id="iSa-Ou-elA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="85w-we-lk0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
+                                <rect key="frame" x="0.0" y="65" width="320" height="164"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J40-3H-XZb">
+                                <rect key="frame" x="20" y="237" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
+                                <rect key="frame" x="20" y="266" width="280" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vdc-hD-ang"/>
+                    <connections>
+                        <outlet property="description" destination="hmd-KZ-sKX" id="1kD-pB-U1H"/>
+                        <outlet property="headerImage" destination="L7J-NJ-qIJ" id="fig-gO-sMo"/>
+                        <outlet property="movieTitle" destination="J40-3H-XZb" id="EB6-6J-UpP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaK-EX-sTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176" y="-23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SkyApps_143x59.png" width="334" height="246"/>
+        <image name="bucket.png" width="640" height="640"/>
+        <image name="smiles.png" width="887" height="435"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
