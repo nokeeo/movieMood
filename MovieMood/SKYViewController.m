@@ -130,7 +130,10 @@
     {
         SKYResultViewController* resultVC = [segue destinationViewController];
         resultVC.movieSource = _moviesForColor;
+<<<<<<< HEAD
         resultVC.chosenColor = _colorWheel.currentColor;
+=======
+>>>>>>> 76815ba40e7826e2f6ea867fdb8d57089e73b1ca
     }
 }
 

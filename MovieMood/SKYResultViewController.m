@@ -71,6 +71,7 @@
     UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
     NSLog(@"%@", currentImage);
+<<<<<<< HEAD
     
     if(!currentImage) {
         NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
@@ -84,7 +85,18 @@
     
     [self checkColor];
     [[cell title] setTextColor:_chosenColor];
+=======
+>>>>>>> 76815ba40e7826e2f6ea867fdb8d57089e73b1ca
     
+    if(!currentImage) {
+        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
+        currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+        [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+        NSLog(@"FIRE!");
+    }
+    
+    cell.title.text = [currentMovie valueForKey:@"title"];
+    cell.artwork.image = currentImage;
     return cell;
 }
 
@@ -99,6 +111,7 @@
         SKYMovieViewController *movieVC = segue.destinationViewController;
         movieVC.movieId = _selectedMovidId;
     }
+<<<<<<< HEAD
 }
 
 -(void)checkColor
@@ -115,6 +128,8 @@
         hue = 0.45f;
     }
     _chosenColor = [_chosenColor initWithHue:hue saturation:sat brightness:brightness alpha:alpha];
+=======
+>>>>>>> 76815ba40e7826e2f6ea867fdb8d57089e73b1ca
 }
 
 @end
