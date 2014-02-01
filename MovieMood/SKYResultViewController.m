@@ -12,12 +12,15 @@
 
 @interface SKYResultViewController ()
 @property NSString *selectedMovidId;
+@property NSMutableDictionary *imageCache;
 @end
 
 @implementation SKYResultViewController {
 }
+
 @synthesize movieSource = _movieSource;
 @synthesize selectedMovidId = _selectedMovidId;
+@synthesize imageCache = _imageCache;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _imageCache = [[NSMutableDictionary alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -64,9 +68,19 @@
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     id currentMovie = [_movieSource objectAtIndex:indexPath.row];
+    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    
+    NSLog(@"%@", currentImage);
+    
+    if(!currentImage) {
+        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
+        currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+        [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+        NSLog(@"FIRE!");
+    }
+    
     cell.title.text = [currentMovie valueForKey:@"title"];
-    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
-    cell.artwork.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: imageURL]];
+    cell.artwork.image = currentImage;
     return cell;
 }
 
