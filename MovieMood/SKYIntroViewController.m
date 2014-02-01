@@ -19,6 +19,7 @@
     UICollisionBehavior* _collision;
 }
 @synthesize bucket = _bucket;
+@synthesize smilePile = _smilePile;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,11 +35,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSMutableArray* smiles = [[NSMutableArray alloc] init];
-    NSLog(@"%@",machineName());
-    int count = ([machineName() isEqualToString:@"iPhone5,1"] || [machineName() isEqualToString:@"iPhone5,2"] || [machineName() isEqualToString:@"x86_64"] ? 30 : 15 );
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < 10; i++) {
         smiles[i] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]];
-        [self.view insertSubview:smiles[i] belowSubview:_bucket];
+        [smiles[i] setPosition:CGPointMake(self.view.bounds.size.width / 2, 200)];
+        [self.view insertSubview:smiles[i] belowSubview:_smilePile];
     }
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
@@ -48,29 +48,21 @@
     _collision = [[UICollisionBehavior alloc]
                   initWithItems:smiles];
     _collision.translatesReferenceBoundsIntoBoundary = YES;
+    //_collision.collisionMode = UICollisionBehaviorModeBoundaries;
+    [_collision addBoundaryWithIdentifier:@"bottom" fromPoint:CGPointMake(0,self.view.bounds.size.height / 2) toPoint:CGPointMake(self.view.bounds.size.width, self.view.bounds.size.height / 2)];
     [_animator addBehavior:_collision];
     
     UIDynamicItemBehavior* itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:smiles];
-    itemBehaviour.elasticity = 1.0;
+    itemBehaviour.elasticity = 0.5;
     [_animator addBehavior:itemBehaviour];
     
     UIPushBehavior* pushBehaviour = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
-    [pushBehaviour setAngle:atan2(-100,0)];
-    [pushBehaviour setMagnitude:10.0];
+    //[pushBehaviour setAngle:atan2(-100, 100)];
+    [pushBehaviour setMagnitude:arc4random() % 11];
     [pushBehaviour setActive:TRUE];
     [_animator addBehavior:pushBehaviour];
     
     [self performSelector:@selector(goToNextView) withObject:nil afterDelay:3];
-}
-
-NSString*
-machineName()
-{
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    
-    return [NSString stringWithCString:systemInfo.machine
-                              encoding:NSUTF8StringEncoding];
 }
 
 - (void) goToNextView

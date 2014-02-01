@@ -10,5 +10,6 @@
 
 @interface SKYIntroViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *bucket;
+@property (weak, nonatomic) IBOutlet UIImageView *smilePile;
 
 @end

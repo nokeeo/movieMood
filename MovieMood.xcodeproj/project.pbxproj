@@ -35,6 +35,7 @@
 		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
 		C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */; };
 		C1A2CEBC189D39A400FDE503 /* TLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A2CEBB189D39A400FDE503 /* TLAlertView.m */; };
+		C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEBD189D934B00FDE503 /* smiles.png */; };
 		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SkyApps_143x59.png; sourceTree = "<group>"; };
 		C1A2CEBA189D39A400FDE503 /* TLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAlertView.h; sourceTree = "<group>"; };
 		C1A2CEBB189D39A400FDE503 /* TLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAlertView.m; sourceTree = "<group>"; };
+		C1A2CEBD189D934B00FDE503 /* smiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiles.png; sourceTree = "<group>"; };
 		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +225,7 @@
 		C16624E0189C71010086F00C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C1A2CEBD189D934B00FDE503 /* smiles.png */,
 				C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */,
 				C16624E3189C76030086F00C /* bucket.png */,
 				C16624E1189C72600086F00C /* smile.png */,
@@ -341,6 +344,7 @@
 				C12714531899FB9300246E40 /* Main.storyboard in Resources */,
 				C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */,
 				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
+				C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */,
 				C16624E4189C76030086F00C /* bucket.png in Resources */,
 				C16624E2189C72600086F00C /* smile.png in Resources */,
 				BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */,
