@@ -179,27 +179,61 @@
                                 <rect key="frame" x="0.0" y="65" width="320" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J40-3H-XZb">
-                                <rect key="frame" x="20" y="237" width="200" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J40-3H-XZb">
+                                <rect key="frame" x="20" y="237" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
-                                <rect key="frame" x="20" y="266" width="280" height="120"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7U-gm-8bm">
+                                <rect key="frame" x="77" y="266" width="101" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XF-ce-40t">
+                                <rect key="frame" x="186" y="266" width="60" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-oz-Al8">
+                                <rect key="frame" x="20" y="266" width="49" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
+                                <rect key="frame" x="20" y="296" width="280" height="252"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-gQ-jUa">
+                                <rect key="frame" x="254" y="266" width="46" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iSa-Ou-elA" firstAttribute="top" secondItem="hmd-KZ-sKX" secondAttribute="bottom" constant="20" id="BXw-Ie-dT7"/>
+                            <constraint firstItem="hmd-KZ-sKX" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="EKd-9D-yrz"/>
+                            <constraint firstItem="J40-3H-XZb" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="anZ-K7-64n"/>
+                            <constraint firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" constant="20" id="bhw-1v-zGq"/>
+                            <constraint firstItem="oxb-oz-Al8" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="tWC-2k-Sad"/>
+                            <constraint firstAttribute="trailing" secondItem="J40-3H-XZb" secondAttribute="trailing" constant="20" id="wEK-qD-Lym"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vdc-hD-ang"/>
                     <connections>
                         <outlet property="description" destination="hmd-KZ-sKX" id="1kD-pB-U1H"/>
                         <outlet property="headerImage" destination="L7J-NJ-qIJ" id="fig-gO-sMo"/>
                         <outlet property="movieTitle" destination="J40-3H-XZb" id="EB6-6J-UpP"/>
+                        <outlet property="rating" destination="nd1-gQ-jUa" id="SNO-iG-L0d"/>
+                        <outlet property="ratingOutOfTen" destination="8XF-ce-40t" id="xM7-RI-Ric"/>
+                        <outlet property="releaseDate" destination="oxb-oz-Al8" id="1au-Fr-zxQ"/>
+                        <outlet property="runtime" destination="z7U-gm-8bm" id="Zcy-Zr-kKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaK-EX-sTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
