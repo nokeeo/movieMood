@@ -28,7 +28,6 @@
     
     for(NSString *genre in genreList) {
         requestsSent++;
-        NSLog(@"%d", pageNum);
         [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre, @"page":[NSString stringWithFormat:@"%d", pageNum]} andResponseBlock:^(id response, NSError *error) {
             if(!error) {
                 requestsRecieved++;

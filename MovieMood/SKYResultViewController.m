@@ -11,6 +11,7 @@
 #import "SKYMovieViewController.h"
 #import "SKYMovieRequests.h"
 #import "SKYActivityIndicator.h"
+#import "SKYColorAnalyser.h"
 
 @interface SKYResultViewController ()
 @property (nonatomic, retain) NSString *selectedMovidId;
@@ -56,6 +57,7 @@
                                                                                     (size.height - activityViewSize.height) / 2,
                                                                                     activityViewSize.width,
                                                                                     activityViewSize.height)];
+
     [self.parentViewController.view addSubview:_activityIndicatorView];
     [_activityIndicatorView.activityIndicator startAnimating];
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
@@ -67,11 +69,10 @@
     } failCallBack:^(NSError *error) {
     }];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    SKYColorAnalyser *colorAnalyser = [[SKYColorAnalyser alloc] init];
+    UIColor *tintColor = [colorAnalyser tintColor:_selectedColor withTintConst: -.25];
+    _activityIndicatorView.activityIndicator.color = tintColor;
+    self.navigationController.navigationBar.tintColor = tintColor;
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +98,6 @@
 {
     static NSString *CellIdentifier = @"MovieCell";
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     id currentMovie = [_movieSource objectAtIndex:indexPath.row];
     UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", [currentMovie objectForKey:@"id"]]];
     
@@ -146,7 +146,7 @@
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
         if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
-            _activityIndicatorView.alpha = 1.f;
+            [self fadeInActivityView];
             [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
                 NSArray *newMovies = [self createListWithProps:_movieProps withSourceLists:requestResponse];
                 [_movieSource addObjectsFromArray:newMovies];
@@ -188,5 +188,4 @@
     _activityIndicatorView.alpha = 0.f;
     [UIView commitAnimations];
 }
-
 @end

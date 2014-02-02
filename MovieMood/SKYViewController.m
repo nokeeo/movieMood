@@ -68,20 +68,6 @@
     [self performSegueWithIdentifier: @"ShowResults" sender: self];
 }
 
-- (NSDictionary*)getMoviesByGenre:(NSString *) genre callback:(void (^)(id requestResponse))sucessCallback {
-    
-    __block NSDictionary* fetchedData = [[NSDictionary alloc] init];
-    __block TLAlertView *errorAlertView = [[TLAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") buttonTitle:NSLocalizedString(@"OK",@"")];
-    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre} andResponseBlock:^(id response, NSError *error) {
-        if(!error) {
-            sucessCallback([response objectForKey:@"results"]);
-        }
-        else
-            [errorAlertView show];
-    }];
-    return fetchedData;
-}
-
 -(void)colorDidChange:(id) sender {
     _contentScrollView.alwaysBounceVertical = false;
     _contentScrollView.colorIndicator.backgroundColor = _contentScrollView.colorWheel.currentColor;
@@ -95,35 +81,12 @@
     {
         SKYResultViewController* resultVC = [segue destinationViewController];
         resultVC.movieProps = _currentPorps;
+        resultVC.selectedColor = _contentScrollView.colorWheel.currentColor;
     }
 }
 
 -(void)selectButtonPressed:(id)sender {
     _currentPorps = [_colorAnalyser analyzeColor: _contentScrollView.colorWheel.currentColor];
     [self performSegueWithIdentifier:@"ShowResults" sender:self];
-    /*for(id key in colorProps) {
-        [self getMoviesByGenre: key callback:^(id requestResponse) {
-            [searchResults setObject:requestResponse forKey: key];
-            
-            if(_requestsRecieved == _requestsSent) {
-                NSMutableArray *movies = [[NSMutableArray alloc] init];
-                for(id genreCode in searchResults) {
-                    float currentProp = [[colorProps objectForKey:genreCode] floatValue];
-                    int numberOfMovies = floor(currentProp * 20);
-                    int numberOfResponses = [requestResponse count];
-                    
-                    for(int i = 0; i < numberOfMovies; i++) {
-                        int randomIndex = arc4random() % numberOfResponses;
-                        while([movies containsObject:[requestResponse objectAtIndex:randomIndex]])
-                            randomIndex = arc4random() % numberOfResponses;
-                        [movies addObject:[requestResponse objectAtIndex:randomIndex]];
-                    }
-                }
-                _moviesForColor = movies;
-                [self performSegueWithIdentifier:@"ShowResults" sender:self];
-            }
-        }];
-    
-    }*/
 }
 @end

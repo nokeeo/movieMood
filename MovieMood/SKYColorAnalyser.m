@@ -302,4 +302,14 @@
     
     return [UIColor colorWithHue:degreeValue / 360 saturation:saturation brightness:brightness - .3 alpha:1.f];
 }
+
+-(UIColor *) tintColor:(UIColor *)originalColor withTintConst:(float) tintConst{
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    
+    [originalColor getRed:&red green:&green blue:&blue alpha:nil];
+    
+    return [UIColor colorWithRed:red + tintConst green:green + tintConst blue:blue + tintConst alpha:1.f];
+}
 @end

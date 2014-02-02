@@ -11,4 +11,5 @@
 @interface SKYColorAnalyser : NSObject
 - (NSDictionary *) analyzeColor:(UIColor *) color;
 -(UIColor *) calculateComplementaryWithColor:(UIColor *) originalColor;
+-(UIColor *) tintColor:(UIColor *) originalColor withTintConst:(float) tintConst;
 @end
