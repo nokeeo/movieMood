@@ -64,7 +64,7 @@
         _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         [self cacheMovieImages:_movieSource];
         [self.tableView reloadData];
-        [self fadeOutActivityView];
+        [_activityIndicatorView fadeOutView];
         [UIView commitAnimations];
     } failCallBack:^(NSError *error) {
     }];
@@ -146,7 +146,7 @@
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
         if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
-            [self fadeInActivityView];
+            [_activityIndicatorView fadeInView];
             [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
                 NSArray *newMovies = [self createListWithProps:_movieProps withSourceLists:requestResponse];
                 [_movieSource addObjectsFromArray:newMovies];
@@ -154,7 +154,7 @@
                 [self.tableView reloadData];
                 _currentPageNumber++;
                 _refresing = NO;
-                [self fadeOutActivityView];
+                [_activityIndicatorView fadeOutView];
             } failCallBack:^(NSError *error) {
                 NSLog(@"error");
             }];
@@ -172,20 +172,5 @@
             [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", [movie objectForKey:@"id"]]];
         }
     }
-}
-
--(void) fadeInActivityView {
-    [_activityIndicatorView.activityIndicator startAnimating];
-    [UIView beginAnimations:@"activityFade" context:nil];
-    _activityIndicatorView.alpha = 0.f;
-    _activityIndicatorView.alpha = 1.f;
-    [UIView commitAnimations];
-}
-
--(void) fadeOutActivityView {
-    [UIView beginAnimations:@"activityFade" context:nil];
-    _activityIndicatorView.alpha = 1.f;
-    _activityIndicatorView.alpha = 0.f;
-    [UIView commitAnimations];
 }
 @end

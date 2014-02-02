@@ -10,4 +10,7 @@
 
 @interface SKYActivityIndicator : UIView
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+
+-(void) fadeInView;
+-(void) fadeOutView;
 @end

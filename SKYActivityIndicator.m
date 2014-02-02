@@ -28,4 +28,19 @@
     }
     return self;
 }
+
+-(void) fadeInView {
+    [self.activityIndicator startAnimating];
+    [UIView beginAnimations:@"activityFade" context:nil];
+    self.alpha = 0.f;
+    self.alpha = 1.f;
+    [UIView commitAnimations];
+}
+
+-(void) fadeOutView {
+    [UIView beginAnimations:@"activityFade" context:nil];
+    self.alpha = 1.f;
+    self.alpha = 0.f;
+    [UIView commitAnimations];
+}
 @end

@@ -9,6 +9,7 @@
 #import "SKYMovieViewController.h"
 #import "JLTMDbClient.h"
 #import "TLAlertView.h"
+#import "SKYActivityIndicator.h"
 
 @interface SKYMovieViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingOutOfTen;
 @property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UIImageView *rating;
+@property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
+@property (nonatomic, retain) UIView *coverView;
 @property id movieData;
 
 -(id)getMovidWithId: (NSString *) movidId;
@@ -27,6 +30,7 @@
 
 @synthesize movieId = _movieId;
 @synthesize movieData = _movieData;
+@synthesize activityIndicatorView = _activityIndicatorView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,8 +46,23 @@
     [super viewDidLoad];
 }
 
--(void) viewWillAppear:(BOOL)animated {
+-(void) viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    CGSize size = self.view.bounds.size;
+    CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
+    
+    _activityIndicatorView = [[SKYActivityIndicator alloc] initWithFrame:CGRectMake((size.width - activityViewSize.width) / 2,
+                                                                                    (size.height - activityViewSize.height) / 2,
+                                                                                    activityViewSize.width,
+                                                                                    activityViewSize.height)];
+    _coverView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f,
+                                                          size.width,
+                                                          size.height)];
+    _coverView.backgroundColor = [UIColor whiteColor];
+    
+    [_coverView addSubview:_activityIndicatorView];
+    [self.view addSubview:_coverView];
+    [_activityIndicatorView fadeInView];
     _movieData = [self getMovidWithId: _movieId];
 }
 
@@ -73,6 +92,11 @@
             self.ratingOutOfTen.text = [NSString stringWithFormat:@"%@/%@",[_movieData objectForKey:@"vote_average"], @"10"];
             self.description.text = [_movieData objectForKey:@"overview"];
             self.description.selectable = NO;
+            
+            [_activityIndicatorView fadeOutView];
+            [UIView animateWithDuration: .75 animations:^{
+                _coverView.alpha = 0.f;
+            }];
         } else
             [errorAlertView show];
     }];
