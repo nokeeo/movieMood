@@ -10,11 +10,13 @@
 #import "SKYResultMovieCell.h"
 #import "SKYMovieViewController.h"
 #import "SKYMovieRequests.h"
+#import "SKYActivityIndicator.h"
 
 @interface SKYResultViewController ()
 @property (nonatomic, retain) NSString *selectedMovidId;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 @property (nonatomic, retain) NSMutableArray *movieSource;
+@property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property int currentPageNumber;
 @property bool refresing;
 @end
@@ -28,6 +30,7 @@
 @synthesize imageCache = _imageCache;
 @synthesize refresing = _refresing;
 @synthesize currentPageNumber = _currentPageNumber;
+@synthesize activityIndicatorView = _activityIndicatorView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,10 +49,21 @@
     _refresing = NO;
     _imageCache = [[NSMutableDictionary alloc] init];
     
+    CGSize size = self.view.bounds.size;
+    CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
+    
+    _activityIndicatorView = [[SKYActivityIndicator alloc] initWithFrame:CGRectMake((size.width - activityViewSize.width) / 2,
+                                                                                    (size.height - activityViewSize.height) / 2,
+                                                                                    activityViewSize.width,
+                                                                                    activityViewSize.height)];
+    [self.parentViewController.view addSubview:_activityIndicatorView];
+    [_activityIndicatorView.activityIndicator startAnimating];
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
         _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         [self cacheMovieImages:_movieSource];
         [self.tableView reloadData];
+        [self fadeOutActivityView];
+        [UIView commitAnimations];
     } failCallBack:^(NSError *error) {
     }];
     
@@ -110,7 +124,6 @@
     for(id genreCode in colorProps) {
         float currentProp = [[colorProps objectForKey:genreCode] floatValue];
         int numberOfMovies = floor(currentProp * 20);
-        NSLog(@"%@ %@", colorProps, sourceList);
         NSMutableArray *currentMovieResponses = [[NSMutableArray alloc] initWithArray:[sourceList objectForKey: genreCode]];
         for(int i = 0; (i < numberOfMovies) && ([currentMovieResponses count] != 0); i++) {
             int randomIndex = arc4random() % [currentMovieResponses count];
@@ -133,6 +146,7 @@
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
         if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
+            _activityIndicatorView.alpha = 1.f;
             [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
                 NSArray *newMovies = [self createListWithProps:_movieProps withSourceLists:requestResponse];
                 [_movieSource addObjectsFromArray:newMovies];
@@ -140,6 +154,7 @@
                 [self.tableView reloadData];
                 _currentPageNumber++;
                 _refresing = NO;
+                [self fadeOutActivityView];
             } failCallBack:^(NSError *error) {
                 NSLog(@"error");
             }];
@@ -157,6 +172,21 @@
             [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", [movie objectForKey:@"id"]]];
         }
     }
+}
+
+-(void) fadeInActivityView {
+    [_activityIndicatorView.activityIndicator startAnimating];
+    [UIView beginAnimations:@"activityFade" context:nil];
+    _activityIndicatorView.alpha = 0.f;
+    _activityIndicatorView.alpha = 1.f;
+    [UIView commitAnimations];
+}
+
+-(void) fadeOutActivityView {
+    [UIView beginAnimations:@"activityFade" context:nil];
+    _activityIndicatorView.alpha = 1.f;
+    _activityIndicatorView.alpha = 0.f;
+    [UIView commitAnimations];
 }
 
 @end

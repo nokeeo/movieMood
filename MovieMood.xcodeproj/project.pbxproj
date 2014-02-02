@@ -11,6 +11,7 @@
 		BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */; };
 		BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */; };
 		BE963007189E19EA004968D0 /* SKYMovieRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE963006189E19EA004968D0 /* SKYMovieRequests.m */; };
+		BE96300A189E3E17004968D0 /* SKYActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE963009189E3E17004968D0 /* SKYActivityIndicator.m */; };
 		BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */; };
 		BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6A1899F8AF00992093 /* Foundation.framework */; };
 		BEE1CA6D1899F8AF00992093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */; };
@@ -69,6 +70,8 @@
 		BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYResultMovieCell.m; path = MovieMood/SKYResultMovieCell.m; sourceTree = "<group>"; };
 		BE963005189E19EA004968D0 /* SKYMovieRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYMovieRequests.h; path = ../SKYMovieRequests.h; sourceTree = "<group>"; };
 		BE963006189E19EA004968D0 /* SKYMovieRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYMovieRequests.m; path = ../SKYMovieRequests.m; sourceTree = "<group>"; };
+		BE963008189E3E17004968D0 /* SKYActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYActivityIndicator.h; sourceTree = "<group>"; };
+		BE963009189E3E17004968D0 /* SKYActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYActivityIndicator.m; sourceTree = "<group>"; };
 		BED5AF09189AC9CE00ABF4EC /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		BEE1CA671899F8AF00992093 /* MovieMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +161,8 @@
 		BEE1CA5E1899F8AF00992093 = {
 			isa = PBXGroup;
 			children = (
+				BE963008189E3E17004968D0 /* SKYActivityIndicator.h */,
+				BE963009189E3E17004968D0 /* SKYActivityIndicator.m */,
 				C15BE3B5189AD23E006FC7C3 /* JLTMDbClient */,
 				BEE1CA721899F8AF00992093 /* MovieMood */,
 				BEE1CA8F1899F8AF00992093 /* MovieMoodTests */,
@@ -444,6 +449,7 @@
 			files = (
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
 				C16F56EA189DCF52009F71AB /* TLAlertView.m in Sources */,
+				BE96300A189E3E17004968D0 /* SKYActivityIndicator.m in Sources */,
 				BE963007189E19EA004968D0 /* SKYMovieRequests.m in Sources */,
 				BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */,
 				BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */,
