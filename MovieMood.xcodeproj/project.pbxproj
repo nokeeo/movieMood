@@ -35,6 +35,9 @@
 		C16624E2189C72600086F00C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E1189C72600086F00C /* smile.png */; };
 		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
 		C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */; };
+		C16F56E4189DCF26009F71AB /* SKYFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16F56E3189DCF26009F71AB /* SKYFlipsideViewController.m */; };
+		C16F56E7189DCF42009F71AB /* SKYMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16F56E6189DCF42009F71AB /* SKYMovieViewController.m */; };
+		C16F56EA189DCF52009F71AB /* TLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C16F56E9189DCF52009F71AB /* TLAlertView.m */; };
 		C1A2CEBC189D39A400FDE503 /* TLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A2CEBB189D39A400FDE503 /* TLAlertView.m */; };
 		C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEBD189D934B00FDE503 /* smiles.png */; };
 		C1A2CEC6189DB54600FDE503 /* G.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEBF189DB54600FDE503 /* G.png */; };
@@ -101,6 +104,12 @@
 		C16624E1189C72600086F00C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		C16624E3189C76030086F00C /* bucket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucket.png; sourceTree = "<group>"; };
 		C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SkyApps_143x59.png; sourceTree = "<group>"; };
+		C16F56E2189DCF26009F71AB /* SKYFlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYFlipsideViewController.h; path = MovieMood/SKYFlipsideViewController.h; sourceTree = "<group>"; };
+		C16F56E3189DCF26009F71AB /* SKYFlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYFlipsideViewController.m; path = MovieMood/SKYFlipsideViewController.m; sourceTree = "<group>"; };
+		C16F56E5189DCF42009F71AB /* SKYMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYMovieViewController.h; path = MovieMood/SKYMovieViewController.h; sourceTree = "<group>"; };
+		C16F56E6189DCF42009F71AB /* SKYMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYMovieViewController.m; path = MovieMood/SKYMovieViewController.m; sourceTree = "<group>"; };
+		C16F56E8189DCF52009F71AB /* TLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLAlertView.h; path = MovieMood/TLAlertView.h; sourceTree = "<group>"; };
+		C16F56E9189DCF52009F71AB /* TLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLAlertView.m; path = MovieMood/TLAlertView.m; sourceTree = "<group>"; };
 		C1A2CEBA189D39A400FDE503 /* TLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAlertView.h; sourceTree = "<group>"; };
 		C1A2CEBB189D39A400FDE503 /* TLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAlertView.m; sourceTree = "<group>"; };
 		C1A2CEBD189D934B00FDE503 /* smiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiles.png; sourceTree = "<group>"; };
@@ -273,6 +282,10 @@
 				C11D129A189C538600A2B84F /* SKYIntroViewController.m */,
 				BE94F127189CD71C006BAE45 /* SKYMovieViewController.h */,
 				BE94F128189CD71C006BAE45 /* SKYMovieViewController.m */,
+				C16F56E5189DCF42009F71AB /* SKYMovieViewController.h */,
+				C16F56E6189DCF42009F71AB /* SKYMovieViewController.m */,
+				C16F56E2189DCF26009F71AB /* SKYFlipsideViewController.h */,
+				C16F56E3189DCF26009F71AB /* SKYFlipsideViewController.m */,
 				C1A2CF12189DBDEE00FDE503 /* SKYFlipsideViewController.h */,
 				C1A2CF13189DBDEE00FDE503 /* SKYFlipsideViewController.m */,
 			);
@@ -283,6 +296,8 @@
 		C192F1FF189B3E3B00F5A00D /* ViewLayouts */ = {
 			isa = PBXGroup;
 			children = (
+				C16F56E8189DCF52009F71AB /* TLAlertView.h */,
+				C16F56E9189DCF52009F71AB /* TLAlertView.m */,
 				C1A2CEBA189D39A400FDE503 /* TLAlertView.h */,
 				C1A2CEBB189D39A400FDE503 /* TLAlertView.m */,
 				BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */,
@@ -438,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
+				C16F56EA189DCF52009F71AB /* TLAlertView.m in Sources */,
 				BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */,
 				BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */,
 				BE94F129189CD71C006BAE45 /* SKYMovieViewController.m in Sources */,
@@ -446,8 +462,10 @@
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
 				C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */,
+				C16F56E7189DCF42009F71AB /* SKYMovieViewController.m in Sources */,
 				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
 				C1A2CF14189DBDEE00FDE503 /* SKYFlipsideViewController.m in Sources */,
+				C16F56E4189DCF26009F71AB /* SKYFlipsideViewController.m in Sources */,
 				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
 				BEE1CA791899F8AF00992093 /* main.m in Sources */,
 				C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */,
