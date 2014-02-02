@@ -47,6 +47,7 @@
 		C1A2CECA189DB54600FDE503 /* PG.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC3189DB54600FDE503 /* PG.png */; };
 		C1A2CECB189DB54600FDE503 /* R.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC4189DB54600FDE503 /* R.png */; };
 		C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC5189DB54600FDE503 /* Unrated.png */; };
+		C1F3D0FD189E9A64009EBCB3 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3D0FC189E9A64009EBCB3 /* AutoScrollLabel.m */; };
 		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,8 @@
 		C1A2CEC3189DB54600FDE503 /* PG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PG.png; sourceTree = "<group>"; };
 		C1A2CEC4189DB54600FDE503 /* R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R.png; sourceTree = "<group>"; };
 		C1A2CEC5189DB54600FDE503 /* Unrated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unrated.png; sourceTree = "<group>"; };
+		C1F3D0FB189E9A64009EBCB3 /* AutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
+		C1F3D0FC189E9A64009EBCB3 /* AutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
 		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +200,8 @@
 		BEE1CA721899F8AF00992093 /* MovieMood */ = {
 			isa = PBXGroup;
 			children = (
+				C1F3D0FB189E9A64009EBCB3 /* AutoScrollLabel.h */,
+				C1F3D0FC189E9A64009EBCB3 /* AutoScrollLabel.m */,
 				BE963005189E19EA004968D0 /* SKYMovieRequests.h */,
 				BE963006189E19EA004968D0 /* SKYMovieRequests.m */,
 				C16624E0189C71010086F00C /* Images */,
@@ -457,6 +462,7 @@
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
 				C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */,
+				C1F3D0FD189E9A64009EBCB3 /* AutoScrollLabel.m in Sources */,
 				C16F56E7189DCF42009F71AB /* SKYMovieViewController.m in Sources */,
 				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
 				C16F56E4189DCF26009F71AB /* SKYFlipsideViewController.m in Sources */,

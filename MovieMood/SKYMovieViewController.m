@@ -10,11 +10,12 @@
 #import "JLTMDbClient.h"
 #import "TLAlertView.h"
 #import "SKYActivityIndicator.h"
+#import "AutoScrollLabel.h"
 #import "SKYColorAnalyser.h"
 
 @interface SKYMovieViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
-@property (weak, nonatomic) IBOutlet UILabel *movieTitle;
+@property (weak, nonatomic) IBOutlet AutoScrollLabel *movieTitle;
 @property (weak, nonatomic) IBOutlet UILabel *releaseDate;
 @property (weak, nonatomic) IBOutlet UILabel *runtime;
 @property (weak, nonatomic) IBOutlet UILabel *ratingOutOfTen;
@@ -97,7 +98,9 @@
             NSDateComponents* components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:released];
             self.releaseDate.text = [NSString stringWithFormat:@"%d", (int)[components year]];
             self.runtime.text = [NSString stringWithFormat:@"%@ %@", [_movieData objectForKey:@"runtime"], @"minutes"];
-            self.ratingOutOfTen.text = [NSString stringWithFormat:@"%@/%@",[_movieData objectForKey:@"vote_average"], @"10"];
+            NSString* rating = [_movieData objectForKey:@"vote_average"];
+            NSString* truncRating =  rating; //[rating substringToIndex:2];
+            self.ratingOutOfTen.text = [NSString stringWithFormat:@"%@/10",truncRating];
             self.description.text = [_movieData objectForKey:@"overview"];
             self.description.selectable = NO;
             

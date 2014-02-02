@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2Kf-dC-obl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2Kf-dC-obl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -16,30 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-r1-j2q" userLabel="smilePile - smiles.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-r1-j2q" userLabel="smilePile - smiles.png">
                                 <rect key="frame" x="0.0" y="135" width="320" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="gId-8R-Mwo"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bucket.png" translatesAutoresizingMaskIntoConstraints="NO" id="MpC-PY-AR6" userLabel="bucket - bucket.png">
-                                <rect key="frame" x="0.0" y="250" width="320" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bucket.png" translatesAutoresizingMaskIntoConstraints="NO" id="MpC-PY-AR6" userLabel="bucket - bucket.png">
+                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkyApps_143x59.png" translatesAutoresizingMaskIntoConstraints="NO" id="q8t-8U-yzn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SkyApps_143x59.png" translatesAutoresizingMaskIntoConstraints="NO" id="q8t-8U-yzn">
                                 <rect key="frame" x="110" y="477" width="100" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES"/>
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="8xc-ic-GIo"/>
+                                    <constraint firstAttribute="width" constant="100" id="vOC-Zs-LNG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.19607843137254902" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MpC-PY-AR6" firstAttribute="trailing" secondItem="fdB-r1-j2q" secondAttribute="trailing" id="C1P-Sz-z0U"/>
+                            <constraint firstItem="fdB-r1-j2q" firstAttribute="leading" secondItem="FGq-WP-9kD" secondAttribute="leading" id="DuH-kY-i7Y"/>
+                            <constraint firstItem="MpC-PY-AR6" firstAttribute="leading" secondItem="fdB-r1-j2q" secondAttribute="leading" id="HZF-e2-Gwo"/>
+                            <constraint firstItem="iw1-W6-X9F" firstAttribute="top" secondItem="MpC-PY-AR6" secondAttribute="bottom" id="IVi-6f-6fC"/>
+                            <constraint firstItem="iw1-W6-X9F" firstAttribute="top" secondItem="q8t-8U-yzn" secondAttribute="bottom" constant="20" id="JM0-Pm-gdE"/>
+                            <constraint firstItem="MpC-PY-AR6" firstAttribute="top" secondItem="XQs-Xl-8qH" secondAttribute="bottom" constant="228" id="UiN-dE-5Ms"/>
+                            <constraint firstItem="q8t-8U-yzn" firstAttribute="centerX" secondItem="MpC-PY-AR6" secondAttribute="centerX" id="pLH-Y8-qrK"/>
+                            <constraint firstItem="fdB-r1-j2q" firstAttribute="top" secondItem="XQs-Xl-8qH" secondAttribute="bottom" constant="115" id="qbm-vg-dmm"/>
+                            <constraint firstAttribute="trailing" secondItem="MpC-PY-AR6" secondAttribute="trailing" id="zRF-S4-xW0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="smilePile" destination="fdB-r1-j2q" id="hr2-bN-ReF"/>
@@ -226,15 +244,6 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                     <constraint firstAttribute="height" constant="164" id="hAn-jH-mBb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J40-3H-XZb">
-                                <rect key="frame" x="20" y="237" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="S4v-5Z-yj0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7U-gm-8bm">
                                 <rect key="frame" x="77" y="266" width="101" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -261,7 +270,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
-                                <rect key="frame" x="20" y="296" width="280" height="272"/>
+                                <rect key="frame" x="20" y="296" width="300" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
@@ -274,30 +283,25 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                     <constraint firstAttribute="width" constant="46" id="v3D-DL-QH8"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjC-2G-4F1" customClass="AutoScrollLabel">
+                                <rect key="frame" x="20" y="237" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="L7J-NJ-qIJ" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" id="39I-TI-5qR"/>
                             <constraint firstItem="hmd-KZ-sKX" firstAttribute="top" secondItem="oxb-oz-Al8" secondAttribute="bottom" constant="8" symbolic="YES" id="3cM-nq-8Il"/>
-                            <constraint firstItem="z7U-gm-8bm" firstAttribute="top" secondItem="J40-3H-XZb" secondAttribute="bottom" constant="8" symbolic="YES" id="63R-nI-29V"/>
                             <constraint firstItem="z7U-gm-8bm" firstAttribute="leading" secondItem="oxb-oz-Al8" secondAttribute="trailing" constant="8" symbolic="YES" id="A65-IK-ocg"/>
                             <constraint firstItem="nd1-gQ-jUa" firstAttribute="leading" secondItem="8XF-ce-40t" secondAttribute="trailing" constant="8" symbolic="YES" id="AVa-jF-7wI"/>
                             <constraint firstItem="iSa-Ou-elA" firstAttribute="top" secondItem="hmd-KZ-sKX" secondAttribute="bottom" id="BXw-Ie-dT7"/>
-                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="top" secondItem="Cz5-JT-WHh" secondAttribute="bottom" constant="45" id="Bl5-3j-sUx"/>
+                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="top" secondItem="Cz5-JT-WHh" secondAttribute="bottom" constant="1" id="Bl5-3j-sUx"/>
                             <constraint firstItem="z7U-gm-8bm" firstAttribute="baseline" secondItem="oxb-oz-Al8" secondAttribute="baseline" id="CDR-Ig-5EI"/>
                             <constraint firstItem="hmd-KZ-sKX" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="EKd-9D-yrz"/>
                             <constraint firstItem="hmd-KZ-sKX" firstAttribute="top" secondItem="nd1-gQ-jUa" secondAttribute="bottom" constant="4" id="NqD-5h-Dr1"/>
-                            <constraint firstItem="J40-3H-XZb" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="anZ-K7-64n"/>
-                            <constraint firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" constant="20" id="bhw-1v-zGq"/>
-                            <constraint firstItem="J40-3H-XZb" firstAttribute="top" secondItem="L7J-NJ-qIJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bsb-3C-mlh"/>
-                            <constraint firstItem="J40-3H-XZb" firstAttribute="trailing" secondItem="nd1-gQ-jUa" secondAttribute="trailing" id="iWP-ju-kaO"/>
+                            <constraint firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" id="bhw-1v-zGq"/>
                             <constraint firstItem="8XF-ce-40t" firstAttribute="leading" secondItem="z7U-gm-8bm" secondAttribute="trailing" constant="8" symbolic="YES" id="lM9-OG-gsX"/>
-                            <constraint firstItem="nd1-gQ-jUa" firstAttribute="top" secondItem="J40-3H-XZb" secondAttribute="bottom" constant="8" symbolic="YES" id="nB7-I3-sAp"/>
-                            <constraint firstItem="oxb-oz-Al8" firstAttribute="top" secondItem="J40-3H-XZb" secondAttribute="bottom" constant="8" symbolic="YES" id="pjS-Ud-PL1"/>
-                            <constraint firstItem="8XF-ce-40t" firstAttribute="top" secondItem="J40-3H-XZb" secondAttribute="bottom" constant="8" symbolic="YES" id="t23-GD-uNV"/>
                             <constraint firstItem="oxb-oz-Al8" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="tWC-2k-Sad"/>
-                            <constraint firstItem="J40-3H-XZb" firstAttribute="centerX" secondItem="L7J-NJ-qIJ" secondAttribute="centerX" id="vbL-g6-XUY"/>
-                            <constraint firstAttribute="trailing" secondItem="J40-3H-XZb" secondAttribute="trailing" constant="20" id="wEK-qD-Lym"/>
                             <constraint firstItem="z7U-gm-8bm" firstAttribute="baseline" secondItem="8XF-ce-40t" secondAttribute="baseline" id="wzV-AY-5DI"/>
                         </constraints>
                     </view>
@@ -305,7 +309,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                     <connections>
                         <outlet property="description" destination="hmd-KZ-sKX" id="1kD-pB-U1H"/>
                         <outlet property="headerImage" destination="L7J-NJ-qIJ" id="fig-gO-sMo"/>
-                        <outlet property="movieTitle" destination="J40-3H-XZb" id="EB6-6J-UpP"/>
+                        <outlet property="movieTitle" destination="yjC-2G-4F1" id="1iv-hV-vg6"/>
                         <outlet property="rating" destination="nd1-gQ-jUa" id="SNO-iG-L0d"/>
                         <outlet property="ratingOutOfTen" destination="8XF-ce-40t" id="xM7-RI-Ric"/>
                         <outlet property="releaseDate" destination="oxb-oz-Al8" id="1au-Fr-zxQ"/>
