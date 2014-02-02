@@ -24,7 +24,7 @@
 		label[i] = [[UILabel alloc] init];
 		label[i].textColor = [UIColor blackColor];
 		label[i].backgroundColor = [UIColor clearColor];
-        label[i].font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18];
+        label[i].font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20];
 		[self addSubview:label[i]];
 	}
 	
