@@ -90,11 +90,12 @@
     else if([[segue identifier] isEqualToString:@"InfoSegue"]){
         UIViewController *nextVC = [segue destinationViewController];
         
-        _infoPage = [[SKYInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-        
-        NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
-        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
-        [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        if(!_infoPage) {
+            _infoPage = [[SKYInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+            NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
+            [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
+            [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        }
         
         [nextVC.view addSubview:_infoPage.view];
     }
