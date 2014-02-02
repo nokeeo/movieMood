@@ -115,14 +115,19 @@
     for(id genreCode in colorProps) {
         float currentProp = [[colorProps objectForKey:genreCode] floatValue];
         int numberOfMovies = floor(currentProp * 20);
-        NSArray *currentMovieResponses = [sourceList objectForKey: genreCode];
-        int numberOfResponses = [currentMovieResponses count];
-        
-        for(int i = 0; i < numberOfMovies; i++) {
-            int randomIndex = arc4random() % numberOfResponses;
-            while([movies containsObject:[currentMovieResponses objectAtIndex:randomIndex]])
-                randomIndex = arc4random() % numberOfResponses;
-            [movies addObject:[currentMovieResponses objectAtIndex:randomIndex]];
+        NSLog(@"%@ %@", colorProps, sourceList);
+        NSMutableArray *currentMovieResponses = [[NSMutableArray alloc] initWithArray:[sourceList objectForKey: genreCode]];
+        for(int i = 0; (i < numberOfMovies) && ([currentMovieResponses count] != 0); i++) {
+            int randomIndex = arc4random() % [currentMovieResponses count];
+            while([_movieSource containsObject:[currentMovieResponses objectAtIndex:randomIndex]] || [movies containsObject:[currentMovieResponses objectAtIndex:randomIndex]]) {
+                [currentMovieResponses removeObjectAtIndex:randomIndex];
+                if([currentMovieResponses count] == 0)
+                    break;
+                else
+                    randomIndex = arc4random() % [currentMovieResponses count];
+            }
+            if([currentMovieResponses count] != 0)
+                [movies addObject:[currentMovieResponses objectAtIndex:randomIndex]];
         }
     }
     return movies;
@@ -140,7 +145,7 @@
                 _currentPageNumber++;
                 _refresing = NO;
             } failCallBack:^(NSError *error) {
-                _refresing = NO;
+                NSLog(@"error");
             }];
             _refresing = YES;
         }
