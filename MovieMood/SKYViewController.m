@@ -70,13 +70,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    [searchBar resignFirstResponder];
-    //results = [self getMoviesByGenre:searchBar.text];
-    [self performSegueWithIdentifier: @"ShowResults" sender: self];
-}
-
 -(void)colorDidChange:(id) sender {
     _contentScrollView.alwaysBounceVertical = false;
     _contentScrollView.colorIndicator.backgroundColor = _contentScrollView.colorWheel.currentColor;

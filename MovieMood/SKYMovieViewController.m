@@ -98,9 +98,10 @@
             NSDateComponents* components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:released];
             self.releaseDate.text = [NSString stringWithFormat:@"%d", (int)[components year]];
             self.runtime.text = [NSString stringWithFormat:@"%@ %@", [_movieData objectForKey:@"runtime"], @"minutes"];
-            NSString* rating = [_movieData objectForKey:@"vote_average"];
-            NSString* truncRating =  rating; //[rating substringToIndex:2];
-            self.ratingOutOfTen.text = [NSString stringWithFormat:@"%@/10",truncRating];
+            NSString* rating = [NSString stringWithFormat:@"%@",[_movieData objectForKey:@"vote_average"]];
+            if ([rating length] > 3)
+                rating = [rating substringToIndex:3];
+            self.ratingOutOfTen.text = [NSString stringWithFormat:@"%@/10",rating];
             self.description.text = [_movieData objectForKey:@"overview"];
             self.description.selectable = NO;
             
