@@ -10,6 +10,7 @@
 #import "JLTMDbClient.h"
 #import "TLAlertView.h"
 #import "SKYActivityIndicator.h"
+#import "SKYColorAnalyser.h"
 
 @interface SKYMovieViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
@@ -31,6 +32,7 @@
 @synthesize movieId = _movieId;
 @synthesize movieData = _movieData;
 @synthesize activityIndicatorView = _activityIndicatorView;
+@synthesize selectedColor = _selectedColor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,6 +65,12 @@
     [_coverView addSubview:_activityIndicatorView];
     [self.view addSubview:_coverView];
     [_activityIndicatorView fadeInView];
+    
+    SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
+    UIColor *tintColor = [analyser tintColor:_selectedColor withTintConst: - .25];
+    self.navigationController.navigationBar.tintColor = tintColor;
+    _activityIndicatorView.activityIndicator.color = tintColor;
+    
     _movieData = [self getMovidWithId: _movieId];
 }
 

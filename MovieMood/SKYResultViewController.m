@@ -116,6 +116,7 @@
     if([segue.identifier isEqualToString:@"MovieDetail"]) {
         SKYMovieViewController *movieVC = segue.destinationViewController;
         movieVC.movieId = _selectedMovidId;
+        movieVC.selectedColor = _selectedColor;
     }
 }
 

@@ -58,6 +58,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fem-uU-XiH">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8EL-Ud-MRT">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="g5d-FV-OnJ" kind="relationship" relationship="rootViewController" id="0QW-7t-Rcm"/>
                     </connections>
@@ -162,7 +166,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="66" id="XrF-A6-J9Q" customClass="SKYResultMovieCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XrF-A6-J9Q" id="iQ1-LA-Zyg">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
@@ -324,6 +328,6 @@ Simply choose the color corresponding to your mood, tap the center of the color 
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Adf-KN-pL5"/>
+        <segue reference="0QW-7t-Rcm"/>
     </inferredMetricsTieBreakers>
 </document>
