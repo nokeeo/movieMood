@@ -106,98 +106,30 @@
                     </navigationItem>
                     <connections>
                         <segue destination="848-LE-X0u" kind="push" identifier="ShowResults" id="8H8-B1-c7B"/>
-                        <segue destination="AcE-I7-T4I" kind="modal" identifier="InfoSegue" modalTransitionStyle="partialCurl" id="iI2-8W-kqm"/>
+                        <segue destination="QjL-Jf-Lrp" kind="modal" identifier="InfoSegue" modalTransitionStyle="partialCurl" id="eub-zR-Uh3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPy-sV-N3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331" y="-23"/>
         </scene>
-        <!--Flipside View Controller-->
-        <scene sceneID="7AJ-jO-IPo">
+        <!--View Controller-->
+        <scene sceneID="gjw-Va-Bth">
             <objects>
-                <viewController id="h5p-cu-Dt0" customClass="SKYFlipsideViewController" sceneMemberID="viewController">
+                <viewController id="QjL-Jf-Lrp" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n3d-lU-QUS"/>
-                        <viewControllerLayoutGuide type="bottom" id="zWT-a0-OG4"/>
+                        <viewControllerLayoutGuide type="top" id="WBx-RE-Uir"/>
+                        <viewControllerLayoutGuide type="bottom" id="yhB-Xb-BEi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AwQ-cR-s64">
+                    <view key="view" contentMode="scaleToFill" id="6Ld-i5-BcW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byf-U0-ryY">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="jZH-LK-zFf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="c4e-s0-Qim">
-                                            <connections>
-                                                <segue destination="g5d-FV-OnJ" kind="modal" id="TPr-Iw-vIf"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCG-ZO-Vpo">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="BIq-yR-2SY">
-                                        <rect key="frame" x="20" y="49" width="280" height="222"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="222" id="4Us-71-ok3"/>
-                                        </constraints>
-                                        <string key="text">MovieMood is a new app from SkyApps, the makers of Packed, the Package Tracking app! With MovieMood, a movie to match your mood or the mood you want to be in is just a tap away!
-
-Simply choose the color corresponding to your mood, tap the center of the color selector, and MovieMood will handle the rest. Happy viewing!</string>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About MovieMood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbV-hX-3dR">
-                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="rVB-lH-SFQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="DbV-hX-3dR" secondAttribute="bottom" constant="463" id="7cZ-RF-Vtn"/>
-                                    <constraint firstItem="DbV-hX-3dR" firstAttribute="leading" secondItem="gCG-ZO-Vpo" secondAttribute="leading" constant="20" symbolic="YES" id="AST-ve-GKs"/>
-                                    <constraint firstItem="BIq-yR-2SY" firstAttribute="trailing" secondItem="DbV-hX-3dR" secondAttribute="trailing" id="VHr-eO-d0V"/>
-                                    <constraint firstAttribute="trailing" secondItem="DbV-hX-3dR" secondAttribute="trailing" constant="20" symbolic="YES" id="bbH-Ov-a4X"/>
-                                    <constraint firstItem="DbV-hX-3dR" firstAttribute="centerX" secondItem="gCG-ZO-Vpo" secondAttribute="centerX" id="m2Z-1W-au3"/>
-                                    <constraint firstItem="BIq-yR-2SY" firstAttribute="top" secondItem="DbV-hX-3dR" secondAttribute="bottom" constant="8" symbolic="YES" id="rau-nJ-C9T"/>
-                                    <constraint firstItem="DbV-hX-3dR" firstAttribute="top" secondItem="gCG-ZO-Vpo" secondAttribute="top" constant="20" symbolic="YES" id="tbq-Kj-g5O"/>
-                                    <constraint firstItem="BIq-yR-2SY" firstAttribute="leading" secondItem="DbV-hX-3dR" secondAttribute="leading" id="vBi-vV-rTD"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="n3d-lU-QUS" firstAttribute="top" secondItem="Byf-U0-ryY" secondAttribute="bottom" constant="-44" id="1Bv-Mj-QB3"/>
-                            <constraint firstItem="Byf-U0-ryY" firstAttribute="leading" secondItem="AwQ-cR-s64" secondAttribute="leading" id="7Rp-Wg-9ya"/>
-                            <constraint firstItem="gCG-ZO-Vpo" firstAttribute="top" secondItem="Byf-U0-ryY" secondAttribute="bottom" id="Eqh-gb-J3x"/>
-                            <constraint firstAttribute="bottom" secondItem="gCG-ZO-Vpo" secondAttribute="bottom" id="ILO-aU-BMx"/>
-                            <constraint firstItem="gCG-ZO-Vpo" firstAttribute="trailing" secondItem="Byf-U0-ryY" secondAttribute="trailing" id="Tob-9e-tu7"/>
-                            <constraint firstItem="gCG-ZO-Vpo" firstAttribute="leading" secondItem="Byf-U0-ryY" secondAttribute="leading" id="p7k-YF-uhU"/>
-                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="isn-1W-lfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epi-vb-Jgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="738"/>
-        </scene>
-        <!--Info View Controller-->
-        <scene sceneID="PcC-qU-GP4">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="AcE-I7-T4I" customClass="SKYInfoViewController" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G5f-AK-yPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="768" y="738"/>
+            <point key="canvasLocation" x="744" y="660"/>
         </scene>
         <!--Result View Controller - Results-->
         <scene sceneID="aee-8a-ch1">
@@ -209,7 +141,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="66" id="XrF-A6-J9Q" customClass="SKYResultMovieCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XrF-A6-J9Q" id="iQ1-LA-Zyg">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
@@ -269,13 +201,13 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                     <constraint firstAttribute="height" constant="164" id="hAn-jH-mBb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7U-gm-8bm">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7U-gm-8bm">
                                 <rect key="frame" x="77" y="266" width="101" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XF-ce-40t">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XF-ce-40t">
                                 <rect key="frame" x="186" y="266" width="60" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -284,7 +216,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-oz-Al8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-oz-Al8">
                                 <rect key="frame" x="20" y="266" width="49" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -294,7 +226,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
                                 <rect key="frame" x="20" y="296" width="300" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -304,7 +236,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-gQ-jUa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-gQ-jUa">
                                 <rect key="frame" x="254" y="266" width="46" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -370,7 +302,4 @@ Simply choose the color corresponding to your mood, tap the center of the color 
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="TPr-Iw-vIf"/>
-    </inferredMetricsTieBreakers>
 </document>

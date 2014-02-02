@@ -12,11 +12,13 @@
 #import "SKYColorAnalyser.h"
 #import "TLAlertView.h"
 #import "SKYInfoViewController.h"
+#import "SKYInfoViewController.h"
 
 @interface SKYViewController ()
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
 @property (nonatomic, retain) SKYColorPickerScrollView *contentScrollView;
 @property (nonatomic, retain) NSDictionary *currentPorps;
+@property (nonatomic, retain) SKYInfoViewController *infoPage;
 @end
 
 @implementation SKYViewController {
@@ -86,12 +88,15 @@
     }
     
     else if([[segue identifier] isEqualToString:@"InfoSegue"]){
-        SKYInfoViewController *nextVC = [segue destinationViewController];
+        UIViewController *nextVC = [segue destinationViewController];
+        
+        _infoPage = [[SKYInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
         
         NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
         [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
-        [nextVC setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         
+        [nextVC.view addSubview:_infoPage.view];
     }
 }
 
