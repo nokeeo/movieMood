@@ -9,24 +9,31 @@
 #import "SKYResultViewController.h"
 #import "SKYResultMovieCell.h"
 #import "SKYMovieViewController.h"
+#import "SKYMovieRequests.h"
 
 @interface SKYResultViewController ()
-@property NSString *selectedMovidId;
-@property NSMutableDictionary *imageCache;
+@property (nonatomic, retain) NSString *selectedMovidId;
+@property (nonatomic, retain) NSMutableDictionary *imageCache;
+@property (nonatomic, retain) NSMutableArray *movieSource;
+@property int currentPageNumber;
+@property bool refresing;
 @end
 
 @implementation SKYResultViewController {
 }
 
+@synthesize movieProps = _movieProps;
 @synthesize movieSource = _movieSource;
 @synthesize selectedMovidId = _selectedMovidId;
 @synthesize imageCache = _imageCache;
+@synthesize refresing = _refresing;
+@synthesize currentPageNumber = _currentPageNumber;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -34,7 +41,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _currentPageNumber = 1;
+    _refresing = NO;
     _imageCache = [[NSMutableDictionary alloc] init];
+    
+    [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
+        _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
+        [self.tableView reloadData];
+    } failCallBack:^(NSError *error) {
+    }];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -91,6 +107,43 @@
     if([segue.identifier isEqualToString:@"MovieDetail"]) {
         SKYMovieViewController *movieVC = segue.destinationViewController;
         movieVC.movieId = _selectedMovidId;
+    }
+}
+
+-(NSArray *) createListWithProps:(NSDictionary *) colorProps withSourceLists:(NSDictionary *) sourceList {
+    NSMutableArray *movies = [[NSMutableArray alloc] init];
+    for(id genreCode in colorProps) {
+        float currentProp = [[colorProps objectForKey:genreCode] floatValue];
+        int numberOfMovies = floor(currentProp * 20);
+        NSArray *currentMovieResponses = [sourceList objectForKey: genreCode];
+        int numberOfResponses = [currentMovieResponses count];
+        
+        for(int i = 0; i < numberOfMovies; i++) {
+            int randomIndex = arc4random() % numberOfResponses;
+            while([movies containsObject:[currentMovieResponses objectAtIndex:randomIndex]])
+                randomIndex = arc4random() % numberOfResponses;
+            [movies addObject:[currentMovieResponses objectAtIndex:randomIndex]];
+        }
+    }
+    return movies;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(_movieSource != 0) {
+        CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
+        NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
+        if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
+            [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
+                NSArray *newMovies = [self createListWithProps:_movieProps withSourceLists:requestResponse];
+                [_movieSource addObjectsFromArray:newMovies];
+                [self.tableView reloadData];
+                _currentPageNumber++;
+                _refresing = NO;
+            } failCallBack:^(NSError *error) {
+                _refresing = NO;
+            }];
+            _refresing = YES;
+        }
     }
 }
 

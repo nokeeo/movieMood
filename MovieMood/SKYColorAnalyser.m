@@ -300,6 +300,6 @@
     degreeValue += 215;
     degreeValue = fmod(degreeValue, 360);
     
-    return [UIColor colorWithHue:degreeValue / 360 saturation:saturation brightness:brightness alpha:1.f];
+    return [UIColor colorWithHue:degreeValue / 360 saturation:saturation brightness:brightness - .3 alpha:1.f];
 }
 @end

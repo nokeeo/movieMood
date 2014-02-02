@@ -14,10 +14,8 @@
 
 @interface SKYViewController ()
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
-@property (nonatomic, retain) NSArray *moviesForColor;
 @property (nonatomic, retain) SKYColorPickerScrollView *contentScrollView;
-@property int requestsSent;
-@property int requestsRecieved;
+@property (nonatomic, retain) NSDictionary *currentPorps;
 @end
 
 @implementation SKYViewController {
@@ -26,9 +24,9 @@
 }
 
 @synthesize colorAnalyser = _colorAnalyser;
-@synthesize requestsRecieved = _requestsRecieved;
-@synthesize requestsSent = _requestsSent;
 @synthesize contentScrollView = _contentScrollView;
+@synthesize currentPorps = _currentPorps;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,15 +41,15 @@
 {
     [super viewDidLoad];
     
-    _requestsSent = 0;
-    _requestsRecieved = 0;
+    CGSize size = self.view.bounds.size;
     
-	CGSize size = self.view.bounds.size;
     _contentScrollView = [[SKYColorPickerScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
                                                                         self.view.bounds.origin.y,
                                                                         size.width,
                                                                         size.height)];
     _contentScrollView.colorViewDelegate = self;
+    _contentScrollView.delegate = self;
+    
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
     [self.view addSubview:_contentScrollView];
 
@@ -71,13 +69,11 @@
 }
 
 - (NSDictionary*)getMoviesByGenre:(NSString *) genre callback:(void (^)(id requestResponse))sucessCallback {
-    _requestsSent++;
     
     __block NSDictionary* fetchedData = [[NSDictionary alloc] init];
     __block TLAlertView *errorAlertView = [[TLAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") buttonTitle:NSLocalizedString(@"OK",@"")];
     [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre} andResponseBlock:^(id response, NSError *error) {
         if(!error) {
-            _requestsRecieved++;
             sucessCallback([response objectForKey:@"results"]);
         }
         else
@@ -98,17 +94,14 @@
     if ([[segue identifier] isEqualToString:@"ShowResults"])
     {
         SKYResultViewController* resultVC = [segue destinationViewController];
-        resultVC.movieSource = _moviesForColor;
+        resultVC.movieProps = _currentPorps;
     }
 }
 
 -(void)selectButtonPressed:(id)sender {
-    __block UIActivityIndicatorView* progress = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    progress.hidesWhenStopped = YES;
-    [progress startAnimating];
-    NSDictionary *colorProps = [_colorAnalyser analyzeColor: _contentScrollView.colorWheel.currentColor];
-    NSMutableDictionary *searchResults = [[NSMutableDictionary alloc] init];
-    for(id key in colorProps) {
+    _currentPorps = [_colorAnalyser analyzeColor: _contentScrollView.colorWheel.currentColor];
+    [self performSegueWithIdentifier:@"ShowResults" sender:self];
+    /*for(id key in colorProps) {
         [self getMoviesByGenre: key callback:^(id requestResponse) {
             [searchResults setObject:requestResponse forKey: key];
             
@@ -127,11 +120,10 @@
                     }
                 }
                 _moviesForColor = movies;
-                [progress stopAnimating];
                 [self performSegueWithIdentifier:@"ShowResults" sender:self];
             }
         }];
-    }
-    [progress stopAnimating];
+    
+    }*/
 }
 @end

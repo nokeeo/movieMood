@@ -10,6 +10,5 @@
 #import "ISColorWheel.h"
 #import "SKYColorPickerScrollView.h"
 
-@interface SKYViewController : UIViewController <ColorPickerViewProtocol>
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface SKYViewController : UIViewController <ColorPickerViewProtocol, UIScrollViewDelegate>
 @end
