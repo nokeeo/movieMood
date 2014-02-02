@@ -124,15 +124,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About MovieMood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbV-hX-3dR">
-                                <rect key="frame" x="20" y="76" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rVB-lH-SFQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byf-U0-ryY">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -140,33 +131,58 @@
                                     <navigationItem id="jZH-LK-zFf">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="c4e-s0-Qim">
                                             <connections>
-                                                <segue destination="g5d-FV-OnJ" kind="modal" id="Adf-KN-pL5"/>
+                                                <segue destination="g5d-FV-OnJ" kind="modal" id="TPr-Iw-vIf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="BIq-yR-2SY">
-                                <rect key="frame" x="20" y="105" width="280" height="222"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">MovieMood is a new app from SkyApps, the makers of Packed, the Package Tracking app! With MovieMood, a movie to match your mood or the mood you want to be in is just a tap away!
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCG-ZO-Vpo">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="BIq-yR-2SY">
+                                        <rect key="frame" x="20" y="49" width="280" height="222"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="222" id="4Us-71-ok3"/>
+                                        </constraints>
+                                        <string key="text">MovieMood is a new app from SkyApps, the makers of Packed, the Package Tracking app! With MovieMood, a movie to match your mood or the mood you want to be in is just a tap away!
 
 Simply choose the color corresponding to your mood, tap the center of the color selector, and MovieMood will handle the rest. Happy viewing!</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About MovieMood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbV-hX-3dR">
+                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="rVB-lH-SFQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DbV-hX-3dR" secondAttribute="bottom" constant="463" id="7cZ-RF-Vtn"/>
+                                    <constraint firstItem="DbV-hX-3dR" firstAttribute="leading" secondItem="gCG-ZO-Vpo" secondAttribute="leading" constant="20" symbolic="YES" id="AST-ve-GKs"/>
+                                    <constraint firstItem="BIq-yR-2SY" firstAttribute="trailing" secondItem="DbV-hX-3dR" secondAttribute="trailing" id="VHr-eO-d0V"/>
+                                    <constraint firstAttribute="trailing" secondItem="DbV-hX-3dR" secondAttribute="trailing" constant="20" symbolic="YES" id="bbH-Ov-a4X"/>
+                                    <constraint firstItem="DbV-hX-3dR" firstAttribute="centerX" secondItem="gCG-ZO-Vpo" secondAttribute="centerX" id="m2Z-1W-au3"/>
+                                    <constraint firstItem="BIq-yR-2SY" firstAttribute="top" secondItem="DbV-hX-3dR" secondAttribute="bottom" constant="8" symbolic="YES" id="rau-nJ-C9T"/>
+                                    <constraint firstItem="DbV-hX-3dR" firstAttribute="top" secondItem="gCG-ZO-Vpo" secondAttribute="top" constant="20" symbolic="YES" id="tbq-Kj-g5O"/>
+                                    <constraint firstItem="BIq-yR-2SY" firstAttribute="leading" secondItem="DbV-hX-3dR" secondAttribute="leading" id="vBi-vV-rTD"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="n3d-lU-QUS" firstAttribute="top" secondItem="Byf-U0-ryY" secondAttribute="bottom" constant="-44" id="1Bv-Mj-QB3"/>
-                            <constraint firstItem="zWT-a0-OG4" firstAttribute="top" secondItem="BIq-yR-2SY" secondAttribute="bottom" constant="241" id="3hJ-6g-oRK"/>
                             <constraint firstItem="Byf-U0-ryY" firstAttribute="leading" secondItem="AwQ-cR-s64" secondAttribute="leading" id="7Rp-Wg-9ya"/>
-                            <constraint firstItem="DbV-hX-3dR" firstAttribute="top" secondItem="Byf-U0-ryY" secondAttribute="bottom" constant="12" id="C72-GY-xJO"/>
-                            <constraint firstItem="DbV-hX-3dR" firstAttribute="trailing" secondItem="BIq-yR-2SY" secondAttribute="trailing" id="NFz-or-SQh"/>
-                            <constraint firstItem="DbV-hX-3dR" firstAttribute="leading" secondItem="AwQ-cR-s64" secondAttribute="leading" constant="20" symbolic="YES" id="Phn-eh-BKy"/>
-                            <constraint firstItem="BIq-yR-2SY" firstAttribute="top" secondItem="DbV-hX-3dR" secondAttribute="bottom" constant="8" symbolic="YES" id="bR6-5c-Z6G"/>
-                            <constraint firstItem="BIq-yR-2SY" firstAttribute="leading" secondItem="DbV-hX-3dR" secondAttribute="leading" id="kEs-AW-lk0"/>
-                            <constraint firstItem="DbV-hX-3dR" firstAttribute="centerX" secondItem="Byf-U0-ryY" secondAttribute="centerX" id="wLP-20-MVW"/>
+                            <constraint firstItem="gCG-ZO-Vpo" firstAttribute="top" secondItem="Byf-U0-ryY" secondAttribute="bottom" id="Eqh-gb-J3x"/>
+                            <constraint firstAttribute="bottom" secondItem="gCG-ZO-Vpo" secondAttribute="bottom" id="ILO-aU-BMx"/>
+                            <constraint firstItem="gCG-ZO-Vpo" firstAttribute="trailing" secondItem="Byf-U0-ryY" secondAttribute="trailing" id="Tob-9e-tu7"/>
+                            <constraint firstItem="gCG-ZO-Vpo" firstAttribute="leading" secondItem="Byf-U0-ryY" secondAttribute="leading" id="p7k-YF-uhU"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -184,7 +200,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="66" id="XrF-A6-J9Q" customClass="SKYResultMovieCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XrF-A6-J9Q" id="iQ1-LA-Zyg">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
@@ -225,7 +241,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
             </objects>
             <point key="canvasLocation" x="737" y="-23"/>
         </scene>
-        <!--Movie View Controller-->
+        <!--Movie View Controller - Detail-->
         <scene sceneID="fAu-VA-hBO">
             <objects>
                 <viewController id="MJC-q8-mti" customClass="SKYMovieViewController" sceneMemberID="viewController">
@@ -237,7 +253,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
                                 <rect key="frame" x="0.0" y="65" width="320" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
@@ -273,6 +289,9 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                 <rect key="frame" x="20" y="296" width="300" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="272" id="agr-Tg-eqO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -283,29 +302,40 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                     <constraint firstAttribute="width" constant="46" id="v3D-DL-QH8"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjC-2G-4F1" customClass="AutoScrollLabel">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjC-2G-4F1" customClass="AutoScrollLabel">
                                 <rect key="frame" x="20" y="237" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" id="0Ga-Ee-ZnP"/>
                             <constraint firstItem="L7J-NJ-qIJ" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" id="39I-TI-5qR"/>
                             <constraint firstItem="hmd-KZ-sKX" firstAttribute="top" secondItem="oxb-oz-Al8" secondAttribute="bottom" constant="8" symbolic="YES" id="3cM-nq-8Il"/>
                             <constraint firstItem="z7U-gm-8bm" firstAttribute="leading" secondItem="oxb-oz-Al8" secondAttribute="trailing" constant="8" symbolic="YES" id="A65-IK-ocg"/>
                             <constraint firstItem="nd1-gQ-jUa" firstAttribute="leading" secondItem="8XF-ce-40t" secondAttribute="trailing" constant="8" symbolic="YES" id="AVa-jF-7wI"/>
+                            <constraint firstItem="oxb-oz-Al8" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" symbolic="YES" id="BUL-aF-5GR"/>
                             <constraint firstItem="iSa-Ou-elA" firstAttribute="top" secondItem="hmd-KZ-sKX" secondAttribute="bottom" id="BXw-Ie-dT7"/>
                             <constraint firstItem="L7J-NJ-qIJ" firstAttribute="top" secondItem="Cz5-JT-WHh" secondAttribute="bottom" constant="1" id="Bl5-3j-sUx"/>
                             <constraint firstItem="z7U-gm-8bm" firstAttribute="baseline" secondItem="oxb-oz-Al8" secondAttribute="baseline" id="CDR-Ig-5EI"/>
+                            <constraint firstItem="8XF-ce-40t" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" symbolic="YES" id="EAb-rn-xcL"/>
                             <constraint firstItem="hmd-KZ-sKX" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="EKd-9D-yrz"/>
+                            <constraint firstItem="z7U-gm-8bm" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" symbolic="YES" id="Hrk-p0-qX8"/>
                             <constraint firstItem="hmd-KZ-sKX" firstAttribute="top" secondItem="nd1-gQ-jUa" secondAttribute="bottom" constant="4" id="NqD-5h-Dr1"/>
+                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="centerX" secondItem="yjC-2G-4F1" secondAttribute="centerX" id="TBW-W7-aqm"/>
                             <constraint firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" id="bhw-1v-zGq"/>
+                            <constraint firstItem="yjC-2G-4F1" firstAttribute="leading" secondItem="oxb-oz-Al8" secondAttribute="leading" id="ePG-1v-Y5o"/>
+                            <constraint firstItem="yjC-2G-4F1" firstAttribute="top" secondItem="L7J-NJ-qIJ" secondAttribute="bottom" constant="8" symbolic="YES" id="gar-1D-h5g"/>
+                            <constraint firstItem="yjC-2G-4F1" firstAttribute="trailing" secondItem="nd1-gQ-jUa" secondAttribute="trailing" id="j0c-Wq-5Yl"/>
+                            <constraint firstItem="8XF-ce-40t" firstAttribute="baseline" secondItem="z7U-gm-8bm" secondAttribute="baseline" id="jdJ-qP-J1b"/>
                             <constraint firstItem="8XF-ce-40t" firstAttribute="leading" secondItem="z7U-gm-8bm" secondAttribute="trailing" constant="8" symbolic="YES" id="lM9-OG-gsX"/>
                             <constraint firstItem="oxb-oz-Al8" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="tWC-2k-Sad"/>
-                            <constraint firstItem="z7U-gm-8bm" firstAttribute="baseline" secondItem="8XF-ce-40t" secondAttribute="baseline" id="wzV-AY-5DI"/>
+                            <constraint firstItem="nd1-gQ-jUa" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" id="xeW-do-wPc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vdc-hD-ang"/>
+                    <navigationItem key="navigationItem" title="Detail" id="vdc-hD-ang">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="rr0-Aw-8uN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="description" destination="hmd-KZ-sKX" id="1kD-pB-U1H"/>
                         <outlet property="headerImage" destination="L7J-NJ-qIJ" id="fig-gO-sMo"/>
@@ -332,6 +362,6 @@ Simply choose the color corresponding to your mood, tap the center of the color 
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0QW-7t-Rcm"/>
+        <segue reference="TPr-Iw-vIf"/>
     </inferredMetricsTieBreakers>
 </document>
