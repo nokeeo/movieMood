@@ -68,10 +68,11 @@
             NSString* release = [_movieData objectForKey:@"release_date"];
             NSDate* released = [dateFormat dateFromString:release];
             NSDateComponents* components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:released];
-            self.releaseDate.text = [NSString stringWithFormat:@"%d", [components year]];
+            self.releaseDate.text = [NSString stringWithFormat:@"%d", (int)[components year]];
             self.runtime.text = [NSString stringWithFormat:@"%@ %@", [_movieData objectForKey:@"runtime"], @"minutes"];
             self.ratingOutOfTen.text = [NSString stringWithFormat:@"%@/%@",[_movieData objectForKey:@"vote_average"], @"10"];
             self.description.text = [_movieData objectForKey:@"overview"];
+            self.description.selectable = NO;
         } else
             [errorAlertView show];
     }];
@@ -81,9 +82,11 @@
             
             if ([[_movieData objectForKey:@"iso_3166_1"] isEqualToString:@"US"]) {
                 NSString* rating = [_movieData objectForKey:@"certification"];
+                rating = [rating isEqualToString:@""] ? @"Unrated" : rating;
                 UIImage* ratingImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", rating]];
                 self.rating.image = ratingImage;
-            }
+            } else
+                self.rating.image = [UIImage imageNamed:@"Unrated.png"];
             
         }
         else
