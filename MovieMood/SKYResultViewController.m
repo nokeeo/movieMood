@@ -48,6 +48,7 @@
     
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
         _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
+        [self cacheMovieImages:_movieSource];
         [self.tableView reloadData];
     } failCallBack:^(NSError *error) {
     }];
@@ -84,13 +85,7 @@
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     id currentMovie = [_movieSource objectAtIndex:indexPath.row];
-    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
-    
-    if(!currentImage) {
-        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[currentMovie valueForKey:@"poster_path"]]];
-        currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
-        [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
-    }
+    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", [currentMovie objectForKey:@"id"]]];
     
     cell.title.text = [currentMovie valueForKey:@"title"];
     cell.artwork.image = currentImage;
@@ -141,6 +136,7 @@
             [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
                 NSArray *newMovies = [self createListWithProps:_movieProps withSourceLists:requestResponse];
                 [_movieSource addObjectsFromArray:newMovies];
+                [self cacheMovieImages:newMovies];
                 [self.tableView reloadData];
                 _currentPageNumber++;
                 _refresing = NO;
@@ -148,6 +144,17 @@
                 NSLog(@"error");
             }];
             _refresing = YES;
+        }
+    }
+}
+
+-(void)cacheMovieImages:(NSArray *)movies {
+    for(id movie in movies) {
+        UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", [movie objectForKey:@"id"]]];
+        if(!currentImage) {
+            NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[movie valueForKey:@"poster_path"]]];
+            currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+            [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", [movie objectForKey:@"id"]]];
         }
     }
 }
