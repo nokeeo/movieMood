@@ -17,4 +17,6 @@
 @property (nonatomic, retain) UIView *colorIndicator;
 @property (nonatomic, retain) ISColorWheel *colorWheel;
 @property id colorViewDelegate;
+
+-(void) changeSelectButtonColorWithColor:(UIColor *) color;
 @end

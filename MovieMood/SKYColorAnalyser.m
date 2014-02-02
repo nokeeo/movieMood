@@ -5,7 +5,7 @@
 //  Created by Eric Lee on 1/30/14.
 //  Copyright (c) 2014 Sky Apps. All rights reserved.
 //
-
+#import <math.h>
 #import "SKYColorAnalyser.h"
 @interface SKYColorAnalyser()
 @property (nonatomic, retain) NSDictionary* genreIds;
@@ -287,5 +287,19 @@
         [finalProportions setObject:[NSNumber numberWithFloat:prop] forKey:genre];
     }
     return finalProportions;
+}
+
+-(UIColor *) calculateComplementaryWithColor:(UIColor *)originalColor {
+    CGFloat hue;
+    CGFloat saturation;
+    CGFloat brightness;
+    
+    [originalColor getHue:&hue saturation:&saturation brightness:&brightness alpha: nil];
+    
+    float degreeValue = 360 * hue;
+    degreeValue += 215;
+    degreeValue = fmod(degreeValue, 360);
+    
+    return [UIColor colorWithHue:degreeValue / 360 saturation:saturation brightness:brightness alpha:1.f];
 }
 @end

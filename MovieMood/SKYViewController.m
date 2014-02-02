@@ -75,13 +75,6 @@
     
     __block NSDictionary* fetchedData = [[NSDictionary alloc] init];
     __block TLAlertView *errorAlertView = [[TLAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") buttonTitle:NSLocalizedString(@"OK",@"")];
-    UIGravityBehavior *gravityBehaviour = [[UIGravityBehavior alloc] initWithItems:@[errorAlertView]];
-    gravityBehaviour.gravityDirection = CGVectorMake(0, 10);
-    [_animator addBehavior:gravityBehaviour];
-    
-    UIDynamicItemBehavior *itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:@[errorAlertView]];
-    [itemBehaviour addAngularVelocity:-M_PI_2 forItem:errorAlertView];
-    [_animator addBehavior:itemBehaviour];
     [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbGenreMovies withParameters:@{@"id":genre} andResponseBlock:^(id response, NSError *error) {
         if(!error) {
             _requestsRecieved++;
@@ -96,6 +89,8 @@
 -(void)colorDidChange:(id) sender {
     _contentScrollView.alwaysBounceVertical = false;
     _contentScrollView.colorIndicator.backgroundColor = _contentScrollView.colorWheel.currentColor;
+    UIColor *complement = [_colorAnalyser calculateComplementaryWithColor: _contentScrollView.colorWheel.currentColor];
+    [_contentScrollView changeSelectButtonColorWithColor: complement];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

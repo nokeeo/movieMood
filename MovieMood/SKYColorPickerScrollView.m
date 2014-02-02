@@ -9,6 +9,7 @@
 #import "SKYColorPickerScrollView.h"
 
 @interface SKYColorPickerScrollView() <ISColorWheelDelegate>
+@property (nonatomic, retain) UIButton *selectButton;
 @end
 
 @implementation SKYColorPickerScrollView
@@ -16,6 +17,7 @@
 @synthesize colorIndicator = _colorIndicator;
 @synthesize colorWheel = _colorWheel;
 @synthesize colorViewDelegate = _colorViewDelegate;
+@synthesize selectButton = _selectButton;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -53,18 +55,18 @@
         _colorIndicator.layer.cornerRadius = 64;
         _colorIndicator.backgroundColor = _colorWheel.currentColor;
         
-        UIButton *selectButton = [[UIButton alloc] initWithFrame:CGRectMake(size.width / 2 - selectButtonSize.width / 2,
+        _selectButton = [[UIButton alloc] initWithFrame:CGRectMake(size.width / 2 - selectButtonSize.width / 2,
                                                                             (size.height * .2) + (wheelSize.height - selectButtonSize.height) / 2,
                                                                             selectButtonSize.width,
                                                                             selectButtonSize.height)];
-        [selectButton setTitle:@"GO" forState:UIControlStateNormal];
-        [selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [_selectButton setTitle:@"GO" forState:UIControlStateNormal];
+        [_selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents:UIControlEventTouchDown];
         
         [self addSubview:_colorWheel];
         [self addSubview:centerWheel];
         [self addSubview:_colorIndicator];
-        [self addSubview:selectButton];
+        [self addSubview:_selectButton];
     }
     return self;
 }
@@ -79,6 +81,10 @@
 
 -(void)selectButtonPressed:(id) sender {
     [_colorViewDelegate selectButtonPressed:self];
+}
+
+-(void)changeSelectButtonColorWithColor:(UIColor *)color {
+    [_selectButton setTitleColor: color forState: UIControlStateNormal];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
