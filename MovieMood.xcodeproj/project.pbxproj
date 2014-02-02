@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */; };
+		BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */; };
+		BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A56189EF03B007B1EDA /* AboutView.xib */; };
+		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
 		BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */; };
 		BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */; };
 		BE963007189E19EA004968D0 /* SKYMovieRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE963006189E19EA004968D0 /* SKYMovieRequests.m */; };
@@ -65,6 +68,10 @@
 		35A86E6D26CC4E8093567DFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0378E4189DA9980032EC9F /* SKYColorPickerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYColorPickerScrollView.h; sourceTree = "<group>"; };
 		BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYColorPickerScrollView.m; sourceTree = "<group>"; };
+		BE271A4F189EED5B007B1EDA /* SKYInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYInfoViewController.h; sourceTree = "<group>"; };
+		BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYInfoViewController.m; sourceTree = "<group>"; };
+		BE271A56189EF03B007B1EDA /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorTheoryView.xib; sourceTree = "<group>"; };
 		BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYColorAnalyser.m; path = MovieMood/SKYColorAnalyser.m; sourceTree = "<group>"; };
 		BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYColorAnalyser.h; path = MovieMood/SKYColorAnalyser.h; sourceTree = "<group>"; };
 		BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYResultMovieCell.h; path = MovieMood/SKYResultMovieCell.h; sourceTree = "<group>"; };
@@ -214,6 +221,8 @@
 				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
 				C12714521899FB9300246E40 /* Main.storyboard */,
+				BE271A4F189EED5B007B1EDA /* SKYInfoViewController.h */,
+				BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */,
 				BE0378E4189DA9980032EC9F /* SKYColorPickerScrollView.h */,
 				BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */,
 			);
@@ -304,6 +313,8 @@
 				BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */,
 				BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */,
 				BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */,
+				BE271A56189EF03B007B1EDA /* AboutView.xib */,
+				BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */,
 			);
 			name = ViewLayouts;
 			path = ..;
@@ -392,9 +403,11 @@
 				C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */,
 				C1A2CEC6189DB54600FDE503 /* G.png in Resources */,
 				C1A2CECB189DB54600FDE503 /* R.png in Resources */,
+				BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */,
 				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
 				C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */,
 				C1A2CEC9189DB54600FDE503 /* PG-13.png in Resources */,
+				BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */,
 				C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */,
 				C1A2CECA189DB54600FDE503 /* PG.png in Resources */,
 				C16624E4189C76030086F00C /* bucket.png in Resources */,
@@ -462,6 +475,7 @@
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
 				C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */,
+				BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */,
 				C1F3D0FD189E9A64009EBCB3 /* AutoScrollLabel.m in Sources */,
 				C16F56E7189DCF42009F71AB /* SKYMovieViewController.m in Sources */,
 				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
