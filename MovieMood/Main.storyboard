@@ -130,15 +130,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="jZH-LK-zFf">
-<<<<<<< HEAD
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="c4e-s0-Qim"/>
-=======
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="c4e-s0-Qim">
                                             <connections>
                                                 <segue destination="g5d-FV-OnJ" kind="modal" id="TPr-Iw-vIf"/>
                                             </connections>
                                         </barButtonItem>
->>>>>>> 3b6e56facb6e9c3883bbe4dccc21094644fe7bfa
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -266,11 +262,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
-=======
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
->>>>>>> 3b6e56facb6e9c3883bbe4dccc21094644fe7bfa
                                 <rect key="frame" x="0.0" y="65" width="320" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
@@ -319,11 +311,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
                                     <constraint firstAttribute="width" constant="46" id="v3D-DL-QH8"/>
                                 </constraints>
                             </imageView>
-<<<<<<< HEAD
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjC-2G-4F1" customClass="AutoScrollLabel">
-=======
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjC-2G-4F1" customClass="AutoScrollLabel">
->>>>>>> 3b6e56facb6e9c3883bbe4dccc21094644fe7bfa
                                 <rect key="frame" x="20" y="237" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
@@ -382,10 +370,7 @@ Simply choose the color corresponding to your mood, tap the center of the color 
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-<<<<<<< HEAD
-=======
     <inferredMetricsTieBreakers>
         <segue reference="TPr-Iw-vIf"/>
     </inferredMetricsTieBreakers>
->>>>>>> 3b6e56facb6e9c3883bbe4dccc21094644fe7bfa
 </document>
