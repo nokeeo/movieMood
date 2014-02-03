@@ -17,7 +17,7 @@
     UIDynamicAnimator* _animator;
     UIGravityBehavior* _gravity;
     UICollisionBehavior* _collision;
-    NSMutableArray* smiles;
+    NSArray* smiles;
     UIDynamicItemBehavior *itemBehaviour;
     
 }
@@ -37,8 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    smiles = [[NSMutableArray alloc] init];
-    smiles[0] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]];
+    smiles = @[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]]];
     [smiles[0] setPosition:CGPointMake(self.view.bounds.size.width / 2, 200)];
     [self.view insertSubview:smiles[0] belowSubview:_smilePile];
     
@@ -90,7 +89,7 @@
 }
 
 -(void) spawnMoreSmiles {
-    UIImageView *newSmile = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2,
+    UIImageView *newSmile = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 5,
                                                                           200,
                                                                           50,
                                                                           50)];
