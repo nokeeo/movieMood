@@ -19,4 +19,5 @@
 @property id colorViewDelegate;
 
 -(void) changeSelectButtonColorWithColor:(UIColor *) color;
+-(void) changeIndicatorColor:(UIColor *) color;
 @end

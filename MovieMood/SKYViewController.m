@@ -74,7 +74,7 @@
 
 -(void)colorDidChange:(id) sender {
     _contentScrollView.alwaysBounceVertical = false;
-    _contentScrollView.colorIndicator.backgroundColor = _contentScrollView.colorWheel.currentColor;
+    [_contentScrollView changeIndicatorColor: _contentScrollView.colorWheel.currentColor];
     UIColor *complement = [_colorAnalyser calculateComplementaryWithColor: _contentScrollView.colorWheel.currentColor];
     [_contentScrollView changeSelectButtonColorWithColor: complement];
 }

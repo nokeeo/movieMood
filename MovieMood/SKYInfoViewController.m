@@ -32,13 +32,6 @@
     self.delegate = self;
     
     _index = 0;
-    
-    CGSize size = self.view.bounds.size;
-    UIView *background = [[UIView alloc] initWithFrame: CGRectMake(0,
-                                              0,
-                                              size.width,
-                                              size.height)];
-    //[self.view addSubview:background];
 }
 
 - (void)didReceiveMemoryWarning

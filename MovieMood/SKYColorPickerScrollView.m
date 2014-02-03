@@ -7,6 +7,7 @@
 //
 
 #import "SKYColorPickerScrollView.h"
+#import "SKYColorAnalyser.h"
 
 @interface SKYColorPickerScrollView() <ISColorWheelDelegate>
 @property (nonatomic, retain) UIButton *selectButton;
@@ -36,7 +37,7 @@
                                                                        (size.height * .2) + (wheelSize.height - centerWheelSize.height) / 2,
                                                                        centerWheelSize.width,
                                                                        centerWheelSize.height)];
-        centerWheel.backgroundColor = [UIColor colorWithRed:(77/255.0) green:(77/255.0) blue:(77/225.0) alpha:1.0];
+        centerWheel.layer.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.2].CGColor;
         centerWheel.layer.cornerRadius = 80;
         centerWheel.layer.borderColor = [UIColor darkGrayColor].CGColor;
         centerWheel.layer.borderWidth = 1.f;
@@ -53,7 +54,9 @@
                                                                    indicatorSize.height,
                                                                    indicatorSize.width)];
         _colorIndicator.layer.cornerRadius = 64;
-        _colorIndicator.backgroundColor = _colorWheel.currentColor;
+        [self changeIndicatorColor: _colorWheel.currentColor];
+        _colorIndicator.layer.borderColor = [UIColor colorWithRed:157/255.f green:157/255.f blue:157/255.f alpha:1].CGColor;
+        _colorIndicator.layer.borderWidth = 1;
         
         _selectButton = [[UIButton alloc] initWithFrame:CGRectMake(size.width / 2 - selectButtonSize.width / 2,
                                                                             (size.height * .2) + (wheelSize.height - selectButtonSize.height) / 2,
@@ -85,6 +88,11 @@
 
 -(void)changeSelectButtonColorWithColor:(UIColor *)color {
     [_selectButton setTitleColor: color forState: UIControlStateNormal];
+}
+
+-(void)changeIndicatorColor:(UIColor *)color {
+    UIColor *backgroundColor = [_colorWheel.currentColor colorWithAlphaComponent:.6];
+    [_colorIndicator setBackgroundColor: backgroundColor];
 }
 
 /*
