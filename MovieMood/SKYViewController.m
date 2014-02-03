@@ -46,6 +46,7 @@
     
     CGSize size = self.view.bounds.size;
     CGSize infoButtonSize = CGSizeMake(30.f, 30.f);
+    CGSize questionSize = CGSizeMake(size.width * .9,  66);
     
     _contentScrollView = [[SKYColorPickerScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
                                                                         self.view.bounds.origin.y,
@@ -55,6 +56,22 @@
     _contentScrollView.colorViewDelegate = self;
     _contentScrollView.delegate = self;
     
+    UILabel *questionLabel = [[UILabel alloc] initWithFrame:CGRectMake((size.width - questionSize.width) / 2,
+                                                                       size.height * .05,
+                                                                       questionSize.width,
+                                                                       questionSize.height)];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [paragraphStyle setAlignment:NSTextAlignmentCenter];
+    
+    UIFont *questionFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18];
+    NSDictionary *questionAttrs = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:questionFont, paragraphStyle, nil]
+                                                              forKeys: [NSArray arrayWithObjects: NSFontAttributeName, NSParagraphStyleAttributeName, nil]];
+    
+    NSAttributedString *questionText = [[NSAttributedString alloc] initWithString:@"What kind of movie are you feeling?" attributes: questionAttrs];
+    questionLabel.numberOfLines = 2;
+    [questionLabel setAttributedText:questionText];
+    
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [infoButton setFrame:CGRectMake(20,
                                     (_contentScrollView.bounds.size.height * .8) - infoButtonSize.height,
@@ -62,6 +79,7 @@
     [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchDown];
     
     [_contentScrollView addSubview:infoButton];
+    [_contentScrollView addSubview:questionLabel];
     [self.view addSubview:_contentScrollView];
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
 }
