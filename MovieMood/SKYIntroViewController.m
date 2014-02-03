@@ -68,7 +68,9 @@
     [pushBehaviour setActive:TRUE];
     [_animator addBehavior:pushBehaviour];
     
-    [self performSelector:@selector(spawnMoreSmiles) withObject:nil afterDelay:.5];
+    for(int i = 0; i < 10; i++) {
+        [self performSelector:@selector(spawnMoreSmiles) withObject:nil afterDelay:.5 * i + 1];
+    }
     [self performSelector:@selector(goToNextView) withObject:nil afterDelay:3];
 }
 
@@ -108,7 +110,6 @@
     [_animator addBehavior:pushBehaviour];
     
     [pushBehaviour addItem:newSmile];
-    [self performSelector:@selector(spawnMoreSmiles) withObject:nil afterDelay:.5];
 }
 
 -(float) getRandomAngle {
