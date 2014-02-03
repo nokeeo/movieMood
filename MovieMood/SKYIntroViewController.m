@@ -18,6 +18,8 @@
     UIGravityBehavior* _gravity;
     UICollisionBehavior* _collision;
     NSMutableArray* smiles;
+    UIDynamicItemBehavior *itemBehaviour;
+    
 }
 @synthesize bucket = _bucket;
 @synthesize smilePile = _smilePile;
@@ -36,35 +38,37 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     smiles = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
-        smiles[i] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]];
-        [smiles[i] setPosition:CGPointMake(self.view.bounds.size.width / 2, 200)];
-        [self.view insertSubview:smiles[i] belowSubview:_smilePile];
-    }
+    smiles[0] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile.png"]];
+    [smiles[0] setPosition:CGPointMake(self.view.bounds.size.width / 2, 200)];
+    [self.view insertSubview:smiles[0] belowSubview:_smilePile];
     
     [self becomeFirstResponder];
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    _gravity = [[UIGravityBehavior alloc] initWithItems:smiles];
+    _gravity = [[UIGravityBehavior alloc] init];
+    [_gravity addItem:smiles[0]];
     [_animator addBehavior:_gravity];
     
-    _collision = [[UICollisionBehavior alloc]
-                  initWithItems:smiles];
-    _collision.translatesReferenceBoundsIntoBoundary = YES;
+    _collision = [[UICollisionBehavior alloc] init];
+    [_collision addItem:smiles[0]];
+    _collision.translatesReferenceBoundsIntoBoundary = NO;
     //_collision.collisionMode = UICollisionBehaviorModeBoundaries;
     [_collision addBoundaryWithIdentifier:@"bottom" fromPoint:CGPointMake(0,self.view.bounds.size.height / 2) toPoint:CGPointMake(self.view.bounds.size.width, self.view.bounds.size.height / 2)];
     [_animator addBehavior:_collision];
     
-    UIDynamicItemBehavior* itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:smiles];
+    itemBehaviour = [[UIDynamicItemBehavior alloc] init];
     itemBehaviour.elasticity = 0.5;
+    [itemBehaviour addItem:smiles[0]];
     [_animator addBehavior:itemBehaviour];
     
-    UIPushBehavior* pushBehaviour = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
-    //[pushBehaviour setAngle:atan2(-100, 100)];
-    [pushBehaviour setMagnitude:arc4random() % 11];
+    UIPushBehavior *pushBehaviour = [[UIPushBehavior alloc] init];
+    pushBehaviour = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
+    [pushBehaviour setAngle:atan2(-100, 100)];
+    [pushBehaviour setMagnitude:1.5];
     [pushBehaviour setActive:TRUE];
     [_animator addBehavior:pushBehaviour];
     
+    [self performSelector:@selector(spawnMoreSmiles) withObject:nil afterDelay:.5];
     [self performSelector:@selector(goToNextView) withObject:nil afterDelay:3];
 }
 
@@ -74,15 +78,42 @@
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (motion == UIEventSubtypeMotionShake) {
-        UIPushBehavior* push = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
+        /*UIPushBehavior* push = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
         [push setMagnitude:5];
-        [_animator addBehavior:push];
+        [_animator addBehavior:push];*/
     }
 }
 
 - (void) goToNextView
 {
     [self performSegueWithIdentifier: @"StartApp" sender: self];
+}
+
+-(void) spawnMoreSmiles {
+    UIImageView *newSmile = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2,
+                                                                          200,
+                                                                          50,
+                                                                          50)];
+    [self.view insertSubview:newSmile belowSubview: _smilePile];
+    newSmile.image = [UIImage imageNamed:@"smile.png"];
+    [_gravity addItem: newSmile];
+    [_collision addItem:newSmile];
+    [itemBehaviour addItem:newSmile];
+    
+    UIPushBehavior *pushBehaviour = [[UIPushBehavior alloc] init];
+    pushBehaviour = [[UIPushBehavior alloc] initWithItems:smiles mode:UIPushBehaviorModeInstantaneous];
+    [pushBehaviour setAngle: [self getRandomAngle]];
+    [pushBehaviour setMagnitude:1.75];
+    [pushBehaviour setActive:TRUE];
+    [_animator addBehavior:pushBehaviour];
+    
+    [pushBehaviour addItem:newSmile];
+    [self performSelector:@selector(spawnMoreSmiles) withObject:nil afterDelay:.5];
+}
+
+-(float) getRandomAngle {
+    float randomDegree = arc4random() %  90;
+    return atan2f(randomDegree  * -1, randomDegree / ((arc4random() % 5) + 5));
 }
 
 @end
