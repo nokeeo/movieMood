@@ -69,8 +69,8 @@
     
     SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
     UIColor *tintColor = [analyser tintColor:_selectedColor withTintConst: - .25];
-    self.navigationController.navigationBar.tintColor = tintColor;
     _activityIndicatorView.activityIndicator.color = tintColor;
+    self.navigationController.navigationBar.tintColor = tintColor;
     
     _movieData = [self getMovidWithId: _movieId];
 }
