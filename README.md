@@ -1,6 +1,7 @@
 MovieMood
 =========
-MovieMood recommends movies based on mood.  Just select the corresponding color and pick a movie!
+MovieMood recommends movies based on mood.  Just select the corresponding color and pick a movie!<br />
+Created for the RIT iOS App Challenge 2014
 
 Developers:
 ---------
