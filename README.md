@@ -1,5 +1,16 @@
-movieMood
+MovieMood
 =========
-this is an app we're making and it's pretty neat
+MovieMood recommends movies based on mood.  Just select the corresponding color and pick a movie!
 
-MovieMood is a new app from SkyApps, the makers of Packed, the Package Tracking app! Choose the color corresponding to your mood and tap the center of the color selector, and MovieMood will do the rest. A movie to match your mood or the mood you want to be in is just a tap away with MovieMood!
+Developers:
+---------
+Eric Lee <br />
+Aaron Sky <br />
+John Stelben <br />
+
+Screenshots:
+---------
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/ColorWheel.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/ColorList.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/MovieList.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/MovieDetail.png" /><br />
