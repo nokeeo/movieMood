@@ -41,7 +41,6 @@
 * Returns dictionary with genre id as the key and the values as the proportions.
  ---------------------------------------------------------------------------*/
 -(NSDictionary *) analyzeColor:(UIColor *)color {
-    //NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:[UIColor colorWithRed:0.f green:0.f blue:1.f alpha:1.f]];
     NSDictionary *genreDiff = [self getGenreColorDifferenceWithColor:color];
     
     NSDictionary *relatedGenres = [self getRelatedGenresWithColorDiffs:genreDiff];
@@ -289,6 +288,9 @@
     return finalProportions;
 }
 
+/*---------------------------------------------------------------------------
+* Calculates the complimentary color of given color
+ ---------------------------------------------------------------------------*/
 -(UIColor *) calculateComplementaryWithColor:(UIColor *)originalColor {
     CGFloat hue;
     CGFloat saturation;
@@ -303,6 +305,9 @@
     return [UIColor colorWithHue:degreeValue / 360 saturation:saturation brightness:brightness - .3 alpha:1.f];
 }
 
+/*---------------------------------------------------------------------------
+* Makes the given color lighter or darker based on the tint const
+ ---------------------------------------------------------------------------*/
 -(UIColor *) tintColor:(UIColor *)originalColor withTintConst:(float) tintConst{
     CGFloat red;
     CGFloat green;
