@@ -7,7 +7,6 @@
 //
 
 #import "SKYAppDelegate.h"
-#import "JLTMDbClient.h"
 
 @implementation SKYAppDelegate
 
@@ -17,7 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[JLTMDbClient sharedAPIInstance] setAPIKey:@"8992783008e1dc1d8d3aedf4e589ec33"];
     return YES;
 }
 

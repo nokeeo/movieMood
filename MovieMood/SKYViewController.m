@@ -8,7 +8,6 @@
 
 #import "SKYViewController.h"
 #import "SKYResultViewController.h"
-#import "JLTMDbClient.h"
 #import "SKYColorAnalyser.h"
 #import "TLAlertView.h"
 #import "SKYInfoViewController.h"

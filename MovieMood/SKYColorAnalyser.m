@@ -28,8 +28,8 @@
     self = [super init];
     if (self)
     {
-        NSArray *ids = [NSArray arrayWithObjects:@"28", @"12", @"16", @"35", @"80", @"105", @"99", @"18", @"14", @"10769", @"36", @"27", @"10756", @"1115", @"10749", @"878", @"10748", @"53", @"10752", @"37", nil];
-        NSArray *genres = [NSArray arrayWithObjects:@"Action", @"Adventure", @"Animation", @"Comedy", @"Crime", @"Disaster", @"Documentary", @"Drama", @"Fantasy", @"Foreign", @"History", @"Horror", @"Indie", @"Road Movie", @"Romance", @"Science Fiction", @"Suspense", @"Thriller", @"War", @"Western", nil];
+        NSArray *ids = [[NSArray alloc] initWithObjects:@"4401", @"4402", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
+        NSArray *genres = [NSArray arrayWithObjects: @"Action/Adventure", @"Anime", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
         
         _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
     }
@@ -167,36 +167,28 @@
  ---------------------------------------------------------------------------*/
 -(UIColor *) getColorWithGenre:(NSString *)genre {
     UIColor *returnColor = nil;
-    if([genre isEqualToString:@"Action"] || [genre isEqualToString:@"Suspense"] || [genre isEqualToString:@"Thriller"])
-        returnColor = [UIColor colorWithRed:255/255.f green:85/255.f blue:0.f alpha:1.f];
-    else if([genre isEqualToString:@"Adventure"] || [genre isEqualToString:@"Western"])
+    if([genre isEqualToString:@"Thriller"])
+        returnColor = [UIColor colorWithRed:255/255.f green:0/255.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Action/Adventure"] || [genre isEqualToString:@"Western"])
         returnColor = [UIColor colorWithRed:255/255.f green:174/255.f blue:0.f alpha:1.f];
-    else if([genre isEqualToString:@"Animation"])
-        returnColor = [UIColor colorWithRed:255/255.f green:255/255.f blue:0.f alpha:1.f];
-    else if([genre isEqualToString:@"Animation"])
-        returnColor = [UIColor colorWithRed:0/225.f green:255/255.f blue:0/255.f alpha:1.f];
+    else if([genre isEqualToString:@"Animation"] || [genre isEqualToString:@"Anime"])
+        returnColor = [UIColor colorWithRed:162/225.f green:255/255.f blue:0/255.f alpha:1.f];
     else if([genre isEqualToString:@"Comedy"])
         returnColor = [UIColor colorWithRed:255/255.f green:255.f blue:0/255.f alpha:1.f];
-    else if([genre isEqualToString:@"Crime"] || [genre isEqualToString:@"Disaster"] || [genre isEqualToString:@"War"])
-        returnColor = [UIColor colorWithRed:255/255.f green:0.f blue:0.f alpha:1.f];
-    else if([genre isEqualToString:@"Documentary"] || [genre isEqualToString:@"History"])
+    else if([genre isEqualToString:@"Documentary"])
         returnColor = [UIColor colorWithRed:0.f green:0.f blue:1.f alpha:1.f];
     else if([genre isEqualToString: @"Drama"])
         returnColor = [UIColor colorWithRed:0.f green:123/255.f blue:1.f alpha:1.f];
-    else if([genre isEqualToString:@"Family"])
-        returnColor = [UIColor colorWithRed:162/255.f green:1.f blue:0.f alpha:1.f];
-    else if([genre isEqualToString:@"Fantasy"])
+    else if([genre isEqualToString:@"Kids & Family"])
+        returnColor = [UIColor colorWithRed:255/255.f green:1.f blue:0.f alpha:1.f];
+    else if([genre isEqualToString:@"Sci-Fi & Fantasy"])
         returnColor = [UIColor colorWithRed:1.f green:0.f blue:1.f alpha:1.f];
     else if([genre isEqualToString:@"Foreign"])
         returnColor = [UIColor colorWithRed:0.f green:1.f blue:1.f alpha:1.f];
     else if([genre isEqualToString:@"Horror"])
         returnColor = [UIColor colorWithRed:255.f green:0.f blue:127/255.f alpha:1.f];
-    else if([genre isEqualToString:@"Indie"])
+    else if([genre isEqualToString:@"Independent"])
         returnColor = [UIColor colorWithRed:0.f green:127/255.f blue:1.f alpha:1.f];
-    else if([genre isEqualToString:@"Road Movie"])
-        returnColor = [UIColor colorWithRed:1.f green:157/255.f blue:0.f alpha:1.f];
-    else if([genre isEqualToString:@"Science Fiction"])
-        returnColor = [UIColor colorWithRed:127/255.f green:0.f blue:1.f alpha:1.f];
     
     return returnColor;
 }

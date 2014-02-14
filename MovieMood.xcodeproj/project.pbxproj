@@ -11,6 +11,16 @@
 		BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */; };
 		BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A56189EF03B007B1EDA /* AboutView.xib */; };
 		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
+		BE94398418ADA0F0001F3023 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */; };
+		BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397418ADA0F0001F3023 /* AFHTTPRequestOperationManager.m */; };
+		BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397618ADA0F0001F3023 /* AFHTTPSessionManager.m */; };
+		BE94398718ADA0F0001F3023 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397918ADA0F0001F3023 /* AFNetworkReachabilityManager.m */; };
+		BE94398818ADA0F0001F3023 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397B18ADA0F0001F3023 /* AFSecurityPolicy.m */; };
+		BE94398918ADA0F0001F3023 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397D18ADA0F0001F3023 /* AFURLConnectionOperation.m */; };
+		BE94398A18ADA0F0001F3023 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397F18ADA0F0001F3023 /* AFURLRequestSerialization.m */; };
+		BE94398B18ADA0F0001F3023 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94398118ADA0F0001F3023 /* AFURLResponseSerialization.m */; };
+		BE94398C18ADA0F0001F3023 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94398318ADA0F0001F3023 /* AFURLSessionManager.m */; };
+		BE94399018ADBDDD001F3023 /* SKYMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94398F18ADBDDD001F3023 /* SKYMovie.m */; };
 		BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */; };
 		BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */; };
 		BE963007189E19EA004968D0 /* SKYMovieRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE963006189E19EA004968D0 /* SKYMovieRequests.m */; };
@@ -34,7 +44,6 @@
 		C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D1294189C4D6000A2B84F /* SKYResultViewController.m */; };
 		C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D129A189C538600A2B84F /* SKYIntroViewController.m */; };
 		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
-		C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */; };
 		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
 		C16624E2189C72600086F00C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E1189C72600086F00C /* smile.png */; };
 		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
@@ -50,7 +59,6 @@
 		C1A2CECB189DB54600FDE503 /* R.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC4189DB54600FDE503 /* R.png */; };
 		C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC5189DB54600FDE503 /* Unrated.png */; };
 		C1F3D0FD189E9A64009EBCB3 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3D0FC189E9A64009EBCB3 /* AutoScrollLabel.m */; };
-		F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A86E6D26CC4E8093567DFD /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +72,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35A86E6D26CC4E8093567DFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0378E4189DA9980032EC9F /* SKYColorPickerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYColorPickerScrollView.h; path = MovieMood/SKYColorPickerScrollView.h; sourceTree = "<group>"; };
 		BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYColorPickerScrollView.m; path = MovieMood/SKYColorPickerScrollView.m; sourceTree = "<group>"; };
 		BE271A4F189EED5B007B1EDA /* SKYInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYInfoViewController.h; path = MovieMood/SKYInfoViewController.h; sourceTree = "<group>"; };
 		BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYInfoViewController.m; path = MovieMood/SKYInfoViewController.m; sourceTree = "<group>"; };
 		BE271A56189EF03B007B1EDA /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorTheoryView.xib; sourceTree = "<group>"; };
+		BE94397118ADA0F0001F3023 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		BE94397318ADA0F0001F3023 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		BE94397418ADA0F0001F3023 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		BE94397518ADA0F0001F3023 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		BE94397618ADA0F0001F3023 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		BE94397718ADA0F0001F3023 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		BE94397818ADA0F0001F3023 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		BE94397918ADA0F0001F3023 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		BE94397A18ADA0F0001F3023 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		BE94397B18ADA0F0001F3023 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		BE94397C18ADA0F0001F3023 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		BE94397D18ADA0F0001F3023 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		BE94397E18ADA0F0001F3023 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		BE94397F18ADA0F0001F3023 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		BE94398018ADA0F0001F3023 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		BE94398118ADA0F0001F3023 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		BE94398218ADA0F0001F3023 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		BE94398318ADA0F0001F3023 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		BE94398E18ADBDDD001F3023 /* SKYMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovie.h; sourceTree = "<group>"; };
+		BE94398F18ADBDDD001F3023 /* SKYMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovie.m; sourceTree = "<group>"; };
 		BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYColorAnalyser.m; sourceTree = "<group>"; };
 		BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYColorAnalyser.h; sourceTree = "<group>"; };
 		BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYResultMovieCell.h; path = MovieMood/SKYResultMovieCell.h; sourceTree = "<group>"; };
@@ -104,9 +132,6 @@
 		C11D1299189C538600A2B84F /* SKYIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYIntroViewController.h; path = MovieMood/SKYIntroViewController.h; sourceTree = "<group>"; };
 		C11D129A189C538600A2B84F /* SKYIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYIntroViewController.m; path = MovieMood/SKYIntroViewController.m; sourceTree = "<group>"; };
 		C12714521899FB9300246E40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C15BE3B6189AD23E006FC7C3 /* JLTMDbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClient.h; sourceTree = "<group>"; };
-		C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTMDbClient.m; sourceTree = "<group>"; };
-		C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMDbClientDefines.h; sourceTree = "<group>"; };
 		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYViewController.h; path = MovieMood/SKYViewController.h; sourceTree = "<group>"; };
 		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYViewController.m; path = MovieMood/SKYViewController.m; sourceTree = "<group>"; };
 		C16624E1189C72600086F00C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
@@ -126,7 +151,6 @@
 		C1A2CEC5189DB54600FDE503 /* Unrated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unrated.png; sourceTree = "<group>"; };
 		C1F3D0FB189E9A64009EBCB3 /* AutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
 		C1F3D0FC189E9A64009EBCB3 /* AutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
-		E652B3611CCC4609BE7DC798 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +162,6 @@
 				BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */,
 				BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */,
 				BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */,
-				F7DFF6DD665543C9A8239D34 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +179,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE94398D18ADA0F6001F3023 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				BE94397118ADA0F0001F3023 /* AFHTTPRequestOperation.h */,
+				BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */,
+				BE94397318ADA0F0001F3023 /* AFHTTPRequestOperationManager.h */,
+				BE94397418ADA0F0001F3023 /* AFHTTPRequestOperationManager.m */,
+				BE94397518ADA0F0001F3023 /* AFHTTPSessionManager.h */,
+				BE94397618ADA0F0001F3023 /* AFHTTPSessionManager.m */,
+				BE94397718ADA0F0001F3023 /* AFNetworking.h */,
+				BE94397818ADA0F0001F3023 /* AFNetworkReachabilityManager.h */,
+				BE94397918ADA0F0001F3023 /* AFNetworkReachabilityManager.m */,
+				BE94397A18ADA0F0001F3023 /* AFSecurityPolicy.h */,
+				BE94397B18ADA0F0001F3023 /* AFSecurityPolicy.m */,
+				BE94397C18ADA0F0001F3023 /* AFURLConnectionOperation.h */,
+				BE94397D18ADA0F0001F3023 /* AFURLConnectionOperation.m */,
+				BE94397E18ADA0F0001F3023 /* AFURLRequestSerialization.h */,
+				BE94397F18ADA0F0001F3023 /* AFURLRequestSerialization.m */,
+				BE94398018ADA0F0001F3023 /* AFURLResponseSerialization.h */,
+				BE94398118ADA0F0001F3023 /* AFURLResponseSerialization.m */,
+				BE94398218ADA0F0001F3023 /* AFURLSessionManager.h */,
+				BE94398318ADA0F0001F3023 /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			sourceTree = "<group>";
+		};
 		BED5AF08189AC99A00ABF4EC /* ColorWheel */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,12 +217,11 @@
 		BEE1CA5E1899F8AF00992093 = {
 			isa = PBXGroup;
 			children = (
-				C15BE3B5189AD23E006FC7C3 /* JLTMDbClient */,
+				BE94398D18ADA0F6001F3023 /* AFNetworking */,
 				BEE1CA721899F8AF00992093 /* MovieMood */,
 				BEE1CA8F1899F8AF00992093 /* MovieMoodTests */,
 				BEE1CA691899F8AF00992093 /* Frameworks */,
 				BEE1CA681899F8AF00992093 /* Products */,
-				E652B3611CCC4609BE7DC798 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,7 +242,6 @@
 				BEE1CA6E1899F8AF00992093 /* UIKit.framework */,
 				BEE1CA701899F8AF00992093 /* CoreData.framework */,
 				BEE1CA881899F8AF00992093 /* XCTest.framework */,
-				35A86E6D26CC4E8093567DFD /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +253,8 @@
 				C1F3D0FC189E9A64009EBCB3 /* AutoScrollLabel.m */,
 				BE963005189E19EA004968D0 /* SKYMovieRequests.h */,
 				BE963006189E19EA004968D0 /* SKYMovieRequests.m */,
+				BE94398E18ADBDDD001F3023 /* SKYMovie.h */,
+				BE94398F18ADBDDD001F3023 /* SKYMovie.m */,
 				BE94F120189B4FA1006BAE45 /* SKYColorAnalyser.m */,
 				BE94F121189B4FA1006BAE45 /* SKYColorAnalyser.h */,
 				C16624E0189C71010086F00C /* Images */,
@@ -249,16 +298,6 @@
 				BEE1CA921899F8AF00992093 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C15BE3B5189AD23E006FC7C3 /* JLTMDbClient */ = {
-			isa = PBXGroup;
-			children = (
-				C15BE3B6189AD23E006FC7C3 /* JLTMDbClient.h */,
-				C15BE3B7189AD23E006FC7C3 /* JLTMDbClient.m */,
-				C15BE3B8189AD23E006FC7C3 /* JLTMDbClientDefines.h */,
-			);
-			path = JLTMDbClient;
 			sourceTree = "<group>";
 		};
 		C16624E0189C71010086F00C /* Images */ = {
@@ -322,11 +361,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEE1CA991899F8AF00992093 /* Build configuration list for PBXNativeTarget "MovieMood" */;
 			buildPhases = (
-				C62EE67B7C4343EBB6749A84 /* Check Pods Manifest.lock */,
 				BEE1CA631899F8AF00992093 /* Sources */,
 				BEE1CA641899F8AF00992093 /* Frameworks */,
 				BEE1CA651899F8AF00992093 /* Resources */,
-				146FBDF6E5B840C2B03FE7E9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -422,60 +459,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		146FBDF6E5B840C2B03FE7E9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C62EE67B7C4343EBB6749A84 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BEE1CA631899F8AF00992093 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE94398C18ADA0F0001F3023 /* AFURLSessionManager.m in Sources */,
+				BE94398918ADA0F0001F3023 /* AFURLConnectionOperation.m in Sources */,
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
+				BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */,
+				BE94398718ADA0F0001F3023 /* AFNetworkReachabilityManager.m in Sources */,
 				C16F56EA189DCF52009F71AB /* TLAlertView.m in Sources */,
 				BE96300A189E3E17004968D0 /* SKYActivityIndicator.m in Sources */,
 				BE963007189E19EA004968D0 /* SKYMovieRequests.m in Sources */,
 				BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */,
+				BE94398818ADA0F0001F3023 /* AFSecurityPolicy.m in Sources */,
 				BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */,
 				C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */,
+				BE94399018ADBDDD001F3023 /* SKYMovie.m in Sources */,
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
+				BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
 				C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */,
 				BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */,
 				C1F3D0FD189E9A64009EBCB3 /* AutoScrollLabel.m in Sources */,
 				C16F56E7189DCF42009F71AB /* SKYMovieViewController.m in Sources */,
-				C15BE3B9189AD23E006FC7C3 /* JLTMDbClient.m in Sources */,
 				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
 				BEE1CA791899F8AF00992093 /* main.m in Sources */,
+				BE94398A18ADA0F0001F3023 /* AFURLRequestSerialization.m in Sources */,
+				BE94398418ADA0F0001F3023 /* AFHTTPRequestOperation.m in Sources */,
+				BE94398B18ADA0F0001F3023 /* AFURLResponseSerialization.m in Sources */,
 				C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +605,6 @@
 		};
 		BEE1CA9A1899F8AF00992093 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E652B3611CCC4609BE7DC798 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -607,7 +619,6 @@
 		};
 		BEE1CA9B1899F8AF00992093 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E652B3611CCC4609BE7DC798 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

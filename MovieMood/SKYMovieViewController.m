@@ -7,7 +7,6 @@
 //
 
 #import "SKYMovieViewController.h"
-#import "JLTMDbClient.h"
 #import "TLAlertView.h"
 #import "SKYActivityIndicator.h"
 #import "AutoScrollLabel.h"
@@ -83,7 +82,7 @@
 
 -(id)getMovidWithId:(NSString *) movidId{
     __block TLAlertView *errorAlertView = [[TLAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") buttonTitle:NSLocalizedString(@"OK",@"")];
-    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbMovie withParameters:@{@"id": movidId} andResponseBlock:^(id response, NSError *error) {
+    /*[[JLTMDbClient sharedAPIInstance] GET:kJLTMDbMovie withParameters:@{@"id": movidId} andResponseBlock:^(id response, NSError *error) {
         if(!error) {
             _movieData = response;
             
@@ -127,7 +126,7 @@
         }
         else
             [errorAlertView show];
-    }];
+    }];*/
     return nil;
 }
 @end

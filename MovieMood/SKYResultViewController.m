@@ -12,6 +12,7 @@
 #import "SKYMovieRequests.h"
 #import "SKYActivityIndicator.h"
 #import "SKYColorAnalyser.h"
+#import "SKYMovie.h"
 
 @interface SKYResultViewController ()
 @property (nonatomic, retain) NSString *selectedMovidId;
@@ -98,17 +99,17 @@
 {
     static NSString *CellIdentifier = @"MovieCell";
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    id currentMovie = [_movieSource objectAtIndex:indexPath.row];
-    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", [currentMovie objectForKey:@"id"]]];
+    SKYMovie *currentMovie = [_movieSource objectAtIndex:indexPath.row];
+    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
     
-    cell.title.text = [currentMovie valueForKey:@"title"];
+    cell.title.text = currentMovie.title;
     cell.artwork.image = currentImage;
     return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    id movie = [_movieSource objectAtIndex: indexPath.row];
-    _selectedMovidId = [movie objectForKey:@"id"];
+    SKYMovie *movie = [_movieSource objectAtIndex: indexPath.row];
+    _selectedMovidId = movie.movieId;
     [self performSegueWithIdentifier:@"MovieDetail" sender:self];
 }
 
@@ -165,12 +166,12 @@
 }
 
 -(void)cacheMovieImages:(NSArray *)movies {
-    for(id movie in movies) {
-        UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", [movie objectForKey:@"id"]]];
+    for(SKYMovie *movie in movies) {
+        UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", movie.movieId]];
         if(!currentImage) {
-            NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://image.tmdb.org/t/p/w185/",[movie valueForKey:@"poster_path"]]];
+            NSURL *imageURL = [NSURL URLWithString: movie.coverImage60];
             currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
-            [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", [movie objectForKey:@"id"]]];
+            [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", movie.movieId]];
         }
     }
 }
