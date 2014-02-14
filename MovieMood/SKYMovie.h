@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSString *movieId;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *coverImage60;
+@property (nonatomic, retain) NSString *coverImage170;
 @property (nonatomic, retain) NSString *purchasePrice;
 @property (nonatomic, retain) NSString *rentalPrice;
 @property (nonatomic, retain) NSString *description;

@@ -33,6 +33,8 @@
             if([imageHeight isEqualToString:@"60"]) {
                 _coverImage60 = [image objectForKey:@"label"];
             }
+            else if([imageHeight isEqualToString:@"170"])
+                _coverImage170 = [image objectForKey:@"label"];
         }
     }
     return self;

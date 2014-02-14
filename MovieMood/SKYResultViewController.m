@@ -169,7 +169,7 @@
     for(SKYMovie *movie in movies) {
         UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", movie.movieId]];
         if(!currentImage) {
-            NSURL *imageURL = [NSURL URLWithString: movie.coverImage60];
+            NSURL *imageURL = [NSURL URLWithString: movie.coverImage170];
             currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
             [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", movie.movieId]];
         }
