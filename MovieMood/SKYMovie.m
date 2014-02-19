@@ -7,6 +7,7 @@
 //
 
 #import "SKYMovie.h"
+#import "SKYMovieRequests.h"
 
 @implementation SKYMovie
 
@@ -18,6 +19,7 @@
         _purchasePrice = [[entry objectForKey:@"im:price"] objectForKey:@"label"];
         _rentalPrice = [[entry objectForKey:@"im:rentalPrice"] objectForKey:@"label"];
         _description = [[entry objectForKey:@"summary"] objectForKey:@"label"];
+        _genre = [[[entry objectForKey:@"category"] objectForKey:@"attributes"] objectForKey:@"label"];
         
         //Get URls
         id links = [entry objectForKey:@"link"];

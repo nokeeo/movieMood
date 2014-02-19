@@ -175,121 +175,145 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="bvw-sg-fwp"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="MJC-q8-mti" kind="push" identifier="MovieDetail" id="PCx-16-7Xa"/>
+                        <segue destination="eeQ-4f-TXA" kind="push" identifier="MovieDetail" id="0cm-Hy-GN9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbs-kw-sby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="737" y="-23"/>
         </scene>
-        <!--Movie View Controller - Detail-->
-        <scene sceneID="fAu-VA-hBO">
+        <!--Movie View Controller-->
+        <scene sceneID="UTu-HI-Kov">
             <objects>
-                <viewController id="MJC-q8-mti" customClass="SKYMovieViewController" sceneMemberID="viewController">
+                <viewController id="eeQ-4f-TXA" customClass="SKYMovieViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cz5-JT-WHh"/>
-                        <viewControllerLayoutGuide type="bottom" id="iSa-Ou-elA"/>
+                        <viewControllerLayoutGuide type="top" id="hC8-n7-c8T"/>
+                        <viewControllerLayoutGuide type="bottom" id="tcL-Jg-Y5i"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="85w-we-lk0">
+                    <view key="view" contentMode="scaleToFill" id="eEP-RX-8Yh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-NJ-qIJ">
-                                <rect key="frame" x="0.0" y="65" width="320" height="164"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zy-xg-BnR">
+                                <rect key="frame" x="20" y="84" width="100" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="164" id="hAn-jH-mBb"/>
-                                </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7U-gm-8bm">
-                                <rect key="frame" x="77" y="266" width="101" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="By6-Of-HZi">
+                                <rect key="frame" x="128" y="95" width="172" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Title">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XF-ce-40t">
-                                <rect key="frame" x="186" y="266" width="60" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="162" translatesAutoresizingMaskIntoConstraints="NO" id="kLS-RP-8vs">
+                                <rect key="frame" x="138" y="118" width="162" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="wJN-tF-vwQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Genre">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-oz-Al8">
-                                <rect key="frame" x="20" y="266" width="49" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XU-nw-o9v">
+                                <rect key="frame" x="171" y="140" width="106" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="Ox6-KA-iWj"/>
-                                    <constraint firstAttribute="height" constant="22" id="m2F-Cg-gBC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=":">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-KZ-sKX">
-                                <rect key="frame" x="20" y="296" width="300" height="272"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="GoZ-KR-6rJ">
+                                <rect key="frame" x="171" y="164" width="106" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="272" id="agr-Tg-eqO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-gQ-jUa">
-                                <rect key="frame" x="254" y="266" width="46" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=":">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPW-ac-bax">
+                                <rect key="frame" x="138" y="141" width="40" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="v3D-DL-QH8"/>
-                                </constraints>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjC-2G-4F1" customClass="AutoScrollLabel">
-                                <rect key="frame" x="20" y="237" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </scrollView>
+                                <attributedString key="attributedText">
+                                    <fragment content="Buy">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGD-45-Jsz">
+                                <rect key="frame" x="138" y="164" width="40" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Rent">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znz-qV-bET" customClass="SKYBorderButton">
+                                <rect key="frame" x="135" y="208" width="66" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="iTunes"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaJ-Ft-W0L" customClass="SKYBorderButton">
+                                <rect key="frame" x="242" y="208" width="58" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Trailer"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" id="0Ga-Ee-ZnP"/>
-                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" id="39I-TI-5qR"/>
-                            <constraint firstItem="hmd-KZ-sKX" firstAttribute="top" secondItem="oxb-oz-Al8" secondAttribute="bottom" constant="8" symbolic="YES" id="3cM-nq-8Il"/>
-                            <constraint firstItem="z7U-gm-8bm" firstAttribute="leading" secondItem="oxb-oz-Al8" secondAttribute="trailing" constant="8" symbolic="YES" id="A65-IK-ocg"/>
-                            <constraint firstItem="nd1-gQ-jUa" firstAttribute="leading" secondItem="8XF-ce-40t" secondAttribute="trailing" constant="8" symbolic="YES" id="AVa-jF-7wI"/>
-                            <constraint firstItem="oxb-oz-Al8" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" symbolic="YES" id="BUL-aF-5GR"/>
-                            <constraint firstItem="iSa-Ou-elA" firstAttribute="top" secondItem="hmd-KZ-sKX" secondAttribute="bottom" id="BXw-Ie-dT7"/>
-                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="top" secondItem="Cz5-JT-WHh" secondAttribute="bottom" constant="1" id="Bl5-3j-sUx"/>
-                            <constraint firstItem="z7U-gm-8bm" firstAttribute="baseline" secondItem="oxb-oz-Al8" secondAttribute="baseline" id="CDR-Ig-5EI"/>
-                            <constraint firstItem="8XF-ce-40t" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" symbolic="YES" id="EAb-rn-xcL"/>
-                            <constraint firstItem="hmd-KZ-sKX" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="EKd-9D-yrz"/>
-                            <constraint firstItem="z7U-gm-8bm" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" symbolic="YES" id="Hrk-p0-qX8"/>
-                            <constraint firstItem="hmd-KZ-sKX" firstAttribute="top" secondItem="nd1-gQ-jUa" secondAttribute="bottom" constant="4" id="NqD-5h-Dr1"/>
-                            <constraint firstItem="L7J-NJ-qIJ" firstAttribute="centerX" secondItem="yjC-2G-4F1" secondAttribute="centerX" id="TBW-W7-aqm"/>
-                            <constraint firstAttribute="trailing" secondItem="hmd-KZ-sKX" secondAttribute="trailing" id="bhw-1v-zGq"/>
-                            <constraint firstItem="yjC-2G-4F1" firstAttribute="leading" secondItem="oxb-oz-Al8" secondAttribute="leading" id="ePG-1v-Y5o"/>
-                            <constraint firstItem="yjC-2G-4F1" firstAttribute="top" secondItem="L7J-NJ-qIJ" secondAttribute="bottom" constant="8" symbolic="YES" id="gar-1D-h5g"/>
-                            <constraint firstItem="yjC-2G-4F1" firstAttribute="trailing" secondItem="nd1-gQ-jUa" secondAttribute="trailing" id="j0c-Wq-5Yl"/>
-                            <constraint firstItem="8XF-ce-40t" firstAttribute="baseline" secondItem="z7U-gm-8bm" secondAttribute="baseline" id="jdJ-qP-J1b"/>
-                            <constraint firstItem="8XF-ce-40t" firstAttribute="leading" secondItem="z7U-gm-8bm" secondAttribute="trailing" constant="8" symbolic="YES" id="lM9-OG-gsX"/>
-                            <constraint firstItem="oxb-oz-Al8" firstAttribute="leading" secondItem="85w-we-lk0" secondAttribute="leading" constant="20" id="tWC-2k-Sad"/>
-                            <constraint firstItem="nd1-gQ-jUa" firstAttribute="top" secondItem="yjC-2G-4F1" secondAttribute="bottom" constant="8" id="xeW-do-wPc"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="vdc-hD-ang">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="rr0-Aw-8uN"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="zTw-dY-XEg"/>
                     <connections>
-                        <outlet property="description" destination="hmd-KZ-sKX" id="1kD-pB-U1H"/>
-                        <outlet property="headerImage" destination="L7J-NJ-qIJ" id="fig-gO-sMo"/>
-                        <outlet property="movieTitle" destination="yjC-2G-4F1" id="1iv-hV-vg6"/>
-                        <outlet property="rating" destination="nd1-gQ-jUa" id="SNO-iG-L0d"/>
-                        <outlet property="ratingOutOfTen" destination="8XF-ce-40t" id="xM7-RI-Ric"/>
-                        <outlet property="releaseDate" destination="oxb-oz-Al8" id="1au-Fr-zxQ"/>
-                        <outlet property="runtime" destination="z7U-gm-8bm" id="Zcy-Zr-kKh"/>
+                        <outlet property="artworkImage" destination="2Zy-xg-BnR" id="1DN-p3-voM"/>
+                        <outlet property="buyLabel" destination="5XU-nw-o9v" id="Qs2-IV-UpK"/>
+                        <outlet property="genreLabel" destination="kLS-RP-8vs" id="sId-xv-apY"/>
+                        <outlet property="iTunesButton" destination="znz-qV-bET" id="yMp-55-fgr"/>
+                        <outlet property="movieTitle" destination="By6-Of-HZi" id="FEX-zM-qPt"/>
+                        <outlet property="rentLabel" destination="GoZ-KR-6rJ" id="X2z-fJ-iQb"/>
+                        <outlet property="trailerButton" destination="gaJ-Ft-W0L" id="37r-A3-FrT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CaK-EX-sTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jax-mn-UJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="-23"/>
+            <point key="canvasLocation" x="1164" y="-24"/>
         </scene>
     </scenes>
     <resources>

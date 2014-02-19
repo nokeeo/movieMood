@@ -8,7 +8,6 @@
 
 #import "SKYMovieRequests.h"
 #import "AFHTTPRequestOperation.h"
-#import "SKYMovie.h"
 
 @implementation SKYMovieRequests
 
@@ -48,13 +47,20 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
++(void) getMovieDetailData:(SKYMovie *) movie successCallback:(void (^)(id requestResponse))successCallback failCallBack: (void (^)(NSError * error)) errorCallback {
+    NSString *movieURL = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://itunes.apple.com/lookup?id=", movie.movieId, @"&entity=movie"];
+    NSURL *url = [NSURL URLWithString:movieURL];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [requestOperation setResponseSerializer: [AFJSONResponseSerializer serializer]];
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        movie.rating = [responseObject objectForKey:@"contentAdvisoryRating"];
+        successCallback(movie);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        errorCallback(error);
+    }];
+    [requestOperation start];
 }
-*/
-
 @end

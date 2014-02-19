@@ -15,7 +15,7 @@
 #import "SKYMovie.h"
 
 @interface SKYResultViewController ()
-@property (nonatomic, retain) NSString *selectedMovidId;
+@property (nonatomic, retain) SKYMovie *selectedMovie;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 @property (nonatomic, retain) NSMutableArray *movieSource;
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
@@ -27,8 +27,7 @@
 }
 
 @synthesize movieProps = _movieProps;
-@synthesize movieSource = _movieSource;
-@synthesize selectedMovidId = _selectedMovidId;
+@synthesize selectedMovie = _selectedMovie;
 @synthesize imageCache = _imageCache;
 @synthesize refresing = _refresing;
 @synthesize currentPageNumber = _currentPageNumber;
@@ -109,14 +108,14 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SKYMovie *movie = [_movieSource objectAtIndex: indexPath.row];
-    _selectedMovidId = movie.movieId;
+    _selectedMovie = movie;
     [self performSegueWithIdentifier:@"MovieDetail" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"MovieDetail"]) {
         SKYMovieViewController *movieVC = segue.destinationViewController;
-        movieVC.movieId = _selectedMovidId;
+        movieVC.movie = _selectedMovie;
         movieVC.selectedColor = _selectedColor;
     }
 }

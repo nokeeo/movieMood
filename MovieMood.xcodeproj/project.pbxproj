@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */; };
+		BE10A5CC18B467AE00935271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE10A5CB18B467AE00935271 /* Main.storyboard */; };
+		BE10A5CF18B47B4800935271 /* SKYBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE10A5CE18B47B4800935271 /* SKYBorderButton.m */; };
 		BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */; };
 		BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A56189EF03B007B1EDA /* AboutView.xib */; };
 		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
@@ -43,7 +45,6 @@
 		BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA951899F8AF00992093 /* MovieMoodTests.m */; };
 		C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D1294189C4D6000A2B84F /* SKYResultViewController.m */; };
 		C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D129A189C538600A2B84F /* SKYIntroViewController.m */; };
-		C12714531899FB9300246E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12714521899FB9300246E40 /* Main.storyboard */; };
 		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
 		C16624E2189C72600086F00C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E1189C72600086F00C /* smile.png */; };
 		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
@@ -74,6 +75,9 @@
 /* Begin PBXFileReference section */
 		BE0378E4189DA9980032EC9F /* SKYColorPickerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYColorPickerScrollView.h; path = MovieMood/SKYColorPickerScrollView.h; sourceTree = "<group>"; };
 		BE0378E5189DA9980032EC9F /* SKYColorPickerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYColorPickerScrollView.m; path = MovieMood/SKYColorPickerScrollView.m; sourceTree = "<group>"; };
+		BE10A5CB18B467AE00935271 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BE10A5CD18B47B4800935271 /* SKYBorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYBorderButton.h; sourceTree = "<group>"; };
+		BE10A5CE18B47B4800935271 /* SKYBorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYBorderButton.m; sourceTree = "<group>"; };
 		BE271A4F189EED5B007B1EDA /* SKYInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYInfoViewController.h; path = MovieMood/SKYInfoViewController.h; sourceTree = "<group>"; };
 		BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYInfoViewController.m; path = MovieMood/SKYInfoViewController.m; sourceTree = "<group>"; };
 		BE271A56189EF03B007B1EDA /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
@@ -131,7 +135,6 @@
 		C11D1294189C4D6000A2B84F /* SKYResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYResultViewController.m; path = MovieMood/SKYResultViewController.m; sourceTree = "<group>"; };
 		C11D1299189C538600A2B84F /* SKYIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYIntroViewController.h; path = MovieMood/SKYIntroViewController.h; sourceTree = "<group>"; };
 		C11D129A189C538600A2B84F /* SKYIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYIntroViewController.m; path = MovieMood/SKYIntroViewController.m; sourceTree = "<group>"; };
-		C12714521899FB9300246E40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYViewController.h; path = MovieMood/SKYViewController.h; sourceTree = "<group>"; };
 		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYViewController.m; path = MovieMood/SKYViewController.m; sourceTree = "<group>"; };
 		C16624E1189C72600086F00C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
@@ -263,10 +266,10 @@
 				BED5AF08189AC99A00ABF4EC /* ColorWheel */,
 				BEE1CA7B1899F8AF00992093 /* SKYAppDelegate.h */,
 				BEE1CA7C1899F8AF00992093 /* SKYAppDelegate.m */,
+				BE10A5CB18B467AE00935271 /* Main.storyboard */,
 				BEE1CA811899F8AF00992093 /* Images.xcassets */,
 				BEE1CA7E1899F8AF00992093 /* MovieMood.xcdatamodeld */,
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
-				C12714521899FB9300246E40 /* Main.storyboard */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -349,6 +352,8 @@
 				BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */,
 				BE271A56189EF03B007B1EDA /* AboutView.xib */,
 				BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */,
+				BE10A5CD18B47B4800935271 /* SKYBorderButton.h */,
+				BE10A5CE18B47B4800935271 /* SKYBorderButton.m */,
 			);
 			name = ViewLayouts;
 			path = ..;
@@ -431,7 +436,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1A2CEC8189DB54600FDE503 /* NR.png in Resources */,
-				C12714531899FB9300246E40 /* Main.storyboard in Resources */,
 				C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */,
 				C1A2CEC6189DB54600FDE503 /* G.png in Resources */,
 				C1A2CECB189DB54600FDE503 /* R.png in Resources */,
@@ -442,6 +446,7 @@
 				BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */,
 				C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */,
 				C1A2CECA189DB54600FDE503 /* PG.png in Resources */,
+				BE10A5CC18B467AE00935271 /* Main.storyboard in Resources */,
 				C16624E4189C76030086F00C /* bucket.png in Resources */,
 				C1A2CEC7189DB54600FDE503 /* NC-17.png in Resources */,
 				C16624E2189C72600086F00C /* smile.png in Resources */,
@@ -477,6 +482,7 @@
 				BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */,
 				C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */,
 				BE94399018ADBDDD001F3023 /* SKYMovie.m in Sources */,
+				BE10A5CF18B47B4800935271 /* SKYBorderButton.m in Sources */,
 				BEE1CA7D1899F8AF00992093 /* SKYAppDelegate.m in Sources */,
 				BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,

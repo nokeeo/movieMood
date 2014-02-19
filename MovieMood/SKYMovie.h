@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *storeURL;
 @property (nonatomic, retain) NSString *trailerURL;
 @property (nonatomic, retain) NSString *rating;
+@property (nonatomic, retain) NSString *genre;
 
 -(id) initWithEntry:(id) entry;
 @end
