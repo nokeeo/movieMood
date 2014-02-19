@@ -24,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *rentLabel;
 @property (weak, nonatomic) IBOutlet SKYBorderButton *iTunesButton;
 @property (weak, nonatomic) IBOutlet SKYBorderButton *trailerButton;
+@property (weak, nonatomic) IBOutlet UILabel *directorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
+@property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
 
 @end
 
@@ -45,10 +48,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
--(void) viewDidAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
     
@@ -80,7 +79,14 @@
     _movieTitle.text = _movie.title;
     _genreLabel.text = _movie.genre;
     _buyLabel.text = [NSString stringWithFormat: @"%@ %@", _buyLabel.text ,_movie.purchasePrice];
-    _rentLabel.text = [NSString stringWithFormat:@"%@ %@", _rentLabel.text, _movie.rentalPrice];
+    _releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _releaseDateLabel.text, _movie.releaseDate];
+    _directorLabel.text = [NSString stringWithFormat:@"%@ %@", _directorLabel.text, _movie.director];
+    _summaryTextView.text = _movie.description;
+    
+    if(!_movie.rentalPrice)
+        _rentLabel.text = @": Not Available";
+    else
+        _rentLabel.text = [NSString stringWithFormat:@"%@ %@", _rentLabel.text, _movie.rentalPrice];
     
     _iTunesButton.color = tintColor;
     _trailerButton.color = tintColor;
@@ -95,6 +101,10 @@
     } failCallBack:^(NSError * error){
         //
     }];
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

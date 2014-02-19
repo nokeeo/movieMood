@@ -20,6 +20,8 @@
         _rentalPrice = [[entry objectForKey:@"im:rentalPrice"] objectForKey:@"label"];
         _description = [[entry objectForKey:@"summary"] objectForKey:@"label"];
         _genre = [[[entry objectForKey:@"category"] objectForKey:@"attributes"] objectForKey:@"label"];
+        _director = [[entry objectForKey:@"im:artist"] objectForKey:@"label"];
+        _releaseDate = [[[entry objectForKey:@"im:releaseDate"] objectForKey:@"attributes"] objectForKey:@"label"];
         
         //Get URls
         id links = [entry objectForKey:@"link"];

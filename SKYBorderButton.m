@@ -31,5 +31,6 @@
 -(void)setColor:(UIColor *) color {
     self.tintColor = color;
     [self drawRect:self.frame];
+    
 }
 @end

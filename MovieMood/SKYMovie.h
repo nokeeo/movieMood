@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString *trailerURL;
 @property (nonatomic, retain) NSString *rating;
 @property (nonatomic, retain) NSString *genre;
+@property (nonatomic, retain) NSString *director;
+@property (nonatomic, retain) NSString *releaseDate;
 
 -(id) initWithEntry:(id) entry;
 @end
