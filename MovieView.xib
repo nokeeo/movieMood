@@ -108,12 +108,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="iTunes"/>
+                    <connections>
+                        <action selector="iTunesButtonPressed:" destination="xJF-fQ-NUu" eventType="touchUpInside" id="qMF-hO-1u4"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVu-qy-XWj" customClass="SKYBorderButton">
                     <rect key="frame" x="242" y="144" width="58" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Trailer"/>
+                    <connections>
+                        <action selector="trailerButtonPressed:" destination="xJF-fQ-NUu" eventType="touchUpInside" id="Grc-IS-MMU"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zub-Th-Cyy">
                     <rect key="frame" x="21" y="294" width="172" height="31"/>

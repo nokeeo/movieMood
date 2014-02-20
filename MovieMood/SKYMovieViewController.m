@@ -13,7 +13,6 @@
 #import "SKYColorAnalyser.h"
 #import "SKYMovieRequests.h"
 #import "SKYBorderButton.h"
-#import "SKYMovieDetailView.h"
 
 @interface SKYMovieViewController ()
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
@@ -53,11 +52,6 @@
     _contentView = (SKYMovieDetailView *)[[[NSBundle mainBundle] loadNibNamed:@"MovieView" owner:self options:nil] objectAtIndex:0];
     _contentView.frame = CGRectMake(0.f, 60.f, _contentView.frame.size.width, _contentView.frame.size.height);
     
-    [_coverView addSubview:_activityIndicatorView];
-    [self.view addSubview:_contentView];
-    [self.view addSubview:_coverView];
-    [_activityIndicatorView fadeInView];
-    
     SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
     UIColor *tintColor = [analyser tintColor:_selectedColor withTintConst: - .25];
     _activityIndicatorView.activityIndicator.color = tintColor;
@@ -81,6 +75,7 @@
     
     _contentView.iTunesButton.color = tintColor;
     _contentView.trailerButton.color = tintColor;
+    _contentView.buttonResponseDelegate = self;
     
     [SKYMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){
         _movie = (SKYMovie*) requestResponse;
@@ -92,10 +87,23 @@
     } failCallBack:^(NSError * error){
         //
     }];
+    
+    [_coverView addSubview:_activityIndicatorView];
+    [self.view addSubview:_contentView];
+    [self.view addSubview:_coverView];
+    [_activityIndicatorView fadeInView];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+-(void)iTunesButtonPressedResponse:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.storeURL]];
+}
+
+-(void)trailerButtonPressedResponse:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SKYBorderButton.h"
 
+@protocol MovieDetailButtonResponse
+-(void)iTunesButtonPressedResponse:(id) sender;
+-(void)trailerButtonPressedResponse:(id) sender;
+@end
+
 @interface SKYMovieDetailView : UIScrollView
 @property (weak, nonatomic) IBOutlet UILabel *movieTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImage;
@@ -20,4 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *directorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+
+@property (nonatomic, retain) id buttonResponseDelegate;
 @end

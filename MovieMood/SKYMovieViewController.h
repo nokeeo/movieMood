@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SKYMovie.h"
+#import "SKYMovieDetailView.h"
 
-@interface SKYMovieViewController : UIViewController
+@interface SKYMovieViewController : UIViewController <MovieDetailButtonResponse>
 @property (nonatomic, retain) SKYMovie *movie;
 @property (nonatomic, retain) UIColor *selectedColor;
 @end

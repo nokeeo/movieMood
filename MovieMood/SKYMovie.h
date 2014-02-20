@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern const NSString *AFFILIATE_KEY;
+
 @interface SKYMovie : NSObject
 @property (nonatomic, retain) NSString *movieId;
 @property (nonatomic, retain) NSString *title;

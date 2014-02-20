@@ -14,6 +14,8 @@
 
 @implementation SKYMovieDetailView
 
+@synthesize buttonResponseDelegate = _buttonResponseDelegate;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -43,4 +45,11 @@
     
 }
 
+- (IBAction)iTunesButtonPressed:(id)sender {
+    [_buttonResponseDelegate iTunesButtonPressedResponse: sender];
+}
+
+- (IBAction)trailerButtonPressed:(id)sender {
+    [_buttonResponseDelegate trailerButtonPressedResponse: sender];
+}
 @end

@@ -9,6 +9,8 @@
 #import "SKYMovie.h"
 #import "SKYMovieRequests.h"
 
+const NSString *AFFILIATE_KEY = @"11lu3P";
+
 @implementation SKYMovie
 
 -(id)initWithEntry:(id)entry {
@@ -27,7 +29,7 @@
         id links = [entry objectForKey:@"link"];
         for(id link in links) {
             if([[[link objectForKey:@"attributes"] objectForKey:@"type"] isEqualToString:@"text/html"])
-                _storeURL = [[link objectForKey:@"attributes"] objectForKey:@"href"];
+                _storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [[link objectForKey:@"attributes"] objectForKey:@"href"], AFFILIATE_KEY ];
         }
         
         //Get the images
