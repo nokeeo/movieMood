@@ -11,4 +11,5 @@
 @interface SKYMovieRequests : NSObject
 +(void) getMoviesWithGenres: (NSArray *) genreList page:(int) pageNum successCallback: (void (^)(id requestResponse)) successCallback failCallBack: (void (^)(NSError *error)) errorCallback;
 +(void) getMovieDetailData:(SKYMovie *) movie successCallback:(void (^)(id requestResponse))successCallback failCallBack: (void (^)(NSError * error)) errorCallback;
++(void) getTrailerWithMovieTitle:(NSString *) title successCallback:(void (^) (id requestResponse))successCallback failCallBack: (void (^)(NSError *error)) errorCallback;
 @end

@@ -103,7 +103,11 @@
 }
 
 -(void)trailerButtonPressedResponse:(id)sender {
-    
+    [SKYMovieRequests getTrailerWithMovieTitle:_movie.title successCallback:^(id requestResponse) {
+        //
+    } failCallBack:^(NSError * error){
+        //
+    }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -63,4 +63,20 @@
     }];
     [requestOperation start];
 }
+
++(void) getTrailerWithMovieTitle:(NSString *)title successCallback:(void (^)(id))successCallback failCallBack:(void (^)(NSError *error))errorCallback {
+    NSString *formatTitle = [title stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    NSString *titleURL = [[NSString alloc] initWithFormat:@"%@film=%@", @"http://api.traileraddict.com/?", formatTitle ];
+    NSURL *url = [NSURL URLWithString:titleURL];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [requestOperation setResponseSerializer: [AFXMLParserResponseSerializer serializer]];
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    [requestOperation start];
+}
 @end
