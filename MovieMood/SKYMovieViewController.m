@@ -13,21 +13,12 @@
 #import "SKYColorAnalyser.h"
 #import "SKYMovieRequests.h"
 #import "SKYBorderButton.h"
+#import "SKYMovieDetailView.h"
 
 @interface SKYMovieViewController ()
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) UIView *coverView;
-@property (weak, nonatomic) IBOutlet UIImageView *artworkImage;
-@property (weak, nonatomic) IBOutlet UILabel *movieTitle;
-@property (weak, nonatomic) IBOutlet UILabel *genreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *buyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rentLabel;
-@property (weak, nonatomic) IBOutlet SKYBorderButton *iTunesButton;
-@property (weak, nonatomic) IBOutlet SKYBorderButton *trailerButton;
-@property (weak, nonatomic) IBOutlet UILabel *directorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
-@property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
-
+@property (nonatomic, retain) SKYMovieDetailView *contentView;
 @end
 
 @implementation SKYMovieViewController
@@ -35,12 +26,12 @@
 @synthesize movie = _movie;
 @synthesize activityIndicatorView = _activityIndicatorView;
 @synthesize selectedColor = _selectedColor;
+@synthesize contentView = _contentView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -59,8 +50,11 @@
                                                           size.width,
                                                           size.height)];
     _coverView.backgroundColor = [UIColor whiteColor];
+    _contentView = (SKYMovieDetailView *)[[[NSBundle mainBundle] loadNibNamed:@"MovieView" owner:self options:nil] objectAtIndex:0];
+    _contentView.frame = CGRectMake(0.f, 60.f, _contentView.frame.size.width, _contentView.frame.size.height);
     
     [_coverView addSubview:_activityIndicatorView];
+    [self.view addSubview:_contentView];
     [self.view addSubview:_coverView];
     [_activityIndicatorView fadeInView];
     
@@ -70,26 +64,23 @@
     self.navigationController.navigationBar.tintColor = tintColor;
     
     NSURL *artworkURL = [NSURL URLWithString: _movie.coverImage170];
-    _artworkImage.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:artworkURL]];
-    _artworkImage.layer.cornerRadius = 10;
-    _artworkImage.layer.borderWidth = 1;
-    _artworkImage.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    _artworkImage.layer.masksToBounds = YES;
+    _contentView.artworkImage.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:artworkURL]];
     
-    _movieTitle.text = _movie.title;
-    _genreLabel.text = _movie.genre;
-    _buyLabel.text = [NSString stringWithFormat: @"%@ %@", _buyLabel.text ,_movie.purchasePrice];
-    _releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _releaseDateLabel.text, _movie.releaseDate];
-    _directorLabel.text = [NSString stringWithFormat:@"%@ %@", _directorLabel.text, _movie.director];
-    _summaryTextView.text = _movie.description;
+    
+    _contentView.movieTitle.text = _movie.title;
+    _contentView.genreLabel.text = _movie.genre;
+    _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
+    _contentView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.releaseDateLabel.text, _movie.releaseDate];
+    _contentView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.directorLabel.text, _movie.director];
+    _contentView.summaryLabel.text = _movie.description;
     
     if(!_movie.rentalPrice)
-        _rentLabel.text = @": Not Available";
+        _contentView.rentLabel.text = @": Not Available";
     else
-        _rentLabel.text = [NSString stringWithFormat:@"%@ %@", _rentLabel.text, _movie.rentalPrice];
+        _contentView.rentLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.rentLabel.text, _movie.rentalPrice];
     
-    _iTunesButton.color = tintColor;
-    _trailerButton.color = tintColor;
+    _contentView.iTunesButton.color = tintColor;
+    _contentView.trailerButton.color = tintColor;
     
     [SKYMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){
         _movie = (SKYMovie*) requestResponse;
