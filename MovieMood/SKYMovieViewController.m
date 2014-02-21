@@ -103,11 +103,12 @@
 }
 
 -(void)trailerButtonPressedResponse:(id)sender {
-    [SKYMovieRequests getTrailerWithMovieTitle:_movie.title successCallback:^(id requestResponse) {
+    /*[SKYMovieRequests getTrailerWithMovieTitle:_movie.title successCallback:^(id requestResponse) {
         //
     } failCallBack:^(NSError * error){
         //
-    }];
+    }];*/
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.trailerURL]];
 }
 
 - (void)didReceiveMemoryWarning

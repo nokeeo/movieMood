@@ -30,6 +30,8 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
         for(id link in links) {
             if([[[link objectForKey:@"attributes"] objectForKey:@"type"] isEqualToString:@"text/html"])
                 _storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [[link objectForKey:@"attributes"] objectForKey:@"href"], AFFILIATE_KEY ];
+            else if([[[link objectForKey:@"attributes"] objectForKey:@"type"] isEqualToString:@"video/x-m4v"])
+                _trailerURL = [[link objectForKey:@"attributes"] objectForKey:@"href"];
         }
         
         //Get the images
