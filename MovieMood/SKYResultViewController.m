@@ -20,12 +20,12 @@
 @property (nonatomic, retain) NSMutableArray *movieSource;
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) NSDictionary *movieRequestCache;
+@property (nonatomic, retain) dispatch_queue_t dispatchQueue;
 @property int currentPageNumber;
 @property bool refresing;
 @end
 
-@implementation SKYResultViewController {
-}
+@implementation SKYResultViewController
 
 @synthesize movieProps = _movieProps;
 @synthesize selectedMovie = _selectedMovie;
@@ -34,6 +34,7 @@
 @synthesize currentPageNumber = _currentPageNumber;
 @synthesize activityIndicatorView = _activityIndicatorView;
 @synthesize  movieRequestCache = _movieRequestCache;
+@synthesize dispatchQueue = _dispatchQueue;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,6 +52,7 @@
     _currentPageNumber = 1;
     _refresing = NO;
     _imageCache = [[NSMutableDictionary alloc] init];
+    _dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
@@ -65,7 +67,7 @@
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
         _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         _movieRequestCache = requestResponse;
-        [self cacheMovieImages:_movieSource];
+        //[self cacheMovieImages:_movieSource];
         [self.tableView reloadData];
         [_activityIndicatorView fadeOutView];
         [UIView commitAnimations];
@@ -102,10 +104,26 @@
     static NSString *CellIdentifier = @"MovieCell";
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     SKYMovie *currentMovie = [_movieSource objectAtIndex:indexPath.row];
-    UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
+    //UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
+    //cell.artwork.image = currentImage;
+    [cell.artwork setImage: [UIImage imageNamed:@"defaultMoviePoster.png"]];
+    dispatch_async(_dispatchQueue, ^{
+        if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
+            cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.movieId]];
+        else {
+            NSURL *imageURL = [NSURL URLWithString: currentMovie.coverImage170];
+            NSData *imageData = [NSData dataWithContentsOfURL: imageURL];
+            UIImage *artwork = [UIImage imageWithData: imageData];
+            [_imageCache setObject:artwork forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.artwork.image = artwork;
+            });
+        }
+    });
+    
     
     cell.title.text = currentMovie.title;
-    cell.artwork.image = currentImage;
     return cell;
 }
 
@@ -145,7 +163,7 @@
         if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
             NSArray *newMovies = [self createListWithProps: _movieProps withSourceLists: _movieRequestCache];
             [_movieSource addObjectsFromArray: newMovies];
-            [self cacheMovieImages: newMovies];
+            //[self cacheMovieImages: newMovies];
             [self.tableView reloadData];
             _currentPageNumber++;
         }
