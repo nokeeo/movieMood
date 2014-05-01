@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 @property (nonatomic, retain) NSMutableArray *movieSource;
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
+@property (nonatomic, retain) NSDictionary *movieRequestCache;
 @property int currentPageNumber;
 @property bool refresing;
 @end
@@ -32,6 +33,7 @@
 @synthesize refresing = _refresing;
 @synthesize currentPageNumber = _currentPageNumber;
 @synthesize activityIndicatorView = _activityIndicatorView;
+@synthesize  movieRequestCache = _movieRequestCache;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -62,6 +64,7 @@
     [_activityIndicatorView.activityIndicator startAnimating];
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
         _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
+        _movieRequestCache = requestResponse;
         [self cacheMovieImages:_movieSource];
         [self.tableView reloadData];
         [_activityIndicatorView fadeOutView];
@@ -128,15 +131,8 @@
         NSMutableArray *currentMovieResponses = [[NSMutableArray alloc] initWithArray:[sourceList objectForKey: genreCode]];
         for(int i = 0; (i < numberOfMovies) && ([currentMovieResponses count] != 0); i++) {
             int randomIndex = arc4random() % [currentMovieResponses count];
-            while([_movieSource containsObject:[currentMovieResponses objectAtIndex:randomIndex]] || [movies containsObject:[currentMovieResponses objectAtIndex:randomIndex]]) {
-                [currentMovieResponses removeObjectAtIndex:randomIndex];
-                if([currentMovieResponses count] == 0)
-                    break;
-                else
-                    randomIndex = arc4random() % [currentMovieResponses count];
-            }
-            if([currentMovieResponses count] != 0)
-                [movies addObject:[currentMovieResponses objectAtIndex:randomIndex]];
+            [movies addObject:[currentMovieResponses objectAtIndex:randomIndex]];
+            [currentMovieResponses removeObjectAtIndex:randomIndex];
         }
     }
     return movies;
@@ -147,19 +143,11 @@
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
         if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
-            [_activityIndicatorView fadeInView];
-            [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
-                NSArray *newMovies = [self createListWithProps:_movieProps withSourceLists:requestResponse];
-                [_movieSource addObjectsFromArray:newMovies];
-                [self cacheMovieImages:newMovies];
-                [self.tableView reloadData];
-                _currentPageNumber++;
-                _refresing = NO;
-                [_activityIndicatorView fadeOutView];
-            } failCallBack:^(NSError *error) {
-                NSLog(@"error");
-            }];
-            _refresing = YES;
+            NSArray *newMovies = [self createListWithProps: _movieProps withSourceLists: _movieRequestCache];
+            [_movieSource addObjectsFromArray: newMovies];
+            [self cacheMovieImages: newMovies];
+            [self.tableView reloadData];
+            _currentPageNumber++;
         }
     }
 }
