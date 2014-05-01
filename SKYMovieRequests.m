@@ -79,4 +79,16 @@
     }];
     [requestOperation start];
 }
+
++(void) loadImageWithURL: (NSURL *)url successCallback:(void (^) (id requestResponse))successCallback failCallcack:(void (^) (NSError *error)) errorCallback {
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL: url]];
+    operation.responseSerializer = [AFImageResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        successCallback(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        errorCallback(error);
+    }];
+    [operation start];
+}
 @end

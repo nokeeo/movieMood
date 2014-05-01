@@ -34,7 +34,6 @@
 @synthesize currentPageNumber = _currentPageNumber;
 @synthesize activityIndicatorView = _activityIndicatorView;
 @synthesize  movieRequestCache = _movieRequestCache;
-@synthesize dispatchQueue = _dispatchQueue;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,7 +51,6 @@
     _currentPageNumber = 1;
     _refresing = NO;
     _imageCache = [[NSMutableDictionary alloc] init];
-    _dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
@@ -104,20 +102,18 @@
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     SKYMovie *currentMovie = [_movieSource objectAtIndex:indexPath.row];
     [cell.artwork setImage: [UIImage imageNamed:@"defaultMoviePoster.png"]];
-    dispatch_async(_dispatchQueue, ^{
-        if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
-            cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.movieId]];
-        else {
-            NSURL *imageURL = [NSURL URLWithString: currentMovie.coverImage170];
-            NSData *imageData = [NSData dataWithContentsOfURL: imageURL];
-            UIImage *artwork = [UIImage imageWithData: imageData];
-            [_imageCache setObject:artwork forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.artwork.image = artwork;
-            });
-        }
-    });
+    if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
+        cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.movieId]];
+    else {
+        NSURL *imageURL = [NSURL URLWithString: currentMovie.coverImage170];
+        [SKYMovieRequests loadImageWithURL:imageURL successCallback:^(id requestResponse) {
+            [_imageCache setObject:requestResponse forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
+            cell.artwork.image = requestResponse;
+            NSLog(@"FIRE");
+        } failCallcack:^(NSError *error) {
+            NSLog(@"%@", error);
+        }];
+    }
     
     
     cell.title.text = currentMovie.title;
