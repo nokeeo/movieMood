@@ -67,7 +67,6 @@
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
         _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         _movieRequestCache = requestResponse;
-        //[self cacheMovieImages:_movieSource];
         [self.tableView reloadData];
         [_activityIndicatorView fadeOutView];
         [UIView commitAnimations];
@@ -104,8 +103,6 @@
     static NSString *CellIdentifier = @"MovieCell";
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     SKYMovie *currentMovie = [_movieSource objectAtIndex:indexPath.row];
-    //UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
-    //cell.artwork.image = currentImage;
     [cell.artwork setImage: [UIImage imageNamed:@"defaultMoviePoster.png"]];
     dispatch_async(_dispatchQueue, ^{
         if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
@@ -163,20 +160,8 @@
         if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
             NSArray *newMovies = [self createListWithProps: _movieProps withSourceLists: _movieRequestCache];
             [_movieSource addObjectsFromArray: newMovies];
-            //[self cacheMovieImages: newMovies];
             [self.tableView reloadData];
             _currentPageNumber++;
-        }
-    }
-}
-
--(void)cacheMovieImages:(NSArray *)movies {
-    for(SKYMovie *movie in movies) {
-        UIImage *currentImage = [_imageCache objectForKey:[NSString stringWithFormat:@"%@", movie.movieId]];
-        if(!currentImage) {
-            NSURL *imageURL = [NSURL URLWithString: movie.coverImage170];
-            currentImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
-            [_imageCache setObject:currentImage forKey:[NSString stringWithFormat:@"%@", movie.movieId]];
         }
     }
 }
