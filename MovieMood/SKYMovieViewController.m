@@ -64,8 +64,8 @@
     _contentView.movieTitle.text = _movie.title;
     _contentView.genreLabel.text = _movie.genre;
     _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
-    _contentView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.releaseDateLabel.text, _movie.releaseDate];
-    _contentView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.directorLabel.text, _movie.director];
+    //_contentView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.releaseDateLabel.text, _movie.releaseDate];
+    //_contentView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.directorLabel.text, _movie.director];
     _contentView.summaryLabel.text = _movie.description;
     
     if(!_movie.rentalPrice)
@@ -74,7 +74,7 @@
         _contentView.rentLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.rentLabel.text, _movie.rentalPrice];
     
     _contentView.iTunesButton.color = tintColor;
-    _contentView.trailerButton.color = tintColor;
+   // _contentView.trailerButton.color = tintColor;
     _contentView.buttonResponseDelegate = self;
     
     [SKYMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){

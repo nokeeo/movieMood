@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SKYBorderButton.h"
+#import "SKYMovieInformationView.h"
 
 @protocol MovieDetailButtonResponse
 -(void)iTunesButtonPressedResponse:(id) sender;
@@ -21,10 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *buyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rentLabel;
 @property (weak, nonatomic) IBOutlet SKYBorderButton *iTunesButton;
-@property (weak, nonatomic) IBOutlet SKYBorderButton *trailerButton;
-@property (weak, nonatomic) IBOutlet UILabel *directorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) SKYMovieInformationView *movieInformationView;
 
 @property (nonatomic, retain) id buttonResponseDelegate;
 @end

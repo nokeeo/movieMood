@@ -15,6 +15,7 @@
 @implementation SKYMovieDetailView
 
 @synthesize buttonResponseDelegate = _buttonResponseDelegate;
+@synthesize movieInformationView = _movieInformationView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -22,6 +23,19 @@
     if (self) {
     }
     return self;
+}
+
+-(void)awakeFromNib {
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
+    _movieInformationView = [nib objectAtIndex: 0];
+    CGPoint informationOrigin = CGPointMake(_summaryLabel.frame.origin.x ,
+                                            _summaryLabel.frame.origin.y + _summaryLabel.frame.size.height);
+    CGRect informationRect = CGRectMake(informationOrigin.x,
+                                        informationOrigin.y,
+                                        _summaryLabel.frame.size.width,
+                                        200);
+    [self addSubview: _movieInformationView];
+    [_movieInformationView setFrame: informationRect];
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder {

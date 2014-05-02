@@ -15,6 +15,8 @@
 		BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */; };
 		BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A56189EF03B007B1EDA /* AboutView.xib */; };
 		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
+		BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */; };
+		BE38A3CE1913F9B700559C44 /* SKYMovieInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */; };
 		BE94398418ADA0F0001F3023 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */; };
 		BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397418ADA0F0001F3023 /* AFHTTPRequestOperationManager.m */; };
 		BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397618ADA0F0001F3023 /* AFHTTPSessionManager.m */; };
@@ -88,6 +90,9 @@
 		BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYInfoViewController.m; path = MovieMood/SKYInfoViewController.m; sourceTree = "<group>"; };
 		BE271A56189EF03B007B1EDA /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorTheoryView.xib; sourceTree = "<group>"; };
+		BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieInformationView.xib; sourceTree = "<group>"; };
+		BE38A3CC1913F9B700559C44 /* SKYMovieInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovieInformationView.h; sourceTree = "<group>"; };
+		BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovieInformationView.m; sourceTree = "<group>"; };
 		BE94397118ADA0F0001F3023 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BE94397318ADA0F0001F3023 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -364,6 +369,9 @@
 				BE10A5CE18B47B4800935271 /* SKYBorderButton.m */,
 				BE10A5D018B5562000935271 /* SKYMovieDetailView.h */,
 				BE10A5D118B5562000935271 /* SKYMovieDetailView.m */,
+				BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */,
+				BE38A3CC1913F9B700559C44 /* SKYMovieInformationView.h */,
+				BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */,
 				BE10A5D318B5565600935271 /* MovieView.xib */,
 			);
 			name = ViewLayouts;
@@ -449,6 +457,7 @@
 				C1A2CEC8189DB54600FDE503 /* NR.png in Resources */,
 				C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */,
 				C1A2CEC6189DB54600FDE503 /* G.png in Resources */,
+				BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */,
 				C1A2CECB189DB54600FDE503 /* R.png in Resources */,
 				BE10A5D418B5565600935271 /* MovieView.xib in Resources */,
 				BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */,
@@ -485,6 +494,7 @@
 				BE94398C18ADA0F0001F3023 /* AFURLSessionManager.m in Sources */,
 				BE94398918ADA0F0001F3023 /* AFURLConnectionOperation.m in Sources */,
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
+				BE38A3CE1913F9B700559C44 /* SKYMovieInformationView.m in Sources */,
 				BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */,
 				BE94398718ADA0F0001F3023 /* AFNetworkReachabilityManager.m in Sources */,
 				C16F56EA189DCF52009F71AB /* TLAlertView.m in Sources */,
