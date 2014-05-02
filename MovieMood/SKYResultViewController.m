@@ -177,7 +177,7 @@
 -(BOOL) movieDisplayed:(SKYMovie *) movie {
     for(int i = 0; i < [_movieSource count]; i++) {
         SKYMovie *currentMovie = [_movieSource objectAtIndex: i];
-        if([currentMovie.title isEqualToString: movie.title])
+        if([currentMovie.movieId isEqualToString: movie.movieId])
             return true;
     }
     return false;
