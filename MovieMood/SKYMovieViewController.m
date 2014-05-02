@@ -64,8 +64,8 @@
     _contentView.movieTitle.text = _movie.title;
     _contentView.genreLabel.text = _movie.genre;
     _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
-    //_contentView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.releaseDateLabel.text, _movie.releaseDate];
-    //_contentView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.directorLabel.text, _movie.director];
+    _contentView.movieInformationView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.releaseDateLabel.text, _movie.releaseDate];
+    _contentView.movieInformationView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.directorLabel.text, _movie.director];
     _contentView.summaryLabel.text = _movie.description;
     
     if(!_movie.rentalPrice)
