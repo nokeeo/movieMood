@@ -9,13 +9,14 @@
 #import "SKYMovieDetailView.h"
 
 @interface SKYMovieDetailView ()
-@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (nonatomic, retain) UILabel *summaryLabel;
 @end
 
 @implementation SKYMovieDetailView
 
 @synthesize buttonResponseDelegate = _buttonResponseDelegate;
 @synthesize movieInformationView = _movieInformationView;
+@synthesize summaryLabel = _summaryLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -26,6 +27,11 @@
 }
 
 -(void)awakeFromNib {
+    CGRect summaryRect = CGRectMake(_artworkImage.frame.origin.x,
+                                    _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 10,
+                                    277, 98);
+    _summaryLabel = [[UILabel alloc] initWithFrame:summaryRect];
+    [self addSubview: _summaryLabel];
     
     //Create information view
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
@@ -43,8 +49,6 @@
 -(id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if(self) {
-        self.userInteractionEnabled = YES;
-        self.alwaysBounceVertical = YES;
         [self setBackgroundColor:[UIColor whiteColor]];
     }
     return self;
@@ -67,16 +71,29 @@
 
 -(void) setSummaryText:(NSString *)text {
     _summaryLabel.text = text;
-    
+    _summaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:15];
+    _summaryLabel.numberOfLines = 0;
+    CGFloat oldSumHeight = _summaryLabel.frame.size.height;
     //Check if more button in summary is needed.
     CGSize maxSummarySize = [self getFullSummarySizeWithText: _summaryLabel.text];
     if(maxSummarySize.height > _summaryLabel.frame.size.height) {
         CGRect newFrame = CGRectMake(_summaryLabel.frame.origin.x,
                                      _summaryLabel.frame.origin.y,
                                      _summaryLabel.frame.size.width,
-                                     maxSummarySize.height);
+                                     maxSummarySize.height + 30);
         [_summaryLabel setFrame: newFrame];
     }
+    
+    //Adjust the information view
+    CGRect newInfoFrame = CGRectMake(_movieInformationView.frame.origin.x,
+                                        _movieInformationView.frame.origin.y + (_summaryLabel.frame.size.height -  oldSumHeight) + 10,
+                                        _movieInformationView.frame.size.width,
+                                        _movieInformationView.frame.size.height);
+    [_movieInformationView setFrame: newInfoFrame];
+    
+    //Adjust contentsize
+    //CGSize newContentSize = CGSizeMake(self.contentSize.width, 9999);
+    //self.contentSize = newContentSize;
 }
 
 -(CGSize)getFullSummarySizeWithText: (NSString *) text {

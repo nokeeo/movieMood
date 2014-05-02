@@ -15,7 +15,7 @@
 -(void)trailerButtonPressedResponse:(id) sender;
 @end
 
-@interface SKYMovieDetailView : UIScrollView
+@interface SKYMovieDetailView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *movieTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImage;
 @property (weak, nonatomic) IBOutlet UILabel *genreLabel;

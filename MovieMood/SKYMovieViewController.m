@@ -18,6 +18,7 @@
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) UIView *coverView;
 @property (nonatomic, retain) SKYMovieDetailView *contentView;
+@property (nonatomic, retain) UIScrollView *contentScrollView;
 @end
 
 @implementation SKYMovieViewController
@@ -26,6 +27,7 @@
 @synthesize activityIndicatorView = _activityIndicatorView;
 @synthesize selectedColor = _selectedColor;
 @synthesize contentView = _contentView;
+@synthesize contentScrollView = _contentScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,8 +51,15 @@
                                                           size.width,
                                                           size.height)];
     _coverView.backgroundColor = [UIColor whiteColor];
+    
+    CGRect contentSize = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _contentScrollView = [[UIScrollView alloc] initWithFrame: contentSize];
+    _contentScrollView.userInteractionEnabled = YES;
+    _contentScrollView.bounces = YES;
+    _contentScrollView.scrollEnabled = YES;
+    
     _contentView = (SKYMovieDetailView *)[[[NSBundle mainBundle] loadNibNamed:@"MovieView" owner:self options:nil] objectAtIndex:0];
-    _contentView.frame = CGRectMake(0.f, 60.f, _contentView.frame.size.width, _contentView.frame.size.height);
+    _contentView.frame = contentSize;
     
     SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
     UIColor *tintColor = [analyser tintColor:_selectedColor withTintConst: - .25];
@@ -66,7 +75,6 @@
     _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
     _contentView.movieInformationView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.releaseDateLabel.text, _movie.releaseDate];
     _contentView.movieInformationView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.directorLabel.text, _movie.director];
-    [_contentView setSummaryText: _movie.description];
     
     if(!_movie.rentalPrice)
         _contentView.rentLabel.text = @": Not Available";
@@ -87,10 +95,18 @@
         //
     }];
     
+    _contentScrollView.contentSize = _contentView.frame.size;
+    
     [_coverView addSubview:_activityIndicatorView];
-    [self.view addSubview:_contentView];
+    [_contentScrollView addSubview: _contentView];
+    [self.view addSubview: _contentScrollView];
     [self.view addSubview:_coverView];
     [_activityIndicatorView fadeInView];
+}
+
+-(void) viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    [_contentView setSummaryText: _movie.description];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
