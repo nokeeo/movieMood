@@ -106,4 +106,8 @@
     
     return requiredSize.size;
 }
+
+-(CGSize) getSizeOfContent {
+    return CGSizeMake(self.frame.size.width, self.artworkImage.frame.size.height + _summaryLabel.frame.size.height + _movieInformationView.frame.size.height);
+}
 @end

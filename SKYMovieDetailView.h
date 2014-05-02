@@ -26,4 +26,5 @@
 @property (nonatomic, retain) id buttonResponseDelegate;
 
 -(void)setSummaryText:(NSString *) text;
+-(CGSize) getSizeOfContent;
 @end

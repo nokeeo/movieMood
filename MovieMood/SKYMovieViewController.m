@@ -95,8 +95,6 @@
         //
     }];
     
-    _contentScrollView.contentSize = _contentView.frame.size;
-    
     [_coverView addSubview:_activityIndicatorView];
     [_contentScrollView addSubview: _contentView];
     [self.view addSubview: _contentScrollView];
@@ -107,6 +105,7 @@
 -(void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     [_contentView setSummaryText: _movie.description];
+    [_contentScrollView setContentSize: [_contentView getSizeOfContent]];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
