@@ -67,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="744" y="660"/>
         </scene>
-        <!--Result View Controller - Results-->
+        <!--Result View Controller-->
         <scene sceneID="aee-8a-ch1">
             <objects>
                 <tableViewController id="848-LE-X0u" customClass="SKYResultViewController" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                             <outlet property="delegate" destination="848-LE-X0u" id="3JR-6N-34I"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Results" id="YVa-rl-bSZ">
+                    <navigationItem key="navigationItem" id="YVa-rl-bSZ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bvw-sg-fwp"/>
                     </navigationItem>
                     <connections>
