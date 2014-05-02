@@ -22,8 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *buyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rentLabel;
 @property (weak, nonatomic) IBOutlet SKYBorderButton *iTunesButton;
-@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (weak, nonatomic) SKYMovieInformationView *movieInformationView;
-
 @property (nonatomic, retain) id buttonResponseDelegate;
+
+-(void)setSummaryText:(NSString *) text;
 @end

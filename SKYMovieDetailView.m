@@ -9,7 +9,7 @@
 #import "SKYMovieDetailView.h"
 
 @interface SKYMovieDetailView ()
-
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @end
 
 @implementation SKYMovieDetailView
@@ -26,6 +26,8 @@
 }
 
 -(void)awakeFromNib {
+    
+    //Create information view
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
     _movieInformationView = [nib objectAtIndex: 0];
     CGPoint informationOrigin = CGPointMake(_summaryLabel.frame.origin.x ,
@@ -61,5 +63,30 @@
 
 - (IBAction)iTunesButtonPressed:(id)sender {
     [_buttonResponseDelegate iTunesButtonPressedResponse: sender];
+}
+
+-(void) setSummaryText:(NSString *)text {
+    _summaryLabel.text = text;
+    
+    //Check if more button in summary is needed.
+    CGSize maxSummarySize = [self getFullSummarySizeWithText: _summaryLabel.text];
+    if(maxSummarySize.height > _summaryLabel.frame.size.height) {
+        CGRect newFrame = CGRectMake(_summaryLabel.frame.origin.x,
+                                     _summaryLabel.frame.origin.y,
+                                     _summaryLabel.frame.size.width,
+                                     maxSummarySize.height);
+        [_summaryLabel setFrame: newFrame];
+    }
+}
+
+-(CGSize)getFullSummarySizeWithText: (NSString *) text {
+    CGSize maxSize = CGSizeMake(self.frame.size.width, 9999);
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:_summaryLabel.font, NSFontAttributeName, nil];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text attributes: attributes];
+    
+    CGRect requiredSize = [attrString boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+    
+    return requiredSize.size;
 }
 @end

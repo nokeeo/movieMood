@@ -66,7 +66,7 @@
     _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
     _contentView.movieInformationView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.releaseDateLabel.text, _movie.releaseDate];
     _contentView.movieInformationView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.directorLabel.text, _movie.director];
-    _contentView.summaryLabel.text = _movie.description;
+    [_contentView setSummaryText: _movie.description];
     
     if(!_movie.rentalPrice)
         _contentView.rentLabel.text = @": Not Available";
