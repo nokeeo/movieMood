@@ -63,8 +63,8 @@
     [self.parentViewController.view addSubview:_activityIndicatorView];
     [_activityIndicatorView.activityIndicator startAnimating];
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
-        _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         _movieRequestCache = requestResponse;
+        _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         [self.tableView reloadData];
         [_activityIndicatorView fadeOutView];
         [UIView commitAnimations];
@@ -109,7 +109,6 @@
         [SKYMovieRequests loadImageWithURL:imageURL successCallback:^(id requestResponse) {
             [_imageCache setObject:requestResponse forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
             cell.artwork.image = requestResponse;
-            NSLog(@"FIRE");
         } failCallcack:^(NSError *error) {
             NSLog(@"%@", error);
         }];
@@ -139,11 +138,24 @@
     for(id genreCode in colorProps) {
         float currentProp = [[colorProps objectForKey:genreCode] floatValue];
         int numberOfMovies = floor(currentProp * 20);
-        NSMutableArray *currentMovieResponses = [[NSMutableArray alloc] initWithArray:[sourceList objectForKey: genreCode]];
+        NSMutableArray *currentMovieResponses = [_movieRequestCache objectForKey: genreCode];
         for(int i = 0; (i < numberOfMovies) && ([currentMovieResponses count] != 0); i++) {
             int randomIndex = arc4random() % [currentMovieResponses count];
-            [movies addObject:[currentMovieResponses objectAtIndex:randomIndex]];
-            [currentMovieResponses removeObjectAtIndex:randomIndex];
+            SKYMovie *randomMovie = [currentMovieResponses objectAtIndex:randomIndex];
+            
+            while([self movieDisplayed: randomMovie] && [currentMovieResponses count] > 1) {
+                [currentMovieResponses removeObjectAtIndex: randomIndex];
+                
+                if([currentMovieResponses count] > 0) {
+                    randomIndex = arc4random() % [currentMovieResponses count];
+                    randomMovie = [currentMovieResponses objectAtIndex:randomIndex];
+                }
+            }
+            
+            if([currentMovieResponses count] > 0) {
+                [movies addObject: randomMovie];
+                [currentMovieResponses removeObjectAtIndex:randomIndex];
+            }
         }
     }
     return movies;
@@ -160,5 +172,14 @@
             _currentPageNumber++;
         }
     }
+}
+
+-(BOOL) movieDisplayed:(SKYMovie *) movie {
+    for(int i = 0; i < [_movieSource count]; i++) {
+        SKYMovie *currentMovie = [_movieSource objectAtIndex: i];
+        if([currentMovie.title isEqualToString: movie.title])
+            return true;
+    }
+    return false;
 }
 @end
