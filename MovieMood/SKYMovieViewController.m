@@ -74,7 +74,6 @@
         _contentView.rentLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.rentLabel.text, _movie.rentalPrice];
     
     _contentView.iTunesButton.color = tintColor;
-   // _contentView.trailerButton.color = tintColor;
     _contentView.buttonResponseDelegate = self;
     
     [SKYMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){
