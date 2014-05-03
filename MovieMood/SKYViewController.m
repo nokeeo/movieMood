@@ -110,19 +110,17 @@
         SKYInfoContainerViewController *nextVC = (SKYInfoContainerViewController *)[segue destinationViewController];
         
         
-        if(!_infoPage) {
-            _infoPage = [[SKYInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-            NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
+        _infoPage = [[SKYInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
             
-            [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil]];
-            [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil]];
+        [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
             [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
             
-            SKYDeveloperViewController *developerPage = [[SKYDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
-            [viewControllers addObject: developerPage];
-            developerPage.delegate = nextVC;
-            _infoPage.data = viewControllers;
-        }
+        SKYDeveloperViewController *developerPage = [[SKYDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
+        [viewControllers addObject: developerPage];
+        developerPage.delegate = nextVC;
+        _infoPage.data = viewControllers;
         
         [nextVC.view addSubview:_infoPage.view];
     }

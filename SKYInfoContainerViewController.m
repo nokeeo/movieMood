@@ -41,12 +41,14 @@
 }
 
 -(void)dislikePressed {
-    _mailVC = [[MFMailComposeViewController alloc] init];
-    _mailVC.mailComposeDelegate = self;
-    [_mailVC setSubject:@"MovieMood Feedback"];
-    [_mailVC setToRecipients:[NSArray arrayWithObjects:@"eric.lee.edl@gmail.com", nil]];
+    if(!_mailVC) {
+        _mailVC = [[MFMailComposeViewController alloc] init];
+        _mailVC.mailComposeDelegate = self;
+        [_mailVC setSubject:@"MovieMood Feedback"];
+        [_mailVC setToRecipients:[NSArray arrayWithObjects:@"eric.lee.edl@gmail.com", nil]];
+    }
 
-    [self.navigationController presentViewController: _mailVC animated:YES completion: nil];
+    [self presentViewController: _mailVC animated:YES completion: nil];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
