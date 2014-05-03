@@ -42,17 +42,17 @@
                     </navigationItem>
                     <connections>
                         <segue destination="848-LE-X0u" kind="push" identifier="ShowResults" id="8H8-B1-c7B"/>
-                        <segue destination="QjL-Jf-Lrp" kind="modal" identifier="InfoSegue" modalTransitionStyle="partialCurl" id="eub-zR-Uh3"/>
+                        <segue destination="QjL-Jf-Lrp" kind="push" identifier="InfoSegue" id="zjw-l0-p21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPy-sV-N3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331" y="-23"/>
         </scene>
-        <!--View Controller-->
+        <!--Info Container View Controller-->
         <scene sceneID="gjw-Va-Bth">
             <objects>
-                <viewController id="QjL-Jf-Lrp" sceneMemberID="viewController">
+                <viewController id="QjL-Jf-Lrp" customClass="SKYInfoContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WBx-RE-Uir"/>
                         <viewControllerLayoutGuide type="bottom" id="yhB-Xb-BEi"/>
@@ -62,10 +62,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dZ0-Ma-BMV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epi-vb-Jgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="660"/>
+            <point key="canvasLocation" x="326" y="684"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="aee-8a-ch1">

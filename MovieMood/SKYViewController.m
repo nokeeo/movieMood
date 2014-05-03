@@ -12,6 +12,8 @@
 #import "TLAlertView.h"
 #import "SKYInfoViewController.h"
 #import "SKYInfoViewController.h"
+#import "SKYDeveloperViewController.h"
+#import "SKYInfoContainerViewController.h"
 
 @interface SKYViewController ()
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
@@ -105,7 +107,8 @@
     }
     
     else if([[segue identifier] isEqualToString:@"InfoSegue"]){
-        UIViewController *nextVC = [segue destinationViewController];
+        SKYInfoContainerViewController *nextVC = (SKYInfoContainerViewController *)[segue destinationViewController];
+        
         
         if(!_infoPage) {
             _infoPage = [[SKYInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -114,7 +117,10 @@
             [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil]];
             [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
             [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
-            [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"DevelopersView" bundle:nil]];
+            
+            SKYDeveloperViewController *developerPage = [[SKYDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
+            [viewControllers addObject: developerPage];
+            developerPage.delegate = nextVC;
             _infoPage.data = viewControllers;
         }
         

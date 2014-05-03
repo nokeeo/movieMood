@@ -91,13 +91,6 @@
 }
 
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    
     _index = [_data indexOfObject:[self.viewControllers lastObject]];
-    NSLog(@"%d", _index);
-    
-    /*if(_index == 0)
-        _index++;
-    else if(completed)
-        _index--;*/
 }
 @end
