@@ -68,6 +68,9 @@
 - (IBAction)iTunesButtonPressed:(id)sender {
     [_buttonResponseDelegate iTunesButtonPressedResponse: sender];
 }
+- (IBAction)favButtonPressed:(id)sender {
+    [_buttonResponseDelegate favButtonPressedResponse: sender];
+}
 
 -(void) setSummaryText:(NSString *)text {
     _summaryLabel.text = text;
@@ -90,10 +93,6 @@
                                         _movieInformationView.frame.size.width,
                                         _movieInformationView.frame.size.height);
     [_movieInformationView setFrame: newInfoFrame];
-    
-    //Adjust contentsize
-    //CGSize newContentSize = CGSizeMake(self.contentSize.width, 9999);
-    //self.contentSize = newContentSize;
 }
 
 -(CGSize)getFullSummarySizeWithText: (NSString *) text {

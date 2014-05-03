@@ -108,6 +108,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="iTunes"/>
+                    <connections>
+                        <action selector="iTunesButtonPressed:" destination="Oz2-pq-UIA" eventType="touchUpInside" id="XHT-HI-e0S"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vY-fD-gXP" customClass="SKYBorderButton">
+                    <rect key="frame" x="212" y="135" width="66" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Fav"/>
+                    <connections>
+                        <action selector="favButtonPressed:" destination="Oz2-pq-UIA" eventType="touchUpInside" id="dDy-z2-6lD"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

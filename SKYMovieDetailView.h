@@ -12,7 +12,7 @@
 
 @protocol MovieDetailButtonResponse
 -(void)iTunesButtonPressedResponse:(id) sender;
--(void)trailerButtonPressedResponse:(id) sender;
+-(void)favButtonPressedResponse:(id) sender;
 @end
 
 @interface SKYMovieDetailView : UIView

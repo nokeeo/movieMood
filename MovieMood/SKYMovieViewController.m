@@ -13,12 +13,14 @@
 #import "SKYColorAnalyser.h"
 #import "SKYMovieRequests.h"
 #import "SKYBorderButton.h"
+#import "SKYDataManager.h"
 
 @interface SKYMovieViewController ()
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) UIView *coverView;
 @property (nonatomic, retain) SKYMovieDetailView *contentView;
 @property (nonatomic, retain) UIScrollView *contentScrollView;
+@property (nonatomic, retain) SKYDataManager *dataManager;
 @end
 
 @implementation SKYMovieViewController
@@ -28,6 +30,7 @@
 @synthesize selectedColor = _selectedColor;
 @synthesize contentView = _contentView;
 @synthesize contentScrollView = _contentScrollView;
+@synthesize dataManager = _dataManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +45,8 @@
     [super viewDidLoad];
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
+    
+    _dataManager = [[SKYDataManager alloc] init];
     
     _activityIndicatorView = [[SKYActivityIndicator alloc] initWithFrame:CGRectMake((size.width - activityViewSize.width) / 2,
                                                                                     (size.height - activityViewSize.height) / 2,
@@ -116,13 +121,12 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.storeURL]];
 }
 
--(void)trailerButtonPressedResponse:(id)sender {
-    /*[SKYMovieRequests getTrailerWithMovieTitle:_movie.title successCallback:^(id requestResponse) {
-        //
-    } failCallBack:^(NSError * error){
-        //
-    }];*/
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.trailerURL]];
+-(void)favButtonPressedResponse:(id)sender {
+    if(![_dataManager isMovieFav: _movie])
+        [_dataManager saveMovie: _movie];
+    else
+        [_dataManager deleteMovie: _movie];
+    [_dataManager getFavMovies];
 }
 
 - (void)didReceiveMemoryWarning
