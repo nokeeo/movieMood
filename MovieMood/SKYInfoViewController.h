@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYInfoViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@property (nonatomic, retain) NSArray *data;
 @end

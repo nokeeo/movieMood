@@ -10,11 +10,13 @@
 
 @interface SKYInfoViewController ()
 @property int index;
+@property int previousIndex;
 @end
 
 @implementation SKYInfoViewController
 
 @synthesize index = _index;
+@synthesize data = _data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -64,31 +66,38 @@
     if(_index == 0)
         return nil;
     else {
-        return [[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil];
+        return [_data objectAtIndex: _index - 1];
+        //return [[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil];
     }
 }
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    if(_index == 1) {
+    if(_index == [_data count] - 1) {
         return nil;
     }
     else {
-        return [[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil];
+        //return [[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil];
+        return [_data objectAtIndex: _index + 1];
     }
 }
 
 -(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 2;
+    return [_data count];
 }
+
 
 -(NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return 0;
 }
 
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    if(_index == 0 && completed)
+    
+    _index = [_data indexOfObject:[self.viewControllers lastObject]];
+    NSLog(@"%d", _index);
+    
+    /*if(_index == 0)
         _index++;
     else if(completed)
-        _index--;
+        _index--;*/
 }
 @end
