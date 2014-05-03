@@ -22,6 +22,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -32,6 +33,25 @@
     self.delegate = self;
     
     _index = 0;
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    for(int i = 0; i < [self.view.subviews count]; i++) {
+        if([[self.view.subviews objectAtIndex:i] isKindOfClass:[UIPageControl class]]) {
+            UIPageControl *pageControl = [self.view.subviews objectAtIndex:i];
+            
+            CGFloat red;
+            CGFloat green;
+            CGFloat blue;
+            
+            [self.view.tintColor getRed:&red green:&green blue:&blue alpha:nil];
+            
+            pageControl.currentPageIndicatorTintColor = self.view.tintColor;
+            pageControl.pageIndicatorTintColor = [UIColor colorWithRed:red green:green blue:blue alpha:.2];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,9 +86,9 @@
 }
 
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    if(_index == 0)
+    if(_index == 0 && completed)
         _index++;
-    else
+    else if(completed)
         _index--;
 }
 @end

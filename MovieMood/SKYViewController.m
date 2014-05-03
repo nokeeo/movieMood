@@ -73,7 +73,7 @@
     
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [infoButton setFrame:CGRectMake(20,
-                                    (_contentScrollView.bounds.size.height * .8) - infoButtonSize.height,
+                                    _contentScrollView.frame.size.height * .8 - infoButtonSize.height,
                                     infoButtonSize.width, infoButtonSize.height)];
     [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchDown];
     
