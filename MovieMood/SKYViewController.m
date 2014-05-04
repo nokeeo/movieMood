@@ -14,6 +14,7 @@
 #import "SKYInfoViewController.h"
 #import "SKYDeveloperViewController.h"
 #import "SKYInfoContainerViewController.h"
+#import "SKYFavViewController.h"
 
 @interface SKYViewController ()
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;

@@ -79,11 +79,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView: tableView didSelectRowAtIndexPath: indexPath];
     [self performSegueWithIdentifier:@"MovieDetail" sender:self];

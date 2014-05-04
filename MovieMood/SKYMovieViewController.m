@@ -20,7 +20,6 @@
 @property (nonatomic, retain) UIView *coverView;
 @property (nonatomic, retain) SKYMovieDetailView *contentView;
 @property (nonatomic, retain) UIScrollView *contentScrollView;
-@property (nonatomic, retain) SKYDataManager *dataManager;
 @end
 
 @implementation SKYMovieViewController
@@ -30,7 +29,6 @@
 @synthesize selectedColor = _selectedColor;
 @synthesize contentView = _contentView;
 @synthesize contentScrollView = _contentScrollView;
-@synthesize dataManager = _dataManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,8 +43,6 @@
     [super viewDidLoad];
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
-    
-    _dataManager = [[SKYDataManager alloc] init];
     
     _activityIndicatorView = [[SKYActivityIndicator alloc] initWithFrame:CGRectMake((size.width - activityViewSize.width) / 2,
                                                                                     (size.height - activityViewSize.height) / 2,
@@ -122,22 +118,12 @@
 }
 
 -(void)favButtonPressedResponse:(id)sender {
-    if(![_dataManager isMovieFav: _movie])
-        [_dataManager saveMovie: _movie];
-    else
-        [_dataManager deleteMovie: _movie];
-    NSArray *movies = [_dataManager getFavMovies];
-    NSMutableArray *movieIds = [[NSMutableArray alloc] init];
-    for(int i = 0; i < [movies count]; i++) {
-        NSManagedObject *movie = [movies objectAtIndex: i];
-        [movieIds addObject: [movie valueForKey:@"iTunesID"]];
-    }
+    SKYDataManager *dataManager = [[SKYDataManager alloc] init];
     
-    [SKYMovieRequests getMoviesWithIDs:movieIds successCallback:^(id responesMovies) {
-        //NSLog(@"%@", responesMovies);
-    } failCallback:^(NSError *error) {
-        //
-    }];
+    if(![dataManager isMovieFav: _movie])
+        [dataManager saveMovie: _movie];
+    else
+        [dataManager deleteMovie: _movie];
 }
 
 - (void)didReceiveMemoryWarning

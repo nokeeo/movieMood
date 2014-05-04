@@ -20,6 +20,7 @@
 		BE765CAC1914ABCB007D7B16 /* SKYInfoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CAB1914ABCB007D7B16 /* SKYInfoContainerViewController.m */; };
 		BE765CAF19159CC8007D7B16 /* SKYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CAE19159CC8007D7B16 /* SKYDataManager.m */; };
 		BE765CB51915BCE7007D7B16 /* SKYMovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CB41915BCE7007D7B16 /* SKYMovieTableViewController.m */; };
+		BE765CB81915C3E4007D7B16 /* SKYFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CB71915C3E4007D7B16 /* SKYFavViewController.m */; };
 		BE94398418ADA0F0001F3023 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */; };
 		BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397418ADA0F0001F3023 /* AFHTTPRequestOperationManager.m */; };
 		BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397618ADA0F0001F3023 /* AFHTTPSessionManager.m */; };
@@ -104,6 +105,8 @@
 		BE765CAE19159CC8007D7B16 /* SKYDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYDataManager.m; sourceTree = "<group>"; };
 		BE765CB31915BCE7007D7B16 /* SKYMovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovieTableViewController.h; sourceTree = "<group>"; };
 		BE765CB41915BCE7007D7B16 /* SKYMovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovieTableViewController.m; sourceTree = "<group>"; };
+		BE765CB61915C3E4007D7B16 /* SKYFavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYFavViewController.h; sourceTree = "<group>"; };
+		BE765CB71915C3E4007D7B16 /* SKYFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYFavViewController.m; sourceTree = "<group>"; };
 		BE94397118ADA0F0001F3023 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BE94397318ADA0F0001F3023 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				BE765CAB1914ABCB007D7B16 /* SKYInfoContainerViewController.m */,
 				C15BE3BA189AD269006FC7C3 /* SKYViewController.h */,
 				C15BE3BB189AD269006FC7C3 /* SKYViewController.m */,
+				BE765CB61915C3E4007D7B16 /* SKYFavViewController.h */,
+				BE765CB71915C3E4007D7B16 /* SKYFavViewController.m */,
 				C11D1293189C4D6000A2B84F /* SKYResultViewController.h */,
 				C11D1294189C4D6000A2B84F /* SKYResultViewController.m */,
 				C11D1299189C538600A2B84F /* SKYIntroViewController.h */,
@@ -529,6 +534,7 @@
 				BE10A5D218B5562000935271 /* SKYMovieDetailView.m in Sources */,
 				BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */,
 				BE94398818ADA0F0001F3023 /* AFSecurityPolicy.m in Sources */,
+				BE765CB81915C3E4007D7B16 /* SKYFavViewController.m in Sources */,
 				BE0378E6189DA9980032EC9F /* SKYColorPickerScrollView.m in Sources */,
 				BE765CAC1914ABCB007D7B16 /* SKYInfoContainerViewController.m in Sources */,
 				C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */,
