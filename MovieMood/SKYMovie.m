@@ -51,7 +51,7 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
 -(id)initWithLookupData: (id) entry {
     self = [super init];
     if(self) {
-        _movieId = [entry objectForKey: @"trackId"];
+        _movieId = [[NSString alloc] initWithFormat:@"%@", [entry objectForKey: @"trackId"]];
         _title = [entry objectForKey: @"trackName"];
         
         _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackHdPrice"] ];
