@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SKYMovieTableViewController.h"
 
-@interface SKYResultViewController : UITableViewController
+@interface SKYResultViewController : SKYMovieTableViewController
 @property (nonatomic,retain) NSDictionary* movieProps;
 @property (nonatomic, retain) UIColor *selectedColor;
 @end

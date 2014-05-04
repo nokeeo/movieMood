@@ -15,9 +15,6 @@
 #import "SKYMovie.h"
 
 @interface SKYResultViewController ()
-@property (nonatomic, retain) SKYMovie *selectedMovie;
-@property (nonatomic, retain) NSMutableDictionary *imageCache;
-@property (nonatomic, retain) NSMutableArray *movieSource;
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) NSDictionary *movieRequestCache;
 @property (nonatomic, retain) dispatch_queue_t dispatchQueue;
@@ -28,8 +25,6 @@
 @implementation SKYResultViewController
 
 @synthesize movieProps = _movieProps;
-@synthesize selectedMovie = _selectedMovie;
-@synthesize imageCache = _imageCache;
 @synthesize refresing = _refresing;
 @synthesize currentPageNumber = _currentPageNumber;
 @synthesize activityIndicatorView = _activityIndicatorView;
@@ -50,7 +45,6 @@
     
     _currentPageNumber = 1;
     _refresing = NO;
-    _imageCache = [[NSMutableDictionary alloc] init];
     
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
@@ -64,7 +58,7 @@
     [_activityIndicatorView.activityIndicator startAnimating];
     [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
         _movieRequestCache = requestResponse;
-        _movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
+        self.movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         [self.tableView reloadData];
         [_activityIndicatorView fadeOutView];
         [UIView commitAnimations];
@@ -90,45 +84,15 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [_movieSource count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"MovieCell";
-    SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    SKYMovie *currentMovie = [_movieSource objectAtIndex:indexPath.row];
-    [cell.artwork setImage: [UIImage imageNamed:@"defaultMoviePoster.png"]];
-    if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
-        cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.movieId]];
-    else {
-        NSURL *imageURL = [NSURL URLWithString: currentMovie.coverImage170];
-        [SKYMovieRequests loadImageWithURL:imageURL successCallback:^(id requestResponse) {
-            [_imageCache setObject:requestResponse forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
-            cell.artwork.image = requestResponse;
-        } failCallcack:^(NSError *error) {
-            NSLog(@"%@", error);
-        }];
-    }
-    
-    
-    cell.title.text = currentMovie.title;
-    return cell;
-}
-
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SKYMovie *movie = [_movieSource objectAtIndex: indexPath.row];
-    _selectedMovie = movie;
+    [super tableView: tableView didSelectRowAtIndexPath: indexPath];
     [self performSegueWithIdentifier:@"MovieDetail" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"MovieDetail"]) {
         SKYMovieViewController *movieVC = segue.destinationViewController;
-        movieVC.movie = _selectedMovie;
+        movieVC.movie = self.selectedMovie;
         movieVC.selectedColor = _selectedColor;
     }
 }
@@ -162,12 +126,12 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if(_movieSource != 0) {
+    if(self.movieSource != 0) {
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
-        if(!_refresing && currentPath.row == ([_movieSource count] - 1)) {
+        if(!_refresing && currentPath.row == ([self.movieSource count] - 1)) {
             NSArray *newMovies = [self createListWithProps: _movieProps withSourceLists: _movieRequestCache];
-            [_movieSource addObjectsFromArray: newMovies];
+            [self.movieSource addObjectsFromArray: newMovies];
             [self.tableView reloadData];
             _currentPageNumber++;
         }
@@ -175,8 +139,8 @@
 }
 
 -(BOOL) movieDisplayed:(SKYMovie *) movie {
-    for(int i = 0; i < [_movieSource count]; i++) {
-        SKYMovie *currentMovie = [_movieSource objectAtIndex: i];
+    for(int i = 0; i < [self.movieSource count]; i++) {
+        SKYMovie *currentMovie = [self.movieSource objectAtIndex: i];
         if([currentMovie.movieId isEqualToString: movie.movieId])
             return true;
     }
