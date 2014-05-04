@@ -13,4 +13,5 @@
 +(void) getMovieDetailData:(SKYMovie *) movie successCallback:(void (^)(id requestResponse))successCallback failCallBack: (void (^)(NSError * error)) errorCallback;
 +(void) getTrailerWithMovieTitle:(NSString *) title successCallback:(void (^) (id requestResponse))successCallback failCallBack: (void (^)(NSError *error)) errorCallback;
 +(void) loadImageWithURL: (NSURL *)url successCallback:(void (^) (id requestResponse))successCallback failCallcack:(void (^) (NSError *error)) errorCallback;
++(void) getMoviesWithIDs: (NSArray *)ids successCallback:(void (^)(id movies)) successCallback failCallback: (void(^)(NSError *error)) errorCallback;
 @end

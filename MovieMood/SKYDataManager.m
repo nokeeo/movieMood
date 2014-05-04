@@ -69,8 +69,6 @@
     NSError *error;
     NSArray *fetchedMovies = [_context executeFetchRequest: favMovieRequest error: &error];
     
-    NSLog(@"%@", fetchedMovies);
-    
     return fetchedMovies;
 }
 

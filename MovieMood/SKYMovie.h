@@ -26,4 +26,5 @@ extern const NSString *AFFILIATE_KEY;
 @property (nonatomic, retain) NSString *releaseDate;
 
 -(id) initWithEntry:(id) entry;
+-(id)initWithLookupData: (id) entry;
 @end

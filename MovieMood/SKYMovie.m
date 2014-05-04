@@ -47,4 +47,31 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
     }
     return self;
 }
+
+-(id)initWithLookupData: (id) entry {
+    self = [super init];
+    if(self) {
+        _movieId = [entry objectForKey: @"trackId"];
+        _title = [entry objectForKey: @"trackName"];
+        
+        _purchasePrice = [entry objectForKey: @"trackHdPrice"];
+        if([_purchasePrice isEqual: @""])
+            _purchasePrice = [entry objectForKey: @"trackPrice"];
+        
+        _rentalPrice = [entry objectForKey: @"trackHdRentalPrice"];
+        if([_rentalPrice isEqual:@""])
+            _rentalPrice = [entry objectForKey: @"trackRentalPrice"];
+        
+        _description = [entry objectForKey: @"longDescription"];
+        _genre = [entry objectForKey: @"primaryGenreName"];
+        _director = [entry objectForKey: @"artistName"];
+        _releaseDate = [entry objectForKey: @"releaseDate"];
+        _storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [entry objectForKey: @"trackViewUrl"], AFFILIATE_KEY ];
+        _trailerURL = [entry objectForKey:@"previewUrl"];
+        _coverImage170 = [entry objectForKey: @"artworkUrl100"];
+        _coverImage60 = [entry objectForKey: @"artworkUrl60"];
+        _rating = [entry objectForKey: @"contentAdvisoryRating"];
+    }
+    return self;
+}
 @end

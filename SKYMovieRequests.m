@@ -64,6 +64,38 @@
     [requestOperation start];
 }
 
++(void) getMoviesWithIDs: (NSArray *)ids successCallback:(void (^)(id movies)) successCallback failCallback: (void(^)(NSError *error)) errorCallback {
+    NSMutableString *movieURL = [[NSMutableString alloc] initWithString:@"https://itunes.apple.com/lookup?id="];
+    
+    //Build URL
+    for(int i = 0; i < [ids count]; i++) {
+        [movieURL appendString: [ids objectAtIndex: i]];
+        
+        if(i != [ids count] - 1)
+            [movieURL appendString: @","];
+    }
+    [movieURL appendString: @"&entity=movie"];
+    
+    NSURL *url = [NSURL URLWithString: movieURL];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
+    [requestOperation setResponseSerializer: [AFJSONResponseSerializer serializer]];
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        id results = [responseObject objectForKey: @"results"];
+        NSMutableArray *movies = [[NSMutableArray alloc] init];
+        for(int i = 0; i < [results count]; i++) {
+            SKYMovie *movie = [[SKYMovie alloc] initWithLookupData: [results objectAtIndex: i]];
+            [movies addObject: movie];
+        }
+        successCallback(movies);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        errorCallback(error);
+    }];
+    [requestOperation start];
+}
+
 +(void) getTrailerWithMovieTitle:(NSString *)title successCallback:(void (^)(id))successCallback failCallBack:(void (^)(NSError *error))errorCallback {
     NSString *formatTitle = [title stringByReplacingOccurrencesOfString:@" " withString:@"-"];
     NSString *titleURL = [[NSString alloc] initWithFormat:@"%@film=%@", @"http://api.traileraddict.com/?", formatTitle ];

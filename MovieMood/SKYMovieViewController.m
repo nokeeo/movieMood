@@ -126,7 +126,18 @@
         [_dataManager saveMovie: _movie];
     else
         [_dataManager deleteMovie: _movie];
-    [_dataManager getFavMovies];
+    NSArray *movies = [_dataManager getFavMovies];
+    NSMutableArray *movieIds = [[NSMutableArray alloc] init];
+    for(int i = 0; i < [movies count]; i++) {
+        NSManagedObject *movie = [movies objectAtIndex: i];
+        [movieIds addObject: [movie valueForKey:@"iTunesID"]];
+    }
+    
+    [SKYMovieRequests getMoviesWithIDs:movieIds successCallback:^(id responesMovies) {
+        //NSLog(@"%@", responesMovies);
+    } failCallback:^(NSError *error) {
+        //
+    }];
 }
 
 - (void)didReceiveMemoryWarning
