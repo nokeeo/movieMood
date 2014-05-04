@@ -72,6 +72,26 @@
 
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        //Delete in model
+        SKYDataManager *dataManager = [[SKYDataManager alloc] init];
+        SKYMovie *deleteMovie = [self.movieSource objectAtIndex: indexPath.row];
+        [self.movieSource removeObjectAtIndex: indexPath.row];
+        [dataManager deleteMovie: deleteMovie];
+        
+        //Animate delete
+        if(indexPath.row != [self.movieSource count])
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects: indexPath, nil] withRowAnimation: UITableViewRowAnimationRight];
+        else
+            [self.tableView reloadData];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
