@@ -92,7 +92,13 @@
         }];
         
     } failCallBack:^(NSError * error){
-        //
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Uh oh!"
+                                                             message:@"There was an error retrieving your movie! Please try again soon"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles: nil];
+        _activityIndicatorView.alpha = 0.f;
+        [errorAlert show];
     }];
     
     [_coverView addSubview:_activityIndicatorView];
@@ -123,6 +129,10 @@
         [dataManager saveMovie: _movie];
     else
         [dataManager deleteMovie: _movie];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated: YES];
 }
 
 - (void)didReceiveMemoryWarning

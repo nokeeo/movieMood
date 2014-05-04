@@ -8,6 +8,6 @@
 
 #import "SKYMovieTableViewController.h"
 
-@interface SKYFavViewController : SKYMovieTableViewController
+@interface SKYFavViewController : SKYMovieTableViewController <UIAlertViewDelegate>
 
 @end

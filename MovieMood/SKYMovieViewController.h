@@ -10,7 +10,7 @@
 #import "SKYMovie.h"
 #import "SKYMovieDetailView.h"
 
-@interface SKYMovieViewController : UIViewController <MovieDetailButtonResponse>
+@interface SKYMovieViewController : UIViewController <MovieDetailButtonResponse, UIAlertViewDelegate>
 @property (nonatomic, retain) SKYMovie *movie;
 @property (nonatomic, retain) UIColor *selectedColor;
 @end

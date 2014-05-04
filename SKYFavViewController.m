@@ -61,7 +61,13 @@
         [_activityIndicator fadeOutView];
         [UIView commitAnimations];
     } failCallback:^(NSError *error) {
-        //
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Uh oh!"
+                                                             message:@"There was an error retrieving your favorite movies! Please try again soon"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles: nil];
+        _activityIndicator.alpha = 0.f;
+        [errorAlert show];
     }];
 
 }
@@ -81,6 +87,10 @@
 }
 
 - (IBAction)closeButtonPressed:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 

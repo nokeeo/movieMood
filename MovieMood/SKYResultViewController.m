@@ -63,6 +63,13 @@
         [_activityIndicatorView fadeOutView];
         [UIView commitAnimations];
     } failCallBack:^(NSError *error) {
+        _activityIndicatorView.alpha = 0.f;
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Uh oh!"
+                                                             message:@"There was an error getting your movies! Try again soon"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles:nil];
+        [errorAlert show];
     }];
     
     SKYColorAnalyser *colorAnalyser = [[SKYColorAnalyser alloc] init];
@@ -141,5 +148,9 @@
             return true;
     }
     return false;
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated: YES];
 }
 @end
