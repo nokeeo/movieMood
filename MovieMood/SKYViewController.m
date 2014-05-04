@@ -120,7 +120,7 @@
             
         [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil]];
         [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-            [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
+        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
             
         SKYDeveloperViewController *developerPage = [[SKYDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
         [viewControllers addObject: developerPage];

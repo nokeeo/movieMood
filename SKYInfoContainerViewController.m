@@ -11,11 +11,12 @@
 @interface SKYInfoContainerViewController ()
 
 @property (nonatomic, retain) MFMailComposeViewController *mailVC;
-
+@property (nonatomic, retain) NSString *emailAddress;
 @end
 
 @implementation SKYInfoContainerViewController
 
+@synthesize emailAddress = _emailAddress;
 @synthesize mailVC = _mailVC;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _emailAddress = @"eric.lee.edl@gmail.com";
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
@@ -41,14 +43,20 @@
 }
 
 -(void)dislikePressed {
-    if(!_mailVC) {
+    if([MFMailComposeViewController canSendMail]) {
         _mailVC = [[MFMailComposeViewController alloc] init];
         _mailVC.mailComposeDelegate = self;
         [_mailVC setSubject:@"MovieMood Feedback"];
-        [_mailVC setToRecipients:[NSArray arrayWithObjects:@"eric.lee.edl@gmail.com", nil]];
-    }
+        [_mailVC setToRecipients:[NSArray arrayWithObjects: _emailAddress, nil]];
 
-    [self presentViewController: _mailVC animated:YES completion: nil];
+        [self presentViewController: _mailVC animated:YES completion: nil];
+    }
+    else {
+        UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"This device cannot send mail"
+                                                               message: [[NSString alloc] initWithFormat:@"%@%@", @"We still want to hear from you. Email us at", _emailAddress]
+                                                              delegate:nil cancelButtonTitle: nil otherButtonTitles: nil];
+        [errorMessage show];
+    }
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
