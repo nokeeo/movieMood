@@ -84,6 +84,7 @@
     [_contentScrollView addSubview:questionLabel];
     [self.view addSubview:_contentScrollView];
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
+    [self colorDidChange: self];
 }
 
 -(void) viewWillAppear:(BOOL)animated {

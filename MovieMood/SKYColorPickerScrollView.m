@@ -48,7 +48,6 @@
                                                                      wheelSize.height)];
         _colorWheel.continuous = true;
         _colorWheel.delegate = self;
-        _colorWheel.knobView.alpha = 0.f;
         
         _colorIndicator = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - indicatorSize.width / 2,
                                                                    (size.height * .2) + (wheelSize.height - indicatorSize.height) / 2,

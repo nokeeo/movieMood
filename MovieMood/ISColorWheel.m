@@ -138,7 +138,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
         
         _brightness = 1.0;
         _knobSize = CGSizeMake(20, 20);
-        _touchPoint = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0);
+        _touchPoint = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height);
         
         ISColorKnob* knob = [[ISColorKnob alloc] init];
         self.knobView = knob;
