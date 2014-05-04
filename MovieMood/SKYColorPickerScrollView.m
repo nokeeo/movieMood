@@ -65,6 +65,7 @@
         [_selectButton setTitle:@"GO" forState:UIControlStateNormal];
         [_selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [_selectButton.titleLabel setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size:25]];
         
         [self addSubview:_colorWheel];
         [self addSubview:centerWheel];

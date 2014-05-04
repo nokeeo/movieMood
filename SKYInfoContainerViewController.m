@@ -53,8 +53,8 @@
     }
     else {
         UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"This device cannot send mail"
-                                                               message: [[NSString alloc] initWithFormat:@"%@%@", @"We still want to hear from you. Email us at", _emailAddress]
-                                                              delegate:nil cancelButtonTitle: nil otherButtonTitles: nil];
+                                                               message: [[NSString alloc] initWithFormat:@"%@%@", @"We still want to hear from you. Email us at ", _emailAddress]
+                                                              delegate:nil cancelButtonTitle: @"Done" otherButtonTitles: nil];
         [errorMessage show];
     }
 }
