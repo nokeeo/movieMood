@@ -86,9 +86,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"MovieDetail"]) {
+        SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
         SKYMovieViewController *movieVC = segue.destinationViewController;
         movieVC.movie = self.selectedMovie;
-        movieVC.selectedColor = _selectedColor;
+        movieVC.selectedColor = [analyser tintColor:_selectedColor withTintConst:-.25];
     }
 }
 

@@ -65,7 +65,20 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
         _description = [entry objectForKey: @"longDescription"];
         _genre = [entry objectForKey: @"primaryGenreName"];
         _director = [entry objectForKey: @"artistName"];
-        _releaseDate = [entry objectForKey: @"releaseDate"];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat: @"yyyy-MM-dd"];
+        if([[entry objectForKey:@"releaseDate"] length] >= 10) {
+           NSString *dateString = [[entry objectForKey:@"releaseDate"] substringToIndex: 10];
+           NSDate *releaseDate = [formatter dateFromString: dateString];
+           [formatter setDateFormat:@"MMMM dd, yyyy"];
+           _releaseDate = [formatter stringFromDate:releaseDate];
+        }
+        else {
+            _releaseDate = [entry objectForKey:@"releaseDate"];
+        }
+        
+        
         _storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [entry objectForKey: @"trackViewUrl"], AFFILIATE_KEY ];
         _trailerURL = [entry objectForKey:@"previewUrl"];
         _coverImage170 = [entry objectForKey: @"artworkUrl100"];

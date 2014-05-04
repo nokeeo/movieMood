@@ -86,6 +86,10 @@
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.tintColor = self.view.tintColor;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

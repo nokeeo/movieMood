@@ -62,10 +62,9 @@
     _contentView = (SKYMovieDetailView *)[[[NSBundle mainBundle] loadNibNamed:@"MovieView" owner:self options:nil] objectAtIndex:0];
     _contentView.frame = contentSize;
     
-    SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
-    UIColor *tintColor = [analyser tintColor:_selectedColor withTintConst: - .25];
-    _activityIndicatorView.activityIndicator.color = tintColor;
-    self.navigationController.navigationBar.tintColor = tintColor;
+    UIColor *tintColor = _selectedColor;
+    _activityIndicatorView.activityIndicator.color = _selectedColor;
+    self.navigationController.navigationBar.tintColor = _selectedColor;
     
     NSURL *artworkURL = [NSURL URLWithString: _movie.coverImage170];
     _contentView.artworkImage.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:artworkURL]];

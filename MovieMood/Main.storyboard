@@ -114,7 +114,13 @@
                             <outlet property="delegate" destination="tYL-v9-6fR" id="PGk-4o-gAX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="4V3-CN-jPR"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="4V3-CN-jPR">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="rXC-1m-cZs">
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="tYL-v9-6fR" id="LMW-IY-wdw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THS-aS-cdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
