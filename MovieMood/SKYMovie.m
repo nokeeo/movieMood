@@ -54,13 +54,13 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
         _movieId = [entry objectForKey: @"trackId"];
         _title = [entry objectForKey: @"trackName"];
         
-        _purchasePrice = [entry objectForKey: @"trackHdPrice"];
-        if([_purchasePrice isEqual: @""])
-            _purchasePrice = [entry objectForKey: @"trackPrice"];
+        _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackHdPrice"] ];
+        if([_purchasePrice isEqual: @"$"] || [_purchasePrice isEqual:@"$ "])
+            _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackPrice"]];
         
-        _rentalPrice = [entry objectForKey: @"trackHdRentalPrice"];
-        if([_rentalPrice isEqual:@""])
-            _rentalPrice = [entry objectForKey: @"trackRentalPrice"];
+        _rentalPrice = [[NSString alloc] initWithFormat: @"%@%@", @"$", [entry objectForKey: @"trackHdRentalPrice"]];
+        if([_rentalPrice isEqual:@"$"] || [_rentalPrice isEqual:@"$ "])
+            _rentalPrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackRentalPrice"]];
         
         _description = [entry objectForKey: @"longDescription"];
         _genre = [entry objectForKey: @"primaryGenreName"];
