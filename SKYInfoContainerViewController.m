@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _emailAddress = @"eric.lee.edl@gmail.com";
+    _emailAddress = @"feedback@moviemoodapp.com";
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }

@@ -35,6 +35,8 @@
 		BE94F126189CC294006BAE45 /* SKYResultMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */; };
 		BE963007189E19EA004968D0 /* SKYMovieRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE963006189E19EA004968D0 /* SKYMovieRequests.m */; };
 		BE96300A189E3E17004968D0 /* SKYActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE963009189E3E17004968D0 /* SKYActivityIndicator.m */; };
+		BEAD74AE191805D200BC2EBE /* fav.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAD74AD191805D200BC2EBE /* fav.png */; };
+		BEAD74B0191806AB00BC2EBE /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAD74AF191806AB00BC2EBE /* fav@2x.png */; };
 		BEB04D6F191486DC0045A118 /* DevelopersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB04D6E191486DC0045A118 /* DevelopersView.xib */; };
 		BEB04D721914902F0045A118 /* SKYDeveloperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB04D711914902F0045A118 /* SKYDeveloperViewController.m */; };
 		BECDC1E51912F9A900F7CE7B /* defaultMoviePoster.png in Resources */ = {isa = PBXBuildFile; fileRef = BECDC1E41912F9A900F7CE7B /* defaultMoviePoster.png */; };
@@ -136,6 +138,8 @@
 		BE963006189E19EA004968D0 /* SKYMovieRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYMovieRequests.m; path = ../SKYMovieRequests.m; sourceTree = "<group>"; };
 		BE963008189E3E17004968D0 /* SKYActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYActivityIndicator.h; sourceTree = "<group>"; };
 		BE963009189E3E17004968D0 /* SKYActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYActivityIndicator.m; sourceTree = "<group>"; };
+		BEAD74AD191805D200BC2EBE /* fav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav.png; sourceTree = "<group>"; };
+		BEAD74AF191806AB00BC2EBE /* fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav@2x.png"; sourceTree = "<group>"; };
 		BEB04D6E191486DC0045A118 /* DevelopersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DevelopersView.xib; sourceTree = "<group>"; };
 		BEB04D701914902F0045A118 /* SKYDeveloperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYDeveloperViewController.h; sourceTree = "<group>"; };
 		BEB04D711914902F0045A118 /* SKYDeveloperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYDeveloperViewController.m; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 				C1A2CEC1189DB54600FDE503 /* NR.png */,
 				C1A2CEC2189DB54600FDE503 /* PG-13.png */,
 				C1A2CEC3189DB54600FDE503 /* PG.png */,
+				BEAD74AD191805D200BC2EBE /* fav.png */,
+				BEAD74AF191806AB00BC2EBE /* fav@2x.png */,
 				C1A2CEC4189DB54600FDE503 /* R.png */,
 				C1A2CEC5189DB54600FDE503 /* Unrated.png */,
 				C1A2CEBD189D934B00FDE503 /* smiles.png */,
@@ -494,7 +500,9 @@
 				C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */,
 				C1A2CEC9189DB54600FDE503 /* PG-13.png in Resources */,
 				BEB04D6F191486DC0045A118 /* DevelopersView.xib in Resources */,
+				BEAD74AE191805D200BC2EBE /* fav.png in Resources */,
 				BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */,
+				BEAD74B0191806AB00BC2EBE /* fav@2x.png in Resources */,
 				C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */,
 				C1A2CECA189DB54600FDE503 /* PG.png in Resources */,
 				BE10A5CC18B467AE00935271 /* Main.storyboard in Resources */,

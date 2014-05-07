@@ -39,7 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l6r-IF-Q3Y">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" title="Fav" id="2Rx-ug-L1U">
+                        <barButtonItem key="rightBarButtonItem" image="fav.png" width="10" id="2Rx-ug-L1U">
                             <connections>
                                 <segue destination="tbx-JR-Bst" kind="modal" identifier="favButtonSegue" modalTransitionStyle="coverVertical" id="uzl-sa-wtf"/>
                             </connections>
@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPy-sV-N3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="-23"/>
+            <point key="canvasLocation" x="294" y="-17"/>
         </scene>
         <!--Info Container View Controller-->
         <scene sceneID="gjw-Va-Bth">
@@ -212,6 +212,9 @@
             <point key="canvasLocation" x="1169" y="-23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fav.png" width="22" height="22"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
