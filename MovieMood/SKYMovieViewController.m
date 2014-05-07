@@ -43,6 +43,7 @@
     [super viewDidLoad];
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
+    SKYDataManager *dataManager = [[SKYDataManager alloc] init];
     
     _activityIndicatorView = [[SKYActivityIndicator alloc] initWithFrame:CGRectMake((size.width - activityViewSize.width) / 2,
                                                                                     (size.height - activityViewSize.height) / 2,
@@ -82,6 +83,7 @@
         _contentView.rentLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.rentLabel.text, _movie.rentalPrice];
     
     _contentView.iTunesButton.color = tintColor;
+    _contentView.favButton.color = tintColor;
     _contentView.buttonResponseDelegate = self;
     
     [SKYMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){
@@ -100,6 +102,9 @@
         _activityIndicatorView.alpha = 0.f;
         [errorAlert show];
     }];
+    
+    //Toggle Favbutton image
+    [self setFavImage: [dataManager isMovieFav: _movie]];
     
     [_coverView addSubview:_activityIndicatorView];
     [_contentScrollView addSubview: _contentView];
@@ -125,14 +130,30 @@
 -(void)favButtonPressedResponse:(id)sender {
     SKYDataManager *dataManager = [[SKYDataManager alloc] init];
     
-    if(![dataManager isMovieFav: _movie])
+    if(![dataManager isMovieFav: _movie]) {
+        [self setFavImage: YES];
         [dataManager saveMovie: _movie];
-    else
+    }
+    else {
+        [self setFavImage: NO];
         [dataManager deleteMovie: _movie];
+    }
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated: YES];
+}
+
+-(void)setFavImage:(BOOL) flag {
+    NSString *imageName;
+    if(flag)
+        imageName = @"favFill.png";
+    else
+        imageName = @"fav.png";
+    
+    UIImage *favImage = [UIImage imageNamed: imageName];
+    favImage = [favImage imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
+    [_contentView.favButton setImage: favImage forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning

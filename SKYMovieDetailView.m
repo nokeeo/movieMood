@@ -44,6 +44,11 @@
                                         200);
     [self addSubview: _movieInformationView];
     [_movieInformationView setFrame: informationRect];
+    
+    //Set up star button
+    UIImage *favButtonImage = [UIImage imageNamed:@"fav.png"];
+    favButtonImage = [favButtonImage imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
+    [_favButton setImage: favButtonImage forState: UIControlStateNormal];
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder {

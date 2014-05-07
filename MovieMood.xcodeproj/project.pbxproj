@@ -17,6 +17,8 @@
 		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
 		BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */; };
 		BE38A3CE1913F9B700559C44 /* SKYMovieInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */; };
+		BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DC191ADDD200A5FA69 /* favFill.png */; };
+		BE3D64DF191ADEB600A5FA69 /* favFill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DE191ADEB600A5FA69 /* favFill@2x.png */; };
 		BE765CAC1914ABCB007D7B16 /* SKYInfoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CAB1914ABCB007D7B16 /* SKYInfoContainerViewController.m */; };
 		BE765CAF19159CC8007D7B16 /* SKYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CAE19159CC8007D7B16 /* SKYDataManager.m */; };
 		BE765CB51915BCE7007D7B16 /* SKYMovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CB41915BCE7007D7B16 /* SKYMovieTableViewController.m */; };
@@ -101,6 +103,8 @@
 		BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieInformationView.xib; sourceTree = "<group>"; };
 		BE38A3CC1913F9B700559C44 /* SKYMovieInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovieInformationView.h; sourceTree = "<group>"; };
 		BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovieInformationView.m; sourceTree = "<group>"; };
+		BE3D64DC191ADDD200A5FA69 /* favFill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favFill.png; sourceTree = "<group>"; };
+		BE3D64DE191ADEB600A5FA69 /* favFill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favFill@2x.png"; sourceTree = "<group>"; };
 		BE765CAA1914ABCB007D7B16 /* SKYInfoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYInfoContainerViewController.h; sourceTree = "<group>"; };
 		BE765CAB1914ABCB007D7B16 /* SKYInfoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYInfoContainerViewController.m; sourceTree = "<group>"; };
 		BE765CAD19159CC8007D7B16 /* SKYDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYDataManager.h; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				BEAD74AD191805D200BC2EBE /* fav.png */,
 				BEAD74AF191806AB00BC2EBE /* fav@2x.png */,
 				C1A2CEC4189DB54600FDE503 /* R.png */,
+				BE3D64DE191ADEB600A5FA69 /* favFill@2x.png */,
+				BE3D64DC191ADDD200A5FA69 /* favFill.png */,
 				C1A2CEC5189DB54600FDE503 /* Unrated.png */,
 				C1A2CEBD189D934B00FDE503 /* smiles.png */,
 				C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */,
@@ -500,8 +506,10 @@
 				C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */,
 				C1A2CEC9189DB54600FDE503 /* PG-13.png in Resources */,
 				BEB04D6F191486DC0045A118 /* DevelopersView.xib in Resources */,
+				BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */,
 				BEAD74AE191805D200BC2EBE /* fav.png in Resources */,
 				BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */,
+				BE3D64DF191ADEB600A5FA69 /* favFill@2x.png in Resources */,
 				BEAD74B0191806AB00BC2EBE /* fav@2x.png in Resources */,
 				C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */,
 				C1A2CECA189DB54600FDE503 /* PG.png in Resources */,
