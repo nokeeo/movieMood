@@ -9,7 +9,6 @@
 #import <MediaPlayer/MPMoviePlayerController.h>
 #import "SKYMovieViewController.h"
 #import "SKYActivityIndicator.h"
-#import "AutoScrollLabel.h"
 #import "SKYColorAnalyser.h"
 #import "SKYMovieRequests.h"
 #import "SKYBorderButton.h"

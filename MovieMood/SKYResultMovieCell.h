@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYResultMovieCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UIImageView *artwork;
+//@property (weak, nonatomic) IBOutlet UILabel *title;
+//@property (weak, nonatomic) IBOutlet UIImageView *artwork;
+
+@property (nonatomic, retain) UIImageView *artwork;
+@property (nonatomic, retain) UILabel *title;
 
 @end

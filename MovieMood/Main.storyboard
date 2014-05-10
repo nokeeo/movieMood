@@ -88,23 +88,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lL3-n1-ExU" id="yD4-OT-H3P">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgO-8S-9Qa">
-                                            <rect key="frame" x="0.0" y="0.0" width="46" height="65"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmj-7G-14E">
-                                            <rect key="frame" x="64" y="22" width="223" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="artwork" destination="CgO-8S-9Qa" id="iqH-fa-RFQ"/>
-                                    <outlet property="title" destination="fmj-7G-14E" id="VH0-sL-bn1"/>
                                     <segue destination="eeQ-4f-TXA" kind="push" identifier="selectMovieSegue" id="mWg-If-RKB"/>
                                 </connections>
                             </tableViewCell>
@@ -130,6 +115,7 @@
         <scene sceneID="W2d-Kw-6D6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="tbx-JR-Bst" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="l8y-1i-bIo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tk3-CG-7vl">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -156,24 +142,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XrF-A6-J9Q" id="iQ1-LA-Zyg">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-mH-SHT">
-                                            <rect key="frame" x="0.0" y="0.0" width="46" height="65"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eue-DI-mfO">
-                                            <rect key="frame" x="64" y="22" width="223" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="artwork" destination="kc2-mH-SHT" id="mBf-Zc-99l"/>
-                                    <outlet property="title" destination="eue-DI-mfO" id="Ky3-QL-yHN"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -181,9 +150,16 @@
                             <outlet property="delegate" destination="848-LE-X0u" id="3JR-6N-34I"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="YVa-rl-bSZ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bvw-sg-fwp"/>
+                        <barButtonItem key="rightBarButtonItem" image="fav.png" width="10" id="tYA-jZ-nvc">
+                            <connections>
+                                <segue destination="tbx-JR-Bst" kind="modal" identifier="favSegue" id="Hjb-ao-u8Q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="eeQ-4f-TXA" kind="push" identifier="MovieDetail" id="0cm-Hy-GN9"/>
                     </connections>
@@ -221,6 +197,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Hjb-ao-u8Q"/>
         <segue reference="mWg-If-RKB"/>
     </inferredMetricsTieBreakers>
 </document>

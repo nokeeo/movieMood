@@ -9,7 +9,6 @@
 #import "SKYViewController.h"
 #import "SKYResultViewController.h"
 #import "SKYColorAnalyser.h"
-#import "TLAlertView.h"
 #import "SKYInfoViewController.h"
 #import "SKYInfoViewController.h"
 #import "SKYDeveloperViewController.h"
