@@ -7,8 +7,8 @@
 //
 
 #import "SKYResultMovieCell.h"
-#import "SKYMovieCellScrollView.h"
 #import "SKYDataManager.h"
+#import "SKYMovieCellScrollView.h"
 
 #define SLIDE_WIDTH 46
 
@@ -18,6 +18,7 @@
 
 @property (nonatomic, retain) UIView *buttonView;
 @property (nonatomic) UIButton *favButton;
+@property (nonatomic, retain) SKYMovieCellScrollView *slideScrollView;
 @end
 
 @implementation SKYResultMovieCell
@@ -29,6 +30,8 @@
 @synthesize backgroundShadeColor = _backgroundShadeColor;
 @synthesize isFavOn = _isFavOn;
 @synthesize favButtonDelegate = _favButtonDelegate;
+@synthesize slideScrollView = _slideScrollView;
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -42,17 +45,17 @@
     _artwork = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 46, self.bounds.size.height)];
     _title = [[UILabel alloc] initWithFrame: CGRectMake(64, 22, 223, 21)];
     
-    SKYMovieCellScrollView *slideScrollView = [[SKYMovieCellScrollView alloc] initWithFrame: CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
-    slideScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) + SLIDE_WIDTH,  CGRectGetHeight(self.bounds));
-    slideScrollView.delegate = self;
-    slideScrollView.contentOffset = CGPointMake(SLIDE_WIDTH, 0);
-    slideScrollView.showsHorizontalScrollIndicator = NO;
+     _slideScrollView = [[SKYMovieCellScrollView alloc] initWithFrame: CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
+    _slideScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) + SLIDE_WIDTH,  CGRectGetHeight(self.bounds));
+    _slideScrollView.delegate = self;
+    _slideScrollView.contentOffset = CGPointMake(SLIDE_WIDTH, 0);
+    _slideScrollView.showsHorizontalScrollIndicator = NO;
     
-    [self.contentView addSubview: slideScrollView];
+    [self.contentView addSubview: _slideScrollView];
     
     _buttonView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, SLIDE_WIDTH, CGRectGetHeight(self.bounds))];
     
-    [slideScrollView addSubview: _buttonView];
+    [_slideScrollView addSubview: _buttonView];
     CGSize buttonSize = CGSizeMake(SLIDE_WIDTH, SLIDE_WIDTH);
     _favButton = [[UIButton alloc] initWithFrame: CGRectMake(0,
                                                             (self.bounds.size.height / 2) - (SLIDE_WIDTH / 2),
@@ -64,10 +67,12 @@
     
     UIView *scrollViewContent = [[UIView alloc] initWithFrame: CGRectMake(SLIDE_WIDTH, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
     scrollViewContent.backgroundColor = [UIColor whiteColor];
-    [slideScrollView addSubview:scrollViewContent];
+    [_slideScrollView addSubview:scrollViewContent];
     
     [scrollViewContent addSubview: _artwork];
     [scrollViewContent addSubview:_title];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enclosingTableViewDidScroll) name:@"SKYSwipeCellShouldRetract" object:nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -84,6 +89,11 @@
                                    SLIDE_WIDTH,
                                    CGRectGetHeight(self.bounds));
 }
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SKYSwipeCellShouldRetract" object:self userInfo:nil];
+}
+
 
 -(void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     if(scrollView.contentOffset.x > SLIDE_WIDTH)
@@ -129,4 +139,15 @@
     [_favButtonDelegate favButtonPressed: self];
 }
 
+-(void)enclosingTableViewDidScroll {
+    if(!_slideScrollView.dragging) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_slideScrollView setContentOffset: CGPointMake(SLIDE_WIDTH, 0) animated:YES];
+        });
+    }
+}
+
+-(void)resetFavScrollView {
+    [_slideScrollView setContentOffset: CGPointMake(SLIDE_WIDTH, 0)];
+}
 @end

@@ -88,6 +88,7 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView: tableView didSelectRowAtIndexPath: indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SKYSwipeCellShouldRetract" object:self userInfo:nil];
     [self performSegueWithIdentifier:@"MovieDetail" sender:self];
 }
 
@@ -101,9 +102,11 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
     SKYResultMovieCell *cell = (SKYResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-    cell.backgroundShadeColor = _selectedColor;
+    cell.backgroundShadeColor = [analyser tintColor: _selectedColor withTintConst:-.25];
     cell.favButtonDelegate = self;
+    [cell resetFavScrollView];
     return cell;
 }
 
@@ -136,6 +139,7 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"SKYSwipeCellShouldRetract" object:self userInfo:nil];
     if(self.movieSource != 0) {
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];

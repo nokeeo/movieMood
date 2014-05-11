@@ -17,6 +17,8 @@
 @property BOOL isFavOn;
 @property id favButtonDelegate;
 
+-(void)resetFavScrollView;
+
 @end
 
 @protocol favButtonProtocol <NSObject>
