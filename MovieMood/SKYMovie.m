@@ -54,13 +54,21 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
         _movieId = [[NSString alloc] initWithFormat:@"%@", [entry objectForKey: @"trackId"]];
         _title = [entry objectForKey: @"trackName"];
         
-        _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackHdPrice"] ];
-        if([_purchasePrice isEqual: @"$"] || [_purchasePrice isEqual:@"$ "])
-            _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackPrice"]];
+        NSLog(@"%@", [entry objectForKey: @"trackHdPrice"]);
         
-        _rentalPrice = [[NSString alloc] initWithFormat: @"%@%@", @"$", [entry objectForKey: @"trackHdRentalPrice"]];
-        if([_rentalPrice isEqual:@"$"] || [_rentalPrice isEqual:@"$ "])
+        if([entry objectForKey: @"trackHdPrice"])
+            _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackHdPrice"] ];
+        else if([entry objectForKey: @"trackPrice"] != nil)
+            _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackPrice"]];
+        else
+            _purchasePrice = @"Not Available";
+        
+        if([entry objectForKey: @"trackHdRentalPrice"] != nil)
+            _rentalPrice = [[NSString alloc] initWithFormat: @"%@%@", @"$", [entry objectForKey: @"trackHdRentalPrice"]];
+        else if([entry objectForKey: @"trackRentalPrice"] != nil)
             _rentalPrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackRentalPrice"]];
+        else
+            _rentalPrice = @"Not available";
         
         _description = [entry objectForKey: @"longDescription"];
         _genre = [entry objectForKey: @"primaryGenreName"];
