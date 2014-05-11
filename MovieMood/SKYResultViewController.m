@@ -7,12 +7,12 @@
 //
 
 #import "SKYResultViewController.h"
-#import "SKYResultMovieCell.h"
 #import "SKYMovieViewController.h"
 #import "SKYMovieRequests.h"
 #import "SKYActivityIndicator.h"
 #import "SKYColorAnalyser.h"
 #import "SKYMovie.h"
+#import "SKYDataManager.h"
 
 @interface SKYResultViewController ()
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
@@ -100,6 +100,13 @@
     }
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SKYResultMovieCell *cell = (SKYResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundShadeColor = _selectedColor;
+    cell.favButtonDelegate = self;
+    return cell;
+}
+
 -(NSArray *) createListWithProps:(NSDictionary *) colorProps withSourceLists:(NSDictionary *) sourceList {
     NSMutableArray *movies = [[NSMutableArray alloc] init];
     for(id genreCode in colorProps) {
@@ -153,5 +160,16 @@
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated: YES];
+}
+
+-(void)favButtonPressed:(SKYResultMovieCell *)sender {
+    NSIndexPath *cellIndex = [self.tableView indexPathForCell: sender];
+    SKYDataManager *dataManager = [[SKYDataManager alloc] init];
+    if(sender.isFavOn) {
+        [dataManager saveMovie: [self.movieSource objectAtIndex: cellIndex.row]];
+    }
+    else {
+        [dataManager deleteMovie: [self.movieSource objectAtIndex: cellIndex.row]];
+    }
 }
 @end

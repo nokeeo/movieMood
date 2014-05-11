@@ -9,6 +9,7 @@
 #import "SKYMovieTableViewController.h"
 #import "SKYResultMovieCell.h"
 #import "SKYMovieRequests.h"
+#import "SKYDataManager.h"
 
 @interface SKYMovieTableViewController ()
 @end
@@ -49,12 +50,20 @@
     return 1;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    [self.tableView reloadData];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    SKYDataManager *dataManager = [[SKYDataManager alloc] init];
     static NSString *CellIdentifier = @"MovieCell";
     SKYResultMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     SKYMovie *currentMovie = [_movieSource objectAtIndex:indexPath.row];
     [cell.artwork setImage: [UIImage imageNamed:@"defaultMoviePoster.png"]];
+    cell.isFavOn = [dataManager isMovieFav: currentMovie];
+    
     if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
         cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.movieId]];
     else {

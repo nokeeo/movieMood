@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SKYMovieTableViewController.h"
+#import "SKYResultMovieCell.h"
 
-@interface SKYResultViewController : SKYMovieTableViewController <UIAlertViewDelegate>
+@interface SKYResultViewController : SKYMovieTableViewController <UIAlertViewDelegate, favButtonProtocol>
 @property (nonatomic,retain) NSDictionary* movieProps;
 @property (nonatomic, retain) UIColor *selectedColor;
 @end

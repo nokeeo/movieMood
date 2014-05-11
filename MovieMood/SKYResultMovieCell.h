@@ -9,11 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYResultMovieCell : UITableViewCell <UIScrollViewDelegate>
-//@property (weak, nonatomic) IBOutlet UILabel *title;
-//@property (weak, nonatomic) IBOutlet UIImageView *artwork;
 
 @property (nonatomic, retain) UIImageView *artwork;
 @property (nonatomic, retain) UILabel *title;
 @property BOOL rightSlideMenuEnabled;
+@property UIColor *backgroundShadeColor;
+@property BOOL isFavOn;
+@property id favButtonDelegate;
+
+@end
+
+@protocol favButtonProtocol <NSObject>
+
+-(void)favButtonPressed:(SKYResultMovieCell *) sender;
 
 @end
