@@ -82,7 +82,7 @@
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView {
-    if(scrollView.contentOffset.x > SLIDE_WIDTH)
+    if(scrollView.contentOffset.x > SLIDE_WIDTH || !_rightSlideMenuEnabled)
         scrollView.contentOffset = CGPointMake(SLIDE_WIDTH, 0);
     _buttonView.frame = CGRectMake(_buttonView.bounds.origin.x + scrollView.contentOffset.x,
                                    0,

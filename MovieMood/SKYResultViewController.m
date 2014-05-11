@@ -106,6 +106,7 @@
     SKYResultMovieCell *cell = (SKYResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
     cell.backgroundShadeColor = [analyser tintColor: _selectedColor withTintConst:-.25];
     cell.favButtonDelegate = self;
+    cell.rightSlideMenuEnabled = YES;
     [cell resetFavScrollView];
     return cell;
 }
