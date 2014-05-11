@@ -41,6 +41,7 @@
 		BEAD74B0191806AB00BC2EBE /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAD74AF191806AB00BC2EBE /* fav@2x.png */; };
 		BEB04D6F191486DC0045A118 /* DevelopersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB04D6E191486DC0045A118 /* DevelopersView.xib */; };
 		BEB04D721914902F0045A118 /* SKYDeveloperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB04D711914902F0045A118 /* SKYDeveloperViewController.m */; };
+		BEC2BD45191EF53A00DDE7E8 /* SKYMovieCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC2BD44191EF53A00DDE7E8 /* SKYMovieCellScrollView.m */; };
 		BECDC1E51912F9A900F7CE7B /* defaultMoviePoster.png in Resources */ = {isa = PBXBuildFile; fileRef = BECDC1E41912F9A900F7CE7B /* defaultMoviePoster.png */; };
 		BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */; };
 		BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA6A1899F8AF00992093 /* Foundation.framework */; };
@@ -145,6 +146,8 @@
 		BEB04D6E191486DC0045A118 /* DevelopersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DevelopersView.xib; sourceTree = "<group>"; };
 		BEB04D701914902F0045A118 /* SKYDeveloperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYDeveloperViewController.h; sourceTree = "<group>"; };
 		BEB04D711914902F0045A118 /* SKYDeveloperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYDeveloperViewController.m; sourceTree = "<group>"; };
+		BEC2BD43191EF53A00DDE7E8 /* SKYMovieCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovieCellScrollView.h; sourceTree = "<group>"; };
+		BEC2BD44191EF53A00DDE7E8 /* SKYMovieCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovieCellScrollView.m; sourceTree = "<group>"; };
 		BECDC1E41912F9A900F7CE7B /* defaultMoviePoster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultMoviePoster.png; sourceTree = "<group>"; };
 		BED5AF09189AC9CE00ABF4EC /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		BED5AF0A189AC9CE00ABF4EC /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				BE963009189E3E17004968D0 /* SKYActivityIndicator.m */,
 				BE94F124189CC294006BAE45 /* SKYResultMovieCell.h */,
 				BE94F125189CC294006BAE45 /* SKYResultMovieCell.m */,
+				BEC2BD43191EF53A00DDE7E8 /* SKYMovieCellScrollView.h */,
+				BEC2BD44191EF53A00DDE7E8 /* SKYMovieCellScrollView.m */,
 				BE271A56189EF03B007B1EDA /* AboutView.xib */,
 				BEB04D6E191486DC0045A118 /* DevelopersView.xib */,
 				BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */,
@@ -528,6 +533,7 @@
 			files = (
 				BE94398C18ADA0F0001F3023 /* AFURLSessionManager.m in Sources */,
 				BE94398918ADA0F0001F3023 /* AFURLConnectionOperation.m in Sources */,
+				BEC2BD45191EF53A00DDE7E8 /* SKYMovieCellScrollView.m in Sources */,
 				BE94F122189B4FA1006BAE45 /* SKYColorAnalyser.m in Sources */,
 				BE765CB51915BCE7007D7B16 /* SKYMovieTableViewController.m in Sources */,
 				BE38A3CE1913F9B700559C44 /* SKYMovieInformationView.m in Sources */,

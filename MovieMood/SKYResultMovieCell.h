@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SKYResultMovieCell : UITableViewCell
+@interface SKYResultMovieCell : UITableViewCell <UIScrollViewDelegate>
 //@property (weak, nonatomic) IBOutlet UILabel *title;
 //@property (weak, nonatomic) IBOutlet UIImageView *artwork;
 
 @property (nonatomic, retain) UIImageView *artwork;
 @property (nonatomic, retain) UILabel *title;
+@property BOOL rightSlideMenuEnabled;
 
 @end
