@@ -30,7 +30,7 @@
     
     CGRect summaryRect = CGRectMake(0,
                                     _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 20,
-                                    CGRectGetWidth(self.frame), 98);
+                                    CGRectGetWidth(self.frame), 10);
     _summaryLabel = [[UITextView alloc] initWithFrame:summaryRect];
     _summaryLabel.userInteractionEnabled = NO;
     _summaryLabel.backgroundColor = [UIColor colorWithRed:235./255 green:235./255 blue:235./255 alpha:1];
