@@ -7,7 +7,8 @@
 //
 
 #import "SKYMovieTableViewController.h"
+#import "SKYResultMovieCell.h"
 
-@interface SKYFavViewController : SKYMovieTableViewController <UIAlertViewDelegate>
+@interface SKYFavViewController : SKYMovieTableViewController <UIAlertViewDelegate, favButtonProtocol>
 
 @end

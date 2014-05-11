@@ -12,6 +12,7 @@
 #import "SKYMovieViewController.h"
 #import "SKYActivityIndicator.h"
 
+
 @interface SKYFavViewController ()
 
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicator;
@@ -76,20 +77,13 @@
     return YES;
 }
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(editingStyle == UITableViewCellEditingStyleDelete) {
-        //Delete in model
-        SKYDataManager *dataManager = [[SKYDataManager alloc] init];
-        SKYMovie *deleteMovie = [self.movieSource objectAtIndex: indexPath.row];
-        [self.movieSource removeObjectAtIndex: indexPath.row];
-        [dataManager deleteMovie: deleteMovie];
-        
-        //Animate delete
-        if(indexPath.row != [self.movieSource count])
-            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects: indexPath, nil] withRowAnimation: UITableViewRowAnimationRight];
-        else
-            [self.tableView reloadData];
-    }
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SKYResultMovieCell *cell = (SKYResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
+    cell.favButtonDelegate = self;
+    cell.rightSlideMenuEnabled = YES;
+    cell.backgroundShadeColor = self.view.tintColor;
+    [cell resetFavScrollView];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,6 +106,20 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) favButtonPressed:(SKYResultMovieCell *)sender {
+    SKYDataManager *dataManager = [[SKYDataManager alloc] init];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    SKYMovie *deleteMovie = [self.movieSource objectAtIndex: indexPath.row];
+    [self.movieSource removeObjectAtIndex: indexPath.row];
+    [dataManager deleteMovie: deleteMovie];
+    
+    //Animate delete
+    if(indexPath.row != [self.movieSource count])
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects: indexPath, nil] withRowAnimation: UITableViewRowAnimationRight];
+    else
+        [self.tableView reloadData];
 }
 
 /*

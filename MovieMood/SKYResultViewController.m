@@ -73,7 +73,7 @@
     }];
     
     SKYColorAnalyser *colorAnalyser = [[SKYColorAnalyser alloc] init];
-    UIColor *tintColor = [colorAnalyser tintColor:_selectedColor withTintConst: -.25];
+    UIColor *tintColor = [colorAnalyser tintColor:_selectedColor withTintConst: -.10];
     _activityIndicatorView.activityIndicator.color = tintColor;
     self.navigationController.navigationBar.tintColor = tintColor;
 }
@@ -97,14 +97,14 @@
         SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
         SKYMovieViewController *movieVC = segue.destinationViewController;
         movieVC.movie = self.selectedMovie;
-        movieVC.selectedColor = [analyser tintColor:_selectedColor withTintConst:-.25];
+        movieVC.selectedColor = [analyser tintColor:_selectedColor withTintConst:-.10];
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SKYColorAnalyser *analyser = [[SKYColorAnalyser alloc] init];
     SKYResultMovieCell *cell = (SKYResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-    cell.backgroundShadeColor = [analyser tintColor: _selectedColor withTintConst:-.25];
+    cell.backgroundShadeColor = [analyser tintColor: _selectedColor withTintConst: -.10];
     cell.favButtonDelegate = self;
     cell.rightSlideMenuEnabled = YES;
     [cell resetFavScrollView];
@@ -140,7 +140,7 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"SKYSwipeCellShouldRetract" object:self userInfo:nil];
+    [super scrollViewDidScroll: scrollView];
     if(self.movieSource != 0) {
         CGPoint point = CGPointMake(scrollView.contentOffset.x, (scrollView.contentOffset.y + scrollView.bounds.size.height - 5));
         NSIndexPath *currentPath = [self.tableView indexPathForRowAtPoint: point];
