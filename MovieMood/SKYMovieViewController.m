@@ -87,6 +87,7 @@
     
     [SKYMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){
         _movie = (SKYMovie*) requestResponse;
+        _contentView.movieInformationView.ratingLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.ratingLabel.text, _movie.rating];
         [_activityIndicatorView fadeOutView];
         [UIView animateWithDuration: .75 animations:^{
             _coverView.alpha = 0.f;

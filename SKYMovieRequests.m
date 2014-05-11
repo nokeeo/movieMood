@@ -55,7 +55,12 @@
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [requestOperation setResponseSerializer: [AFJSONResponseSerializer serializer]];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        movie.rating = [responseObject objectForKey:@"contentAdvisoryRating"];
+        id results = [responseObject objectForKey: @"results"];
+        if([results count] > 0) {
+            id targetMovie = [results objectAtIndex: 0];
+            movie.rating = [targetMovie objectForKey:@"contentAdvisoryRating"];
+            NSLog(@"%@", [targetMovie objectForKey:@"contentAdvisoryRating"]);
+        }
         successCallback(movie);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

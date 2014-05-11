@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SKYMovieInformationView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *directorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
 @end

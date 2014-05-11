@@ -28,7 +28,7 @@
 
 -(void)awakeFromNib {
     
-    CGRect summaryRect = CGRectMake(0/*_artworkImage.frame.origin.x*/,
+    CGRect summaryRect = CGRectMake(0,
                                     _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 20,
                                     CGRectGetWidth(self.frame), 98);
     _summaryLabel = [[UITextView alloc] initWithFrame:summaryRect];
@@ -86,7 +86,6 @@
 -(void) setSummaryText:(NSString *)text {
     _summaryLabel.text = text;
     _summaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:12];
-    //_summaryLabel.numberOfLines = 0;
     CGFloat oldSumHeight = _summaryLabel.frame.size.height;
     //Check if more button in summary is needed.
     CGSize maxSummarySize = [self getFullSummarySizeWithText: _summaryLabel.text];
