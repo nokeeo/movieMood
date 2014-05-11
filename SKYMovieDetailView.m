@@ -9,7 +9,7 @@
 #import "SKYMovieDetailView.h"
 
 @interface SKYMovieDetailView ()
-@property (nonatomic, retain) UILabel *summaryLabel;
+@property (nonatomic, retain) UITextView *summaryLabel;
 @end
 
 @implementation SKYMovieDetailView
@@ -27,17 +27,23 @@
 }
 
 -(void)awakeFromNib {
-    CGRect summaryRect = CGRectMake(_artworkImage.frame.origin.x,
-                                    _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 10,
-                                    277, 98);
-    _summaryLabel = [[UILabel alloc] initWithFrame:summaryRect];
+    
+    CGRect summaryRect = CGRectMake(0/*_artworkImage.frame.origin.x*/,
+                                    _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 20,
+                                    CGRectGetWidth(self.frame), 98);
+    _summaryLabel = [[UITextView alloc] initWithFrame:summaryRect];
+    _summaryLabel.userInteractionEnabled = NO;
+    _summaryLabel.backgroundColor = [UIColor colorWithRed:235./255 green:235./255 blue:235./255 alpha:1];
+    _summaryLabel.layer.borderWidth = .5;
+    _summaryLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [_summaryLabel setTextContainerInset: UIEdgeInsetsMake(10, _artworkImage.frame.origin.x, 10, _artworkImage.frame.origin.x)];
     [self addSubview: _summaryLabel];
     
     //Create information view
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
     _movieInformationView = [nib objectAtIndex: 0];
     CGPoint informationOrigin = CGPointMake(_summaryLabel.frame.origin.x ,
-                                            _summaryLabel.frame.origin.y + _summaryLabel.frame.size.height);
+                                            _summaryLabel.frame.origin.y + _summaryLabel.frame.size.height - 10);
     CGRect informationRect = CGRectMake(informationOrigin.x,
                                         informationOrigin.y,
                                         _summaryLabel.frame.size.width,
@@ -79,8 +85,8 @@
 
 -(void) setSummaryText:(NSString *)text {
     _summaryLabel.text = text;
-    _summaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:15];
-    _summaryLabel.numberOfLines = 0;
+    _summaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:12];
+    //_summaryLabel.numberOfLines = 0;
     CGFloat oldSumHeight = _summaryLabel.frame.size.height;
     //Check if more button in summary is needed.
     CGSize maxSummarySize = [self getFullSummarySizeWithText: _summaryLabel.text];
@@ -88,7 +94,7 @@
         CGRect newFrame = CGRectMake(_summaryLabel.frame.origin.x,
                                      _summaryLabel.frame.origin.y,
                                      _summaryLabel.frame.size.width,
-                                     maxSummarySize.height + 65);
+                                     maxSummarySize.height + 60);
         [_summaryLabel setFrame: newFrame];
     }
     
