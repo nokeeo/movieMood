@@ -88,7 +88,7 @@
         CGRect newFrame = CGRectMake(_summaryLabel.frame.origin.x,
                                      _summaryLabel.frame.origin.y,
                                      _summaryLabel.frame.size.width,
-                                     maxSummarySize.height + 30);
+                                     maxSummarySize.height + 65);
         [_summaryLabel setFrame: newFrame];
     }
     
