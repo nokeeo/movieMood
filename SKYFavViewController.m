@@ -46,6 +46,7 @@
                                                                                 (size.height - activityViewSize.height) / 2,
                                                                                 activityViewSize.width,
                                                                                 activityViewSize.height)];
+    _activityIndicator.activityIndicator.color = self.view.tintColor;
     [_activityIndicator.activityIndicator startAnimating];
     [self.parentViewController.view addSubview: _activityIndicator];
     
