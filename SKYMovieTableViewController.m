@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.tableView setSeparatorInset: UIEdgeInsetsMake(0, 46, 0, 0)];
     _imageCache = [[NSMutableDictionary alloc] init];
 }
 

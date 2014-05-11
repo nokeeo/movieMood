@@ -113,7 +113,7 @@
 
 -(void)setBackgroundShadeColor:(UIColor *)backgroundShadeColor {
     _backgroundShadeColor = backgroundShadeColor;
-    self.backgroundColor = backgroundShadeColor;
+    //self.backgroundColor = backgroundShadeColor;
     _buttonView.backgroundColor = backgroundShadeColor;
 }
 

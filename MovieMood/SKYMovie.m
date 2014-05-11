@@ -54,8 +54,6 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
         _movieId = [[NSString alloc] initWithFormat:@"%@", [entry objectForKey: @"trackId"]];
         _title = [entry objectForKey: @"trackName"];
         
-        NSLog(@"%@", [entry objectForKey: @"trackHdPrice"]);
-        
         if([entry objectForKey: @"trackHdPrice"])
             _purchasePrice = [[NSString alloc] initWithFormat:@"%@%@", @"$", [entry objectForKey: @"trackHdPrice"] ];
         else if([entry objectForKey: @"trackPrice"] != nil)
