@@ -71,7 +71,11 @@
         NSURL *imageURL = [NSURL URLWithString: currentMovie.coverImage170];
         [SKYMovieRequests loadImageWithURL:imageURL successCallback:^(id requestResponse) {
             [_imageCache setObject:requestResponse forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
-            cell.artwork.image = requestResponse;
+            NSArray *visibleRows = [tableView indexPathsForVisibleRows];
+            for(int i = 0; i < [visibleRows count]; i++) {
+                if(((NSIndexPath *)[visibleRows objectAtIndex: i]).row == indexPath.row)
+                    cell.artwork.image = requestResponse;;
+            }
         } failCallcack:^(NSError *error) {
             NSLog(@"%@", error);
         }];
