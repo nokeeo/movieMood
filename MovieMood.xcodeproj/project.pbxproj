@@ -63,18 +63,7 @@
 		C11D1295189C4D6000A2B84F /* SKYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D1294189C4D6000A2B84F /* SKYResultViewController.m */; };
 		C11D129B189C538600A2B84F /* SKYIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D129A189C538600A2B84F /* SKYIntroViewController.m */; };
 		C15BE3BC189AD269006FC7C3 /* SKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* SKYViewController.m */; };
-		C16624E2189C72600086F00C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E1189C72600086F00C /* smile.png */; };
-		C16624E4189C76030086F00C /* bucket.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E3189C76030086F00C /* bucket.png */; };
-		C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */ = {isa = PBXBuildFile; fileRef = C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */; };
 		C16F56E7189DCF42009F71AB /* SKYMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16F56E6189DCF42009F71AB /* SKYMovieViewController.m */; };
-		C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEBD189D934B00FDE503 /* smiles.png */; };
-		C1A2CEC6189DB54600FDE503 /* G.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEBF189DB54600FDE503 /* G.png */; };
-		C1A2CEC7189DB54600FDE503 /* NC-17.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC0189DB54600FDE503 /* NC-17.png */; };
-		C1A2CEC8189DB54600FDE503 /* NR.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC1189DB54600FDE503 /* NR.png */; };
-		C1A2CEC9189DB54600FDE503 /* PG-13.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC2189DB54600FDE503 /* PG-13.png */; };
-		C1A2CECA189DB54600FDE503 /* PG.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC3189DB54600FDE503 /* PG.png */; };
-		C1A2CECB189DB54600FDE503 /* R.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC4189DB54600FDE503 /* R.png */; };
-		C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */ = {isa = PBXBuildFile; fileRef = C1A2CEC5189DB54600FDE503 /* Unrated.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,19 +166,8 @@
 		C11D129A189C538600A2B84F /* SKYIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYIntroViewController.m; path = MovieMood/SKYIntroViewController.m; sourceTree = "<group>"; };
 		C15BE3BA189AD269006FC7C3 /* SKYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYViewController.h; path = MovieMood/SKYViewController.h; sourceTree = "<group>"; };
 		C15BE3BB189AD269006FC7C3 /* SKYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYViewController.m; path = MovieMood/SKYViewController.m; sourceTree = "<group>"; };
-		C16624E1189C72600086F00C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
-		C16624E3189C76030086F00C /* bucket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucket.png; sourceTree = "<group>"; };
-		C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SkyApps_143x59.png; sourceTree = "<group>"; };
 		C16F56E5189DCF42009F71AB /* SKYMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKYMovieViewController.h; path = MovieMood/SKYMovieViewController.h; sourceTree = "<group>"; };
 		C16F56E6189DCF42009F71AB /* SKYMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYMovieViewController.m; path = MovieMood/SKYMovieViewController.m; sourceTree = "<group>"; };
-		C1A2CEBD189D934B00FDE503 /* smiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiles.png; sourceTree = "<group>"; };
-		C1A2CEBF189DB54600FDE503 /* G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = G.png; sourceTree = "<group>"; };
-		C1A2CEC0189DB54600FDE503 /* NC-17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NC-17.png"; sourceTree = "<group>"; };
-		C1A2CEC1189DB54600FDE503 /* NR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NR.png; sourceTree = "<group>"; };
-		C1A2CEC2189DB54600FDE503 /* PG-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PG-13.png"; sourceTree = "<group>"; };
-		C1A2CEC3189DB54600FDE503 /* PG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PG.png; sourceTree = "<group>"; };
-		C1A2CEC4189DB54600FDE503 /* R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R.png; sourceTree = "<group>"; };
-		C1A2CEC5189DB54600FDE503 /* Unrated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unrated.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,21 +323,10 @@
 		C16624E0189C71010086F00C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C1A2CEBF189DB54600FDE503 /* G.png */,
-				C1A2CEC0189DB54600FDE503 /* NC-17.png */,
-				C1A2CEC1189DB54600FDE503 /* NR.png */,
-				C1A2CEC2189DB54600FDE503 /* PG-13.png */,
-				C1A2CEC3189DB54600FDE503 /* PG.png */,
 				BEAD74AD191805D200BC2EBE /* fav.png */,
 				BEAD74AF191806AB00BC2EBE /* fav@2x.png */,
-				C1A2CEC4189DB54600FDE503 /* R.png */,
 				BE3D64DE191ADEB600A5FA69 /* favFill@2x.png */,
 				BE3D64DC191ADDD200A5FA69 /* favFill.png */,
-				C1A2CEC5189DB54600FDE503 /* Unrated.png */,
-				C1A2CEBD189D934B00FDE503 /* smiles.png */,
-				C16624E5189C8EEF0086F00C /* SkyApps_143x59.png */,
-				C16624E3189C76030086F00C /* bucket.png */,
-				C16624E1189C72600086F00C /* smile.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -496,29 +463,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1A2CEC8189DB54600FDE503 /* NR.png in Resources */,
-				C16624E6189C8EEF0086F00C /* SkyApps_143x59.png in Resources */,
-				C1A2CEC6189DB54600FDE503 /* G.png in Resources */,
 				BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */,
-				C1A2CECB189DB54600FDE503 /* R.png in Resources */,
 				BE10A5D418B5565600935271 /* MovieView.xib in Resources */,
 				BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */,
 				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
 				BECDC1E51912F9A900F7CE7B /* defaultMoviePoster.png in Resources */,
-				C1A2CECC189DB54600FDE503 /* Unrated.png in Resources */,
-				C1A2CEC9189DB54600FDE503 /* PG-13.png in Resources */,
 				BEB04D6F191486DC0045A118 /* DevelopersView.xib in Resources */,
 				BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */,
 				BEAD74AE191805D200BC2EBE /* fav.png in Resources */,
 				BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */,
 				BE3D64DF191ADEB600A5FA69 /* favFill@2x.png in Resources */,
 				BEAD74B0191806AB00BC2EBE /* fav@2x.png in Resources */,
-				C1A2CEBE189D934B00FDE503 /* smiles.png in Resources */,
-				C1A2CECA189DB54600FDE503 /* PG.png in Resources */,
 				BE10A5CC18B467AE00935271 /* Main.storyboard in Resources */,
-				C16624E4189C76030086F00C /* bucket.png in Resources */,
-				C1A2CEC7189DB54600FDE503 /* NC-17.png in Resources */,
-				C16624E2189C72600086F00C /* smile.png in Resources */,
 				BEE1CA821899F8AF00992093 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
