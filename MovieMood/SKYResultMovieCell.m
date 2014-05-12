@@ -10,7 +10,7 @@
 #import "SKYDataManager.h"
 #import "SKYMovieCellScrollView.h"
 
-#define SLIDE_WIDTH 46
+#define SLIDE_WIDTH 49.85
 
 @interface SKYResultMovieCell() {
     CGFloat slideMenuCatch;
@@ -42,7 +42,7 @@
 }
 
 -(void) awakeFromNib {
-    _artwork = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 46, self.frame.size.height)];
+    _artwork = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, SLIDE_WIDTH, self.frame.size.height)];
     //_artwork.contentMode = UIViewContentModeScaleAspectFill;
     _title = [[UILabel alloc] initWithFrame: CGRectMake(64, 25, 223, 21)];
     
