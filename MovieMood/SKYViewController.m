@@ -46,7 +46,7 @@
     [super viewDidLoad];
     
     CGSize size = self.view.bounds.size;
-    CGSize infoButtonSize = CGSizeMake(30.f, 30.f);
+    CGSize infoButtonSize = CGSizeMake(50, 50);
     CGSize questionSize = CGSizeMake(size.width * .9,  66);
     
     _contentScrollView = [[SKYColorPickerScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
@@ -74,8 +74,8 @@
     [questionLabel setAttributedText:questionText];
     
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [infoButton setFrame:CGRectMake(20,
-                                    _contentScrollView.frame.size.height * .8 - infoButtonSize.height,
+    [infoButton setFrame:CGRectMake(15,
+                                    _contentScrollView.frame.size.height * .85 - infoButtonSize.height,
                                     infoButtonSize.width, infoButtonSize.height)];
     [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchDown];
     
