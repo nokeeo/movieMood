@@ -6,12 +6,14 @@
 //  Copyright (c) 2014 Sky Apps. All rights reserved.
 //
 
+#import <StoreKit/StoreKit.h>
 #import <UIKit/UIKit.h>
 
 
 @protocol AppFeedbackProtocol <NSObject>
 
 -(void)dislikePressed;
+-(void)appStorePressed;
 
 @end
 

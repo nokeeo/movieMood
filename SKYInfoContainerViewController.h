@@ -10,6 +10,6 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SKYDeveloperViewController.h"
 
-@interface SKYInfoContainerViewController : UIViewController <MFMailComposeViewControllerDelegate, AppFeedbackProtocol>
+@interface SKYInfoContainerViewController : UIViewController <MFMailComposeViewControllerDelegate, AppFeedbackProtocol, SKStoreProductViewControllerDelegate>
 
 @end

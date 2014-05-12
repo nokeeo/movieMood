@@ -15,6 +15,7 @@
 		BE271A51189EED5B007B1EDA /* SKYInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */; };
 		BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A56189EF03B007B1EDA /* AboutView.xib */; };
 		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
+		BE2A9FA5192090D5008F66FB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2A9FA4192090D5008F66FB /* StoreKit.framework */; };
 		BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */; };
 		BE38A3CE1913F9B700559C44 /* SKYMovieInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */; };
 		BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DC191ADDD200A5FA69 /* favFill.png */; };
@@ -99,6 +100,7 @@
 		BE271A50189EED5B007B1EDA /* SKYInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKYInfoViewController.m; path = MovieMood/SKYInfoViewController.m; sourceTree = "<group>"; };
 		BE271A56189EF03B007B1EDA /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorTheoryView.xib; sourceTree = "<group>"; };
+		BE2A9FA4192090D5008F66FB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieInformationView.xib; sourceTree = "<group>"; };
 		BE38A3CC1913F9B700559C44 /* SKYMovieInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYMovieInformationView.h; sourceTree = "<group>"; };
 		BE38A3CD1913F9B700559C44 /* SKYMovieInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKYMovieInformationView.m; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2A9FA5192090D5008F66FB /* StoreKit.framework in Frameworks */,
 				BEE1CA6D1899F8AF00992093 /* CoreGraphics.framework in Frameworks */,
 				BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */,
 				BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */,
@@ -274,6 +277,7 @@
 		BEE1CA691899F8AF00992093 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE2A9FA4192090D5008F66FB /* StoreKit.framework */,
 				BEE1CA6A1899F8AF00992093 /* Foundation.framework */,
 				BEE1CA6C1899F8AF00992093 /* CoreGraphics.framework */,
 				BEE1CA6E1899F8AF00992093 /* UIKit.framework */,
@@ -461,6 +465,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Sky Apps";
 				TargetAttributes = {
+					BEE1CA661899F8AF00992093 = {
+						DevelopmentTeam = 9Q9WY65JWC;
+					};
 					BEE1CA861899F8AF00992093 = {
 						TestTargetID = BEE1CA661899F8AF00992093;
 					};
@@ -680,11 +687,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
 				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -694,10 +704,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
 				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

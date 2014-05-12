@@ -12,12 +12,14 @@
 
 @property (nonatomic, retain) MFMailComposeViewController *mailVC;
 @property (nonatomic, retain) NSString *emailAddress;
+@property (nonatomic, retain) SKStoreProductViewController *appStoreVC;
 @end
 
 @implementation SKYInfoContainerViewController
 
 @synthesize emailAddress = _emailAddress;
 @synthesize mailVC = _mailVC;
+@synthesize appStoreVC = _appStoreVC;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +61,21 @@
     }
 }
 
+-(void)appStorePressed {
+    _appStoreVC = [[SKStoreProductViewController alloc] init];
+    [_appStoreVC setDelegate: self];
+    [_appStoreVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier : @"877461524"} completionBlock:^(BOOL result, NSError *error) {
+        if(error) {
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Uh-oh!" message:@"There was an error loading the App Store. Please try again later" delegate: nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [errorAlert show];
+        }
+        else {
+            [self presentViewController: _appStoreVC animated:YES completion:nil];
+        }
+    }];
+    
+}
+
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     if(!error)
         [_mailVC dismissViewControllerAnimated:YES completion:nil];
@@ -72,6 +89,9 @@
     }
 }
 
+-(void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [_appStoreVC dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation

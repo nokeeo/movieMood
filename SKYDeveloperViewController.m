@@ -10,11 +10,15 @@
 
 @interface SKYDeveloperViewController ()
 
+@property (nonatomic, retain) UIAlertView *appFeelingAlert;
+@property (nonatomic, retain) UIAlertView *reviewAlert;
+
 @end
 
 @implementation SKYDeveloperViewController
 
 @synthesize delegate = _delegate;
+@synthesize appFeelingAlert = _appFeelingAlert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,16 +42,21 @@
 }
 
 - (IBAction)feedbackPressed:(id)sender {
-    UIAlertView *feedBackAlert = [[UIAlertView alloc] initWithTitle:@"Do you love MovieMood?" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Absolutely", @"Not Quite", nil];
-    [feedBackAlert show];
+    _appFeelingAlert = [[UIAlertView alloc] initWithTitle:@"Do you love MovieMood?" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Absolutely", @"Not Quite", nil];
+    [_appFeelingAlert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if(buttonIndex == 0) {
-        //TODO: Send to app store
+    if(buttonIndex == 0 && [alertView  isEqual: _appFeelingAlert]) {
+        _reviewAlert = [[UIAlertView alloc] initWithTitle:@"Thats Great!" message:@"We'd really appreciate it if you rate our app" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Sure", @"Maybe Later", nil];
+        [_reviewAlert show];
     }
-    else {
+    else if(buttonIndex == 1 && [alertView isEqual: _appFeelingAlert]){
         [_delegate dislikePressed];
+    }
+    
+    else if(buttonIndex == 0 && [_reviewAlert isEqual: alertView]) {
+        [_delegate appStorePressed];
     }
 }
 
