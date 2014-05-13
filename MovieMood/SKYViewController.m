@@ -125,6 +125,8 @@
         SKYDeveloperViewController *developerPage = [[SKYDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
         [viewControllers addObject: developerPage];
         developerPage.delegate = nextVC;
+        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ImageCredits" bundle:nil]];
+        
         _infoPage.data = viewControllers;
         
         [nextVC.view addSubview:_infoPage.view];
