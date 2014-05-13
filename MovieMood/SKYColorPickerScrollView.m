@@ -40,13 +40,13 @@
         centerWheel.layer.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.2].CGColor;
         centerWheel.layer.cornerRadius = 80;
         centerWheel.layer.borderColor = [UIColor darkGrayColor].CGColor;
-        centerWheel.layer.borderWidth = 1.f;
+        centerWheel.layer.borderWidth = .5;
         
         _colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
                                                                      size.height * .2,
                                                                      wheelSize.width,
                                                                      wheelSize.height)];
-        _colorWheel.continuous = true;
+        _colorWheel.continuous = YES;
         _colorWheel.delegate = self;
         
         _colorIndicator = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - indicatorSize.width / 2,
@@ -55,8 +55,9 @@
                                                                    indicatorSize.width)];
         _colorIndicator.layer.cornerRadius = 64;
         [self changeIndicatorColor: _colorWheel.currentColor];
-        _colorIndicator.layer.borderColor = [UIColor colorWithRed:157/255.f green:157/255.f blue:157/255.f alpha:1].CGColor;
-        _colorIndicator.layer.borderWidth = 1;
+        //_colorIndicator.layer.borderColor = [UIColor colorWithRed:157/255.f green:157/255.f blue:157/255.f alpha:1].CGColor;
+        _colorIndicator.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        _colorIndicator.layer.borderWidth = .3;
         
         _selectButton = [[UIButton alloc] initWithFrame:CGRectMake(size.width / 2 - selectButtonSize.width / 2,
                                                                             (size.height * .2) + (wheelSize.height - selectButtonSize.height) / 2,
@@ -93,7 +94,7 @@
 }
 
 -(void)changeIndicatorColor:(UIColor *)color {
-    UIColor *backgroundColor = [_colorWheel.currentColor colorWithAlphaComponent:.35];
+    UIColor *backgroundColor = [_colorWheel.currentColor colorWithAlphaComponent:.4];
     [_colorIndicator setBackgroundColor: backgroundColor];
 }
 
