@@ -62,10 +62,10 @@
                                                                             (size.height * .2) + (wheelSize.height - selectButtonSize.height) / 2,
                                                                             selectButtonSize.width,
                                                                             selectButtonSize.height)];
-        [_selectButton setTitle:@"GO" forState:UIControlStateNormal];
+        [_selectButton setTitle:@"Go" forState:UIControlStateNormal];
         [_selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents:UIControlEventTouchDown];
-        [_selectButton.titleLabel setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size:25]];
+        [_selectButton.titleLabel setFont:[UIFont fontWithName: @"HelveticaNeue-Thin" size:25]];
         
         [self addSubview:_colorWheel];
         [self addSubview:centerWheel];
@@ -93,7 +93,7 @@
 }
 
 -(void)changeIndicatorColor:(UIColor *)color {
-    UIColor *backgroundColor = [_colorWheel.currentColor colorWithAlphaComponent:.6];
+    UIColor *backgroundColor = [_colorWheel.currentColor colorWithAlphaComponent:.35];
     [_colorIndicator setBackgroundColor: backgroundColor];
 }
 
