@@ -19,10 +19,9 @@
     
     for(NSString *genre in genreList) {
         requestsSent++;
-        NSString *genreURL = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://itunes.apple.com/us/rss/topmovies/limit=300/genre=", genre, @"/json"];
+        NSString *genreURL = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://itunes.apple.com/us/rss/topmovies/limit=100/genre=", genre, @"/json"];
         NSURL *url = [NSURL URLWithString:genreURL];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-        
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
         [requestOperation setResponseSerializer:[AFJSONResponseSerializer serializer]];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {

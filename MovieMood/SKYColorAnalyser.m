@@ -28,8 +28,8 @@
     self = [super init];
     if (self)
     {
-        NSArray *ids = [[NSArray alloc] initWithObjects:@"4401", @"4402", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
-        NSArray *genres = [NSArray arrayWithObjects: @"Action/Adventure", @"Anime", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
+        NSArray *ids = [[NSArray alloc] initWithObjects:@"4401", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
+        NSArray *genres = [NSArray arrayWithObjects: @"Action/Adventure", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
         
         _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
     }
