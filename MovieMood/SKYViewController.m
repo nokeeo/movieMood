@@ -20,6 +20,7 @@
 @property (nonatomic, retain) SKYColorPickerScrollView *contentScrollView;
 @property (nonatomic, retain) NSDictionary *currentPorps;
 @property (nonatomic, retain) SKYInfoViewController *infoPage;
+@property UILabel *colorText;
 @end
 
 @implementation SKYViewController {
@@ -30,6 +31,7 @@
 @synthesize colorAnalyser = _colorAnalyser;
 @synthesize contentScrollView = _contentScrollView;
 @synthesize currentPorps = _currentPorps;
+@synthesize colorText = _colorText;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,7 +48,6 @@
     [super viewDidLoad];
     
     CGSize size = self.view.bounds.size;
-    CGSize infoButtonSize = CGSizeMake(50, 50);
     CGSize questionSize = CGSizeMake(size.width * .9,  66);
     
     _contentScrollView = [[SKYColorPickerScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
@@ -73,14 +74,15 @@
     questionLabel.numberOfLines = 2;
     [questionLabel setAttributedText:questionText];
     
-    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [infoButton setFrame:CGRectMake(15,
-                                    _contentScrollView.frame.size.height * .85 - infoButtonSize.height,
-                                    infoButtonSize.width, infoButtonSize.height)];
-    [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchDown];
+    _colorText = [[UILabel alloc] initWithFrame: CGRectMake(0,
+                                                            CGRectGetHeight(_contentScrollView.bounds) * .75,
+                                                            CGRectGetWidth(_contentScrollView.bounds),
+                                                            30)];
+    [_colorText setTextAlignment: NSTextAlignmentCenter];
+    [_colorText setFont: questionFont];
     
-    [_contentScrollView addSubview:infoButton];
     [_contentScrollView addSubview:questionLabel];
+    [_contentScrollView addSubview: _colorText];
     [self.view addSubview:_contentScrollView];
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
     [self colorDidChange: self];
@@ -101,6 +103,7 @@
     [_contentScrollView changeIndicatorColor: _contentScrollView.colorWheel.currentColor];
     UIColor *complement = [_colorAnalyser calculateComplementaryWithColor: _contentScrollView.colorWheel.currentColor];
     [_contentScrollView changeSelectButtonColorWithColor: complement];
+    _colorText.text = [_colorAnalyser descriptionForColor: _contentScrollView.colorWheel.currentColor];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -138,7 +141,7 @@
     [self performSegueWithIdentifier:@"ShowResults" sender:self];
 }
 
--(void)infoButtonPressed:(id) sender {
+-(IBAction)infoButtonPressed:(id) sender {
     [self performSegueWithIdentifier:@"InfoSegue" sender:self];
 }
 @end

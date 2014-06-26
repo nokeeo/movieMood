@@ -39,6 +39,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="l6r-IF-Q3Y">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="DIy-pL-04B">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="fp5-8y-n73">
+                                <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="g5d-FV-OnJ" eventType="touchUpInside" id="YVY-g7-Yxj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Fav" width="10" id="2Rx-ug-L1U">
                             <connections>
                                 <segue destination="tbx-JR-Bst" kind="modal" identifier="favButtonSegue" modalTransitionStyle="coverVertical" id="uzl-sa-wtf"/>
@@ -194,7 +206,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Hjb-ao-u8Q"/>
+        <segue reference="uzl-sa-wtf"/>
         <segue reference="0cm-Hy-GN9"/>
     </inferredMetricsTieBreakers>
 </document>

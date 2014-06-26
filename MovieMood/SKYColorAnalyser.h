@@ -12,4 +12,5 @@
 - (NSDictionary *) analyzeColor:(UIColor *) color;
 -(UIColor *) calculateComplementaryWithColor:(UIColor *) originalColor;
 -(UIColor *) tintColor:(UIColor *) originalColor withTintConst:(float) tintConst;
+-(NSString *) descriptionForColor: (UIColor *) color;
 @end
