@@ -104,6 +104,7 @@
     UIColor *complement = [_colorAnalyser calculateComplementaryWithColor: _contentScrollView.colorWheel.currentColor];
     [_contentScrollView changeSelectButtonColorWithColor: complement];
     _colorText.text = [_colorAnalyser descriptionForColor: _contentScrollView.colorWheel.currentColor];
+    _colorText.textColor = [_colorAnalyser tintColor: _contentScrollView.colorWheel.currentColor withTintConst: -.35];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
