@@ -75,7 +75,7 @@
     [questionLabel setAttributedText:questionText];
     
     _colorText = [[UILabel alloc] initWithFrame: CGRectMake(0,
-                                                            CGRectGetHeight(_contentScrollView.bounds) * .75,
+                                                            CGRectGetHeight(_contentScrollView.bounds) * .78,
                                                             CGRectGetWidth(_contentScrollView.bounds),
                                                             30)];
     [_colorText setTextAlignment: NSTextAlignmentCenter];

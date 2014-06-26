@@ -29,7 +29,7 @@
         
         CGSize size = self.bounds.size;
         CGSize indicatorSize = CGSizeMake(size.width * .40, size.width * .40);
-        CGSize wheelSize = CGSizeMake(size.width * .75, size.width * .75);
+        CGSize wheelSize = CGSizeMake(size.width * .8, size.width * .8);
         CGSize centerWheelSize = CGSizeMake(size.width * .50, size.width * .50);
         CGSize selectButtonSize = CGSizeMake(size.width * .3, size.width * .3);
         
