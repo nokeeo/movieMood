@@ -69,6 +69,9 @@
     return returnProps;
 }
 
+/*---------------------------------------------------------------------------
+ * Returns the text desription of the color given
+ ---------------------------------------------------------------------------*/
 -(NSString *) descriptionForColor: (UIColor *) color {
     NSDictionary *closeColors = [self analyzeColor: color];
     
