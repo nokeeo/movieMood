@@ -22,6 +22,7 @@
 @property(nonatomic, assign)float brightness;
 @property(nonatomic, assign)BOOL continuous;
 @property(nonatomic, assign)id <ISColorWheelDelegate> delegate;
+@property BOOL dragging;
 
 - (void)updateImage;
 

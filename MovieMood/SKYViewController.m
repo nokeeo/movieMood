@@ -15,7 +15,9 @@
 #import "SKYInfoContainerViewController.h"
 #import "SKYFavViewController.h"
 
-@interface SKYViewController ()
+@interface SKYViewController () {
+    BOOL moodTextAnimating;
+}
 @property (nonatomic, retain) SKYColorAnalyser *colorAnalyser;
 @property (nonatomic, retain) SKYColorPickerScrollView *contentScrollView;
 @property (nonatomic, retain) NSDictionary *currentPorps;
@@ -49,6 +51,7 @@
     
     CGSize size = self.view.bounds.size;
     CGSize questionSize = CGSizeMake(size.width * .9,  66);
+    moodTextAnimating = NO;
     
     _contentScrollView = [[SKYColorPickerScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
                                                                         self.view.bounds.origin.y,
@@ -78,6 +81,7 @@
                                                             CGRectGetHeight(_contentScrollView.bounds) * .78,
                                                             CGRectGetWidth(_contentScrollView.bounds),
                                                             30)];
+    
     [_colorText setTextAlignment: NSTextAlignmentCenter];
     [_colorText setFont: questionFont];
     
@@ -85,6 +89,7 @@
     [_contentScrollView addSubview: _colorText];
     [self.view addSubview:_contentScrollView];
     _colorAnalyser = [[SKYColorAnalyser alloc] init];
+    
     [self colorDidChange: self];
 }
 
@@ -99,11 +104,25 @@
 }
 
 -(void)colorDidChange:(id) sender {
+    
+    //Text change animation
+    NSString *colorDescription = [_colorAnalyser descriptionForColor: _contentScrollView.colorWheel.currentColor];
+    if(!moodTextAnimating || ![_colorText.text isEqual: colorDescription]) {
+        moodTextAnimating = YES;
+        CATransition *textAnimation = [CATransition animation];
+        textAnimation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
+        textAnimation.type = kCATransitionFade;
+        textAnimation.duration = .25;
+        textAnimation.delegate = self;
+        
+        [_colorText.layer addAnimation: textAnimation forKey: @"fadeAnimation"];
+        _colorText.text = colorDescription;
+    }
+    
     _contentScrollView.alwaysBounceVertical = false;
     [_contentScrollView changeIndicatorColor: _contentScrollView.colorWheel.currentColor];
     UIColor *complement = [_colorAnalyser calculateComplementaryWithColor: _contentScrollView.colorWheel.currentColor];
     [_contentScrollView changeSelectButtonColorWithColor: complement];
-    _colorText.text = [_colorAnalyser descriptionForColor: _contentScrollView.colorWheel.currentColor];
     _colorText.textColor = [_colorAnalyser tintColor: _contentScrollView.colorWheel.currentColor withTintConst: -.35];
 }
 
@@ -144,5 +163,11 @@
 
 -(IBAction)infoButtonPressed:(id) sender {
     [self performSegueWithIdentifier:@"InfoSegue" sender:self];
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+    if(flag) {
+        moodTextAnimating = NO;
+    }
 }
 @end

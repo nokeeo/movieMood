@@ -126,6 +126,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 @synthesize brightness = _brightness;
 @synthesize continuous = _continuous;
 @synthesize delegate = _delegate;
+@synthesize dragging = _dragging;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -146,6 +147,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
         self.backgroundColor = [UIColor clearColor];
         
         _continuous = false;
+        _dragging = NO;
     }
     return self;
 }
@@ -358,13 +360,14 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 {
     [self setTouchPoint:[[touches anyObject] locationInView:self]];
     
+    
     [_delegate colorWheelDidChangeColor:self];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setTouchPoint:[[touches anyObject] locationInView:self]];
-    
+    _dragging = YES;
     if (_continuous)
     {
         [_delegate colorWheelDidChangeColor:self];
@@ -373,6 +376,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    _dragging = NO;
     [_delegate colorWheelDidChangeColor:self];
 }
 
