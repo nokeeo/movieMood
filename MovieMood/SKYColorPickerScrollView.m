@@ -11,6 +11,7 @@
 
 @interface SKYColorPickerScrollView() <ISColorWheelDelegate>
 @property (nonatomic, retain) UIButton *selectButton;
+@property (nonatomic, retain) UIView *centerWheel;
 @end
 
 @implementation SKYColorPickerScrollView
@@ -19,6 +20,7 @@
 @synthesize colorWheel = _colorWheel;
 @synthesize colorViewDelegate = _colorViewDelegate;
 @synthesize selectButton = _selectButton;
+@synthesize centerWheel = _centerWheel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,14 +35,14 @@
         CGSize centerWheelSize = CGSizeMake(size.width * .50, size.width * .50);
         CGSize selectButtonSize = CGSizeMake(size.width * .3, size.width * .3);
         
-        UIView *centerWheel = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - centerWheelSize.width / 2,
+        _centerWheel = [[UIView alloc] initWithFrame:CGRectMake(size.width / 2 - centerWheelSize.width / 2,
                                                                        (size.height * .2) + (wheelSize.height - centerWheelSize.height) / 2,
                                                                        centerWheelSize.width,
                                                                        centerWheelSize.height)];
-        centerWheel.layer.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.2].CGColor;
-        centerWheel.layer.cornerRadius = 80;
-        centerWheel.layer.borderColor = [UIColor darkGrayColor].CGColor;
-        centerWheel.layer.borderWidth = .5;
+        _centerWheel.layer.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.2].CGColor;
+        _centerWheel.layer.cornerRadius = 80;
+        _centerWheel.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        _centerWheel.layer.borderWidth = .5;
         
         _colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
                                                                      size.height * .2,
@@ -55,7 +57,6 @@
                                                                    indicatorSize.width)];
         _colorIndicator.layer.cornerRadius = 64;
         [self changeIndicatorColor: _colorWheel.currentColor];
-        //_colorIndicator.layer.borderColor = [UIColor colorWithRed:157/255.f green:157/255.f blue:157/255.f alpha:1].CGColor;
         _colorIndicator.layer.borderColor = [UIColor darkGrayColor].CGColor;
         _colorIndicator.layer.borderWidth = .3;
         
@@ -65,11 +66,12 @@
                                                                             selectButtonSize.height)];
         [_selectButton setTitle:@"Go" forState:UIControlStateNormal];
         [_selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [_selectButton addTarget:self action:@selector(selectButtonPressed:) forControlEvents: UIControlEventTouchUpInside];
+        [_selectButton addTarget: self action: @selector(selectButtonTouched:) forControlEvents: UIControlEventTouchDown];
         [_selectButton.titleLabel setFont:[UIFont fontWithName: @"HelveticaNeue-Thin" size:25]];
         
         [self addSubview:_colorWheel];
-        [self addSubview:centerWheel];
+        [self addSubview:_centerWheel];
         [self addSubview:_colorIndicator];
         [self addSubview:_selectButton];
     }
@@ -86,7 +88,24 @@
 }
 
 -(void)selectButtonPressed:(id) sender {
-    [_colorViewDelegate selectButtonPressed:self];
+    [UIView animateWithDuration: .25 animations:^{
+        _colorIndicator.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+        _colorWheel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+        _centerWheel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+    } completion:^(BOOL finished) {
+        [_colorViewDelegate selectButtonPressed:self];
+    }];
+}
+
+-(void) selectButtonTouched: (id) sender {
+    //Start growth animations
+    [UIView animateWithDuration: .35 animations:^{
+        CGFloat scale = 1.15;
+        CGFloat colorWheelScale  = ((scale - 1) / 3) + 1;
+        _colorIndicator.transform = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
+        _centerWheel.transform = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
+        _colorWheel.transform = CGAffineTransformScale(CGAffineTransformIdentity, colorWheelScale, colorWheelScale);
+    }];
 }
 
 -(void)changeSelectButtonColorWithColor:(UIColor *)color {
