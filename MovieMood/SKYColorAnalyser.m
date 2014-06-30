@@ -198,13 +198,13 @@
     else if([genre isEqualToString:@"Animation"] || [genre isEqualToString:@"Anime"])
         returnColor = [UIColor colorWithRed:162/225.f green:255/255.f blue:0/255.f alpha:1.f];
     else if([genre isEqualToString:@"Comedy"])
-        returnColor = [UIColor colorWithRed:255/255.f green:255.f blue:0/255.f alpha:1.f];
+        returnColor = [UIColor colorWithRed:255/255.f green:255.f blue:0.f alpha:1.f];
     else if([genre isEqualToString:@"Documentary"])
         returnColor = [UIColor colorWithRed:0.f green:0.f blue:1.f alpha:1.f];
     else if([genre isEqualToString: @"Drama"])
         returnColor = [UIColor colorWithRed:0.f green:123/255.f blue:1.f alpha:1.f];
     else if([genre isEqualToString:@"Kids & Family"])
-        returnColor = [UIColor colorWithRed:255/255.f green:1.f blue:0.f alpha:1.f];
+        returnColor = [UIColor colorWithRed:0.f green:1.f blue:0.f alpha:1.f];
     else if([genre isEqualToString:@"Sci-Fi & Fantasy"])
         returnColor = [UIColor colorWithRed:1.f green:0.f blue:1.f alpha:1.f];
     else if([genre isEqualToString:@"Foreign"])

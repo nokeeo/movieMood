@@ -88,7 +88,7 @@
 }
 
 -(void)selectButtonPressed:(id) sender {
-    [UIView animateWithDuration: .25 animations:^{
+    [UIView animateWithDuration: .15 animations:^{
         _colorIndicator.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
         _colorWheel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
         _centerWheel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
