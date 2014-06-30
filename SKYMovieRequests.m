@@ -14,6 +14,7 @@
 +(void) getMoviesWithGenres:(NSArray *)genreList page:(int) pageNum successCallback:(void (^)(id))successCallback failCallBack:(void (^)(NSError *))errorCallback {
     __block int requestsSent = 0;
     __block int requestsRecieved = 0;
+    __block BOOL errorCallbackCalled = NO;
     
     __block NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     
@@ -39,8 +40,10 @@
                 successCallback(data);
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"%@", error);
-            errorCallback(error);
+            if(!errorCallbackCalled) {
+                errorCallbackCalled = YES;
+                errorCallback(error);
+            }
         }];
         [requestOperation start];
     }
