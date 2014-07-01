@@ -8,8 +8,6 @@
 #import <math.h>
 #import "SKYColorAnalyser.h"
 @interface SKYColorAnalyser()
-@property (nonatomic, retain) NSDictionary *genreIds;
-@property (nonatomic, retain) NSDictionary *descriptionIds;
 
 -(NSArray *) rgbToXyzWithRed:(float) red withGreen:(float) green withBlue: (float) blue;
 -(NSArray *) xyzToLabWithX:(float) x withY:(float) y withZ:(float) z;
@@ -28,16 +26,17 @@
 
 -(id) init {
     self = [super init];
-    if (self)
-    {
-        NSArray *ids = [[NSArray alloc] initWithObjects:@"4401", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
-        NSArray *genres = [NSArray arrayWithObjects: @"Action/Adventure", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
-        
-        NSArray *descriptions = [NSArray arrayWithObjects: @"Aggressive, Violent, Heated", @"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Thought-Provoking, Serious", @"Eclectic, Eccentric", @"Aggressive, Violent, Heated", @"Eclectic, Eccentric", @"Fresh, Kid-Friendly", @"", @"Mysterious, Wondrous", @"Aggressive, Violent, Heated", @"Energetic, Exciting", nil];
-        
-        _genreIds = [NSDictionary dictionaryWithObjects:ids forKeys:genres];
-        _descriptionIds = [NSDictionary dictionaryWithObjects: descriptions forKeys: ids];
+    if (self) {
     }
+    return self;
+}
+
+-(id) initWithIdsForGenre:(NSDictionary *)idsForGenre descriptionForIds:(NSDictionary *)descriptionForIds {
+    self = [self init];
+    
+    _genreIds = idsForGenre;
+    _descriptionIds = descriptionForIds;
+    
     return self;
 }
 

@@ -14,8 +14,19 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+@synthesize movieDescriptionsForId = _movieDescriptionsForId;
+@synthesize movieIdsForGenre = _movieIdsForGenre;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSArray *movieIds = [[NSArray alloc] initWithObjects:@"4401", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
+    NSArray *movieGenres = [NSArray arrayWithObjects: @"Action/Adventure", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
+    
+    NSArray *movieDescriptions = [NSArray arrayWithObjects: @"Aggressive, Violent, Heated", @"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Thought-Provoking, Serious", @"Eclectic, Eccentric", @"Aggressive, Violent, Heated", @"Eclectic, Eccentric", @"Fresh, Kid-Friendly", @"", @"Mysterious, Wondrous", @"Aggressive, Violent, Heated", @"Energetic, Exciting", nil];
+    
+    _movieIdsForGenre = [NSDictionary dictionaryWithObjects: movieIds forKeys: movieGenres];
+    _movieDescriptionsForId = [NSDictionary dictionaryWithObjects: movieDescriptions forKeys: movieIds];
+    
     return YES;
 }
 

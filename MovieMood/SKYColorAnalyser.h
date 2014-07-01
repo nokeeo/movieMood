@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface SKYColorAnalyser : NSObject
+
+@property (nonatomic, strong) NSDictionary *genreIds;
+@property (nonatomic, strong) NSDictionary *descriptionIds;
+
+-(id) initWithIdsForGenre: (NSDictionary *) idsForGenre descriptionForIds: (NSDictionary *) descriptionForIds;
+
 - (NSDictionary *) analyzeColor:(UIColor *) color;
 -(UIColor *) calculateComplementaryWithColor:(UIColor *) originalColor;
 -(UIColor *) tintColor:(UIColor *) originalColor withTintConst:(float) tintConst;

@@ -14,6 +14,7 @@
 #import "SKYDeveloperViewController.h"
 #import "SKYInfoContainerViewController.h"
 #import "SKYFavViewController.h"
+#import "SKYAppDelegate.h"
 
 @interface SKYViewController () {
     BOOL moodTextAnimating;
@@ -48,6 +49,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SKYAppDelegate *appDelegate = (SKYAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     CGSize size = self.view.bounds.size;
     CGSize questionSize = CGSizeMake(size.width * .9,  66);
@@ -88,7 +91,7 @@
     [_contentScrollView addSubview:questionLabel];
     [_contentScrollView addSubview: _colorText];
     [self.view addSubview:_contentScrollView];
-    _colorAnalyser = [[SKYColorAnalyser alloc] init];
+    _colorAnalyser = [[SKYColorAnalyser alloc] initWithIdsForGenre: appDelegate.movieIdsForGenre descriptionForIds: appDelegate.movieDescriptionsForId];
     
     [self colorDidChange: self];
 }

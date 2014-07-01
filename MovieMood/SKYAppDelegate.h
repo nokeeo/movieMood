@@ -16,6 +16,9 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (nonatomic, strong) NSDictionary *movieIdsForGenre;
+@property (nonatomic, strong) NSDictionary *movieDescriptionsForId;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
