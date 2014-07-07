@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="hGM-g0-uLg">
             <objects>
-                <viewController id="g5d-FV-OnJ" customClass="SKYViewController" sceneMemberID="viewController">
+                <viewController id="g5d-FV-OnJ" customClass="ELViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0UK-PB-HAp"/>
                         <viewControllerLayoutGuide type="bottom" id="fAH-hx-YwC"/>
@@ -69,7 +69,7 @@
         <!--Info Container View Controller-->
         <scene sceneID="gjw-Va-Bth">
             <objects>
-                <viewController id="QjL-Jf-Lrp" customClass="SKYInfoContainerViewController" sceneMemberID="viewController">
+                <viewController id="QjL-Jf-Lrp" customClass="ELInfoContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WBx-RE-Uir"/>
                         <viewControllerLayoutGuide type="bottom" id="yhB-Xb-BEi"/>
@@ -88,13 +88,13 @@
         <!--Fav View Controller - Favorites-->
         <scene sceneID="W8m-CG-wM9">
             <objects>
-                <tableViewController id="tYL-v9-6fR" customClass="SKYFavViewController" sceneMemberID="viewController">
+                <tableViewController id="tYL-v9-6fR" customClass="ELFavViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Myv-96-GsE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="75" id="lL3-n1-ExU" customClass="SKYResultMovieCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="75" id="lL3-n1-ExU" customClass="ELResultMovieCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lL3-n1-ExU" id="yD4-OT-H3P">
@@ -142,13 +142,13 @@
         <!--Result View Controller-->
         <scene sceneID="aee-8a-ch1">
             <objects>
-                <tableViewController id="848-LE-X0u" customClass="SKYResultViewController" sceneMemberID="viewController">
+                <tableViewController id="848-LE-X0u" customClass="ELResultViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hz6-JL-oj8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="75" id="XrF-A6-J9Q" customClass="SKYResultMovieCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="75" id="XrF-A6-J9Q" customClass="ELResultMovieCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XrF-A6-J9Q" id="iQ1-LA-Zyg">
@@ -165,7 +165,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="YVa-rl-bSZ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bvw-sg-fwp"/>
-                        <barButtonItem key="rightBarButtonItem" title="Fav" width="10" id="tYA-jZ-nvc">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" width="10" id="tYA-jZ-nvc">
                             <connections>
                                 <segue destination="tbx-JR-Bst" kind="modal" identifier="favSegue" id="Hjb-ao-u8Q"/>
                             </connections>
@@ -183,7 +183,7 @@
         <!--Movie View Controller-->
         <scene sceneID="UTu-HI-Kov">
             <objects>
-                <viewController id="eeQ-4f-TXA" customClass="SKYMovieViewController" sceneMemberID="viewController">
+                <viewController id="eeQ-4f-TXA" customClass="ELMovieViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hC8-n7-c8T"/>
                         <viewControllerLayoutGuide type="bottom" id="tcL-Jg-Y5i"/>
@@ -206,7 +206,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uzl-sa-wtf"/>
         <segue reference="0cm-Hy-GN9"/>
+        <segue reference="Hjb-ao-u8Q"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SKYAppDelegate.h"
+#import "ELAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([SKYAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ELAppDelegate class]));
     }
 }
