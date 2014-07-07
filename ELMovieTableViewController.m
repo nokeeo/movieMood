@@ -65,12 +65,12 @@
     [cell.artwork setImage: [UIImage imageNamed:@"defaultMoviePoster.png"]];
     cell.isFavOn = [dataManager isMovieFav: currentMovie];
     
-    if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]])
-        cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.movieId]];
+    if([_imageCache objectForKey:[NSString stringWithFormat:@"%@", currentMovie.entityID]])
+        cell.artwork.image = [_imageCache objectForKey: [NSString stringWithFormat:@"%@", currentMovie.entityID]];
     else {
         NSURL *imageURL = [NSURL URLWithString: currentMovie.coverImage170];
         [ELMovieRequests loadImageWithURL:imageURL successCallback:^(id requestResponse) {
-            [_imageCache setObject:requestResponse forKey:[NSString stringWithFormat:@"%@", currentMovie.movieId]];
+            [_imageCache setObject:requestResponse forKey:[NSString stringWithFormat:@"%@", currentMovie.entityID]];
             NSArray *visibleRows = [tableView indexPathsForVisibleRows];
             for(int i = 0; i < [visibleRows count]; i++) {
                 if(((NSIndexPath *)[visibleRows objectAtIndex: i]).row == indexPath.row)

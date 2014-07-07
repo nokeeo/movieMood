@@ -62,6 +62,7 @@
 		BEE1CA8C1899F8AF00992093 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1CA701899F8AF00992093 /* CoreData.framework */; };
 		BEE1CA941899F8AF00992093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEE1CA921899F8AF00992093 /* InfoPlist.strings */; };
 		BEE1CA961899F8AF00992093 /* MovieMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE1CA951899F8AF00992093 /* MovieMoodTests.m */; };
+		BEFED0BC196A39C300F066E3 /* ELMovieMediaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */; };
 		C11D1295189C4D6000A2B84F /* ELResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D1294189C4D6000A2B84F /* ELResultViewController.m */; };
 		C11D129B189C538600A2B84F /* ELIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D129A189C538600A2B84F /* ELIntroViewController.m */; };
 		C15BE3BC189AD269006FC7C3 /* ELViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* ELViewController.m */; };
@@ -164,6 +165,8 @@
 		BEE1CA911899F8AF00992093 /* MovieMoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMoodTests-Info.plist"; sourceTree = "<group>"; };
 		BEE1CA931899F8AF00992093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEE1CA951899F8AF00992093 /* MovieMoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMoodTests.m; sourceTree = "<group>"; };
+		BEFED0BA196A39C300F066E3 /* ELMovieMediaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMovieMediaEntity.h; sourceTree = "<group>"; };
+		BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMovieMediaEntity.m; sourceTree = "<group>"; };
 		C11D1293189C4D6000A2B84F /* ELResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELResultViewController.h; path = MovieMood/ELResultViewController.h; sourceTree = "<group>"; };
 		C11D1294189C4D6000A2B84F /* ELResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ELResultViewController.m; path = MovieMood/ELResultViewController.m; sourceTree = "<group>"; };
 		C11D1299189C538600A2B84F /* ELIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELIntroViewController.h; path = MovieMood/ELIntroViewController.h; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				BE963006189E19EA004968D0 /* ELMovieRequests.m */,
 				BE94398E18ADBDDD001F3023 /* ELMediaEntity.h */,
 				BE94398F18ADBDDD001F3023 /* ELMediaEntity.m */,
+				BEFED0BA196A39C300F066E3 /* ELMovieMediaEntity.h */,
+				BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */,
 				BE94F121189B4FA1006BAE45 /* ELColorAnalyser.h */,
 				BE94F120189B4FA1006BAE45 /* ELColorAnalyser.m */,
 				C16624E0189C71010086F00C /* Images */,
@@ -519,6 +524,7 @@
 				BE765CB81915C3E4007D7B16 /* ELFavViewController.m in Sources */,
 				BE0378E6189DA9980032EC9F /* ELColorPickerScrollView.m in Sources */,
 				BE765CAC1914ABCB007D7B16 /* ELInfoContainerViewController.m in Sources */,
+				BEFED0BC196A39C300F066E3 /* ELMovieMediaEntity.m in Sources */,
 				C11D1295189C4D6000A2B84F /* ELResultViewController.m in Sources */,
 				BE94399018ADBDDD001F3023 /* ELMediaEntity.m in Sources */,
 				BE10A5CF18B47B4800935271 /* ELBorderButton.m in Sources */,

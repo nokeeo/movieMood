@@ -32,7 +32,7 @@
     
     NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.movieId];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.entityID];
     [favMovieRequest setPredicate: pred];
     
     NSError *error;
@@ -43,7 +43,7 @@
     
     else if([fetchedMovies count] == 0) {
         NSManagedObject *newMovie = [NSEntityDescription insertNewObjectForEntityForName:@"FavMovie" inManagedObjectContext:_context];
-        [newMovie setValue: movie.movieId forKeyPath:@"iTunesID"];
+        [newMovie setValue: movie.entityID forKeyPath:@"iTunesID"];
         
         [_context save: &error];
     }
@@ -82,7 +82,7 @@
 -(NSManagedObject *)getFavMovie:(ELMediaEntity *) movie{
     NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.movieId];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.entityID];
     [favMovieRequest setPredicate: pred];
     
     NSError *error;

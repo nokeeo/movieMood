@@ -8,6 +8,7 @@
 
 #import "ELMovieRequests.h"
 #import "AFHTTPRequestOperation.h"
+#import "ELMovieMediaEntity.h"
 
 @implementation ELMovieRequests
 
@@ -31,7 +32,7 @@
             id entries = [feed objectForKey:@"entry"];
             NSMutableArray *movies = [[NSMutableArray alloc] init];
             for(id entry in entries) {
-                ELMediaEntity *newMovie = [[ELMediaEntity alloc] initWithEntry:entry];
+                ELMediaEntity *newMovie = [[ELMovieMediaEntity alloc] initWithEntry:entry];
                 [movies addObject:newMovie];
             }
             [data setObject:movies forKey:genre];
@@ -50,7 +51,7 @@
 }
 
 +(void) getMovieDetailData:(ELMediaEntity *) movie successCallback:(void (^)(id requestResponse))successCallback failCallBack: (void (^)(NSError * error)) errorCallback {
-    NSString *movieURL = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://itunes.apple.com/lookup?id=", movie.movieId, @"&entity=movie"];
+    NSString *movieURL = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://itunes.apple.com/lookup?id=", movie.entityID, @"&entity=movie"];
     NSURL *url = [NSURL URLWithString:movieURL];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
@@ -92,7 +93,7 @@
         id results = [responseObject objectForKey: @"results"];
         NSMutableArray *movies = [[NSMutableArray alloc] init];
         for(int i = 0; i < [results count]; i++) {
-            ELMediaEntity *movie = [[ELMediaEntity alloc] initWithLookupData: [results objectAtIndex: i]];
+            ELMediaEntity *movie = [[ELMovieMediaEntity alloc] initWithLookupData: [results objectAtIndex: i]];
             [movies addObject: movie];
         }
         successCallback(movies);

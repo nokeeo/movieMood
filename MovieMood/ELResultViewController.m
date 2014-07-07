@@ -152,7 +152,7 @@
 -(BOOL) movieDisplayed:(ELMediaEntity *) movie {
     for(int i = 0; i < [self.movieSource count]; i++) {
         ELMediaEntity *currentMovie = [self.movieSource objectAtIndex: i];
-        if([currentMovie.movieId isEqualToString: movie.movieId])
+        if([currentMovie.entityID isEqualToString: movie.entityID])
             return true;
     }
     return false;

@@ -10,8 +10,9 @@
 
 extern const NSString *AFFILIATE_KEY;
 
+//  ABSTRACT CLASS
 @interface ELMediaEntity : NSObject
-@property (nonatomic, retain) NSString *movieId;
+@property (nonatomic, retain) NSString *entityID;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *coverImage60;
 @property (nonatomic, retain) NSString *coverImage170;
