@@ -19,6 +19,9 @@
 @property (nonatomic, strong) NSDictionary *movieIdsForGenre;
 @property (nonatomic, strong) NSDictionary *movieDescriptionsForId;
 
+@property (nonatomic, strong) NSDictionary *tvShowIdsForGenre;
+@property (nonatomic, strong) NSDictionary *tvShowDescriptionForId;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

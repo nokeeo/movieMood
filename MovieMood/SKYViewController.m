@@ -91,19 +91,16 @@
     [_contentScrollView addSubview:questionLabel];
     [_contentScrollView addSubview: _colorText];
     [self.view addSubview:_contentScrollView];
-    _colorAnalyser = [[SKYColorAnalyser alloc] initWithIdsForGenre: appDelegate.movieIdsForGenre descriptionForIds: appDelegate.movieDescriptionsForId];
+    _colorAnalyser = [[SKYColorAnalyser alloc] initWithIdsForGenre: appDelegate.tvShowIdsForGenre descriptionForIds: appDelegate.tvShowDescriptionForId];
+    
+    NSLog(@"%@", appDelegate.tvShowIdsForGenre);
+    NSLog(@"%@", appDelegate.movieIdsForGenre);
     
     [self colorDidChange: self];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = self.view.tintColor;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)colorDidChange:(id) sender {

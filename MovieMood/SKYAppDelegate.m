@@ -24,8 +24,16 @@
     
     NSArray *movieDescriptions = [NSArray arrayWithObjects: @"Aggressive, Violent, Heated", @"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Thought-Provoking, Serious", @"Eclectic, Eccentric", @"Aggressive, Violent, Heated", @"Eclectic, Eccentric", @"Fresh, Kid-Friendly", @"", @"Mysterious, Wondrous", @"Aggressive, Violent, Heated", @"Energetic, Exciting", nil];
     
+    NSArray *tvShowIds = @[@"4000", @"4001", @"4003", @"4005", @"4006", @"4008", @"4004"];
+    NSArray *tvShowGenres = @[@"Comedy", @"Drama", @"Action/Adventure", @"Kids & Family", @"Documentary", @"Sci-Fi & Fantasy", @"Foreign"];
+    
+    NSArray *tvShowDescriptions = @[@"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Aggressive, Violent, Heated", @"Fresh, Kid-Friendly", @"Thought-Provoking, Serious", @"Mysterious, Wondrous", @"Eclectic, Eccentric"];
+    
     _movieIdsForGenre = [NSDictionary dictionaryWithObjects: movieIds forKeys: movieGenres];
     _movieDescriptionsForId = [NSDictionary dictionaryWithObjects: movieDescriptions forKeys: movieIds];
+    
+    _tvShowDescriptionForId = [NSDictionary dictionaryWithObjects: tvShowDescriptions forKeys: tvShowIds];
+    _tvShowIdsForGenre = [NSDictionary dictionaryWithObjects: tvShowIds forKeys: tvShowGenres];
     
     return YES;
 }

@@ -11,7 +11,7 @@
 
 @implementation SKYMovieRequests
 
-+(void) getMoviesWithGenres:(NSArray *)genreList page:(int) pageNum successCallback:(void (^)(id))successCallback failCallBack:(void (^)(NSError *))errorCallback {
++(void) getMoviesWithGenres:(NSArray *)genreList successCallback:(void (^)(id))successCallback failCallBack:(void (^)(NSError *))errorCallback {
     __block int requestsSent = 0;
     __block int requestsRecieved = 0;
     __block BOOL errorCallbackCalled = NO;

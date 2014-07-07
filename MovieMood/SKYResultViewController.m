@@ -18,7 +18,6 @@
 @property (nonatomic, retain) SKYActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) NSDictionary *movieRequestCache;
 @property (nonatomic, retain) dispatch_queue_t dispatchQueue;
-@property int currentPageNumber;
 @property bool refresing;
 @end
 
@@ -26,7 +25,6 @@
 
 @synthesize movieProps = _movieProps;
 @synthesize refresing = _refresing;
-@synthesize currentPageNumber = _currentPageNumber;
 @synthesize activityIndicatorView = _activityIndicatorView;
 @synthesize  movieRequestCache = _movieRequestCache;
 
@@ -43,7 +41,6 @@
 {
     [super viewDidLoad];
     
-    _currentPageNumber = 1;
     _refresing = NO;
     
     CGSize size = self.view.bounds.size;
@@ -56,7 +53,7 @@
 
     [self.parentViewController.view addSubview:_activityIndicatorView];
     [_activityIndicatorView.activityIndicator startAnimating];
-    [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] page: _currentPageNumber successCallback:^(id requestResponse) {
+    [SKYMovieRequests getMoviesWithGenres:[_movieProps allKeys] successCallback:^(id requestResponse) {
         _movieRequestCache = requestResponse;
         self.movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         [self.tableView reloadData];
@@ -148,7 +145,6 @@
             NSArray *newMovies = [self createListWithProps: _movieProps withSourceLists: _movieRequestCache];
             [self.movieSource addObjectsFromArray: newMovies];
             [self.tableView reloadData];
-            _currentPageNumber++;
         }
     }
 }

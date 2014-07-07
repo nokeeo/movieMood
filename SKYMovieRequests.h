@@ -9,7 +9,7 @@
 #import "SKYMovie.h"
 
 @interface SKYMovieRequests : NSObject
-+(void) getMoviesWithGenres: (NSArray *) genreList page:(int) pageNum successCallback: (void (^)(id requestResponse)) successCallback failCallBack: (void (^)(NSError *error)) errorCallback;
++(void) getMoviesWithGenres: (NSArray *) genreList successCallback: (void (^)(id requestResponse)) successCallback failCallBack: (void (^)(NSError *error)) errorCallback;
 +(void) getMovieDetailData:(SKYMovie *) movie successCallback:(void (^)(id requestResponse))successCallback failCallBack: (void (^)(NSError * error)) errorCallback;
 +(void) getTrailerWithMovieTitle:(NSString *) title successCallback:(void (^) (id requestResponse))successCallback failCallBack: (void (^)(NSError *error)) errorCallback;
 +(void) loadImageWithURL: (NSURL *)url successCallback:(void (^) (id requestResponse))successCallback failCallcack:(void (^) (NSError *error)) errorCallback;
