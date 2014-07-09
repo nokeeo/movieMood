@@ -9,6 +9,7 @@
 #import "ELMovieRequests.h"
 #import "AFHTTPRequestOperation.h"
 #import "ELMovieMediaEntity.h"
+#import "ELTVShowMediaEntity.h"
 
 @implementation ELMovieRequests
 
@@ -21,7 +22,7 @@
     
     for(NSString *genre in genreList) {
         requestsSent++;
-        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"%@/genre=%@/json", baseUrl, genre]];
+        NSURL *url = [ELMovieRequests getURLWithGenreCode: genre];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
         [requestOperation setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -31,8 +32,16 @@
             id entries = [feed objectForKey:@"entry"];
             NSMutableArray *movies = [[NSMutableArray alloc] init];
             for(id entry in entries) {
-                ELMediaEntity *newMovie = creationBlock(entry);
-                [movies addObject:newMovie];
+                NSLog(@"%@", entry);
+                ELMediaEntity *newMediaEntity;
+                NSString *genreCode = [[[entry objectForKey: @"category"] objectForKey: @"attributes"] objectForKey: @"im:id"];
+                if([genreCode hasPrefix: @"44"]) {
+                     newMediaEntity = [[ELMovieMediaEntity alloc] initWithEntry: entry];
+                }
+                else {
+                    newMediaEntity = [[ELTVShowMediaEntity alloc] initWithEntry: entry];
+                }
+                [movies addObject: newMediaEntity];
             }
             [data setObject:movies forKey:genre];
             
@@ -110,22 +119,6 @@
     [requestOperation start];
 }
 
-+(void) getTrailerWithMovieTitle:(NSString *)title successCallback:(void (^)(id))successCallback failCallBack:(void (^)(NSError *error))errorCallback {
-    NSString *formatTitle = [title stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-    NSString *titleURL = [[NSString alloc] initWithFormat:@"%@film=%@", @"http://api.traileraddict.com/?", formatTitle ];
-    NSURL *url = [NSURL URLWithString:titleURL];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
-    
-    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [requestOperation setResponseSerializer: [AFXMLParserResponseSerializer serializer]];
-    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
-    }];
-    [requestOperation start];
-}
-
 +(void) loadImageWithURL: (NSURL *)url successCallback:(void (^) (id requestResponse))successCallback failCallcack:(void (^) (NSError *error)) errorCallback {
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL: url]];
     operation.responseSerializer = [AFImageResponseSerializer serializer];
@@ -136,5 +129,15 @@
         errorCallback(error);
     }];
     [operation start];
+}
+
+#pragma mark - Helper functions 
++(NSURL *) getURLWithGenreCode: (NSString *) genre {
+    NSString *urlString;
+    if([genre hasPrefix: @"44"])
+        urlString = @"https://itunes.apple.com/us/rss/topmovies/limit=100";
+    else
+        urlString = @"https://itunes.apple.com/us/rss/toptvseasons/limit=100";
+    return [NSURL URLWithString: [NSString stringWithFormat: @"%@/genre=%@/json", urlString, genre]];
 }
 @end

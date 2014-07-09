@@ -19,21 +19,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSArray *movieIds = [[NSArray alloc] initWithObjects:@"4401", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
-    NSArray *movieGenres = [NSArray arrayWithObjects: @"Action/Adventure", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
+    NSMutableArray *movieIds = [[NSMutableArray alloc] initWithObjects:@"4401", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
+    NSMutableArray *movieGenres = [NSMutableArray arrayWithObjects: @"Action/Adventure", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
     
-    NSArray *movieDescriptions = [NSArray arrayWithObjects: @"Aggressive, Violent, Heated", @"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Thought-Provoking, Serious", @"Eclectic, Eccentric", @"Aggressive, Violent, Heated", @"Eclectic, Eccentric", @"Fresh, Kid-Friendly", @"", @"Mysterious, Wondrous", @"Aggressive, Violent, Heated", @"Energetic, Exciting", nil];
+    NSMutableArray *movieDescriptions = [NSMutableArray arrayWithObjects: @"Aggressive, Violent, Heated", @"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Thought-Provoking, Serious", @"Eclectic, Eccentric", @"Aggressive, Violent, Heated", @"Eclectic, Eccentric", @"Fresh, Kid-Friendly", @"", @"Mysterious, Wondrous", @"Aggressive, Violent, Heated", @"Energetic, Exciting", nil];
     
     NSArray *tvShowIds = @[@"4000", @"4001", @"4003", @"4005", @"4006", @"4008", @"4004"];
     NSArray *tvShowGenres = @[@"Comedy", @"Drama", @"Action/Adventure", @"Kids & Family", @"Documentary", @"Sci-Fi & Fantasy", @"Foreign"];
     
     NSArray *tvShowDescriptions = @[@"Happy, Funny, Carefree", @"Thought-Provoking, Serious", @"Aggressive, Violent, Heated", @"Fresh, Kid-Friendly", @"Thought-Provoking, Serious", @"Mysterious, Wondrous", @"Eclectic, Eccentric"];
     
-    _movieIdsForGenre = [NSDictionary dictionaryWithObjects: movieIds forKeys: movieGenres];
-    _movieDescriptionsForId = [NSDictionary dictionaryWithObjects: movieDescriptions forKeys: movieIds];
+    [movieIds addObjectsFromArray: tvShowIds];
+    [movieGenres addObjectsFromArray: tvShowGenres];
+    [movieDescriptions addObjectsFromArray: tvShowDescriptions];
     
-    _tvShowDescriptionForId = [NSDictionary dictionaryWithObjects: tvShowDescriptions forKeys: tvShowIds];
-    _tvShowIdsForGenre = [NSDictionary dictionaryWithObjects: tvShowIds forKeys: tvShowGenres];
+    //_movieIdsForGenre = [NSDictionary dictionaryWithObjects: movieIds forKeys: movieGenres];
+    //_movieDescriptionsForId = [NSDictionary dictionaryWithObjects: movieDescriptions forKeys: movieIds];
+    
+    _movieIdsForGenre = [NSDictionary dictionaryWithObjects: tvShowIds forKeys: tvShowGenres];
+    _movieDescriptionsForId = [NSDictionary dictionaryWithObjects: tvShowDescriptions forKeys: tvShowIds];
     
     return YES;
 }

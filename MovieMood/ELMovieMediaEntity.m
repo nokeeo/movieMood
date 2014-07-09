@@ -17,6 +17,12 @@
         self.description = [[entry objectForKey:@"summary"] objectForKey:@"label"];
         self.director = [[entry objectForKey:@"im:artist"] objectForKey:@"label"];
         
+        //Get URls
+        id links = [entry objectForKey:@"link"];
+        for(id link in links) {
+            if([[[link objectForKey:@"attributes"] objectForKey:@"type"] isEqualToString:@"text/html"])
+                self.storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [[link objectForKey:@"attributes"] objectForKey:@"href"], AFFILIATE_KEY ];
+        }
     }
     return self;
 }

@@ -22,13 +22,6 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
     self.purchasePrice = [[entry objectForKey:@"im:price"] objectForKey:@"label"];
     self.genre = [[[entry objectForKey:@"category"] objectForKey:@"attributes"] objectForKey:@"label"];
     self.releaseDate = [[[entry objectForKey:@"im:releaseDate"] objectForKey:@"attributes"] objectForKey:@"label"];
-    
-    //Get URls
-    id links = [entry objectForKey:@"link"];
-    for(id link in links) {
-        if([[[link objectForKey:@"attributes"] objectForKey:@"type"] isEqualToString:@"text/html"])
-            self.storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [[link objectForKey:@"attributes"] objectForKey:@"href"], AFFILIATE_KEY ];
-    }
 
     //Get the images
     id imageList = [entry objectForKey:@"im:image"];

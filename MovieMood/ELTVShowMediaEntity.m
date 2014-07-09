@@ -11,7 +11,10 @@
 @implementation ELTVShowMediaEntity
 
 -(id) initWithEntry:(id)entry {
-    return nil;
+    self = [super initWithEntry: entry];
+    self.storeURL = [[[entry objectForKey:@"link"] objectForKey: @"attributes"] objectForKey: @"href"];
+    
+    return self;
 }
 
 @end
