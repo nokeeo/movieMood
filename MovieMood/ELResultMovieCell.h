@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ResultMovieCellProtocol <NSObject>
+
+-(void) favButtonPressed: (id) sender;
+-(void) doNotShowButtonPressed: (id) sender;
+
+@end
+
 @interface ELResultMovieCell : UITableViewCell <UIScrollViewDelegate>
 
 @property (nonatomic, retain) UIImageView *artwork;
@@ -15,14 +22,8 @@
 @property BOOL rightSlideMenuEnabled;
 @property UIColor *backgroundShadeColor;
 @property BOOL isFavOn;
-@property id favButtonDelegate;
+@property id<ResultMovieCellProtocol> delegate;
 
 -(void)resetFavScrollView;
-
-@end
-
-@protocol favButtonProtocol <NSObject>
-
--(void)favButtonPressed:(ELResultMovieCell *) sender;
 
 @end

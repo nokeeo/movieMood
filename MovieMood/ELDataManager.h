@@ -10,8 +10,12 @@
 #import "ELMediaEntity.h"
 
 @interface ELDataManager : NSObject
+
 -(NSError *)saveMovie:(ELMediaEntity *) movie;
 -(NSError *)deleteMovie:(ELMediaEntity *) movie;
 -(NSArray *)getFavMovies;
 -(BOOL)isMovieFav:(ELMediaEntity *) movie;
+
+-(BOOL) canShowMovie: (ELMediaEntity *) movie;
+-(NSError *) doNotShowMovie: (ELMediaEntity *) movie;
 @end

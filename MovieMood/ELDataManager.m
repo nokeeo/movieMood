@@ -29,14 +29,84 @@
 }
 
 -(NSError *)saveMovie:(ELMediaEntity *)movie {
-    
     NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
+    return [self saveMovieItem: movie withRequest: favMovieRequest];
+}
+
+-(NSError *) doNotShowMovie: (ELMediaEntity *) movie {
+    NSFetchRequest *doNotShowRequest = [self createDoNotShowMovieRequest];
+    NSError *error = [self saveMovieItem: movie withRequest:doNotShowRequest];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.entityID];
-    [favMovieRequest setPredicate: pred];
+    return error;
+}
+
+-(NSError *)deleteMovie:(ELMediaEntity *) movie {
+    NSManagedObject *movieObject = [self getFavMovie: movie];
+    return [self deleteManagedItem: movieObject];
+}
+
+-(NSError *) doShowMovie: (ELMediaEntity *) movie {
+    NSManagedObject *movieObject = [self getDoNotShowMovie: movie];
+    return [self deleteManagedItem: movieObject];
+}
+
+-(NSArray *)getFavMovies {
+    NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
     
     NSError *error;
     NSArray *fetchedMovies = [_context executeFetchRequest: favMovieRequest error: &error];
+    
+    return fetchedMovies;
+}
+
+-(NSArray *) getDoNotShowMovies {
+    NSFetchRequest *doNotShowMovies = [self createDoNotShowMovieRequest];
+    
+    NSError *error;
+    NSArray *fetchedMovies = [_context executeFetchRequest: doNotShowMovies error: &error];
+    
+    return fetchedMovies;
+}
+
+-(BOOL)isMovieFav:(ELMediaEntity *) movie {
+    if([self getFavMovie: movie])
+        return YES;
+    return NO;
+}
+
+-(BOOL) canShowMovie: (ELMediaEntity *) movie {
+    if([self getDoNotShowMovie: movie])
+        return NO;
+    return YES;
+}
+
+-(NSManagedObject *) getDoNotShowMovie: (ELMediaEntity *) movie {
+    NSFetchRequest *request = [self createDoNotShowMovieRequest];
+    return [self getMovieItem: movie withRequest: request];
+}
+
+-(NSManagedObject *)getFavMovie:(ELMediaEntity *) movie{
+    NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
+    return [self getMovieItem: movie withRequest: favMovieRequest];
+}
+
+#pragma mark - Helper functions
+
+-(NSError *) deleteManagedItem: (NSManagedObject *) item {
+    NSError *error;
+    if(item) {
+        [_context deleteObject: item];
+        [_context save: &error];
+    }
+    return error;
+}
+
+-(NSError *) saveMovieItem: (ELMediaEntity *) movie withRequest: (NSFetchRequest *) request {
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.entityID];
+    [request setPredicate: pred];
+    
+    NSError *error;
+    NSArray *fetchedMovies = [_context executeFetchRequest: request error: &error];
     
     if(error)
         return error;
@@ -51,48 +121,17 @@
     return error;
 }
 
--(NSError *)deleteMovie:(ELMediaEntity *) movie {
-    NSManagedObject *movieObject = [self getFavMovie: movie];
-    NSError *error;
-    
-    if(movieObject) {
-        [_context deleteObject: movieObject];
-        [_context save: &error];
-    }
-    
-    return error;
-}
-
--(NSArray *)getFavMovies {
-    NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
-    
-    NSError *error;
-    NSArray *fetchedMovies = [_context executeFetchRequest: favMovieRequest error: &error];
-    
-    return fetchedMovies;
-}
-
--(BOOL)isMovieFav:(ELMediaEntity *) movie {
-    if([self getFavMovie: movie])
-        return true;
-    else
-        return false;
-}
-
--(NSManagedObject *)getFavMovie:(ELMediaEntity *) movie{
-    NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
-    
+-(NSManagedObject *) getMovieItem:(ELMediaEntity *) movie withRequest: (NSFetchRequest *) request {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"iTunesID = %@", movie.entityID];
-    [favMovieRequest setPredicate: pred];
+    [request setPredicate: pred];
     
     NSError *error;
-    NSArray *fetchedMovies = [_context executeFetchRequest: favMovieRequest error: &error];
-
+    NSArray *fetchedMovies = [_context executeFetchRequest: request error: &error];
+    
     if([fetchedMovies count] > 0)
         return [fetchedMovies objectAtIndex: 0];
     else
         return nil;
-    
 }
 
 -(NSFetchRequest *)createFavMovieRequest {
@@ -101,5 +140,13 @@
     [favMovieRequest setEntity:movieDescription];
 
     return favMovieRequest;
+}
+
+-(NSFetchRequest *) createDoNotShowMovieRequest {
+    NSEntityDescription *movieDescription = [NSEntityDescription entityForName: @"DoNotShowMovie" inManagedObjectContext:_context];
+    NSFetchRequest *doNotShowMovieRequest = [[NSFetchRequest alloc] init];
+    [doNotShowMovieRequest setEntity: movieDescription];
+    
+    return doNotShowMovieRequest;
 }
 @end

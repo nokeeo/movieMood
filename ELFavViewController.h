@@ -9,6 +9,6 @@
 #import "ELMovieTableViewController.h"
 #import "ELResultMovieCell.h"
 
-@interface ELFavViewController : ELMovieTableViewController <UIAlertViewDelegate, favButtonProtocol>
+@interface ELFavViewController : ELMovieTableViewController <UIAlertViewDelegate, ResultMovieCellProtocol>
 
 @end

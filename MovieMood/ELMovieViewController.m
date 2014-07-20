@@ -40,7 +40,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", _movie.coverImage170);
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
     ELDataManager *dataManager = [[ELDataManager alloc] init];

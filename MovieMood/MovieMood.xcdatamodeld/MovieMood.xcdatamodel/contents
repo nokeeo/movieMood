@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DoNotShowMovie" syncable="YES">
+        <attribute name="iTunesID" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="FavMovie" syncable="YES">
         <attribute name="iTunesID" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FavMovie" positionX="-477" positionY="-1305" width="128" height="58"/>
+        <element name="FavMovie" positionX="837" positionY="-1548" width="128" height="58"/>
+        <element name="DoNotShowMovie" positionX="1017" positionY="-1539" width="128" height="58"/>
     </elements>
 </model>

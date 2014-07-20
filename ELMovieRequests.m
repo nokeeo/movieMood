@@ -62,7 +62,6 @@
         if([results count] > 0) {
             id targetMovie = [results objectAtIndex: 0];
             movie.rating = [targetMovie objectForKey:@"contentAdvisoryRating"];
-            NSLog(@"%@", [targetMovie objectForKey:@"contentAdvisoryRating"]);
         }
         successCallback(movie);
         
@@ -113,7 +112,6 @@
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [requestOperation setResponseSerializer: [AFXMLParserResponseSerializer serializer]];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];

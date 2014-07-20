@@ -93,9 +93,6 @@
     [self.view addSubview:_contentScrollView];
     _colorAnalyser = [[ELColorAnalyser alloc] initWithIdsForGenre: appDelegate.movieIdsForGenre descriptionForIds: appDelegate.movieDescriptionsForId];
     
-    NSLog(@"%@", appDelegate.tvShowIdsForGenre);
-    NSLog(@"%@", appDelegate.movieIdsForGenre);
-    
     [self colorDidChange: self];
 }
 

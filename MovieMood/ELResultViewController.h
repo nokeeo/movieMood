@@ -10,7 +10,7 @@
 #import "ELMovieTableViewController.h"
 #import "ELResultMovieCell.h"
 
-@interface ELResultViewController : ELMovieTableViewController <UIAlertViewDelegate, favButtonProtocol>
+@interface ELResultViewController : ELMovieTableViewController <UIAlertViewDelegate, ResultMovieCellProtocol>
 @property (nonatomic,retain) NSDictionary* movieProps;
 @property (nonatomic, retain) UIColor *selectedColor;
 @end

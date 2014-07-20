@@ -9,16 +9,19 @@
 #import "ELResultMovieCell.h"
 #import "ELDataManager.h"
 #import "ELMovieCellScrollView.h"
+#import "ELColorAnalyser.h"
 
-#define SLIDE_WIDTH 49.85
+#define SLIDE_WIDTH 49.85 * 2
+#define BUTTON_WIDTH 49.85
 
 @interface ELResultMovieCell() {
     CGFloat slideMenuCatch;
 }
 
-@property (nonatomic, retain) UIView *buttonView;
-@property (nonatomic) UIButton *favButton;
-@property (nonatomic, retain) ELMovieCellScrollView *slideScrollView;
+@property (nonatomic, strong) UIView *buttonView;
+@property (nonatomic, strong) UIButton *favButton;
+@property (nonatomic, strong) UIButton *doNotShowButton;
+@property (nonatomic, strong) ELMovieCellScrollView *slideScrollView;
 @end
 
 @implementation ELResultMovieCell
@@ -29,8 +32,10 @@
 @synthesize buttonView = _buttonView;
 @synthesize backgroundShadeColor = _backgroundShadeColor;
 @synthesize isFavOn = _isFavOn;
-@synthesize favButtonDelegate = _favButtonDelegate;
+@synthesize delegate = _delegate;
 @synthesize slideScrollView = _slideScrollView;
+@synthesize favButton = _favButton;
+@synthesize doNotShowButton = _doNotShowButton;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -42,10 +47,11 @@
 }
 
 -(void) awakeFromNib {
-    _artwork = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, SLIDE_WIDTH, self.frame.size.height)];
+    _artwork = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, BUTTON_WIDTH, self.frame.size.height)];
     _title = [[UILabel alloc] initWithFrame: CGRectMake(64, 25, 223, 21)];
     
-     _slideScrollView = [[ELMovieCellScrollView alloc] initWithFrame: CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
+    //Configure Button scroll view
+    _slideScrollView = [[ELMovieCellScrollView alloc] initWithFrame: CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
     _slideScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) + SLIDE_WIDTH,  CGRectGetHeight(self.bounds));
     _slideScrollView.delegate = self;
     _slideScrollView.contentOffset = CGPointMake(SLIDE_WIDTH, 0);
@@ -54,16 +60,29 @@
     [self.contentView addSubview: _slideScrollView];
     
     _buttonView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, SLIDE_WIDTH, CGRectGetHeight(self.bounds))];
-    
     [_slideScrollView addSubview: _buttonView];
-    CGSize buttonSize = CGSizeMake(SLIDE_WIDTH, SLIDE_WIDTH);
+    
+    //Configure favorite button
+    CGSize buttonSize = CGSizeMake(BUTTON_WIDTH, CGRectGetHeight(self.bounds));
     _favButton = [[UIButton alloc] initWithFrame: CGRectMake(0,
-                                                            (self.bounds.size.height / 2) - (SLIDE_WIDTH / 2),
+                                                            0,
                                                             buttonSize.width,
                                                             buttonSize.height)];
     _favButton.tintColor = [UIColor whiteColor];
     [_favButton addTarget: self action:@selector(favButtonPressed:) forControlEvents: UIControlEventTouchUpInside];
     [_buttonView addSubview: _favButton];
+    
+    //Configure Do Not Show button
+    _doNotShowButton = [[UIButton alloc] initWithFrame: CGRectMake(BUTTON_WIDTH,
+                                                                   0,
+                                                                   buttonSize.width,
+                                                                   buttonSize.height)];
+    _doNotShowButton.tintColor = [UIColor whiteColor];
+    UIImage *doNotShowImage = [UIImage imageNamed: @"doNotShow.png"];
+    doNotShowImage = [doNotShowImage imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
+    [_doNotShowButton setImage: doNotShowImage forState: UIControlStateNormal];
+    [_doNotShowButton addTarget: self action: @selector(doNotShowButtonPressed:) forControlEvents: UIControlEventTouchUpInside];
+    [_buttonView addSubview: _doNotShowButton];
     
     UIView *scrollViewContent = [[UIView alloc] initWithFrame: CGRectMake(SLIDE_WIDTH, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
     scrollViewContent.backgroundColor = [UIColor whiteColor];
@@ -113,8 +132,9 @@
 
 -(void)setBackgroundShadeColor:(UIColor *)backgroundShadeColor {
     _backgroundShadeColor = backgroundShadeColor;
-    //self.backgroundColor = backgroundShadeColor;
-    _buttonView.backgroundColor = backgroundShadeColor;
+    ELColorAnalyser *analyser = [[ELColorAnalyser alloc] init];
+    _favButton.backgroundColor = backgroundShadeColor;
+    _doNotShowButton.backgroundColor = [analyser tintColor: backgroundShadeColor withTintConst: .2];
 }
 
 -(UIColor *)backgroundShadeColor {
@@ -136,7 +156,11 @@
 
 -(void)favButtonPressed:(UIButton *) sender {
     [self setIsFavOn: !_isFavOn];
-    [_favButtonDelegate favButtonPressed: self];
+    [_delegate favButtonPressed: self];
+}
+
+-(void) doNotShowButtonPressed: (UIButton *) sender {
+    [_delegate doNotShowButtonPressed: self];
 }
 
 -(void)enclosingTableViewDidScroll {
