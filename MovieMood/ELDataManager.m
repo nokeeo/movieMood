@@ -112,7 +112,7 @@
         return error;
     
     else if([fetchedMovies count] == 0) {
-        NSManagedObject *newMovie = [NSEntityDescription insertNewObjectForEntityForName:@"FavMovie" inManagedObjectContext:_context];
+        NSManagedObject *newMovie = [NSEntityDescription insertNewObjectForEntityForName: request.entityName inManagedObjectContext:_context];
         [newMovie setValue: movie.entityID forKeyPath:@"iTunesID"];
         
         [_context save: &error];

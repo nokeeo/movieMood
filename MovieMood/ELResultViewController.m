@@ -55,7 +55,6 @@
     [_activityIndicatorView.activityIndicator startAnimating];
     [ELMovieRequests getMoviesWithGenres:[_movieProps allKeys] successCallback:^(id requestResponse) {
         _movieRequestCache = requestResponse;
-        NSLog(@"%@", _movieProps);
         self.movieSource = [[NSMutableArray alloc] initWithArray:[self createListWithProps:_movieProps withSourceLists:requestResponse]];
         [self.tableView reloadData];
         [_activityIndicatorView fadeOutView];
@@ -172,17 +171,6 @@
     }
     else {
         [dataManager deleteMovie: [self.movieSource objectAtIndex: cellIndex.row]];
-    }
-}
-
--(void) doNotShowButtonPressed:(id)sender {
-    NSIndexPath *cellIndex = [self.tableView indexPathForCell: sender];
-    ELDataManager *dataManager = [[ELDataManager alloc] init];
-    if(![dataManager doNotShowMovie: [self.movieSource objectAtIndex: cellIndex.row]]) {
-        [self.movieSource removeObjectAtIndex: cellIndex.row];
-        [self.tableView beginUpdates];
-        [self.tableView deleteRowsAtIndexPaths: @[cellIndex] withRowAnimation: UITableViewRowAnimationFade];
-        [self.tableView endUpdates];
     }
 }
 @end

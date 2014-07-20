@@ -32,7 +32,6 @@
             id entries = [feed objectForKey:@"entry"];
             NSMutableArray *movies = [[NSMutableArray alloc] init];
             for(id entry in entries) {
-                NSLog(@"%@", entry);
                 ELMediaEntity *newMediaEntity;
                 NSString *genreCode = [[[entry objectForKey: @"category"] objectForKey: @"attributes"] objectForKey: @"im:id"];
                 if([genreCode hasPrefix: @"44"]) {
