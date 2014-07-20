@@ -14,11 +14,33 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
 @implementation ELMediaEntity
 
 -(id) initWithEntry:(id)entry {
-    return nil;
+    self = [super init];
+    
+    //General init
+    self.entityID = [[[entry objectForKey:@"id"] objectForKey:@"attributes"] objectForKey:@"im:id"];
+    self.title = [[entry objectForKey:@"im:name"] objectForKey:@"label"];
+    self.purchasePrice = [[entry objectForKey:@"im:price"] objectForKey:@"label"];
+    self.genre = [[[entry objectForKey:@"category"] objectForKey:@"attributes"] objectForKey:@"label"];
+    self.releaseDate = [[[entry objectForKey:@"im:releaseDate"] objectForKey:@"attributes"] objectForKey:@"label"];
+
+    //Get the images
+    id imageList = [entry objectForKey:@"im:image"];
+    for(id image in imageList) {
+        id imageHeight = [[image objectForKey:@"attributes"] objectForKey:@"height"];
+        if([imageHeight isEqualToString:@"60"]) {
+            self.coverImage60 = [image objectForKey:@"label"];
+        }
+        else if([imageHeight isEqualToString:@"170"])
+            self.coverImage170 = [image objectForKey:@"label"];
+    }
+    
+    return self;
 }
 
 -(id) initWithLookupData:(id)entry {
-    return nil;
+    self = [super init];
+    
+    return self;
 }
 
 @end

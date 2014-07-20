@@ -7,7 +7,7 @@
         <attribute name="iTunesID" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="DoNotShowMovie" positionX="1042" positionY="-1552" width="128" height="58"/>
         <element name="FavMovie" positionX="837" positionY="-1548" width="128" height="58"/>
-        <element name="DoNotShowMovie" positionX="1017" positionY="-1539" width="128" height="58"/>
     </elements>
 </model>

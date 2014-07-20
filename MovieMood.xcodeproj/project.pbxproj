@@ -65,6 +65,7 @@
 		BEE7CF93197BAC580011FF9A /* doNotShow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE7CF91197BAC580011FF9A /* doNotShow@2x.png */; };
 		BEE7CF94197BAC580011FF9A /* doNotShow.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE7CF92197BAC580011FF9A /* doNotShow.png */; };
 		BEFED0BC196A39C300F066E3 /* ELMovieMediaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */; };
+		BEFED0BF196A3D1F00F066E3 /* ELTVShowMediaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFED0BE196A3D1F00F066E3 /* ELTVShowMediaEntity.m */; };
 		C11D1295189C4D6000A2B84F /* ELResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D1294189C4D6000A2B84F /* ELResultViewController.m */; };
 		C11D129B189C538600A2B84F /* ELIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11D129A189C538600A2B84F /* ELIntroViewController.m */; };
 		C15BE3BC189AD269006FC7C3 /* ELViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15BE3BB189AD269006FC7C3 /* ELViewController.m */; };
@@ -171,6 +172,8 @@
 		BEE7CF92197BAC580011FF9A /* doNotShow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doNotShow.png; sourceTree = "<group>"; };
 		BEFED0BA196A39C300F066E3 /* ELMovieMediaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMovieMediaEntity.h; sourceTree = "<group>"; };
 		BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMovieMediaEntity.m; sourceTree = "<group>"; };
+		BEFED0BD196A3D1F00F066E3 /* ELTVShowMediaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTVShowMediaEntity.h; sourceTree = "<group>"; };
+		BEFED0BE196A3D1F00F066E3 /* ELTVShowMediaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTVShowMediaEntity.m; sourceTree = "<group>"; };
 		C11D1293189C4D6000A2B84F /* ELResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELResultViewController.h; path = MovieMood/ELResultViewController.h; sourceTree = "<group>"; };
 		C11D1294189C4D6000A2B84F /* ELResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ELResultViewController.m; path = MovieMood/ELResultViewController.m; sourceTree = "<group>"; };
 		C11D1299189C538600A2B84F /* ELIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELIntroViewController.h; path = MovieMood/ELIntroViewController.h; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				BE94398F18ADBDDD001F3023 /* ELMediaEntity.m */,
 				BEFED0BA196A39C300F066E3 /* ELMovieMediaEntity.h */,
 				BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */,
+				BEFED0BD196A3D1F00F066E3 /* ELTVShowMediaEntity.h */,
+				BEFED0BE196A3D1F00F066E3 /* ELTVShowMediaEntity.m */,
 				BE94F121189B4FA1006BAE45 /* ELColorAnalyser.h */,
 				BE94F120189B4FA1006BAE45 /* ELColorAnalyser.m */,
 				C16624E0189C71010086F00C /* Images */,
@@ -533,6 +538,7 @@
 				BE0378E6189DA9980032EC9F /* ELColorPickerScrollView.m in Sources */,
 				BE765CAC1914ABCB007D7B16 /* ELInfoContainerViewController.m in Sources */,
 				BEFED0BC196A39C300F066E3 /* ELMovieMediaEntity.m in Sources */,
+				BEFED0BF196A3D1F00F066E3 /* ELTVShowMediaEntity.m in Sources */,
 				C11D1295189C4D6000A2B84F /* ELResultViewController.m in Sources */,
 				BE94399018ADBDDD001F3023 /* ELMediaEntity.m in Sources */,
 				BE10A5CF18B47B4800935271 /* ELBorderButton.m in Sources */,
