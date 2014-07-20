@@ -10,7 +10,7 @@
 #import "ELMediaEntity.h"
 #import "ELMovieDetailView.h"
 
-@interface ELMovieViewController : UIViewController <MovieDetailButtonResponse, UIAlertViewDelegate>
+@interface ELMovieViewController : UIViewController <MovieDetailButtonResponse, UIAlertViewDelegate, ELInformationViewDelegate>
 @property (nonatomic, retain) ELMediaEntity *movie;
 @property (nonatomic, retain) UIColor *selectedColor;
 @end

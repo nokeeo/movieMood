@@ -114,11 +114,29 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ee0-g5-p7c">
+                    <rect key="frame" x="0.0" y="117" width="320" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Do Not Show Me This Movie">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="doNotShowMoviePressed:" destination="Mv7-nj-Fs3" eventType="touchUpInside" id="EBk-No-rYE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="directorLabel" destination="IFS-Dt-7Rz" id="NTQ-zx-ShX"/>
+                <outlet property="doNotShowMovieButton" destination="ee0-g5-p7c" id="WgR-Dq-d6s"/>
                 <outlet property="ratingLabel" destination="HEv-WF-pRm" id="llv-Jq-9SQ"/>
                 <outlet property="releaseDateLabel" destination="epN-hu-FH6" id="6V1-NB-SmS"/>
             </connections>

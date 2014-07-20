@@ -73,6 +73,9 @@
     _contentView.movieTitle.text = _movie.title;
     _contentView.genreLabel.text = _movie.genre;
     _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
+    _contentView.movieInformationView.delegate = self;
+    _contentView.movieInformationView.doNotShowMovieButton.titleLabel.textColor = _selectedColor;
+    [self updateDoNotShowButtonText];
     _contentView.movieInformationView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.releaseDateLabel.text, _movie.releaseDate];
     _contentView.movieInformationView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.directorLabel.text, _movie.director];
     
@@ -160,5 +163,28 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) doNotShowMeButtonPressed:(id)sender {
+    ELDataManager *manager = [[ELDataManager alloc] init];
+    if([manager canShowMovie: self.movie]) {
+        if(![manager doNotShowMovie: self.movie]) {
+            [self updateDoNotShowButtonText];
+        }
+    }
+    else if(![manager doShowMovie: self.movie]) {
+        [self updateDoNotShowButtonText];
+    }
+        
+}
+
+-(void) updateDoNotShowButtonText {
+    ELDataManager *manager = [[ELDataManager alloc] init];
+    if([manager canShowMovie: self.movie]) {
+        _contentView.movieInformationView.doNotShowMovieButton.titleLabel.text = @"Do Not Show Me This Movie";
+    }
+    else {
+        _contentView.movieInformationView.doNotShowMovieButton.titleLabel.text = @"Show Me This Movie";
+    }
 }
 @end

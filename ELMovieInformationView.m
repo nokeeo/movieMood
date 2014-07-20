@@ -14,9 +14,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
+}
+
+- (IBAction)doNotShowMoviePressed:(id)sender {
+    [_delegate doNotShowMeButtonPressed: self];
 }
 
 /*
