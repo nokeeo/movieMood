@@ -19,4 +19,5 @@
 -(BOOL) canShowMovie: (ELMediaEntity *) movie;
 -(NSError *) doNotShowMovie: (ELMediaEntity *) movie;
 -(NSError *) doShowMovie: (ELMediaEntity *) movie;
+-(NSArray *) getDoNotShowMovies;
 @end

@@ -35,7 +35,7 @@
 
 -(NSError *) doNotShowMovie: (ELMediaEntity *) movie {
     NSFetchRequest *doNotShowRequest = [self createDoNotShowMovieRequest];
-    NSError *error = [self saveMovieItem: movie withRequest:doNotShowRequest];
+    NSError *error = [self saveMovieItem: movie withRequest: doNotShowRequest];
     
     return error;
 }

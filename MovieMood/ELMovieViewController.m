@@ -168,11 +168,11 @@
 -(void) doNotShowMeButtonPressed:(id)sender {
     ELDataManager *manager = [[ELDataManager alloc] init];
     if([manager canShowMovie: self.movie]) {
-        if(![manager doNotShowMovie: self.movie]) {
-            [self updateDoNotShowButtonText];
-        }
+        [manager doNotShowMovie: self.movie];
+        [self updateDoNotShowButtonText];
     }
-    else if(![manager doShowMovie: self.movie]) {
+    else {
+        [manager doShowMovie: self.movie];
         [self updateDoNotShowButtonText];
     }
         
@@ -180,11 +180,18 @@
 
 -(void) updateDoNotShowButtonText {
     ELDataManager *manager = [[ELDataManager alloc] init];
+    NSLog(@"%hhd", [manager canShowMovie: self.movie]);
+    UIButton *doNotShowButton = _contentView.movieInformationView.doNotShowMovieButton;
+    
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithAttributedString: [doNotShowButton attributedTitleForState: UIControlStateNormal]];
+    
     if([manager canShowMovie: self.movie]) {
-        _contentView.movieInformationView.doNotShowMovieButton.titleLabel.text = @"Do Not Show Me This Movie";
+        [title.mutableString setString: @"Do Not Show Me This Movie"];
     }
     else {
-        _contentView.movieInformationView.doNotShowMovieButton.titleLabel.text = @"Show Me This Movie";
+        [title.mutableString setString: @"Show Me This Movie"];
     }
+    
+    [doNotShowButton setAttributedTitle: title forState: UIControlStateNormal];
 }
 @end
