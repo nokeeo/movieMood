@@ -18,6 +18,7 @@
 		BE2A9FA5192090D5008F66FB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2A9FA4192090D5008F66FB /* StoreKit.framework */; };
 		BE33B15019CEA189007571AD /* ELMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B14F19CEA189007571AD /* ELMainTabBarViewController.m */; };
 		BE33B15519CEA59C007571AD /* ELSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15419CEA59C007571AD /* ELSettingsTableViewController.m */; };
+		BE33B15819CEC897007571AD /* ELMainTabAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15719CEC897007571AD /* ELMainTabAnimator.m */; };
 		BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */; };
 		BE38A3CE1913F9B700559C44 /* ELMovieInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */; };
 		BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DC191ADDD200A5FA69 /* favFill.png */; };
@@ -103,6 +104,8 @@
 		BE33B15219CEA3C7007571AD /* ELMainTabProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELMainTabProtocol.h; sourceTree = "<group>"; };
 		BE33B15319CEA59C007571AD /* ELSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELSettingsTableViewController.h; sourceTree = "<group>"; };
 		BE33B15419CEA59C007571AD /* ELSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELSettingsTableViewController.m; sourceTree = "<group>"; };
+		BE33B15619CEC897007571AD /* ELMainTabAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMainTabAnimator.h; sourceTree = "<group>"; };
+		BE33B15719CEC897007571AD /* ELMainTabAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMainTabAnimator.m; sourceTree = "<group>"; };
 		BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieInformationView.xib; sourceTree = "<group>"; };
 		BE38A3CC1913F9B700559C44 /* ELMovieInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMovieInformationView.h; sourceTree = "<group>"; };
 		BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMovieInformationView.m; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				BEE1CA731899F8AF00992093 /* Supporting Files */,
 				BE765CAD19159CC8007D7B16 /* ELDataManager.h */,
 				BE765CAE19159CC8007D7B16 /* ELDataManager.m */,
+				BE33B15619CEC897007571AD /* ELMainTabAnimator.h */,
+				BE33B15719CEC897007571AD /* ELMainTabAnimator.m */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				BE963007189E19EA004968D0 /* ELMovieRequests.m in Sources */,
 				BEB04D721914902F0045A118 /* ELDeveloperViewController.m in Sources */,
 				BE10A5D218B5562000935271 /* ELMovieDetailView.m in Sources */,
+				BE33B15819CEC897007571AD /* ELMainTabAnimator.m in Sources */,
 				BE33B15019CEA189007571AD /* ELMainTabBarViewController.m in Sources */,
 				BE94F126189CC294006BAE45 /* ELResultMovieCell.m in Sources */,
 				BE94398818ADA0F0001F3023 /* AFSecurityPolicy.m in Sources */,

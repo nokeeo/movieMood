@@ -8,20 +8,18 @@
 
 #import "ELSettingsTableViewController.h"
 
-@interface ELSettingsTableViewController ()
+static const NSString *EMAIL_ADDRESS = @"feedback@moviemoodapp.com";
+
+@interface ELSettingsTableViewController () {
+    NSDictionary *_cellTitles;
+}
+
+@property (nonatomic, strong) MFMailComposeViewController * mailVC;
 
 @end
 
 @implementation ELSettingsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -29,6 +27,7 @@
     CGFloat topOffset = CGRectGetHeight(self.navigationController.navigationBar.frame) + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     CGFloat bottomOffset = CGRectGetHeight(self.tabBarController.tabBar.frame);
     self.tableView.contentInset = UIEdgeInsetsMake( topOffset, 0, bottomOffset, 0);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,20 +36,51 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 0;
+#pragma mark - MailComposeDelegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    if(!error)
+        [_mailVC dismissViewControllerAnimated:YES completion:nil];
+    else {
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                             message:@"We were not able to send your message please try again."
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles: nil];
+        [errorAlert show];
+    }
 }
 
 #pragma mark - ELMainTabBarProtocol
 -(BOOL) shouldShowNavBar {
+    return YES;
+}
+
+#pragma mark - Helper Functions 
+
+-(void) handleContactPressed {
+    if([MFMailComposeViewController canSendMail]) {
+        _mailVC = [[MFMailComposeViewController alloc] init];
+        _mailVC.mailComposeDelegate = self;
+        [_mailVC setSubject:@"MovieMood Feedback"];
+        [_mailVC setToRecipients:[NSArray arrayWithObjects: EMAIL_ADDRESS, nil]];
+    
+        [self presentViewController: _mailVC animated:YES completion: nil];
+    }
+    else {
+        UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"This device cannot send mail"
+                                                               message: [[NSString alloc] initWithFormat:@"%@%@", @"We still want to hear from you. Email us at ", EMAIL_ADDRESS]
+                                                              delegate:nil cancelButtonTitle: @"Done" otherButtonTitles: nil];
+        [errorMessage show];
+    }
+}
+
+-(BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if([identifier isEqualToString: @"contact"]) {
+        [self handleContactPressed];
+        return NO;
+    }
+    
     return YES;
 }
 

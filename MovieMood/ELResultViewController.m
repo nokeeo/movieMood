@@ -77,7 +77,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
-    self.navigationController.navigationBar.alpha = 1;
+    [self.navigationController setNavigationBarHidden: NO animated: YES];
 }
 
 #pragma mark - Table view data source

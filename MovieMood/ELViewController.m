@@ -46,7 +46,6 @@
     [super viewDidLoad];
     
     ELAppDelegate *appDelegate = (ELAppDelegate *)[[UIApplication sharedApplication] delegate];
-    //self.navigationController.navigationBar.hidden = YES;
     
     CGSize size = self.view.bounds.size;
     CGSize questionSize = CGSizeMake(size.width * .9,  66);
@@ -94,7 +93,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = self.view.tintColor;
-    self.navigationController.navigationBar.alpha = 0;
+    [self.navigationController setNavigationBarHidden: YES animated: YES];
 }
 
 -(void)colorDidChange:(id) sender {
