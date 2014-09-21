@@ -51,6 +51,7 @@
     [super viewDidLoad];
     
     ELAppDelegate *appDelegate = (ELAppDelegate *)[[UIApplication sharedApplication] delegate];
+    //self.navigationController.navigationBar.hidden = YES;
     
     CGSize size = self.view.bounds.size;
     CGSize questionSize = CGSizeMake(size.width * .9,  66);
@@ -98,6 +99,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = self.view.tintColor;
+    self.navigationController.navigationBar.alpha = 0;
 }
 
 -(void)colorDidChange:(id) sender {
@@ -114,6 +116,7 @@
         
         [_colorText.layer addAnimation: textAnimation forKey: @"fadeAnimation"];
         _colorText.text = colorDescription;
+        self.tabBarController.tabBar.tintColor = [_colorAnalyser tintColor: _contentScrollView.colorWheel.currentColor withTintConst: -.15];
     }
     
     _contentScrollView.alwaysBounceVertical = false;
