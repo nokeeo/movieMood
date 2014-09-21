@@ -10,6 +10,6 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "ELDeveloperViewController.h"
 
-@interface ELInfoContainerViewController : UIViewController <MFMailComposeViewControllerDelegate, AppFeedbackProtocol, SKStoreProductViewControllerDelegate>
+@interface ELInfoContainerViewController : UIViewController <MFMailComposeViewControllerDelegate, SKStoreProductViewControllerDelegate>
 
 @end

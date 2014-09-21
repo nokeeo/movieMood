@@ -7,18 +7,15 @@
 //
 
 #import "ELDeveloperViewController.h"
+#import "ELFeedbackController.h"
 
 @interface ELDeveloperViewController ()
 
-@property (nonatomic, retain) UIAlertView *appFeelingAlert;
-@property (nonatomic, retain) UIAlertView *reviewAlert;
+@property (nonatomic, strong) ELFeedbackController *feedbackController;
 
 @end
 
 @implementation ELDeveloperViewController
-
-@synthesize delegate = _delegate;
-@synthesize appFeelingAlert = _appFeelingAlert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _feedbackController = [[ELFeedbackController alloc] initWithParentVC: _parentVC];
     // Do any additional setup after loading the view.
 }
 
@@ -41,23 +39,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)feedbackPressed:(id)sender {
-    _appFeelingAlert = [[UIAlertView alloc] initWithTitle:@"Do you love MovieMood?" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Absolutely", @"Not Quite", nil];
-    [_appFeelingAlert show];
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if(buttonIndex == 0 && [alertView  isEqual: _appFeelingAlert]) {
-        _reviewAlert = [[UIAlertView alloc] initWithTitle:@"Thats Great!" message:@"We'd really appreciate it if you rate our app" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Sure", @"Maybe Later", nil];
-        [_reviewAlert show];
-    }
-    else if(buttonIndex == 1 && [alertView isEqual: _appFeelingAlert]){
-        [_delegate dislikePressed];
-    }
-    
-    else if(buttonIndex == 0 && [_reviewAlert isEqual: alertView]) {
-        [_delegate appStorePressed];
-    }
+- (IBAction)feedbackButtonPressed:(id)sender {
+    [_feedbackController beginFeedbackFlow];
 }
 
 /*

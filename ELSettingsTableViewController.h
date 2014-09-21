@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
 #import "ELMainTabProtocol.h"
 
-@interface ELSettingsTableViewController : UITableViewController <ELMainTabProtocol, MFMailComposeViewControllerDelegate, UITableViewDelegate>
+@interface ELSettingsTableViewController : UITableViewController <ELMainTabProtocol, UITableViewDelegate>
 
 @end

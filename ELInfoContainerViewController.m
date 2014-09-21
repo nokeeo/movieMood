@@ -7,12 +7,14 @@
 //
 
 #import "ELInfoContainerViewController.h"
+#import "ELInfoViewController.h"
 
 @interface ELInfoContainerViewController ()
 
 @property (nonatomic, retain) MFMailComposeViewController *mailVC;
 @property (nonatomic, retain) NSString *emailAddress;
 @property (nonatomic, retain) SKStoreProductViewController *appStoreVC;
+@property (nonatomic, retain) ELInfoViewController *infoPage;
 @end
 
 @implementation ELInfoContainerViewController
@@ -20,6 +22,23 @@
 @synthesize emailAddress = _emailAddress;
 @synthesize mailVC = _mailVC;
 @synthesize appStoreVC = _appStoreVC;
+
+-(void) awakeFromNib {
+    [super awakeFromNib];
+     _infoPage = [[ELInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
+
+    ELDeveloperViewController *developerPage = [[ELDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
+    developerPage.parentVC = self;
+    [viewControllers addObject: developerPage];
+    [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+
+    [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ImageCredits" bundle:nil]];
+    
+    _infoPage.data = viewControllers;
+    
+    [self.view addSubview: _infoPage.view];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,23 +61,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)dislikePressed {
-    if([MFMailComposeViewController canSendMail]) {
-        _mailVC = [[MFMailComposeViewController alloc] init];
-        _mailVC.mailComposeDelegate = self;
-        [_mailVC setSubject:@"MovieMood Feedback"];
-        [_mailVC setToRecipients:[NSArray arrayWithObjects: _emailAddress, nil]];
-
-        [self presentViewController: _mailVC animated:YES completion: nil];
-    }
-    else {
-        UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"This device cannot send mail"
-                                                               message: [[NSString alloc] initWithFormat:@"%@%@", @"We still want to hear from you. Email us at ", _emailAddress]
-                                                              delegate:nil cancelButtonTitle: @"Done" otherButtonTitles: nil];
-        [errorMessage show];
-    }
 }
 
 -(void)appStorePressed {
@@ -87,10 +89,6 @@
                                                    otherButtonTitles: nil];
         [errorAlert show];
     }
-}
-
--(void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
-    [_appStoreVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

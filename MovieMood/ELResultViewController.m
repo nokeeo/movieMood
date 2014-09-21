@@ -75,11 +75,6 @@
     self.navigationController.navigationBar.tintColor = tintColor;
 }
 
--(void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear: animated];
-    [self.navigationController setNavigationBarHidden: NO animated: YES];
-}
-
 #pragma mark - Table view data source
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

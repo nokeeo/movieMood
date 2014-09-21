@@ -10,14 +10,8 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol AppFeedbackProtocol <NSObject>
-
--(void)dislikePressed;
--(void)appStorePressed;
-
-@end
-
 @interface ELDeveloperViewController : UIViewController <UIAlertViewDelegate>
-@property (nonatomic, retain) id delegate;
+
+@property (nonatomic, weak) UIViewController *parentVC;
 
 @end

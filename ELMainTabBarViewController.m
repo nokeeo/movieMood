@@ -26,10 +26,10 @@
    
 }
 
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear: animated];
+-(void) viewWillAppear:(BOOL)animated {
     UIViewController<ELMainTabProtocol> *controller = (UIViewController<ELMainTabProtocol> *) self.selectedViewController;
     [self hideNavBarWithVC: controller];
+    [super viewWillAppear: animated];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,6 +7,7 @@
 //
 
 #import "ELMainTabAnimator.h"
+#import "ELMainTabProtocol.h"
 
 @implementation ELMainTabAnimator
 
@@ -15,10 +16,9 @@
 }
 
 -(void) animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *toVC = [transitionContext viewControllerForKey: UITransitionContextToViewControllerKey];
+    UIViewController<ELMainTabProtocol> *toVC = (UIViewController<ELMainTabProtocol>*)[transitionContext viewControllerForKey: UITransitionContextToViewControllerKey];
     UIViewController *fromVC = [transitionContext viewControllerForKey: UITransitionContextFromViewControllerKey];
     
-    toVC.view.frame = [transitionContext containerView].frame;
     toVC.view.alpha = 1;
     
     [[transitionContext containerView] insertSubview: toVC.view belowSubview: fromVC.view];
@@ -33,6 +33,7 @@
                          [fromVC.view removeFromSuperview];
                          [transitionContext completeTransition: YES];
                      }];
+    [toVC.navigationController setNavigationBarHidden: ![toVC shouldShowNavBar] animated: YES];
 }
 
 @end

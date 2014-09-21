@@ -93,7 +93,6 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = self.view.tintColor;
-    [self.navigationController setNavigationBarHidden: YES animated: YES];
 }
 
 -(void)colorDidChange:(id) sender {
@@ -126,28 +125,9 @@
         ELResultViewController* resultVC = [segue destinationViewController];
         resultVC.movieProps = _currentPorps;
         resultVC.selectedColor = _contentScrollView.colorWheel.currentColor;
+        [self.navigationController setNavigationBarHidden: NO animated: YES];
     }
     
-    else if([[segue identifier] isEqualToString:@"InfoSegue"]){
-        ELInfoContainerViewController *nextVC = (ELInfoContainerViewController *)[segue destinationViewController];
-        
-        
-        _infoPage = [[ELInfoViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-        NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
-            
-        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ColorTheoryView" bundle:nil]];
-        [_infoPage setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"AboutView" bundle:nil]];
-            
-        ELDeveloperViewController *developerPage = [[ELDeveloperViewController alloc] initWithNibName:@"DevelopersView" bundle:nil];
-        [viewControllers addObject: developerPage];
-        developerPage.delegate = nextVC;
-        [viewControllers addObject:[[UIViewController alloc] initWithNibName:@"ImageCredits" bundle:nil]];
-        
-        _infoPage.data = viewControllers;
-        
-        [nextVC.view addSubview:_infoPage.view];
-    }
 }
 
 -(void)selectButtonPressed:(id)sender {
