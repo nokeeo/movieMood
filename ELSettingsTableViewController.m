@@ -59,6 +59,7 @@
     }
     else if([identifier isEqualToString: @"rate"]) {
         [self handleRateButtonPressed];
+        return NO;
     }
     
     return YES;
