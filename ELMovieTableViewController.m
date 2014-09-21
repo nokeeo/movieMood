@@ -99,11 +99,15 @@
     NSIndexPath *cellIndex = [self.tableView indexPathForCell: sender];
     ELDataManager *dataManager = [[ELDataManager alloc] init];
     if(![dataManager doNotShowMovie: [self.movieSource objectAtIndex: cellIndex.row]]) {
-        [self.movieSource removeObjectAtIndex: cellIndex.row];
-        [self.tableView beginUpdates];
-        [self.tableView deleteRowsAtIndexPaths: @[cellIndex] withRowAnimation: UITableViewRowAnimationFade];
-        [self.tableView endUpdates];
+        [self removeCellAtIndex: cellIndex];
     }
+}
+
+-(void) removeCellAtIndex: (NSIndexPath *) indexPath {
+    [self.movieSource removeObjectAtIndex: indexPath.row];
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths: @[indexPath] withRowAnimation: UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
 }
 
 @end

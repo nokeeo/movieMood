@@ -41,6 +41,27 @@
     [self reloadTable];
 }
 
+-(void) favButtonPressed:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    ELMediaEntity *movie = [self.movieSource objectAtIndex: indexPath.row];
+    
+    ELDataManager *dataManager = [[ELDataManager alloc] init];
+    [dataManager saveMovie: movie];
+    [dataManager doShowMovie: movie];
+    
+    [self removeCellAtIndex: indexPath];
+}
+
+-(void) doNotShowButtonPressed:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    ELMediaEntity *movie = [self.movieSource objectAtIndex: indexPath.row];
+    
+    ELDataManager *dataManager = [[ELDataManager alloc] init];
+    [dataManager doShowMovie: movie];
+    
+    [self removeCellAtIndex: indexPath];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

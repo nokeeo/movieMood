@@ -11,6 +11,6 @@
 #import "ELMainTabProtocol.h"
 #import "ELIDMovieTableViewController.h"
 
-@interface ELFavViewController : ELIDMovieTableViewController <UIAlertViewDelegate, ResultMovieCellProtocol, ELMainTabProtocol>
+@interface ELFavViewController : ELIDMovieTableViewController <UIAlertViewDelegate, ELMainTabProtocol>
 
 @end

@@ -93,6 +93,16 @@
         [self.tableView reloadData];
 }
 
+-(void) doNotShowButtonPressed:(id)sender {
+    [super doNotShowButtonPressed: sender];
+    
+    ELDataManager *dataManager = [[ELDataManager alloc] init];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    ELMediaEntity *movieEntity = [self.movieSource objectAtIndex: indexPath.row];
+    
+    [dataManager deleteMovie: movieEntity];
+}
+
 #pragma mark - MainTabBarProtocol
 -(BOOL) shouldShowNavBar {
     return YES;

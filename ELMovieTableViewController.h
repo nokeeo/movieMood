@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ELMediaEntity.h"
+#import "ELResultMovieCell.h"
 
-@interface ELMovieTableViewController : UITableViewController
+@interface ELMovieTableViewController : UITableViewController <ResultMovieCellProtocol>
 @property (nonatomic, retain) NSMutableArray *movieSource;
 @property (nonatomic, retain) ELMediaEntity *selectedMovie;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
+
+-(void) removeCellAtIndex: (NSIndexPath *) indexPath;
+
 @end

@@ -104,6 +104,7 @@
 
 -(NSArray *) createListWithProps:(NSDictionary *) colorProps withSourceLists:(NSDictionary *) sourceList {
     NSMutableArray *movies = [[NSMutableArray alloc] init];
+    ELDataManager *dataManager = [[ELDataManager alloc] init];
     for(id genreCode in colorProps) {
         float currentProp = [[colorProps objectForKey:genreCode] floatValue];
         int numberOfMovies = floor(currentProp * 20);
@@ -112,7 +113,7 @@
             int randomIndex = arc4random() % [currentMovieResponses count];
             ELMediaEntity *randomMovie = [currentMovieResponses objectAtIndex:randomIndex];
             
-            while([self movieDisplayed: randomMovie] && [currentMovieResponses count] > 1) {
+            while([self movieDisplayed: randomMovie] && [currentMovieResponses count] > 1 && ![dataManager canShowMovie: randomMovie]) {
                 [currentMovieResponses removeObjectAtIndex: randomIndex];
                 
                 if([currentMovieResponses count] > 0) {
