@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ISColorWheel.h"
 #import "ELColorPickerScrollView.h"
+#import "ELMainTabProtocol.h"
 
-@interface ELViewController : UIViewController <ColorPickerViewProtocol, UIScrollViewDelegate>
+@interface ELViewController : UIViewController <ColorPickerViewProtocol, UIScrollViewDelegate, ELMainTabProtocol>
 @end

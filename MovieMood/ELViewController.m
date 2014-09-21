@@ -31,11 +31,6 @@
     NSDictionary* results;
 }
 
-@synthesize colorAnalyser = _colorAnalyser;
-@synthesize contentScrollView = _contentScrollView;
-@synthesize currentPorps = _currentPorps;
-@synthesize colorText = _colorText;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -169,5 +164,10 @@
     if(flag) {
         moodTextAnimating = NO;
     }
+}
+
+#pragma mark - MainTabBarProtocol
+-(BOOL) shouldShowNavBar {
+    return NO;
 }
 @end

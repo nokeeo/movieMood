@@ -35,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGFloat heightOffset = CGRectGetHeight(self.navigationController.navigationBar.frame) + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    CGFloat bottomOffset = CGRectGetHeight(self.tabBarController.tabBar.frame);
+    self.tableView.contentInset = UIEdgeInsetsMake(heightOffset, 0, bottomOffset, 0);
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -72,6 +75,7 @@
         [errorAlert show];
     }];
 
+    
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,15 +127,9 @@
         [self.tableView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - MainTabBarProtocol
+-(BOOL) shouldShowNavBar {
+    return YES;
 }
-*/
 
 @end

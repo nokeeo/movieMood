@@ -8,7 +8,8 @@
 
 #import "ELMovieTableViewController.h"
 #import "ELResultMovieCell.h"
+#import "ELMainTabProtocol.h"
 
-@interface ELFavViewController : ELMovieTableViewController <UIAlertViewDelegate, ResultMovieCellProtocol>
+@interface ELFavViewController : ELMovieTableViewController <UIAlertViewDelegate, ResultMovieCellProtocol, ELMainTabProtocol>
 
 @end

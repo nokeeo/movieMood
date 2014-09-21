@@ -16,6 +16,8 @@
 		BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A56189EF03B007B1EDA /* AboutView.xib */; };
 		BE271A5B189EF0A7007B1EDA /* ColorTheoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */; };
 		BE2A9FA5192090D5008F66FB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2A9FA4192090D5008F66FB /* StoreKit.framework */; };
+		BE33B15019CEA189007571AD /* ELMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B14F19CEA189007571AD /* ELMainTabBarViewController.m */; };
+		BE33B15519CEA59C007571AD /* ELSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15419CEA59C007571AD /* ELSettingsTableViewController.m */; };
 		BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */; };
 		BE38A3CE1913F9B700559C44 /* ELMovieInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */; };
 		BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DC191ADDD200A5FA69 /* favFill.png */; };
@@ -96,6 +98,11 @@
 		BE271A56189EF03B007B1EDA /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		BE271A5A189EF0A7007B1EDA /* ColorTheoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorTheoryView.xib; sourceTree = "<group>"; };
 		BE2A9FA4192090D5008F66FB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BE33B14E19CEA189007571AD /* ELMainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMainTabBarViewController.h; sourceTree = "<group>"; };
+		BE33B14F19CEA189007571AD /* ELMainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMainTabBarViewController.m; sourceTree = "<group>"; };
+		BE33B15219CEA3C7007571AD /* ELMainTabProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELMainTabProtocol.h; sourceTree = "<group>"; };
+		BE33B15319CEA59C007571AD /* ELSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELSettingsTableViewController.h; sourceTree = "<group>"; };
+		BE33B15419CEA59C007571AD /* ELSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELSettingsTableViewController.m; sourceTree = "<group>"; };
 		BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieInformationView.xib; sourceTree = "<group>"; };
 		BE38A3CC1913F9B700559C44 /* ELMovieInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMovieInformationView.h; sourceTree = "<group>"; };
 		BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMovieInformationView.m; sourceTree = "<group>"; };
@@ -356,6 +363,7 @@
 		C192F1FE189B3E2200F5A00D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE33B15219CEA3C7007571AD /* ELMainTabProtocol.h */,
 				BE271A4F189EED5B007B1EDA /* ELInfoViewController.h */,
 				BE271A50189EED5B007B1EDA /* ELInfoViewController.m */,
 				BE765CAA1914ABCB007D7B16 /* ELInfoContainerViewController.h */,
@@ -374,6 +382,10 @@
 				BEB04D711914902F0045A118 /* ELDeveloperViewController.m */,
 				BE765CB31915BCE7007D7B16 /* ELMovieTableViewController.h */,
 				BE765CB41915BCE7007D7B16 /* ELMovieTableViewController.m */,
+				BE33B14E19CEA189007571AD /* ELMainTabBarViewController.h */,
+				BE33B14F19CEA189007571AD /* ELMainTabBarViewController.m */,
+				BE33B15319CEA59C007571AD /* ELSettingsTableViewController.h */,
+				BE33B15419CEA59C007571AD /* ELSettingsTableViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -532,6 +544,7 @@
 				BE963007189E19EA004968D0 /* ELMovieRequests.m in Sources */,
 				BEB04D721914902F0045A118 /* ELDeveloperViewController.m in Sources */,
 				BE10A5D218B5562000935271 /* ELMovieDetailView.m in Sources */,
+				BE33B15019CEA189007571AD /* ELMainTabBarViewController.m in Sources */,
 				BE94F126189CC294006BAE45 /* ELResultMovieCell.m in Sources */,
 				BE94398818ADA0F0001F3023 /* AFSecurityPolicy.m in Sources */,
 				BE765CB81915C3E4007D7B16 /* ELFavViewController.m in Sources */,
@@ -551,6 +564,7 @@
 				C16F56E7189DCF42009F71AB /* ELMovieViewController.m in Sources */,
 				BEE1CA801899F8AF00992093 /* MovieMood.xcdatamodeld in Sources */,
 				BEE1CA791899F8AF00992093 /* main.m in Sources */,
+				BE33B15519CEA59C007571AD /* ELSettingsTableViewController.m in Sources */,
 				BE94398A18ADA0F0001F3023 /* AFURLRequestSerialization.m in Sources */,
 				BE94398418ADA0F0001F3023 /* AFHTTPRequestOperation.m in Sources */,
 				BE94398B18ADA0F0001F3023 /* AFURLResponseSerialization.m in Sources */,
