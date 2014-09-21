@@ -138,6 +138,26 @@
                                             <segue destination="Cso-Nu-7RJ" kind="push" id="yHe-2N-my7"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ifF-y4-KBL" style="IBUITableViewCellStyleDefault" id="n5F-4F-BTb">
+                                        <rect key="frame" x="0.0" y="167" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n5F-4F-BTb" id="Odc-8n-foW">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Removed Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ifF-y4-KBL">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="i6b-Eb-hTT" kind="push" id="zW4-DD-6Pf"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="1sN-Lf-1Fe">
@@ -146,7 +166,7 @@
                             <tableViewSection id="Znk-9C-LI1">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contact" textLabel="a1r-J8-3JS" style="IBUITableViewCellStyleDefault" id="eL1-Qm-20s">
-                                        <rect key="frame" x="0.0" y="207" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="251" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eL1-Qm-20s" id="NeP-KQ-gfc">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -166,7 +186,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rate" textLabel="RzY-CR-OdW" style="IBUITableViewCellStyleDefault" id="obi-j5-7ih">
-                                        <rect key="frame" x="0.0" y="251" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="295" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="obi-j5-7ih" id="19T-vO-SmD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -467,7 +487,7 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
             </objects>
             <point key="canvasLocation" x="390" y="1370"/>
         </scene>
-        <!--Fav View Controller - Favorites-->
+        <!--Fav View Controller-->
         <scene sceneID="W8m-CG-wM9">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="tYL-v9-6fR" customClass="ELFavViewController" sceneMemberID="viewController">
@@ -494,7 +514,7 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="dc9-8Q-HEt"/>
-                    <navigationItem key="navigationItem" title="Favorites" id="4V3-CN-jPR"/>
+                    <navigationItem key="navigationItem" id="4V3-CN-jPR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THS-aS-cdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +575,36 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jax-mn-UJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169" y="-23"/>
+        </scene>
+        <!--Do Not Show View Controller - Favorites-->
+        <scene sceneID="flX-m6-6RY">
+            <objects>
+                <tableViewController id="i6b-Eb-hTT" customClass="ELDoNotShowViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="fNL-uk-fra">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="75" id="CDW-Vj-lPn" customClass="ELResultMovieCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDW-Vj-lPn" id="nLP-Ii-sVv">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="i6b-Eb-hTT" id="t45-ir-Jl1"/>
+                            <outlet property="delegate" destination="i6b-Eb-hTT" id="ksm-ao-9vc"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="mnp-Gs-ccl"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="qNx-cF-NZZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="La9-M8-KBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-487" y="1375"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

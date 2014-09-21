@@ -15,13 +15,9 @@
 
 @interface ELFavViewController ()
 
-@property (nonatomic, retain) ELActivityIndicator *activityIndicator;
-
 @end
 
 @implementation ELFavViewController
-
-@synthesize activityIndicator = _activityIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,40 +38,14 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     ELDataManager *dataManager = [[ELDataManager alloc] init];
-    
-    CGSize size = self.view.bounds.size;
-    CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
-    _activityIndicator = [[ELActivityIndicator alloc] initWithFrame:CGRectMake((size.width - activityViewSize.width) / 2,
-                                                                                (size.height - activityViewSize.height) / 2,
-                                                                                activityViewSize.width,
-                                                                                activityViewSize.height)];
-    _activityIndicator.activityIndicator.color = self.view.tintColor;
-    [_activityIndicator.activityIndicator startAnimating];
-    [self.parentViewController.view addSubview: _activityIndicator];
-    
     NSArray *movies = [dataManager getFavMovies];
     NSMutableArray *movieIds = [[NSMutableArray alloc] init];
     for(int i = 0; i < [movies count]; i++) {
         NSManagedObject *movie = [movies objectAtIndex: i];
         [movieIds addObject: [movie valueForKey:@"iTunesID"]];
     }
-    
-    [ELMovieRequests getMoviesWithIDs:movieIds successCallback:^(id responesMovies) {
-        self.movieSource = responesMovies;
-        [self.tableView reloadData];
-        [_activityIndicator fadeOutView];
-        [UIView commitAnimations];
-    } failCallback:^(NSError *error) {
-        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Uh oh!"
-                                                             message:@"There was an error retrieving your favorite movies! Please try again soon"
-                                                            delegate:self
-                                                   cancelButtonTitle:@"Ok"
-                                                   otherButtonTitles: nil];
-        _activityIndicator.alpha = 0.f;
-        [errorAlert show];
-    }];
-
-    
+    self.movieIDs = movieIds;
+    [self reloadTable];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,10 +73,6 @@
         nextVC.movie = [self.movieSource objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         nextVC.selectedColor = self.navigationController.navigationBar.tintColor;
     }
-}
-
-- (IBAction)closeButtonPressed:(id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
