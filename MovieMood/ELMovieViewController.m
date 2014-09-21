@@ -62,9 +62,9 @@
     _contentView = (ELMovieDetailView *)[[[NSBundle mainBundle] loadNibNamed:@"MovieView" owner:self options:nil] objectAtIndex:0];
     _contentView.frame = contentSize;
     
-    UIColor *tintColor = _selectedColor;
-    _activityIndicatorView.activityIndicator.color = _selectedColor;
-    self.navigationController.navigationBar.tintColor = _selectedColor;
+    UIColor *tintColor = self.navigationController.navigationBar.tintColor;
+    _activityIndicatorView.activityIndicator.color = tintColor;
+    _selectedColor = self.navigationController.navigationBar.tintColor;
     
     NSURL *artworkURL = [NSURL URLWithString: _movie.coverImage170];
     _contentView.artworkImage.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:artworkURL]];

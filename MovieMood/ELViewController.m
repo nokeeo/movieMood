@@ -91,10 +91,6 @@
     [self colorDidChange: self];
 }
 
--(void) viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBar.tintColor = self.view.tintColor;
-}
-
 -(void)colorDidChange:(id) sender {
     
     //Text change animation
@@ -109,7 +105,11 @@
         
         [_colorText.layer addAnimation: textAnimation forKey: @"fadeAnimation"];
         _colorText.text = colorDescription;
-        self.tabBarController.tabBar.tintColor = [_colorAnalyser tintColor: _contentScrollView.colorWheel.currentColor withTintConst: -.15];
+        
+        UIColor *tintColor = [_colorAnalyser tintColor: _contentScrollView.colorWheel.currentColor withTintConst: -.15];
+        self.tabBarController.tabBar.tintColor = tintColor;
+        self.navigationController.navigationBar.tintColor = tintColor;
+        
     }
     
     _contentScrollView.alwaysBounceVertical = false;
@@ -124,7 +124,6 @@
     if ([[segue identifier] isEqualToString:@"ShowResults"]) {
         ELResultViewController* resultVC = [segue destinationViewController];
         resultVC.movieProps = _currentPorps;
-        resultVC.selectedColor = _contentScrollView.colorWheel.currentColor;
         [self.navigationController setNavigationBarHidden: NO animated: YES];
     }
     

@@ -23,11 +23,6 @@
 
 @implementation ELResultViewController
 
-@synthesize movieProps = _movieProps;
-@synthesize refresing = _refresing;
-@synthesize activityIndicatorView = _activityIndicatorView;
-@synthesize  movieRequestCache = _movieRequestCache;
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -51,6 +46,8 @@
                                                                                     activityViewSize.width,
                                                                                     activityViewSize.height)];
 
+    _activityIndicatorView.tintColor = self.navigationController.navigationBar.tintColor;
+    
     [self.parentViewController.view addSubview:_activityIndicatorView];
     [_activityIndicatorView.activityIndicator startAnimating];
     [ELMovieRequests getMoviesWithGenres:[_movieProps allKeys] successCallback:^(id requestResponse) {
@@ -69,10 +66,8 @@
         [errorAlert show];
     }];
     
-    ELColorAnalyser *colorAnalyser = [[ELColorAnalyser alloc] init];
-    UIColor *tintColor = [colorAnalyser tintColor:_selectedColor withTintConst: -.10];
+    UIColor *tintColor = self.navigationController.navigationBar.tintColor;
     _activityIndicatorView.activityIndicator.color = tintColor;
-    self.navigationController.navigationBar.tintColor = tintColor;
 }
 
 #pragma mark - Table view data source
@@ -83,10 +78,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ELColorAnalyser *analyser = [[ELColorAnalyser alloc] init];
     ELResultMovieCell *cell = (ELResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-    cell.backgroundShadeColor = [analyser tintColor: _selectedColor withTintConst: -.10];
-    cell.delegate = self;
     cell.rightSlideMenuEnabled = YES;
     [cell resetFavScrollView];
     return cell;

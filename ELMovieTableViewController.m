@@ -85,6 +85,9 @@
     
     
     cell.title.text = currentMovie.title;
+    cell.backgroundShadeColor = self.navigationController.navigationBar.tintColor;
+    cell.delegate = self;
+    
     return cell;
 }
 
@@ -100,7 +103,6 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"MovieDetail"]) {
-        ELColorAnalyser *analyser = [[ELColorAnalyser alloc] init];
         ELMovieViewController *movieVC = segue.destinationViewController;
         movieVC.movie = self.selectedMovie;
         movieVC.selectedColor = self.navigationController.navigationBar.tintColor;

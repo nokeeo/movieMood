@@ -54,9 +54,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ELResultMovieCell *cell = (ELResultMovieCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-    cell.delegate = self;
     cell.rightSlideMenuEnabled = YES;
-    cell.backgroundShadeColor = self.view.tintColor;
     [cell resetFavScrollView];
     return cell;
 }

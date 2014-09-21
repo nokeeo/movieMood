@@ -43,9 +43,6 @@
 -(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     UIViewController<ELMainTabProtocol> *controller = (UIViewController<ELMainTabProtocol>* )viewController;
     [self hideNavBarWithVC: controller];
-    
-    NSLog(@"%@", viewController.view);
-    NSLog(@"%@", self.selectedViewController.view);
 }
 
 -(id<UIViewControllerAnimatedTransitioning>) tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
