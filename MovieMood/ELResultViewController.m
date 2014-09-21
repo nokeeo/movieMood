@@ -80,16 +80,6 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView: tableView didSelectRowAtIndexPath: indexPath];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SKYSwipeCellShouldRetract" object:self userInfo:nil];
-    [self performSegueWithIdentifier:@"MovieDetail" sender:self];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"MovieDetail"]) {
-        ELColorAnalyser *analyser = [[ELColorAnalyser alloc] init];
-        ELMovieViewController *movieVC = segue.destinationViewController;
-        movieVC.movie = self.selectedMovie;
-        movieVC.selectedColor = [analyser tintColor:_selectedColor withTintConst:-.10];
-    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

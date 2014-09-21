@@ -67,14 +67,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqual:@"selectMovieSegue"]) {
-        ELMovieViewController *nextVC = [segue destinationViewController];
-        nextVC.movie = [self.movieSource objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        nextVC.selectedColor = self.navigationController.navigationBar.tintColor;
-    }
-}
-
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }

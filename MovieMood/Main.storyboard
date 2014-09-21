@@ -503,9 +503,6 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="eeQ-4f-TXA" kind="push" identifier="selectMovieSegue" id="mWg-If-RKB"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -515,6 +512,9 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="dc9-8Q-HEt"/>
                     <navigationItem key="navigationItem" id="4V3-CN-jPR"/>
+                    <connections>
+                        <segue destination="eeQ-4f-TXA" kind="push" identifier="MovieDetail" id="j6S-Eg-HXA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THS-aS-cdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -550,7 +550,7 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="eeQ-4f-TXA" kind="push" identifier="MovieDetail" id="0cm-Hy-GN9"/>
+                        <segue destination="eeQ-4f-TXA" kind="push" identifier="MovieDetail" id="mK6-3U-R1x"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbs-kw-sby" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -601,10 +601,13 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="mnp-Gs-ccl"/>
                     <navigationItem key="navigationItem" title="Favorites" id="qNx-cF-NZZ"/>
+                    <connections>
+                        <segue destination="eeQ-4f-TXA" kind="push" identifier="MovieDetail" id="0gr-eZ-L9X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La9-M8-KBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-487" y="1375"/>
+            <point key="canvasLocation" x="-573" y="1375"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -614,6 +617,6 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qiM-9b-jxF"/>
-        <segue reference="mWg-If-RKB"/>
+        <segue reference="mK6-3U-R1x"/>
     </inferredMetricsTieBreakers>
 </document>

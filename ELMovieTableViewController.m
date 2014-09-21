@@ -10,6 +10,8 @@
 #import "ELResultMovieCell.h"
 #import "ELMovieRequests.h"
 #import "ELDataManager.h"
+#import "ELColorAnalyser.h"
+#import "ELMovieViewController.h"
 
 @interface ELMovieTableViewController ()
 @end
@@ -93,6 +95,16 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ELMediaEntity *movie = [_movieSource objectAtIndex: indexPath.row];
     _selectedMovie = movie;
+    [self performSegueWithIdentifier: @"MovieDetail" sender: nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"MovieDetail"]) {
+        ELColorAnalyser *analyser = [[ELColorAnalyser alloc] init];
+        ELMovieViewController *movieVC = segue.destinationViewController;
+        movieVC.movie = self.selectedMovie;
+        movieVC.selectedColor = self.navigationController.navigationBar.tintColor;
+    }
 }
 
 -(void) doNotShowButtonPressed:(id)sender {
