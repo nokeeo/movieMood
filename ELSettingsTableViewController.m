@@ -9,6 +9,8 @@
 #import "ELSettingsTableViewController.h"
 
 static const NSString *EMAIL_ADDRESS = @"feedback@moviemoodapp.com";
+static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/id877461524?mt=8&uo=4&at=11lu3P";
+
 
 @interface ELSettingsTableViewController () {
     NSDictionary *_cellTitles;
@@ -75,10 +77,17 @@ static const NSString *EMAIL_ADDRESS = @"feedback@moviemoodapp.com";
     }
 }
 
+-(void) handleRateButtonPressed {
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: (NSString *)STORE_URL]];
+}
+
 -(BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if([identifier isEqualToString: @"contact"]) {
         [self handleContactPressed];
         return NO;
+    }
+    else if([identifier isEqualToString: @"rate"]) {
+        [self handleRateButtonPressed];
     }
     
     return YES;
