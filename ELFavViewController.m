@@ -34,6 +34,7 @@
     CGFloat heightOffset = CGRectGetHeight(self.navigationController.navigationBar.frame) + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     CGFloat bottomOffset = CGRectGetHeight(self.tabBarController.tabBar.frame);
     self.tableView.contentInset = UIEdgeInsetsMake(heightOffset, 0, bottomOffset, 0);
+    [self setTitle: @"Favorites"];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -30,6 +30,8 @@
     UIViewController<ELMainTabProtocol> *controller = (UIViewController<ELMainTabProtocol> *) self.selectedViewController;
     [self hideNavBarWithVC: controller];
     [super viewWillAppear: animated];
+    
+    [self hideNavBarWithVC: (UIViewController<ELMainTabProtocol>*) self.selectedViewController];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +56,7 @@
      
 #pragma mark - Helper Functions
 
--(void) hideNavBarWithVC: (id<ELMainTabProtocol>) controller {
+-(void) hideNavBarWithVC: (UIViewController<ELMainTabProtocol>*) controller {
     /*if([controller shouldShowNavBar]) {
         self.navigationController.navigationBar.alpha = 1;
     }
@@ -63,5 +65,6 @@
     }*/
     
     [self.navigationController setNavigationBarHidden: ![controller shouldShowNavBar] animated: YES];
+    [self setTitle: controller.title];
 }
 @end

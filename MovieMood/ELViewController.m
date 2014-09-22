@@ -36,7 +36,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -89,6 +88,7 @@
     _colorAnalyser = [[ELColorAnalyser alloc] initWithIdsForGenre: appDelegate.movieIdsForGenre descriptionForIds: appDelegate.movieDescriptionsForId];
     
     [self colorDidChange: self];
+    [self setTitle: @"Color Wheel"];
 }
 
 -(void)colorDidChange:(id) sender {

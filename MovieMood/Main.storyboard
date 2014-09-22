@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="-133" y="670"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - About-->
         <scene sceneID="9L1-a9-aif">
             <objects>
-                <viewController id="oq4-Pv-SEz" sceneMemberID="viewController">
+                <viewController title="About" id="oq4-Pv-SEz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RVq-Lm-MWj"/>
                         <viewControllerLayoutGuide type="bottom" id="n2p-nu-LCb"/>
@@ -266,10 +266,10 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
             </objects>
             <point key="canvasLocation" x="397" y="667"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Colors-->
         <scene sceneID="xaE-SR-8Kg">
             <objects>
-                <viewController id="Cso-Nu-7RJ" sceneMemberID="viewController">
+                <viewController title="Colors" id="Cso-Nu-7RJ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OGF-8U-FIU"/>
                         <viewControllerLayoutGuide type="bottom" id="k3A-J3-GS6"/>
@@ -468,10 +468,10 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
             </objects>
             <point key="canvasLocation" x="-48" y="1375"/>
         </scene>
-        <!--Info Container View Controller-->
+        <!--Info Container View Controller - Credits-->
         <scene sceneID="rjn-7v-YnI">
             <objects>
-                <viewController id="6n3-4I-jZk" customClass="ELInfoContainerViewController" sceneMemberID="viewController">
+                <viewController title="Credits" id="6n3-4I-jZk" customClass="ELInfoContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cnd-vi-G8o"/>
                         <viewControllerLayoutGuide type="bottom" id="vPX-2f-NVr"/>
@@ -576,10 +576,10 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
             </objects>
             <point key="canvasLocation" x="1169" y="-23"/>
         </scene>
-        <!--Do Not Show View Controller - Favorites-->
+        <!--Do Not Show View Controller - Removed-->
         <scene sceneID="flX-m6-6RY">
             <objects>
-                <tableViewController id="i6b-Eb-hTT" customClass="ELDoNotShowViewController" sceneMemberID="viewController">
+                <tableViewController title="Removed" id="i6b-Eb-hTT" customClass="ELDoNotShowViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="fNL-uk-fra">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -617,6 +617,6 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qiM-9b-jxF"/>
-        <segue reference="mK6-3U-R1x"/>
+        <segue reference="0gr-eZ-L9X"/>
     </inferredMetricsTieBreakers>
 </document>

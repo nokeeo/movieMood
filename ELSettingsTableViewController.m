@@ -27,7 +27,7 @@
     CGFloat topOffset = CGRectGetHeight(self.navigationController.navigationBar.frame) + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     CGFloat bottomOffset = CGRectGetHeight(self.tabBarController.tabBar.frame);
     self.tableView.contentInset = UIEdgeInsetsMake( topOffset, 0, bottomOffset, 0);
-    
+    [self setTitle: @"More"];
 }
 
 - (void)didReceiveMemoryWarning
