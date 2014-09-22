@@ -117,6 +117,6 @@
 }
 
 -(CGSize) getSizeOfContent {
-    return CGSizeMake(self.frame.size.width, self.artworkImage.frame.size.height + _summaryLabel.frame.size.height + _movieInformationView.frame.size.height);
+    return CGSizeMake(self.frame.size.width, self.artworkImage.frame.size.height + _summaryLabel.frame.size.height + _movieInformationView.frame.size.height + 40);
 }
 @end

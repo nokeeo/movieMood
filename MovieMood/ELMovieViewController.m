@@ -118,7 +118,7 @@
 
 -(void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    [_contentView setSummaryText: _movie.description];
+    [_contentView setSummaryText: _movie.entityDescription];
     [_contentScrollView setContentSize: [_contentView getSizeOfContent]];
 }
 
@@ -180,7 +180,6 @@
 
 -(void) updateDoNotShowButtonText {
     ELDataManager *manager = [[ELDataManager alloc] init];
-    NSLog(@"%hhd", [manager canShowMovie: self.movie]);
     UIButton *doNotShowButton = _contentView.movieInformationView.doNotShowMovieButton;
     
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithAttributedString: [doNotShowButton attributedTitleForState: UIControlStateNormal]];

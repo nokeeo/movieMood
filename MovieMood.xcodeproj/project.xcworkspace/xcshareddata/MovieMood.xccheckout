@@ -10,29 +10,29 @@
 	<string>MovieMood</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DA90AF6C-C4E5-4AD2-955A-AEA856CE8398</key>
+		<key>037E549288D27AB0847FD3742A66BF2A5B91BBEC</key>
 		<string>https://github.com/nokeeo/movieMood.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MovieMood.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DA90AF6C-C4E5-4AD2-955A-AEA856CE8398</key>
+		<key>037E549288D27AB0847FD3742A66BF2A5B91BBEC</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/nokeeo/movieMood.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DA90AF6C-C4E5-4AD2-955A-AEA856CE8398</string>
+	<string>037E549288D27AB0847FD3742A66BF2A5B91BBEC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DA90AF6C-C4E5-4AD2-955A-AEA856CE8398</string>
+			<string>037E549288D27AB0847FD3742A66BF2A5B91BBEC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>movieMood</string>
 		</dict>

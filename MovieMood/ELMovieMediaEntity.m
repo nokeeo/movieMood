@@ -14,7 +14,7 @@
     self = [super initWithEntry: entry];
     if(self) {
         self.rentalPrice = [[entry objectForKey:@"im:rentalPrice"] objectForKey:@"label"];
-        self.description = [[entry objectForKey:@"summary"] objectForKey:@"label"];
+        self.entityDescription = [[entry objectForKey:@"summary"] objectForKey:@"label"];
         self.director = [[entry objectForKey:@"im:artist"] objectForKey:@"label"];
         
         //Get URls
@@ -47,7 +47,7 @@
         else
             self.rentalPrice = @"Not available";
         
-        self.description = [entry objectForKey: @"longDescription"];
+        self.entityDescription = [entry objectForKey: @"longDescription"];
         self.genre = [entry objectForKey: @"primaryGenreName"];
         self.director = [entry objectForKey: @"artistName"];
         

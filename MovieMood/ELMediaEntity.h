@@ -18,7 +18,7 @@ extern const NSString *AFFILIATE_KEY;
 @property (nonatomic, retain) NSString *coverImage170;
 @property (nonatomic, retain) NSString *purchasePrice;
 @property (nonatomic, retain) NSString *rentalPrice;
-@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *entityDescription;
 @property (nonatomic, retain) NSString *storeURL;
 @property (nonatomic, retain) NSString *trailerURL;
 @property (nonatomic, retain) NSString *rating;
