@@ -45,8 +45,6 @@
                                                                                     (size.height - activityViewSize.height) / 2,
                                                                                     activityViewSize.width,
                                                                                     activityViewSize.height)];
-
-    _activityIndicatorView.tintColor = self.navigationController.navigationBar.tintColor;
     
     [self.parentViewController.view addSubview:_activityIndicatorView];
     [_activityIndicatorView.activityIndicator startAnimating];
