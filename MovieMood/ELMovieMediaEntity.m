@@ -64,7 +64,7 @@
         }
         
         
-        self.storeURL = [[NSString alloc] initWithFormat:@"%@&at=%@", [entry objectForKey: @"trackViewUrl"], AFFILIATE_KEY ];
+        self.storeURL = [entry objectForKey: @"trackViewUrl"];
         self.trailerURL = [entry objectForKey:@"previewUrl"];
         self.coverImage170 = [entry objectForKey: @"artworkUrl100"];
         self.coverImage60 = [entry objectForKey: @"artworkUrl60"];

@@ -13,21 +13,17 @@
 #import "ELMovieRequests.h"
 #import "ELBorderButton.h"
 #import "ELDataManager.h"
+#import "ELStoreController.h"
 
 @interface ELMovieViewController ()
 @property (nonatomic, retain) ELActivityIndicator *activityIndicatorView;
 @property (nonatomic, retain) UIView *coverView;
 @property (nonatomic, retain) ELMovieDetailView *contentView;
 @property (nonatomic, retain) UIScrollView *contentScrollView;
+@property (nonatomic, retain) ELStoreController *storeController;
 @end
 
 @implementation ELMovieViewController
-
-@synthesize movie = _movie;
-@synthesize activityIndicatorView = _activityIndicatorView;
-@synthesize selectedColor = _selectedColor;
-@synthesize contentView = _contentView;
-@synthesize contentScrollView = _contentScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +31,11 @@
     if (self) {
     }
     return self;
+}
+
+-(void) awakeFromNib {
+    [super awakeFromNib];
+    _storeController = [[ELStoreController alloc] initWithVC: self];
 }
 
 - (void)viewDidLoad
@@ -127,7 +128,8 @@
 }
 
 -(void)iTunesButtonPressedResponse:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.storeURL]];
+    [_storeController openStoreWithEntity: _movie];
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.storeURL]];
 }
 
 -(void)favButtonPressedResponse:(id)sender {

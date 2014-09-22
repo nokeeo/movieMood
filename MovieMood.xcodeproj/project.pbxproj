@@ -30,6 +30,7 @@
 		BE765CAF19159CC8007D7B16 /* ELDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CAE19159CC8007D7B16 /* ELDataManager.m */; };
 		BE765CB51915BCE7007D7B16 /* ELMovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CB41915BCE7007D7B16 /* ELMovieTableViewController.m */; };
 		BE765CB81915C3E4007D7B16 /* ELFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CB71915C3E4007D7B16 /* ELFavViewController.m */; };
+		BE8715FA19CFC94900D0DC7D /* ELStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8715F919CFC94900D0DC7D /* ELStoreController.m */; };
 		BE94398418ADA0F0001F3023 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */; };
 		BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397418ADA0F0001F3023 /* AFHTTPRequestOperationManager.m */; };
 		BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94397618ADA0F0001F3023 /* AFHTTPSessionManager.m */; };
@@ -128,6 +129,8 @@
 		BE765CB41915BCE7007D7B16 /* ELMovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMovieTableViewController.m; sourceTree = "<group>"; };
 		BE765CB61915C3E4007D7B16 /* ELFavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELFavViewController.h; sourceTree = "<group>"; };
 		BE765CB71915C3E4007D7B16 /* ELFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELFavViewController.m; sourceTree = "<group>"; };
+		BE8715F819CFC94900D0DC7D /* ELStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELStoreController.h; sourceTree = "<group>"; };
+		BE8715F919CFC94900D0DC7D /* ELStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELStoreController.m; sourceTree = "<group>"; };
 		BE94397118ADA0F0001F3023 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BE94397218ADA0F0001F3023 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BE94397318ADA0F0001F3023 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				BE94398F18ADBDDD001F3023 /* ELMediaEntity.m */,
 				BEFED0BA196A39C300F066E3 /* ELMovieMediaEntity.h */,
 				BEFED0BB196A39C300F066E3 /* ELMovieMediaEntity.m */,
+				BE8715F819CFC94900D0DC7D /* ELStoreController.h */,
+				BE8715F919CFC94900D0DC7D /* ELStoreController.m */,
 				BEFED0BD196A3D1F00F066E3 /* ELTVShowMediaEntity.h */,
 				BEFED0BE196A3D1F00F066E3 /* ELTVShowMediaEntity.m */,
 				BE94F121189B4FA1006BAE45 /* ELColorAnalyser.h */,
@@ -580,6 +585,7 @@
 				BE94399018ADBDDD001F3023 /* ELMediaEntity.m in Sources */,
 				BE10A5CF18B47B4800935271 /* ELBorderButton.m in Sources */,
 				BEE1CA7D1899F8AF00992093 /* ELAppDelegate.m in Sources */,
+				BE8715FA19CFC94900D0DC7D /* ELStoreController.m in Sources */,
 				BE94398518ADA0F0001F3023 /* AFHTTPRequestOperationManager.m in Sources */,
 				BED5AF0B189AC9CE00ABF4EC /* ISColorWheel.m in Sources */,
 				C15BE3BC189AD269006FC7C3 /* ELViewController.m in Sources */,

@@ -9,8 +9,6 @@
 #import "ELMediaEntity.h"
 #import "ELMovieRequests.h"
 
-const NSString *AFFILIATE_KEY = @"11lu3P";
-
 @implementation ELMediaEntity
 
 -(id) initWithEntry:(id)entry {
