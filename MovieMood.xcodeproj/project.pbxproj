@@ -22,8 +22,6 @@
 		BE33B15B19CF6EF7007571AD /* ELFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15A19CF6EF7007571AD /* ELFeedbackController.m */; };
 		BE33B15E19CF7EB3007571AD /* ELIDMovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15D19CF7EB3007571AD /* ELIDMovieTableViewController.m */; };
 		BE33B16119CF8098007571AD /* ELDoNotShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B16019CF8098007571AD /* ELDoNotShowViewController.m */; };
-		BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */; };
-		BE38A3CE1913F9B700559C44 /* ELMovieInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */; };
 		BE3D64DD191ADDD200A5FA69 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DC191ADDD200A5FA69 /* favFill.png */; };
 		BE3D64DF191ADEB600A5FA69 /* favFill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D64DE191ADEB600A5FA69 /* favFill@2x.png */; };
 		BE765CAC1914ABCB007D7B16 /* ELInfoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE765CAB1914ABCB007D7B16 /* ELInfoContainerViewController.m */; };
@@ -116,9 +114,6 @@
 		BE33B15D19CF7EB3007571AD /* ELIDMovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELIDMovieTableViewController.m; sourceTree = "<group>"; };
 		BE33B15F19CF8098007571AD /* ELDoNotShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELDoNotShowViewController.h; sourceTree = "<group>"; };
 		BE33B16019CF8098007571AD /* ELDoNotShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELDoNotShowViewController.m; sourceTree = "<group>"; };
-		BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieInformationView.xib; sourceTree = "<group>"; };
-		BE38A3CC1913F9B700559C44 /* ELMovieInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMovieInformationView.h; sourceTree = "<group>"; };
-		BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMovieInformationView.m; sourceTree = "<group>"; };
 		BE3D64DC191ADDD200A5FA69 /* favFill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favFill.png; sourceTree = "<group>"; };
 		BE3D64DE191ADEB600A5FA69 /* favFill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favFill@2x.png"; sourceTree = "<group>"; };
 		BE765CAA1914ABCB007D7B16 /* ELInfoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELInfoContainerViewController.h; sourceTree = "<group>"; };
@@ -435,9 +430,6 @@
 				BE10A5CE18B47B4800935271 /* ELBorderButton.m */,
 				BE10A5D018B5562000935271 /* ELMovieDetailView.h */,
 				BE10A5D118B5562000935271 /* ELMovieDetailView.m */,
-				BE38A3CA1913F81A00559C44 /* MovieInformationView.xib */,
-				BE38A3CC1913F9B700559C44 /* ELMovieInformationView.h */,
-				BE38A3CD1913F9B700559C44 /* ELMovieInformationView.m */,
 				BE10A5D318B5565600935271 /* MovieView.xib */,
 			);
 			name = ViewLayouts;
@@ -523,7 +515,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE38A3CB1913F81A00559C44 /* MovieInformationView.xib in Resources */,
 				BE10A5D418B5565600935271 /* MovieView.xib in Resources */,
 				BE271A57189EF03B007B1EDA /* AboutView.xib in Resources */,
 				BEE1CA771899F8AF00992093 /* InfoPlist.strings in Resources */,
@@ -562,7 +553,6 @@
 				BEC2BD45191EF53A00DDE7E8 /* ELMovieCellScrollView.m in Sources */,
 				BE94F122189B4FA1006BAE45 /* ELColorAnalyser.m in Sources */,
 				BE765CB51915BCE7007D7B16 /* ELMovieTableViewController.m in Sources */,
-				BE38A3CE1913F9B700559C44 /* ELMovieInformationView.m in Sources */,
 				BE94398618ADA0F0001F3023 /* AFHTTPSessionManager.m in Sources */,
 				BE94398718ADA0F0001F3023 /* AFNetworkReachabilityManager.m in Sources */,
 				BE96300A189E3E17004968D0 /* ELActivityIndicator.m in Sources */,

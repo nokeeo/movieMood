@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ELBorderButton.h"
-#import "ELMovieInformationView.h"
 
 @protocol MovieDetailButtonResponse
 -(void)iTunesButtonPressedResponse:(id) sender;
@@ -23,8 +22,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *rentLabel;
 @property (weak, nonatomic) IBOutlet ELBorderButton *iTunesButton;
 @property (weak, nonatomic) IBOutlet ELBorderButton *favButton;
-@property (weak, nonatomic) ELMovieInformationView *movieInformationView;
 @property (nonatomic, retain) id buttonResponseDelegate;
+
+@property (weak, nonatomic) IBOutlet UITextView *summaryBox;
+@property (weak, nonatomic) IBOutlet UILabel *directorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *doNotShowMovieButton;
 
 -(void)setSummaryText:(NSString *) text;
 -(CGSize) getSizeOfContent;

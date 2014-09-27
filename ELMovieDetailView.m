@@ -9,13 +9,13 @@
 #import "ELMovieDetailView.h"
 
 @interface ELMovieDetailView ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *summaryHeightConstraint;
 @property (nonatomic, retain) UITextView *summaryLabel;
 @end
 
 @implementation ELMovieDetailView
 
 @synthesize buttonResponseDelegate = _buttonResponseDelegate;
-@synthesize movieInformationView = _movieInformationView;
 @synthesize summaryLabel = _summaryLabel;
 
 - (id)initWithFrame:(CGRect)frame
@@ -28,7 +28,7 @@
 
 -(void)awakeFromNib {
     
-    CGRect summaryRect = CGRectMake(0,
+    /*CGRect summaryRect = CGRectMake(0,
                                     _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 20,
                                     CGRectGetWidth(self.frame), 10);
     _summaryLabel = [[UITextView alloc] initWithFrame:summaryRect];
@@ -37,19 +37,19 @@
     _summaryLabel.layer.borderWidth = .5;
     _summaryLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
     [_summaryLabel setTextContainerInset: UIEdgeInsetsMake(10, _artworkImage.frame.origin.x, 10, _artworkImage.frame.origin.x)];
-    [self addSubview: _summaryLabel];
+    [self addSubview: _summaryLabel];*/
     
     //Create information view
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
+    /*NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
     _movieInformationView = [nib objectAtIndex: 0];
-    CGPoint informationOrigin = CGPointMake(_summaryLabel.frame.origin.x ,
-                                            _summaryLabel.frame.origin.y + _summaryLabel.frame.size.height - 10);
+    CGPoint informationOrigin = CGPointMake(0 ,
+                                            _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 20);
     CGRect informationRect = CGRectMake(informationOrigin.x,
                                         informationOrigin.y,
                                         _summaryLabel.frame.size.width,
                                         200);
     [self addSubview: _movieInformationView];
-    [_movieInformationView setFrame: informationRect];
+    [_movieInformationView setFrame: informationRect];*/
     
     //Set up star button
     UIImage *favButtonImage = [UIImage imageNamed:@"fav.png"];
@@ -84,7 +84,13 @@
 }
 
 -(void) setSummaryText:(NSString *)text {
-    _summaryLabel.text = text;
+    _summaryBox.text = text;
+    
+    CGSize summaryIdealSize = [_summaryBox sizeThatFits: CGSizeMake(self.frame.size.width, FLT_MAX)];
+    NSLog(@"%f", _summaryBox.frame.size.height);
+    _summaryHeightConstraint.constant = summaryIdealSize.height;
+    
+    /*_summaryLabel.text = text;
     _summaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:12];
     CGFloat oldSumHeight = _summaryLabel.frame.size.height;
     //Check if more button in summary is needed.
@@ -102,7 +108,7 @@
                                         _movieInformationView.frame.origin.y + (_summaryLabel.frame.size.height -  oldSumHeight) + 10,
                                         _movieInformationView.frame.size.width,
                                         _movieInformationView.frame.size.height);
-    [_movieInformationView setFrame: newInfoFrame];
+    [_movieInformationView setFrame: newInfoFrame];*/
 }
 
 -(CGSize)getFullSummarySizeWithText: (NSString *) text {
@@ -114,9 +120,5 @@
     CGRect requiredSize = [attrString boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     
     return requiredSize.size;
-}
-
--(CGSize) getSizeOfContent {
-    return CGSizeMake(self.frame.size.width, self.artworkImage.frame.size.height + _summaryLabel.frame.size.height + _movieInformationView.frame.size.height + 40);
 }
 @end

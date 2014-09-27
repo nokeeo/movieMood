@@ -61,7 +61,7 @@
     _contentScrollView.scrollEnabled = YES;
     
     _contentView = (ELMovieDetailView *)[[[NSBundle mainBundle] loadNibNamed:@"MovieView" owner:self options:nil] objectAtIndex:0];
-    _contentView.frame = contentSize;
+    //_contentView.frame = contentSize;
     
     UIColor *tintColor = self.navigationController.navigationBar.tintColor;
     _activityIndicatorView.activityIndicator.color = tintColor;
@@ -74,11 +74,10 @@
     _contentView.movieTitle.text = _movie.title;
     _contentView.genreLabel.text = _movie.genre;
     _contentView.buyLabel.text = [NSString stringWithFormat: @"%@ %@", _contentView.buyLabel.text ,_movie.purchasePrice];
-    _contentView.movieInformationView.delegate = self;
-    _contentView.movieInformationView.doNotShowMovieButton.titleLabel.textColor = _selectedColor;
+    //_contentView.doNotShowMovieButton.titleLabel.textColor = _selectedColor;
     [self updateDoNotShowButtonText];
-    _contentView.movieInformationView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.releaseDateLabel.text, _movie.releaseDate];
-    _contentView.movieInformationView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.directorLabel.text, _movie.director];
+    _contentView.releaseDateLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.releaseDateLabel.text, _movie.releaseDate];
+    _contentView.directorLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.directorLabel.text, _movie.director];
     
     if(!_movie.rentalPrice)
         _contentView.rentLabel.text = @": Not Available";
@@ -91,7 +90,7 @@
     
     [ELMovieRequests getMovieDetailData: _movie successCallback:^(id requestResponse){
         _movie = (ELMediaEntity*) requestResponse;
-        _contentView.movieInformationView.ratingLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.movieInformationView.ratingLabel.text, _movie.rating];
+        _contentView.ratingLabel.text = [NSString stringWithFormat:@"%@ %@", _contentView.ratingLabel.text, _movie.rating];
         [_activityIndicatorView fadeOutView];
         [UIView animateWithDuration: .75 animations:^{
             _coverView.alpha = 0.f;
@@ -115,16 +114,35 @@
     [self.view addSubview: _contentScrollView];
     [self.view addSubview:_coverView];
     [_activityIndicatorView fadeInView];
+    
+    //[_contentView setTranslatesAutoresizingMaskIntoConstraints: NO];
+    //[_contentScrollView setTranslatesAutoresizingMaskIntoConstraints: NO];
+    NSDictionary *visualDictionary = @{@"contentView" : _contentView};
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat: @"H:|[contentView]|"
+                                                                   options: 0
+                                                                   metrics: nil
+                                                                     views: visualDictionary];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[contentView]|"
+                                                                           options: 0
+                                                                           metrics: nil
+                                                                             views: visualDictionary];
+    [_contentScrollView addConstraints: horizontalConstraints];
+    [_contentScrollView addConstraints: verticalConstraints];
 }
 
 -(void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    [_contentView setSummaryText: _movie.entityDescription];
-    [_contentScrollView setContentSize: [_contentView getSizeOfContent]];
+    
 }
 
--(void) viewDidAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+-(void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    [_contentView setSummaryText: _movie.entityDescription];
+    //[_contentScrollView setContentSize: [_contentView sizeThatFits: _contentScrollView.frame.size]];
 }
 
 -(void)iTunesButtonPressedResponse:(id)sender {
@@ -182,7 +200,7 @@
 
 -(void) updateDoNotShowButtonText {
     ELDataManager *manager = [[ELDataManager alloc] init];
-    UIButton *doNotShowButton = _contentView.movieInformationView.doNotShowMovieButton;
+    UIButton *doNotShowButton = _contentView.doNotShowMovieButton;
     
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithAttributedString: [doNotShowButton attributedTitleForState: UIControlStateNormal]];
     
