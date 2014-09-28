@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @interface ELAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -22,7 +23,11 @@
 @property (nonatomic, strong) NSDictionary *tvShowIdsForGenre;
 @property (nonatomic, strong) NSDictionary *tvShowDescriptionForId;
 
+@property BOOL shouldShowFeedbackForSession;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+-(void) startUserPromptTimer;
 
 @end

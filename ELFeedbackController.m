@@ -7,6 +7,8 @@
 //
 
 #import "ELFeedbackController.h"
+#import "ELAppDelegate.h"
+#import "Flurry.h"
 
 @interface ELFeedbackController()
 
@@ -36,13 +38,14 @@ static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/i
 }
 
 -(void) beginFeedbackFlow {
+    [Flurry logEvent: @"Prompted_Feedback"];
     _appFeelingAlert = [[UIAlertView alloc] initWithTitle:@"Do you love MovieMood?" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Absolutely", @"Not Quite", nil];
     [_appFeelingAlert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(buttonIndex == 0 && [alertView  isEqual: _appFeelingAlert]) {
-        _reviewAlert = [[UIAlertView alloc] initWithTitle:@"Thats Great!"
+        _reviewAlert = [[UIAlertView alloc] initWithTitle:@"That's Great!"
                                                   message:@"We'd really appreciate it if you rate our app"
                                                  delegate:self
                                         cancelButtonTitle:nil
@@ -51,7 +54,7 @@ static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/i
     }
     else if(buttonIndex == 1 && [alertView isEqual: _appFeelingAlert]){
         _emailFeedbackAlert = [[UIAlertView alloc] initWithTitle: @"Ah man..."
-                                                         message:@"We'd really appreciate if you give us feedback"
+                                                         message:@"We'd really appreciate it if you give us feedback"
                                                         delegate:self
                                                cancelButtonTitle:nil
                                                otherButtonTitles: @"Sure" , @"Maybe Later", nil];
@@ -65,6 +68,9 @@ static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/i
     else if((buttonIndex == 0 && [alertView isEqual: _emailFeedbackAlert])) {
         [self presentEmailFeedbackVC];
     }
+    
+    ELAppDelegate *appDelegate = (ELAppDelegate *) [[UIApplication sharedApplication] delegate];
+    appDelegate.shouldShowFeedbackForSession = NO;
 }
 
 -(void) presentEmailFeedbackVC {
@@ -82,9 +88,11 @@ static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/i
                                                               delegate:nil cancelButtonTitle: @"Done" otherButtonTitles: nil];
         [errorMessage show];
     }
+    [self setUserGaveFeedback];
 }
 
 -(void) openExternalAppStore {
+    [self setUserGaveFeedback];
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString: (NSString *)STORE_URL]];
 }
 
@@ -100,6 +108,12 @@ static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/i
                                                    otherButtonTitles: nil];
         [errorAlert show];
     }
+}
+
+-(void) setUserGaveFeedback {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [Flurry logEvent: @"Gave_Feedback"];
+    [userDefaults setObject: [NSNumber numberWithBool: YES] forKey: @"haveGivenFeedback"];
 }
 
 @end

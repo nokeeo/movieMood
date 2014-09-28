@@ -7,6 +7,15 @@
 //
 
 #import "ELAppDelegate.h"
+#import "ELFeedbackController.h"
+#import "Flurry.h"
+
+@interface ELAppDelegate()
+
+@property NSTimer *feedbackTimer;
+@property (nonatomic, strong) ELFeedbackController *feedbackController;
+
+@end
 
 @implementation ELAppDelegate
 
@@ -14,10 +23,9 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-@synthesize movieDescriptionsForId = _movieDescriptionsForId;
-@synthesize movieIdsForGenre = _movieIdsForGenre;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    _shouldShowFeedbackForSession = YES;
     
     NSMutableArray *movieIds = [[NSMutableArray alloc] initWithObjects:@"4401", @"4404", @"4405", @"4406", @"4407", @"4408", @"4409", @"4410", @"4412", @"4413", @"4416", @"4418", nil];
     NSMutableArray *movieGenres = [NSMutableArray arrayWithObjects: @"Action/Adventure", @"Comedy", @"Documentary", @"Drama", @"Foreign", @"Horror", @"Independent", @"Kids & Family", @"Romance",@"Sci-Fi & Fantasy", @"Thriller", @"Western", nil];
@@ -35,6 +43,10 @@
     
     _movieIdsForGenre = [NSDictionary dictionaryWithObjects: movieIds forKeys: movieGenres];
     _movieDescriptionsForId = [NSDictionary dictionaryWithObjects: movieDescriptions forKeys: movieIds];
+    
+    //Start up Flurry
+    [Flurry setCrashReportingEnabled: YES];
+    [Flurry startSession: @"2KFXN9FQ4TJSBZ793CV7"];
     
     return YES;
 }
@@ -166,6 +178,29 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+-(void) startUserPromptTimer {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if(_shouldShowFeedbackForSession && ![prefs objectForKey: @"haveGivenFeedback"]) {
+        if(!_feedbackTimer) {
+            _feedbackTimer = [NSTimer scheduledTimerWithTimeInterval: 90 target:self
+                                                            selector:@selector(timerFired:) userInfo:nil repeats:NO];
+        }
+    }
+}
+
+-(void) timerFired: (id) sender {
+    NSLog(@"Feedback timer fired");
+    [_feedbackTimer invalidate];
+    _feedbackTimer = nil;
+    
+    if(!_feedbackController) {
+        UINavigationController *navController = (UINavigationController *) _window.rootViewController;
+        _feedbackController = [[ELFeedbackController alloc] initWithParentVC: navController.topViewController];
+    }
+    
+    [_feedbackController beginFeedbackFlow];
 }
 
 @end

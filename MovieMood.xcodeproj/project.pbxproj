@@ -19,6 +19,7 @@
 		BE2F99C419D7D8E400A0F381 /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2F99C319D7D8E400A0F381 /* color.png */; };
 		BE2F99C819D7DADE00A0F381 /* color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2F99C719D7DADE00A0F381 /* color@2x.png */; };
 		BE2F99CA19D7DB0F00A0F381 /* color@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2F99C919D7DB0F00A0F381 /* color@3x.png */; };
+		BE2F99D019D7EE3E00A0F381 /* libFlurry_5.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2F99CF19D7EE3E00A0F381 /* libFlurry_5.4.0.a */; };
 		BE33B15019CEA189007571AD /* ELMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B14F19CEA189007571AD /* ELMainTabBarViewController.m */; };
 		BE33B15519CEA59C007571AD /* ELSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15419CEA59C007571AD /* ELSettingsTableViewController.m */; };
 		BE33B15819CEC897007571AD /* ELMainTabAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE33B15719CEC897007571AD /* ELMainTabAnimator.m */; };
@@ -107,6 +108,8 @@
 		BE2F99C319D7D8E400A0F381 /* color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color.png; sourceTree = "<group>"; };
 		BE2F99C719D7DADE00A0F381 /* color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "color@2x.png"; path = "../color@2x.png"; sourceTree = "<group>"; };
 		BE2F99C919D7DB0F00A0F381 /* color@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color@3x.png"; sourceTree = "<group>"; };
+		BE2F99CC19D7ECBF00A0F381 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		BE2F99CF19D7EE3E00A0F381 /* libFlurry_5.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.4.0.a; sourceTree = "<group>"; };
 		BE33B14E19CEA189007571AD /* ELMainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMainTabBarViewController.h; sourceTree = "<group>"; };
 		BE33B14F19CEA189007571AD /* ELMainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMainTabBarViewController.m; sourceTree = "<group>"; };
 		BE33B15219CEA3C7007571AD /* ELMainTabProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELMainTabProtocol.h; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 				BEE1CA711899F8AF00992093 /* CoreData.framework in Frameworks */,
 				BEE1CA6F1899F8AF00992093 /* UIKit.framework in Frameworks */,
 				BEE1CA6B1899F8AF00992093 /* Foundation.framework in Frameworks */,
+				BE2F99D019D7EE3E00A0F381 /* libFlurry_5.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +239,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE2F99CB19D7ECAD00A0F381 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				BE2F99CC19D7ECBF00A0F381 /* Flurry.h */,
+			);
+			name = Flurry;
+			sourceTree = "<group>";
+		};
 		BE94398D18ADA0F6001F3023 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +285,7 @@
 		BEE1CA5E1899F8AF00992093 = {
 			isa = PBXGroup;
 			children = (
+				BE2F99CF19D7EE3E00A0F381 /* libFlurry_5.4.0.a */,
 				BE94398D18ADA0F6001F3023 /* AFNetworking */,
 				BEE1CA721899F8AF00992093 /* MovieMood */,
 				BEE1CA8F1899F8AF00992093 /* MovieMoodTests */,
@@ -336,6 +349,7 @@
 				BE765CAE19159CC8007D7B16 /* ELDataManager.m */,
 				BE33B15619CEC897007571AD /* ELMainTabAnimator.h */,
 				BE33B15719CEC897007571AD /* ELMainTabAnimator.m */,
+				BE2F99CB19D7ECAD00A0F381 /* Flurry */,
 			);
 			path = MovieMood;
 			sourceTree = "<group>";
@@ -722,7 +736,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
 				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MovieMood",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -739,6 +761,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovieMood/MovieMood-Prefix.pch";
 				INFOPLIST_FILE = "MovieMood/MovieMood-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

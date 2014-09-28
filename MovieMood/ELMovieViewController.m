@@ -14,6 +14,8 @@
 #import "ELBorderButton.h"
 #import "ELDataManager.h"
 #import "ELStoreController.h"
+#import "ELAppDelegate.h"
+#import "Flurry.h"
 
 @interface ELMovieViewController ()
 @property (nonatomic, retain) ELActivityIndicator *activityIndicatorView;
@@ -42,6 +44,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Flurry logEvent: @"Viewing_Movie" withParameters: @{@"id" : _movie.entityID, @"title" : _movie.title} timed: YES];
+    
     CGSize size = self.view.bounds.size;
     CGSize activityViewSize = CGSizeMake(size.width * .2, size.width * .2);
     ELDataManager *dataManager = [[ELDataManager alloc] init];
@@ -141,8 +146,8 @@
     [self.view addConstraints: scrollViewVerticalConstraints];
 }
 
--(void) viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+-(void) viewDidDisappear:(BOOL)animated {
+    [Flurry endTimedEvent: @"Viewing_Movie" withParameters: nil];
 }
 
 -(void) viewDidLayoutSubviews {
@@ -151,12 +156,14 @@
     [_contentView setSummaryText: _movie.entityDescription];
 }
 
--(void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear: animated];
-    //[_contentScrollView setContentSize: [_contentView sizeThatFits: _contentScrollView.frame.size]];
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: YES];
+    ELAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate startUserPromptTimer];
 }
 
 -(void)iTunesButtonPressedResponse:(id)sender {
+    [Flurry logEvent: @"iTunes_Button_Pressed"];
     [_storeController openStoreWithEntity: _movie];
     //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:_movie.storeURL]];
 }
