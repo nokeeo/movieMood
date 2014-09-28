@@ -12,6 +12,7 @@
 @protocol MovieDetailButtonResponse
 -(void)iTunesButtonPressedResponse:(id) sender;
 -(void)favButtonPressedResponse:(id) sender;
+-(void)doNotShowMeButtonPressed: (id) sender;
 @end
 
 @interface ELMovieDetailView : UIView
@@ -31,5 +32,4 @@
 @property (weak, nonatomic) IBOutlet UIButton *doNotShowMovieButton;
 
 -(void)setSummaryText:(NSString *) text;
--(CGSize) getSizeOfContent;
 @end

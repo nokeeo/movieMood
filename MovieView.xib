@@ -147,27 +147,13 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-Dz-ukT">
-                    <rect key="frame" x="20" y="263" width="94" height="38"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-Dz-ukT">
+                    <rect key="frame" x="26" y="263" width="94" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="qnT-U2-Ch9"/>
                     </constraints>
                     <attributedString key="attributedText">
                         <fragment content="Director">
-                            <attributes>
-                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
-                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0f-Y0-Uxj">
-                    <rect key="frame" x="20" y="315" width="94" height="38"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Release Date">
                             <attributes>
                                 <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
@@ -192,8 +178,22 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYV-OA-XeD">
-                    <rect key="frame" x="20" y="289" width="84" height="38"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-oR-TWl">
+                    <rect key="frame" x="122" y="315" width="178" height="38"/>
+                    <attributedString key="attributedText">
+                        <fragment content=":">
+                            <attributes>
+                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
+                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYV-OA-XeD">
+                    <rect key="frame" x="36" y="289" width="84" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="eaG-6X-fVE"/>
                         <constraint firstAttribute="width" constant="84" id="m5v-dx-irN"/>
@@ -236,6 +236,9 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <connections>
+                        <action selector="doNotShowMeButtonPressed:" destination="Oz2-pq-UIA" eventType="touchUpInside" id="SPq-kE-NPi"/>
+                    </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-Gi-MGG">
                     <rect key="frame" x="0.0" y="176" width="320" height="55"/>
@@ -247,15 +250,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-oR-TWl">
-                    <rect key="frame" x="122" y="315" width="178" height="38"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0f-Y0-Uxj">
+                    <rect key="frame" x="26" y="315" width="94" height="38"/>
                     <attributedString key="attributedText">
-                        <fragment content=":">
+                        <fragment content="Release Date">
                             <attributes>
                                 <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <font key="NSFont" size="15" name="HelveticaNeue-Thin"/>
                                 <font key="NSOriginalFont" size="15" name="HelveticaNeue-Thin"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                             </attributes>
                         </fragment>
                     </attributedString>
@@ -294,6 +297,7 @@
                 <constraint firstItem="3vY-fD-gXP" firstAttribute="top" secondItem="yRJ-Ap-KSo" secondAttribute="bottom" constant="21" id="V6O-OC-YFT"/>
                 <constraint firstItem="yRJ-Ap-KSo" firstAttribute="leading" secondItem="hrI-jQ-xUC" secondAttribute="trailing" constant="51" id="WaE-hQ-eQz"/>
                 <constraint firstItem="bDv-QV-wKy" firstAttribute="bottom" secondItem="hrI-jQ-xUC" secondAttribute="bottom" id="WeV-B4-dWG"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KNp-uY-J4P" secondAttribute="bottom" constant="177" id="aa7-g0-UX6"/>
                 <constraint firstItem="KNp-uY-J4P" firstAttribute="leading" secondItem="Oz2-pq-UIA" secondAttribute="leading" id="ap0-D0-PTU"/>
                 <constraint firstItem="KJJ-EW-pKo" firstAttribute="leading" secondItem="hrI-jQ-xUC" secondAttribute="trailing" constant="18" id="c3e-EL-4Ik"/>
                 <constraint firstAttribute="trailing" secondItem="Yni-Qv-B8j" secondAttribute="trailing" constant="20" id="dKo-s2-sMG"/>

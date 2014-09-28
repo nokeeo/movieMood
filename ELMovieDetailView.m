@@ -28,16 +28,12 @@
 
 -(void)awakeFromNib {
     
-    /*CGRect summaryRect = CGRectMake(0,
-                                    _artworkImage.frame.origin.y + _artworkImage.frame.size.height + 20,
-                                    CGRectGetWidth(self.frame), 10);
-    _summaryLabel = [[UITextView alloc] initWithFrame:summaryRect];
-    _summaryLabel.userInteractionEnabled = NO;
-    _summaryLabel.backgroundColor = [UIColor colorWithRed:235./255 green:235./255 blue:235./255 alpha:1];
-    _summaryLabel.layer.borderWidth = .5;
-    _summaryLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    [_summaryLabel setTextContainerInset: UIEdgeInsetsMake(10, _artworkImage.frame.origin.x, 10, _artworkImage.frame.origin.x)];
-    [self addSubview: _summaryLabel];*/
+    
+    _summaryBox.userInteractionEnabled = NO;
+    _summaryBox.backgroundColor = [UIColor colorWithRed:235./255 green:235./255 blue:235./255 alpha:1];
+    _summaryBox.layer.borderWidth = .5;
+    _summaryBox.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [_summaryBox setTextContainerInset: UIEdgeInsetsMake(10, _artworkImage.frame.origin.x, 10, _artworkImage.frame.origin.x)];
     
     //Create information view
     /*NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieInformationView" owner:self options:nil];
@@ -83,16 +79,19 @@
     [_buttonResponseDelegate favButtonPressedResponse: sender];
 }
 
+- (IBAction)doNotShowMeButtonPressed:(id)sender {
+    [_buttonResponseDelegate doNotShowMeButtonPressed: sender];
+}
+
 -(void) setSummaryText:(NSString *)text {
     _summaryBox.text = text;
+    _summaryBox.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:12];
     
     CGSize summaryIdealSize = [_summaryBox sizeThatFits: CGSizeMake(self.frame.size.width, FLT_MAX)];
-    NSLog(@"%f", _summaryBox.frame.size.height);
+    //NSLog(@"%f", _summaryBox.frame.size.height);
     _summaryHeightConstraint.constant = summaryIdealSize.height;
     
-    /*_summaryLabel.text = text;
-    _summaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:12];
-    CGFloat oldSumHeight = _summaryLabel.frame.size.height;
+    /*CGFloat oldSumHeight = _summaryLabel.frame.size.height;
     //Check if more button in summary is needed.
     CGSize maxSummarySize = [self getFullSummarySizeWithText: _summaryLabel.text];
     if(maxSummarySize.height > _summaryLabel.frame.size.height) {
