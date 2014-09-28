@@ -147,6 +147,12 @@
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
+        NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES};
+        [_persistentStoreCoordinator addPersistentStoreWithType: NSSQLiteStoreType
+                                                  configuration: nil
+                                                            URL: storeURL
+                                                        options: options
+                                                          error:nil];
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }    
