@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="e6k-Wz-FZx"/>
+                    <tabBarItem key="tabBarItem" image="color.png" id="e6k-Wz-FZx"/>
                     <navigationItem key="navigationItem" id="l6r-IF-Q3Y">
                         <nil key="title"/>
                     </navigationItem>
@@ -609,6 +609,9 @@ Simply choose the color corresponding to a mood, tap the center of the color whe
             <point key="canvasLocation" x="-573" y="1375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="color.png" width="22" height="22"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
