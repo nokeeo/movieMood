@@ -30,12 +30,20 @@
 
 -(NSError *)saveMovie:(ELMediaEntity *)movie {
     NSFetchRequest *favMovieRequest = [self createFavMovieRequest];
-    return [self saveMovieItem: movie withRequest: favMovieRequest];
+    NSError *error = [self saveMovieItem: movie withRequest: favMovieRequest];
+    if(!error) {
+        [self doShowMovie: movie];
+    }
+    
+    return error;
 }
 
 -(NSError *) doNotShowMovie: (ELMediaEntity *) movie {
     NSFetchRequest *doNotShowRequest = [self createDoNotShowMovieRequest];
     NSError *error = [self saveMovieItem: movie withRequest: doNotShowRequest];
+    if(!error) {
+         [self deleteMovie: movie];
+    }
     
     return error;
 }

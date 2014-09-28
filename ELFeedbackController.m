@@ -39,7 +39,7 @@ static const NSString *STORE_URL = @"https://itunes.apple.com/us/app/moviemood/i
 
 -(void) beginFeedbackFlow {
     [Flurry logEvent: @"Prompted_Feedback"];
-    _appFeelingAlert = [[UIAlertView alloc] initWithTitle:@"Do you love MovieMood?" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Absolutely", @"Not Quite", nil];
+    _appFeelingAlert = [[UIAlertView alloc] initWithTitle:@"Do you love Movie Mood?" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Absolutely", @"Not Quite", nil];
     [_appFeelingAlert show];
 }
 
