@@ -122,7 +122,7 @@
                                                                    options: 0
                                                                    metrics: 0
                                                                      views: visualDictionary];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[contentView]-100-|"
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[contentView]-120-|"
                                                                            options: 0
                                                                            metrics: 0
                                                                              views: visualDictionary];
