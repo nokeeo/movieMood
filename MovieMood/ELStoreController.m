@@ -51,4 +51,8 @@ const NSString *AFFILIATE_KEY = @"11lu3P";
     }
 }
 
+-(void) productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [_appStoreVC dismissViewControllerAnimated: YES completion: nil];
+}
+
 @end

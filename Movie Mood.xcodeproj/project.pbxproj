@@ -515,7 +515,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "MovieMood" */;
+			buildConfigurationList = BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "Movie Mood" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -813,7 +813,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "MovieMood" */ = {
+		BEE1CA621899F8AF00992093 /* Build configuration list for PBXProject "Movie Mood" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEE1CA971899F8AF00992093 /* Debug */,

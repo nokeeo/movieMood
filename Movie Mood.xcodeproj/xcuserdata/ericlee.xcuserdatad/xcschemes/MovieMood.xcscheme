@@ -17,7 +17,7 @@
                BlueprintIdentifier = "BEE1CA661899F8AF00992093"
                BuildableName = "MovieMood.app"
                BlueprintName = "MovieMood"
-               ReferencedContainer = "container:MovieMood.xcodeproj">
+               ReferencedContainer = "container:Movie Mood.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "BEE1CA861899F8AF00992093"
                BuildableName = "MovieMoodTests.xctest"
                BlueprintName = "MovieMoodTests"
-               ReferencedContainer = "container:MovieMood.xcodeproj">
+               ReferencedContainer = "container:Movie Mood.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "BEE1CA661899F8AF00992093"
             BuildableName = "MovieMood.app"
             BlueprintName = "MovieMood"
-            ReferencedContainer = "container:MovieMood.xcodeproj">
+            ReferencedContainer = "container:Movie Mood.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "BEE1CA661899F8AF00992093"
             BuildableName = "MovieMood.app"
             BlueprintName = "MovieMood"
-            ReferencedContainer = "container:MovieMood.xcodeproj">
+            ReferencedContainer = "container:Movie Mood.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "BEE1CA661899F8AF00992093"
             BuildableName = "MovieMood.app"
             BlueprintName = "MovieMood"
-            ReferencedContainer = "container:MovieMood.xcodeproj">
+            ReferencedContainer = "container:Movie Mood.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
