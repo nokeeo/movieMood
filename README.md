@@ -11,7 +11,8 @@ John Stelben <br />
 
 Screenshots:
 ---------
-<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/ColorWheel.png" /><br />
-<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/ColorList.png" /><br />
-<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/MovieList.png" /><br />
-<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/MovieDetail.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/iPhoneSplash.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/iPhoneColorTheory.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/iPhoneMain.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/iPhoneMovieList.png" /><br />
+<img width="425px" src="https://github.com/nokeeo/movieMood/raw/master/Screenshots/iPhoneMovieDetail.png" /><br />
